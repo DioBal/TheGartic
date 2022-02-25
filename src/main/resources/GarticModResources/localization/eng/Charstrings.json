@@ -1,8 +1,8 @@
 {
-  "${ModID}:TheTodo": {
+  "${ModID}:TheGartic": {
     "NAMES": [
-      "The Todo",
-      "the Todo"
+      "The Gartic",
+      "the Gartic"
     ],
     "TEXT": [
       "An unfinished creation, waiting for an expert to fill the canvas.",
