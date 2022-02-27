@@ -1,10 +1,9 @@
 [
   {
-    "PROPER_NAME": "TODO",
+    "PROPER_NAME": "Fish",
     "NAMES": [
-      "todo",
-      "todos"
+      "fish"
     ],
-    "DESCRIPTION": "TODO: Make your own epic keywords"
+    "DESCRIPTION": "#yFish are random Colorless cards that grant a small benefit, replace themselves, and Exhaust."
   }
 ]

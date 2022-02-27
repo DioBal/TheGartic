@@ -135,7 +135,7 @@ public class Wiz {
     }
 
     public static void makeInHand(AbstractCard c, int i) {
-        atb(new MakeTempCardInHandAction(c, i));
+        atb(new MakeTempCardInHandAction(c, i, true));
     }
 
     public static void makeInHand(AbstractCard c) {

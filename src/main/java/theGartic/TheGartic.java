@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import theGartic.cards.Defend;
 import theGartic.cards.Strike;
-import theGartic.relics.TodoItem;
+import theGartic.relics.OldRod;
 
 import java.util.ArrayList;
 
@@ -81,7 +81,7 @@ public class TheGartic extends CustomPlayer {
 
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(TodoItem.ID);
+        retVal.add(OldRod.ID);
         return retVal;
     }
 

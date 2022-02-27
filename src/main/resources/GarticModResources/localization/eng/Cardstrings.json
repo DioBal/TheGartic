@@ -53,5 +53,22 @@
   "${ModID}:Siren": {
     "NAME": "Siren",
     "DESCRIPTION": "Enemy loses !M! Strength and !${ModID}:m2! HP. NL Draw 1 card. NL Exhaust."
+  },
+  "${ModID}:Hook": {
+    "NAME": "Hook",
+    "DESCRIPTION": "Deal !D! damage. NL Shuffle !M! ${ModID}:Fish into your draw pile."
+  },
+  "${ModID}:CatchOfTheDay": {
+    "NAME": "Catch of the Day",
+    "DESCRIPTION": "At the start of your turn, shuffle a ${ModID}:Fish into your draw pile.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, shuffle a ${ModID}:Fish into your draw pile."
+  },
+  "${ModID}:Baited": {
+    "NAME": "Baited",
+    "DESCRIPTION": "Deal !D! damage. NL Add a ${ModID}:Fish into your hand. NL If the enemy intends to attack, add !M! more."
+  },
+  "${ModID}:GoneFishing": {
+    "NAME": "Gone Fishing",
+    "DESCRIPTION": "Gain 1 Intangible. NL Shuffle !M! ${ModID}:Fish into your draw pile. NL Exhaust."
   }
 }

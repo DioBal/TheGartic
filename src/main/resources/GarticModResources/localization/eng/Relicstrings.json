@@ -1,9 +1,9 @@
 {
-  "${ModID}:TodoItem": {
-    "NAME": "Todo Item",
-    "FLAVOR": "TODO: make this a sweet relic.",
+  "${ModID}:OldRod": {
+    "NAME": "Old Rod",
+    "FLAVOR": "Plop! Now to wait.",
     "DESCRIPTIONS": [
-      "Has no effect."
+      "At the start of combat, shuffle 2 #y${ModID}:Fish into your draw pile."
     ]
   }
 }
