@@ -6,7 +6,8 @@
     <artifactId>TheGartic</artifactId>
     <version>0.0.1</version>
     <name>The Gartic</name>
-    <description>Mod Character for Slay The Spire, collaboratively developed in an StS community modding event</description>
+    <description>Mod Character for Slay The Spire, collaboratively developed in an StS community modding event
+    </description>
     <!-- Change the above for mod information. -->
 
     <properties>
@@ -20,7 +21,7 @@
         <!-- CHANGE THIS TO MATCH YOUR MODID FIELD IN THE MAIN TodoMod CLASS FILE -->
 
         <!--CHANGE THIS TO YOUR STEAM INSTALLATION-->
-        <Steam.path>C:/Fast Games/steamapps</Steam.path>
+        <Steam.path>C:/Program Files (x86)/Steam/steamapps/</Steam.path>
     </properties>
 
     <dependencies>
