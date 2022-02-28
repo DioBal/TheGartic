@@ -70,5 +70,14 @@
   "${ModID}:GoneFishing": {
     "NAME": "Gone Fishing",
     "DESCRIPTION": "Gain 1 Intangible. NL Shuffle !M! ${ModID}:Fish into your draw pile. NL Exhaust."
+  },
+  "${ModID}:CarryOn": {
+    "NAME": "Carry On",
+    "DESCRIPTION": "Discard 2 Cards. Draw an extra card next turn.",
+    "UPGRADE_DESCRIPTION": "Discard 2 Cards. Draw 2 extra cards next turn."
+  },
+  "${ModID}:EmergencyFireworks": {
+    "NAME": "Emergency Fireworks",
+    "DESCRIPTION": "Deal !D! Damage. Apply !M! Vulnerable to ALL enemies. When discarded, apply !${ModID}:m2! Weak to ALL enemies."
   }
 }
