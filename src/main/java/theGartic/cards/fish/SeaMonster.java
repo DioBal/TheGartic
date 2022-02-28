@@ -1,4 +1,4 @@
-package theGartic.fish;
+package theGartic.cards.fish;
 
 import basemod.cardmods.ExhaustMod;
 import basemod.helpers.CardModifierManager;

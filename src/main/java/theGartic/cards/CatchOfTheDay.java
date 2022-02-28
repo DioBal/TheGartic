@@ -4,8 +4,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import theGartic.cards.AbstractEasyCard;
-import theGartic.fish.FishHelper;
+import theGartic.cards.fish.FishHelper;
 import theGartic.powers.LambdaPower;
 
 import static theGartic.GarticMod.makeID;

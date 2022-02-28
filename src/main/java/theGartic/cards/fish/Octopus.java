@@ -1,4 +1,4 @@
-package theGartic.fish;
+package theGartic.cards.fish;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

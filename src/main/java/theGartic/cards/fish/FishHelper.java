@@ -1,4 +1,4 @@
-package theGartic.fish;
+package theGartic.cards.fish;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.colorless.Madness;
