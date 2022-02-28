@@ -1,26 +1,26 @@
-package theGartic.fish;
+package theGartic.cards.fish;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import theGartic.cards.AbstractEasyCard;
 
 import static theGartic.GarticMod.makeID;
 import static theGartic.util.Wiz.*;
 
-public class Hammerhead extends AbstractEasyCard {
-    public final static String ID = makeID("Hammerhead");
-    // intellij stuff skill, self, special, , , , , 1, 1
+public class Shark extends AbstractEasyCard {
+    public final static String ID = makeID("Shark");
+    // intellij stuff skill, enemy, special, , , , , 2, 1
 
-    public Hammerhead() {
-        super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF, CardColor.COLORLESS);
-        baseMagicNumber = magicNumber = 1;
+    public Shark() {
+        super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.ENEMY, CardColor.COLORLESS);
+        baseMagicNumber = magicNumber = 2;
         exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new StrengthPower(p, magicNumber));
+        applyToEnemy(m, new VulnerablePower(m, magicNumber, false));
         atb(new DrawCardAction(1));
     }
 

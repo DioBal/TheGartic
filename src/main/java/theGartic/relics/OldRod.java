@@ -1,8 +1,7 @@
 package theGartic.relics;
 
 import theGartic.TheGartic;
-import theGartic.fish.FishHelper;
-import theGartic.util.Wiz;
+import theGartic.cards.fish.FishHelper;
 
 import static theGartic.GarticMod.makeID;
 import static theGartic.util.Wiz.shuffleIn;

@@ -3,8 +3,7 @@ package theGartic.cards;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
-import theGartic.cards.AbstractEasyCard;
-import theGartic.fish.FishHelper;
+import theGartic.cards.fish.FishHelper;
 
 import static theGartic.GarticMod.makeID;
 import static theGartic.util.Wiz.*;

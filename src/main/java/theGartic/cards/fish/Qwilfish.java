@@ -1,6 +1,5 @@
-package theGartic.fish;
+package theGartic.cards.fish;
 
-import basemod.devcommands.draw.Draw;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;

@@ -1,11 +1,9 @@
 package theGartic.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theGartic.cards.AbstractEasyCard;
-import theGartic.fish.FishHelper;
+import theGartic.cards.fish.FishHelper;
 
 import static theGartic.GarticMod.makeID;
 import static theGartic.util.Wiz.*;
