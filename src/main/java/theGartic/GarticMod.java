@@ -31,7 +31,7 @@ public class GarticMod implements
         EditKeywordsSubscriber,
         EditCharactersSubscriber {
 
-    public static final String modID = "GarticMod";
+    public static final String modID = "garticmod";
 
     public static String makeID(String idText) {
         return modID + ":" + idText;
