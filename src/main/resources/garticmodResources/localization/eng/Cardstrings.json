@@ -1,0 +1,74 @@
+{
+  "${ModID}:Strike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "${ModID}:Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "${ModID}:Boot": {
+    "NAME": "Boot",
+    "DESCRIPTION": "Draw !M! card. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Exhaust."
+  },
+  "${ModID}:Clownfish": {
+    "NAME": "Clownfish",
+    "DESCRIPTION": "Apply !M! Weak. NL Draw 1 card. NL Exhaust."
+  },
+  "${ModID}:Guppy": {
+    "NAME": "Guppy",
+    "DESCRIPTION": "Gain !B! Block. NL Draw 1 card. NL Exhaust."
+  },
+  "${ModID}:Hammerhead": {
+    "NAME": "Hammerhead",
+    "DESCRIPTION": "Gain !M! Strength. NL Draw 1 card. NL Exhaust."
+  },
+  "${ModID}:Octopus": {
+    "NAME": "Octopus",
+    "DESCRIPTION": "Draw !M! cards. NL Exhaust."
+  },
+  "${ModID}:Orca": {
+    "NAME": "Orca",
+    "DESCRIPTION": "Play the top card of your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Play the top card of your draw pile. NL Exhaust."
+  },
+  "${ModID}:Piranha": {
+    "NAME": "Piranha",
+    "DESCRIPTION": "Deal !D! damage. NL Draw 1 card. NL Exhaust."
+  },
+  "${ModID}:Qwilfish": {
+    "NAME": "Qwilfish",
+    "DESCRIPTION": "Apply !M! Poison. NL Draw 1 card. NL Exhaust."
+  },
+  "${ModID}:SeaMonster": {
+    "NAME": "Sea Monster",
+    "DESCRIPTION": "Add 3 random Attacks into your hand. They cost 0 this turn and gain Exhaust. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add 3 random Upgraded Attacks into your hand. They cost 0 this turn and gain Exhaust. NL Exhaust."
+  },
+  "${ModID}:Shark": {
+    "NAME": "Shark",
+    "DESCRIPTION": "Apply !M! Vulnerable. NL Draw 1 card. NL Exhaust."
+  },
+  "${ModID}:Siren": {
+    "NAME": "Siren",
+    "DESCRIPTION": "Enemy loses !M! Strength and !${ModID}:m2! HP. NL Draw 1 card. NL Exhaust."
+  },
+  "${ModID}:Hook": {
+    "NAME": "Hook",
+    "DESCRIPTION": "Deal !D! damage. NL Shuffle !M! ${ModID}:Fish into your draw pile."
+  },
+  "${ModID}:CatchOfTheDay": {
+    "NAME": "Catch of the Day",
+    "DESCRIPTION": "At the start of your turn, shuffle a ${ModID}:Fish into your draw pile.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, shuffle a ${ModID}:Fish into your draw pile."
+  },
+  "${ModID}:Baited": {
+    "NAME": "Baited",
+    "DESCRIPTION": "Deal !D! damage. NL Add a ${ModID}:Fish into your hand. NL If the enemy intends to attack, add !M! more."
+  },
+  "${ModID}:GoneFishing": {
+    "NAME": "Gone Fishing",
+    "DESCRIPTION": "Gain 1 Intangible. NL Shuffle !M! ${ModID}:Fish into your draw pile. NL Exhaust."
+  }
+}

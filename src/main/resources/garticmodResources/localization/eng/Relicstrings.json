@@ -1,0 +1,9 @@
+{
+  "${ModID}:OldRod": {
+    "NAME": "Old Rod",
+    "FLAVOR": "Plop! Now to wait.",
+    "DESCRIPTIONS": [
+      "At the start of combat, shuffle 2 #y${ModID}:Fish into your draw pile."
+    ]
+  }
+}
