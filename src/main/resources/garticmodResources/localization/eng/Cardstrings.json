@@ -129,5 +129,24 @@
   "${ModID}:Soften": {
     "NAME": "Soften",
     "DESCRIPTION": "Deal !D! damage. NL Enemy loses !M! Strength this turn."
+  },
+  "${ModID}:ChargeBeam": {
+    "NAME": "Charge Beam",
+    "DESCRIPTION": "Unplayable. Retain. NL When Retained, increase its damage by !M! this combat. NL When discarded from your hand, deal !D! damage to ALL enemies.",
+    "EXTENDED_DESCRIPTION": ["I can't play this card."]
+  },
+  "${ModID}:Gambit": {
+    "NAME": "Gambit",
+    "DESCRIPTION": "Unplayable. NL When drawn, gain !B! Block and discard 1 card at random.",
+    "EXTENDED_DESCRIPTION": ["I can't play this card."]
+  },
+  "${ModID}:Sparks": {
+    "NAME": "Sparks",
+    "DESCRIPTION": "Unplayable. NL While in hand, deal !D! damage to ALL enemies whenever you play an Attack.",
+    "EXTENDED_DESCRIPTION": ["I can't play this card."]
+  },
+  "${ModID}:StockUp": {
+    "NAME": "Stock Up",
+    "DESCRIPTION": "{@@}Gain !B! Block. NL Draw !M! card{!M!|>1=s}. NL Discard !M! card{!M!|>1=s}."
   }
 }
