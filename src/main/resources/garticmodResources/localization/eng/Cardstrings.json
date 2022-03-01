@@ -113,5 +113,21 @@
   "${ModID}:BoomingBlade": {
     "NAME": "Booming Blade",
     "DESCRIPTION": "Deal !D! damage and add a *Smite to your hand."
+  },
+  "${ModID}:Illusions": {
+    "NAME": "Illusions",
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL Put !M! cards from your discard pile into your hand."
+  },
+  "${ModID}:LoseWeight": {
+    "NAME": "Lose Weight",
+    "DESCRIPTION": "Draw !M! cards. NL Discard any number of Colorless cards and gain 1 ${ModID}:Flight for each card discarded."
+  },
+  "${ModID}:MirrorShot": {
+    "NAME": "Mirror Shot",
+    "DESCRIPTION": "Deal !D! damage. NL If you and the enemy share a buff or debuff with the same name, add !M! Shivs to your hand."
+  },
+  "${ModID}:Soften": {
+    "NAME": "Soften",
+    "DESCRIPTION": "Deal !D! damage. NL Enemy loses !M! Strength this turn."
   }
 }
