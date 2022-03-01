@@ -5,5 +5,13 @@
       "fish"
     ],
     "DESCRIPTION": "#yFish are random Colorless cards that grant a small benefit, replace themselves, and Exhaust."
+  },
+  {
+    "PROPER_NAME": "Glass Armor",
+    "NAMES": [
+      "glass_armor",
+      "glass\u00A0armor"
+    ],
+    "DESCRIPTION": "At the end of your turn, gain Block equal to your stacks of #yGlass #yArmor. Receiving unblocked attack damage removes all #yGlass #yArmor."
   }
 ]

@@ -1,1 +1,10 @@
-{}
+{
+  "${ModID}:GlassArmorPower": {
+  "NAME": "Glass Armor",
+    "DESCRIPTIONS": [
+      "At the end of your turn, gain #b",
+      " #yBlock. Receiving unblocked attack damage removes all #yGlass #yArmor.",
+      "At the end of its turn, gains #b",
+      " #yBlock. Receiving unblocked attack damage removes all #yGlass #yArmor."
+    ]  }
+}
