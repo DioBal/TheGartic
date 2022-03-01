@@ -14,28 +14,27 @@ public class BoxOfCrayons extends AbstractEasyRelic {
 
     public BoxOfCrayons() {
         super(ID, RelicTier.UNCOMMON, LandingSound.FLAT);
+        counter = 0;
     }
 
     public void onManualDiscard() {
         counter++;
-        if (this.counter == THRESHOLD) {
-            this.counter = 0;
+        if (counter == THRESHOLD) {
+            counter = 0;
             flash();
-            this.pulse = false;
+            pulse = false;
             atb(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             atb(new DrawCardAction(1));
-        } else if (this.counter == THRESHOLD - 1) {
+        } else if (counter == THRESHOLD - 1) {
             beginPulse();
-            this.pulse = true;
+            pulse = true;
         }
-        flash();
-        atb(new RelicAboveCreatureAction(AbstractDungeon.player, this));
     }
 
     public void atBattleStart() {
-        if (this.counter == THRESHOLD - 1) {
+        if (counter == THRESHOLD - 1) {
             beginPulse();
-            this.pulse = true;
+            pulse = true;
         }
     }
 }
