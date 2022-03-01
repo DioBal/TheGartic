@@ -9,8 +9,8 @@
   },
   "${ModID}:Boot": {
     "NAME": "Boot",
-    "DESCRIPTION": "Draw !M! card. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Exhaust."
+    "DESCRIPTION": "Draw 1 card. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw 2 cards. NL Exhaust."
   },
   "${ModID}:Clownfish": {
     "NAME": "Clownfish",
@@ -79,5 +79,15 @@
   "${ModID}:EmergencyFireworks": {
     "NAME": "Emergency Fireworks",
     "DESCRIPTION": "Deal !D! Damage. Apply !M! Vulnerable to ALL enemies. When discarded, apply !${ModID}:m2! Weak to ALL enemies."
+  },
+  "${ModID}:FeedingFrenzy": {
+    "NAME": "Feeding Frenzy",
+    "DESCRIPTION": "Exhaust all ${ModID}:Fish in your hand and draw pile. Deal !D! damage to a random enemy for each.",
+    "EXTENDED_DESCRIPTION": [" NL ( !${ModID}:fshhd! ${ModID}:Fish. )"]
+  },
+  "${ModID}:ItWasTHIIIIIIISBig": {
+    "NAME": "It Was THIIIIIIIS Big!",
+    "DESCRIPTION": "Triple the effects of ALL current ${ModID}:Fish cards. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Quadruple the effects of ALL current ${ModID}:Fish cards. NL Exhaust."
   }
 }

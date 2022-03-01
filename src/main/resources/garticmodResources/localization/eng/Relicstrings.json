@@ -5,5 +5,19 @@
     "DESCRIPTIONS": [
       "At the start of combat, shuffle 2 #y${ModID}:Fish into your draw pile."
     ]
+  },
+  "${ModID}:FiberglassRod": {
+    "NAME": "Fiberglass Rod",
+    "FLAVOR": "Plop!... Now to wait some more.",
+    "DESCRIPTIONS": [
+      "Replaces Old Rod. At the start of each turn, shuffle 2 #y${ModID}:Fish into your draw pile."
+    ]
+  },
+  "${ModID}:WornCoat": {
+    "NAME": "Worn Coat",
+    "FLAVOR": "A reminder to take it easy sometimes.",
+    "DESCRIPTIONS": [
+      "Whenever a #y${ModID}:Fish enters your discard pile, gain 6 Block."
+    ]
   }
 }

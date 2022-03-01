@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import static theGartic.GarticMod.makeID;
 import static theGartic.util.Wiz.*;
 
-public class SeaMonster extends AbstractEasyCard {
+public class SeaMonster extends AbstractFishCard {
     public final static String ID = makeID("SeaMonster");
     // intellij stuff skill, none, special, , , , , , 
 

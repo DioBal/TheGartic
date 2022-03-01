@@ -1,7 +1,7 @@
 package theGartic.relics;
 
 import theGartic.TheGartic;
-import theGartic.cards.fish.FishHelper;
+import theGartic.cards.fish.AbstractFishCard;
 
 import static theGartic.GarticMod.makeID;
 import static theGartic.util.Wiz.shuffleIn;
@@ -17,7 +17,7 @@ public class OldRod extends AbstractEasyRelic {
     public void atBattleStart() {
         flash();
         for (int i = 0; i < 2; i++) {
-            shuffleIn(FishHelper.returnRandomFish());
+            shuffleIn(AbstractFishCard.returnRandomFish());
         }
     }
 }
