@@ -9,7 +9,7 @@ import theGartic.cards.AbstractEasyCard;
 import static theGartic.GarticMod.makeID;
 import static theGartic.util.Wiz.*;
 
-public class Shark extends AbstractEasyCard {
+public class Shark extends AbstractFishCard {
     public final static String ID = makeID("Shark");
     // intellij stuff skill, enemy, special, , , , , 2, 1
 

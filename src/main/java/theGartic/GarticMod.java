@@ -2,6 +2,7 @@ package theGartic;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.abstracts.DynamicVariable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -112,14 +113,14 @@ public class GarticMod implements
 
     @Override
     public void receiveEditCards() {
-        BaseMod.addDynamicVariable(new SecondMagicNumber());
-        BaseMod.addDynamicVariable(new SecondDamage());
+        new AutoAdd(modID)
+                .packageFilter(SecondDamage.class)
+                .any(DynamicVariable.class, (info, dynamicVariable) -> BaseMod.addDynamicVariable(dynamicVariable));
         new AutoAdd(modID)
                 .packageFilter(AbstractEasyCard.class)
                 .setDefaultSeen(true)
                 .cards();
     }
-
 
     @Override
     public void receiveEditStrings() {

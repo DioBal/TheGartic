@@ -4,7 +4,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import theGartic.cards.fish.FishHelper;
+import theGartic.cards.fish.AbstractFishCard;
 import theGartic.powers.LambdaPower;
 
 import static theGartic.GarticMod.makeID;
@@ -24,7 +24,7 @@ public class CatchOfTheDay extends AbstractEasyCard {
             public void atStartOfTurnPostDraw() {
                 flash();
                 for (int i = 0; i < amount; i++) {
-                    atb(new MakeTempCardInDrawPileAction(FishHelper.returnRandomFish(), 1, true, true));
+                    atb(new MakeTempCardInDrawPileAction(AbstractFishCard.returnRandomFish(), 1, true, true));
                 }
             }
 
