@@ -89,5 +89,29 @@
     "NAME": "It Was THIIIIIIIS Big!",
     "DESCRIPTION": "Triple the effects of ALL current ${ModID}:Fish cards. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Quadruple the effects of ALL current ${ModID}:Fish cards. NL Exhaust."
+  },
+  "${ModID}:LightofCreation": {
+    "NAME": "Light of Creation",
+    "DESCRIPTION": "Deal !D! damage to a random enemy. NL Repeat for each card in your hand that didn't start in your deck."
+  },
+  "${ModID}:QuickCast": {
+    "NAME": "Quick Cast",
+    "DESCRIPTION": "Choose One ; Deal !D! damage and add a *Smite to your hand. NL Gain !B! Block and add a *Safety to your hand"
+  },
+  "${ModID}:ScorpionSting": {
+    "NAME": "Scorpion Sting",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Poison. NL Apply 2 Weak"
+  },
+  "${ModID}:AngelicGlide": {
+    "NAME": "Feather Guard",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! ${ModID}:Flight."
+  },
+  "${ModID}:ShieldofLight": {
+    "NAME": "Shield of Light",
+    "DESCRIPTION": "Gain !B! Block and add a *Safety to your hand"
+  },
+  "${ModID}:BoomingBlade": {
+    "NAME": "Booming Blade",
+    "DESCRIPTION": "Deal !D! damage and add a *Smite to your hand."
   }
 }
