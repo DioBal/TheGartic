@@ -19,5 +19,12 @@
     "DESCRIPTIONS": [
       "Whenever a #y${ModID}:Fish enters your discard pile, gain 6 Block."
     ]
+  },
+  "${ModID}:BoxOfCrayons": {
+    "NAME": "Box of Crayons",
+    "FLAVOR": "Only a couple of them still have their wrappers.",
+    "DESCRIPTIONS": [
+      "Whenever you discard #b3 cards, draw #b1 card."
+    ]
   }
 }
