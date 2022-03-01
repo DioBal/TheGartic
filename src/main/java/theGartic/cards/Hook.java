@@ -3,7 +3,7 @@ package theGartic.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theGartic.cards.fish.FishHelper;
+import theGartic.cards.fish.AbstractFishCard;
 
 import static theGartic.GarticMod.makeID;
 import static theGartic.util.Wiz.*;
@@ -21,7 +21,7 @@ public class Hook extends AbstractEasyCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
         for (int i = 0; i < magicNumber; i++) {
-            shuffleIn(FishHelper.returnRandomFish());
+            shuffleIn(AbstractFishCard.returnRandomFish());
         }
     }
 
