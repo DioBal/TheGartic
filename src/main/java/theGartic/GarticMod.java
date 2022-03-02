@@ -11,14 +11,12 @@ import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
-import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.localization.CharacterStrings;
-import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import theGartic.cards.AbstractEasyCard;
 import theGartic.cards.cardvars.SecondDamage;
 import theGartic.cards.cardvars.SecondMagicNumber;
+import theGartic.potions.PurpleStuff;
 import theGartic.relics.AbstractEasyRelic;
 
 import java.nio.charset.StandardCharsets;
@@ -93,6 +91,11 @@ public class GarticMod implements
     public void receiveEditCharacters() {
         BaseMod.addCharacter(new TheGartic(TheGartic.characterStrings.NAMES[1], TheGartic.Enums.THE_GARTIC),
                 CHARSELECT_BUTTON, CHARSELECT_PORTRAIT, TheGartic.Enums.THE_GARTIC);
+        receiveEditPotions();
+    }
+
+    public void receiveEditPotions() {
+        BaseMod.addPotion(PurpleStuff.class, Color.PURPLE.cpy(), Color.PURPLE.cpy(), Color.PURPLE.cpy(), PurpleStuff.ID, TheGartic.Enums.THE_GARTIC);
     }
 
     @Override
@@ -131,6 +134,9 @@ public class GarticMod implements
         BaseMod.loadCustomStringsFile(CharacterStrings.class, modID + "Resources/localization/eng/Charstrings.json");
 
         BaseMod.loadCustomStringsFile(PowerStrings.class, modID + "Resources/localization/eng/Powerstrings.json");
+
+        BaseMod.loadCustomStringsFile(PotionStrings.class, modID + "Resources/localization/eng/Potionstrings.json");
+
     }
 
     @Override
