@@ -90,6 +90,14 @@
     "DESCRIPTION": "Triple the effects of ALL current ${ModID}:Fish cards. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Quadruple the effects of ALL current ${ModID}:Fish cards. NL Exhaust."
   },
+  "${ModID}:Frontflip": {
+    "NAME": "Frontflip",
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! random cards from your discard pile."
+  },
+  "${ModID}:GlassWave": {
+    "NAME": "Glass Wave",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! ${ModID}:Glass\u00A0Armor. NL Exhaust."
+  },
   "${ModID}:LightofCreation": {
     "NAME": "Light of Creation",
     "DESCRIPTION": "Deal !D! damage to a random enemy. NL Repeat for each card in your hand that didn't start in your deck."

@@ -1,0 +1,6 @@
+{
+  "${ModID}:PurpleStuff": {
+    "NAME": "Purple Stuff",
+    "DESCRIPTIONS": ["Swap your Draw and Discard piles, draw #b", " cards."]
+  }
+}
