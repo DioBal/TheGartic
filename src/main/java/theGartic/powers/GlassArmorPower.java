@@ -41,7 +41,7 @@ public class GlassArmorPower extends AbstractEasyPower {
         if (amount > 999)
             amount = 999;
         updateDescription();
-    }f
+    }
 
     public void wasHPLost(DamageInfo info, int damageAmount) {
         if (info.owner != null && info.owner != owner && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount > 0) {
