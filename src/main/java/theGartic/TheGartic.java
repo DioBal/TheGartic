@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import theGartic.cards.Defend;
+import theGartic.cards.StockUp;
 import theGartic.cards.Strike;
 import theGartic.relics.OldRod;
 
@@ -76,6 +77,7 @@ public class TheGartic extends CustomPlayer {
         for (int i = 0; i < 4; i++) {
             retVal.add(Defend.ID);
         }
+        retVal.add(StockUp.ID);
         return retVal;
     }
 
