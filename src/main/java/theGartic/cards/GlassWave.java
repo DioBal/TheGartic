@@ -16,7 +16,7 @@ public class GlassWave extends AbstractEasyCard {
     public final static String ID = makeID(GlassWave.class.getSimpleName());
 
     public GlassWave() {
-        super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = damage = 8;
         baseMagicNumber = magicNumber = 3;
         exhaust = true;
