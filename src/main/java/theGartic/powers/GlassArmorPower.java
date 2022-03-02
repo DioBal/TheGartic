@@ -10,6 +10,8 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static theGartic.GarticMod.makeID;
+import static theGartic.GarticMod.modID;
+import static theGartic.util.Wiz.atb;
 
 public class GlassArmorPower extends AbstractEasyPower {
     public static final String POWER_ID = makeID(GlassArmorPower.class.getSimpleName());
@@ -39,22 +41,23 @@ public class GlassArmorPower extends AbstractEasyPower {
         if (amount > 999)
             amount = 999;
         updateDescription();
-    }
+    }f
 
     public void wasHPLost(DamageInfo info, int damageAmount) {
         if (info.owner != null && info.owner != owner && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount > 0) {
             flash();
-            addToBot(new RemoveSpecificPowerAction(owner, owner, this));
+            CardCrawlGame.sound.play(modID + ":GLASSARMOR");
+            atb(new RemoveSpecificPowerAction(owner, owner, this));
         }
     }
 
     public void onRemove() {
         if (!this.owner.isPlayer)
-            addToBot(new ChangeStateAction((AbstractMonster) owner, "ARMOR_BREAK"));
+            atb(new ChangeStateAction((AbstractMonster) owner, "ARMOR_BREAK"));
     }
 
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
         flash();
-        addToBot(new GainBlockAction(owner, owner, amount));
+        atb(new GainBlockAction(owner, owner, amount));
     }
 }

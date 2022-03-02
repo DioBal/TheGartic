@@ -28,7 +28,8 @@ public class GarticMod implements
         EditRelicsSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
-        EditCharactersSubscriber {
+        EditCharactersSubscriber,
+        AddAudioSubscriber{
 
     public static final String modID = "garticmod";
 
@@ -150,5 +151,10 @@ public class GarticMod implements
                 BaseMod.addKeyword(modID, keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
             }
         }
+    }
+
+    @Override
+    public void receiveAddAudio() {
+        BaseMod.addAudio(modID + ":GLASSARMOR", modID + "Resources/audio/sfx/glassarmor.ogg");
     }
 }
