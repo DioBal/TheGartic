@@ -168,7 +168,7 @@
   },
   "${ModID}:LittleShieldDude": {
     "NAME": "Little Shield Dude",
-    "DESCRIPTION": "Your next Attack grants Block equal to their unblocked Damage.",
+    "DESCRIPTION": "Your next Attack grants Block equal to its unblocked Damage.",
     "UPGRADE_DESCRIPTION": "Your 2 next Attacks grant Block equal to their unblocked Damage."
   },
   "${ModID}:ArcaneToolbox": {
