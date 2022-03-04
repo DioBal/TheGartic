@@ -31,7 +31,8 @@
   "${ModID}:Orca": {
     "NAME": "Orca",
     "DESCRIPTION": "Play the top card of your draw pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Play the top card of your draw pile. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Retain. NL Play the top card of your draw pile. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": ["Play the top %d cards of your draw pile. NL Exhaust.", "Retain. NL Play the top %d cards of your draw pile. NL Exhaust."]
   },
   "${ModID}:Piranha": {
     "NAME": "Piranha",
