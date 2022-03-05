@@ -80,6 +80,11 @@ public class GarticMod implements
         return modID + "Resources/images/powers/" + resourcePath;
     }
 
+    public static String makeOrbPath(String resourcePath)
+    {
+        return modID + "Resources/images/orbs/" + resourcePath;
+    }
+
     public static String makeCardPath(String resourcePath) {
         return modID + "Resources/images/cards/" + resourcePath;
     }
@@ -138,6 +143,7 @@ public class GarticMod implements
 
         BaseMod.loadCustomStringsFile(PotionStrings.class, modID + "Resources/localization/eng/Potionstrings.json");
 
+        BaseMod.loadCustomStringsFile(OrbStrings.class, modID + "Resources/localization/eng/Orbstrings.json");
     }
 
     @Override

@@ -21,5 +21,21 @@
       "flight"
     ],
     "DESCRIPTION": "Take #b50% less damage from attacks. NL Reduced by #b1 when damaged or at the start of your turn"
+  },
+  {
+    "PROPER_NAME": "Summon",
+    "NAMES": [
+      "summon",
+      "summoned"
+    ],
+    "DESCRIPTION": "Create a creature to fight for you this battle."
+  },
+  {
+    "PROPER_NAME": "Fire Imp",
+    "NAMES": [
+      "fireimp",
+      "fire\u00A0imp"
+    ],
+    "DESCRIPTION": "A creature that deals 3 damage to a random enemy whenever you play an attack."
   }
 ]
