@@ -31,8 +31,7 @@
   "${ModID}:Orca": {
     "NAME": "Orca",
     "DESCRIPTION": "Play the top card of your draw pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Play the top card of your draw pile. NL Exhaust.",
-    "EXTENDED_DESCRIPTION": ["Play the top %d cards of your draw pile. NL Exhaust.", "Retain. NL Play the top %d cards of your draw pile. NL Exhaust."]
+    "UPGRADE_DESCRIPTION": "Retain. NL Play the top card of your draw pile. NL Exhaust."
   },
   "${ModID}:Piranha": {
     "NAME": "Piranha",
@@ -168,12 +167,16 @@
   },
   "${ModID}:LittleShieldDude": {
     "NAME": "Little Shield Dude",
-    "DESCRIPTION": "Your next Attack grants Block equal to its unblocked Damage.",
+    "DESCRIPTION": "Your next Attack grants Block equal to their unblocked Damage.",
     "UPGRADE_DESCRIPTION": "Your 2 next Attacks grant Block equal to their unblocked Damage."
   },
   "${ModID}:ArcaneToolbox": {
     "NAME": "Arcane Toolbox",
     "DESCRIPTION": "Your first card played each turn grants: NL 1 Strength if it's a Skill, 1 Dexterity if it's an Attack or [E] if it's a Power.",
     "UPGRADE_DESCRIPTION": "Your first card played each turn grants: NL 1 Strength if it's a Skill, 1 Dexterity if it's an Attack or [E] if it's a Power. NL Innate."
+  },
+  "${ModID}:Hellblaze": {
+    "NAME": "Hellblaze",
+    "DESCRIPTION": "Deal !D! damage twice. NL ${ModID}:Summon a ${ModID}:Fire\u00A0Imp."
   }
 }
