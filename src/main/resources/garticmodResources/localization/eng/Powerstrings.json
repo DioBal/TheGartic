@@ -6,5 +6,21 @@
       " #yBlock. Receiving unblocked attack damage removes all #yGlass #yArmor.",
       "At the end of its turn, gains #b",
       " #yBlock. Receiving unblocked attack damage removes all #yGlass #yArmor."
-    ]  }
+    ]
+  },
+  "${ModID}:DoubleDamagePower": {
+    "NAME": "Double Damage",
+    "DESCRIPTIONS": [
+      "Your next #yAttack deals double damage.",
+      "Your next #b",
+      " #yAttacks deals double damage."
+    ]
+  },
+  "${ModID}:AsStonePower": {
+    "NAME": "As Stone",
+    "DESCRIPTIONS": [
+      "Whenever you gain #yBlock, gain #b",
+      " #yThorns."
+    ]
+  }
 }
