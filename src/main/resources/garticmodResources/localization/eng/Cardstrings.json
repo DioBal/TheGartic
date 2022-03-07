@@ -178,5 +178,9 @@
   "${ModID}:Hellblaze": {
     "NAME": "Hellblaze",
     "DESCRIPTION": "Deal !D! damage twice. NL ${ModID}:Summon a ${ModID}:Fire\u00A0Imp."
+  },
+  "${ModID}:FetchingFox": {
+    "NAME": "Fetching Fox",
+    "DESCRIPTION": "Summon a garticmod:FetchingFox."
   }
 }
