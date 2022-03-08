@@ -60,6 +60,10 @@ public abstract class AbstractSummonOrb extends CustomOrb
         evokeAmount = baseEvokeAmount;
     }
 
+    public void atStartOfTurnPostDraw(){
+
+    }
+
     @Override
     public void onEvoke()
     {

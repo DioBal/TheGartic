@@ -6,7 +6,14 @@
       " #yBlock. Receiving unblocked attack damage removes all #yGlass #yArmor.",
       "At the end of its turn, gains #b",
       " #yBlock. Receiving unblocked attack damage removes all #yGlass #yArmor."
-    ]
+    ]  
+  },
+  "${ModID}:StolenCardPower": {
+  "NAME": "Stolen Cards",
+  "DESCRIPTIONS": [
+    "Oh no! A fox has stolen ",
+    " from you! They will be returned at the start of your next turn."
+  ]  
   },
   "${ModID}:DoubleDamagePower": {
     "NAME": "Double Damage",
