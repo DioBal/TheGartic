@@ -88,6 +88,21 @@
     "DESCRIPTION": "Triple the effects of ALL current ${ModID}:Fish cards. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Quadruple the effects of ALL current ${ModID}:Fish cards. NL Exhaust."
   },
+  "${ModID}:Approach": {
+    "NAME": "Approach",
+    "DESCRIPTION": "Deal !D! damage. NL Your next Attack deals double damage."
+  },
+  "${ModID}:AsStone": {
+    "NAME": "As Stone",
+    "DESCRIPTION": "Whenever you gain Block this turn, gain !M! Thorns. NL Exhaust."
+  },
+  "${ModID}:AllWillReturn": {
+    "NAME": "All Will Return",
+    "DESCRIPTION": "Gain Block and deal damage equal to the Block you gained and damage you dealt last turn.",
+    "EXTENDED_DESCRIPTION": [
+      "(Gain !B! Block.) NL (Deal !D! damage.) NL "
+    ]
+  },
   "${ModID}:Frontflip": {
     "NAME": "Frontflip",
     "DESCRIPTION": "Gain !B! Block. NL Draw !M! random cards from your discard pile."
