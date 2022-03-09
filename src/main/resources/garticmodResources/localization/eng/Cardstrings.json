@@ -197,5 +197,14 @@
   "${ModID}:FetchingFox": {
     "NAME": "Fetching Fox",
     "DESCRIPTION": "Summon a garticmod:FetchingFox."
+  },
+  "${ModID}:MischievousFox": {
+    "NAME": "Mischievous Fox",
+    "DESCRIPTION": "Summon a garticmod:MischievousFox that deals !M! damage."
+  },
+  "${ModID}:FriendlyLick": {
+    "NAME": "Friendly Lick",
+    "DESCRIPTION": "Heal !M! HP.",
+    "UPGRADE_DESCRIPTION": "Heal !M! HP. NL Remove a random debuff from yourself."
   }
 }
