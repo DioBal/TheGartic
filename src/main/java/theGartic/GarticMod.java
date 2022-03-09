@@ -12,10 +12,11 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import theGartic.cards.AbstractEasyCard;
 import theGartic.cards.cardvars.SecondDamage;
-import theGartic.cards.cardvars.SecondMagicNumber;
+import theGartic.patches.AllWillReturnPatch;
 import theGartic.potions.PurpleStuff;
 import theGartic.relics.AbstractEasyRelic;
 
@@ -29,7 +30,9 @@ public class GarticMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
-        AddAudioSubscriber{
+        AddAudioSubscriber,
+        OnStartBattleSubscriber,
+        PostBattleSubscriber {
 
     public static final String modID = "garticmod";
 
@@ -162,5 +165,17 @@ public class GarticMod implements
     @Override
     public void receiveAddAudio() {
         BaseMod.addAudio(modID + ":GLASSARMOR", modID + "Resources/audio/sfx/glassarmor.ogg");
+    }
+
+    @Override
+    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+        AllWillReturnPatch.lastTurnBlock = AllWillReturnPatch.thisTurnBlock = 0;
+        AllWillReturnPatch.lastTurnDamage = AllWillReturnPatch.thisTurnDamage = 0;
+    }
+
+    @Override
+    public void receivePostBattle(AbstractRoom abstractRoom) {
+        AllWillReturnPatch.lastTurnBlock = AllWillReturnPatch.thisTurnBlock = 0;
+        AllWillReturnPatch.lastTurnDamage = AllWillReturnPatch.thisTurnDamage = 0;
     }
 }
