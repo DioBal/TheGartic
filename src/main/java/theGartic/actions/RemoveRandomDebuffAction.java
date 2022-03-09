@@ -35,9 +35,10 @@ public class RemoveRandomDebuffAction extends AbstractGameAction {
                 if (p.type.equals(AbstractPower.PowerType.DEBUFF)) {
                     powerList.add(p);
                 }
+            if (powerList.isEmpty()){ this.isDone = true; return; }
             int toRemove = AbstractDungeon.cardRng.random(0, powerList.size() - 1);
             addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, powerList.remove(toRemove).ID));
         }
-        tickDuration();
+        this.isDone = true;
     }
 }

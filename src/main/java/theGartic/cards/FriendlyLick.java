@@ -2,6 +2,8 @@ package theGartic.cards;
 
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theGartic.actions.RemoveRandomDebuffAction;
 
@@ -12,9 +14,11 @@ public class FriendlyLick extends AbstractEasyCard {
     // intellij stuff skill, self, basic, , ,  5, 3, ,
     private static final int MAGIC = 3;
     private static final int DEBUFFS_TO_REMOVE = 1;
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    private static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     public FriendlyLick() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = MAGIC;
         tags.add(CardTags.HEALING);
     }
@@ -27,7 +31,7 @@ public class FriendlyLick extends AbstractEasyCard {
     }
 
     public void upp() {
-        this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+        this.rawDescription = UPGRADE_DESCRIPTION;
         initializeDescription();
     }
 }
