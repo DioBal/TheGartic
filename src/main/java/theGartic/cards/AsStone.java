@@ -4,7 +4,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theGartic.powers.DoubleDamagePower;
+import theGartic.powers.AsStonePower;
 
 import static theGartic.GarticMod.makeID;
 
@@ -17,7 +17,7 @@ public class AsStone extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new DoubleDamagePower(p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new AsStonePower(p, this.magicNumber), this.magicNumber));
     }
 
     public void upp() {
