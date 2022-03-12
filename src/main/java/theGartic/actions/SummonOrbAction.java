@@ -24,6 +24,10 @@ public class SummonOrbAction extends AbstractGameAction
         this.stack = stackAmount;
     }
 
+    public SummonOrbAction(AbstractOrb summonOrb) {
+        this(summonOrb, 0);
+    }
+
     public void update()
     {
         if(summon == null)

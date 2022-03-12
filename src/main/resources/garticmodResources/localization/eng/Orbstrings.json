@@ -5,6 +5,20 @@
       "Whenever you play an attack, deal ", " damage to a random enemy ", " time.", " times."
     ]
   },
+  "${ModID}:HungryFox": {
+    "NAME": "Hungry Fox",
+    "DESCRIPTION": [
+      "At the end of your turn will deal #b",
+      " damage to the lowest health enemy."
+    ]
+  },
+  "${ModID}:CrazyPanda": {
+    "NAME": "Crazy Panda",
+    "DESCRIPTION": [
+      "At the end of your turn will deal #b",
+      " damage to a random enemy and inflict #yWeak or #yVulnerable."
+    ]
+  },
   "${ModID}:FetchingFoxSummon": {
   "NAME": "Fetching Fox",
   "DESCRIPTION": [

@@ -9,8 +9,10 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -65,6 +67,11 @@ public class GarticMod implements
                 ATTACK_S_ART, SKILL_S_ART, POWER_S_ART, CARD_ENERGY_S,
                 ATTACK_L_ART, SKILL_L_ART, POWER_L_ART,
                 CARD_ENERGY_L, TEXT_ENERGY);
+    }
+
+    public static class Enums {
+        @SpireEnum
+        public static AbstractCard.CardTags SUMMON;
     }
 
     public static String makePath(String resourcePath) {

@@ -103,6 +103,22 @@
       "(Gain !B! Block.) NL (Deal !D! damage.) NL "
     ]
   },
+  "${ModID}:Hunt": {
+    "NAME": "Hunt",
+    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Summon a ${ModID}:Hungry\u00a0Fox that deals !M! damage."
+  },
+  "${ModID}:RangersFocus": {
+    "NAME": "Ranger's Focus",
+    "DESCRIPTION": "Deal !D! damage. NL The next time you play a ${ModID}:Summon card, gain [E]."
+  },
+  "${ModID}:DistractingFox": {
+    "NAME": "DistractingFox",
+    "DESCRIPTION": "${ModID}:Unsummon a fox.  If you do, at the end of your turn, gain !M! Block."
+  },
+  "${ModID}:Pandamonium": {
+    "NAME": "Pandamonium",
+    "DESCRIPTION": "At the end of your turn, ${ModID}:Summon a ${ModID}:Crazy\u00a0Panda that deals !D! damage."
+  },
   "${ModID}:Frontflip": {
     "NAME": "Frontflip",
     "DESCRIPTION": "Gain !B! Block. NL Draw !M! random cards from your discard pile."

@@ -33,6 +33,7 @@ public class Hellblaze extends AbstractEasyCard
         super(ID, COST, TYPE, RARITY, TARGET, COLOR);
         damage = baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = 3;
+        tags.add(GarticMod.Enums.SUMMON);
     }
 
     @Override

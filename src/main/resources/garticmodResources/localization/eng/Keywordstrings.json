@@ -39,6 +39,20 @@
     "DESCRIPTION": "A creature that deals 3 damage to a random enemy whenever you play an attack."
   },
   {
+    "PROPER_NAME": "Hungry Fox",
+    "NAMES": [
+      "Hungry\u00a0Fox"
+    ],
+    "DESCRIPTION": "#ySummon. At the end of your turn deals damage to the lowest health enemy."
+  },
+  {
+    "PROPER_NAME": "Crazy Panda",
+    "NAMES": [
+      "Crazy\u00a0Panda"
+    ],
+    "DESCRIPTION": "#ySummon. At the end of your turn deals damage to a random enemy and applies #yWeak or #yVulnerable."
+  },
+  {
     "PROPER_NAME": "Fetching Fox",
     "NAMES": [
       "fetchingfox"
