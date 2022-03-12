@@ -36,5 +36,11 @@
       "Whenever you gain #yBlock, gain #b",
       " #yThorns."
     ]
+  },
+  "${ModID}:GambleNextTurnPower": {
+    "NAME": "Long Shot",
+    "DESCRIPTIONS": [
+      "Next turn, #ydiscard any number of cards then draw that many."
+    ]
   }
 }

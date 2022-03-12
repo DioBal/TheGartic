@@ -110,7 +110,7 @@ public class AllWillReturnPatch {
                 locator = Locator.class
         )
         public static void noReallyWhy_AreYouUsingTacklesOrSomething(AbstractCreature __instance, DamageInfo info, int ___damageAmount) {
-            if (info.owner.equals(AbstractDungeon.player)) {
+            if (__instance.equals(info.owner)) {
                 thisTurnDamage += Math.min(___damageAmount, __instance.currentHealth);
             }
         }
