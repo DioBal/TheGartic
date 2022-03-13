@@ -38,7 +38,6 @@ public class SureShot extends AbstractEasyCard {
         }
         atb(new DamageAction(m, new DamageInfo(AbstractDungeon.player, baseDamage, DamageInfo.DamageType.HP_LOSS),
                 AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-
     }
 
     // Upgraded stats.

@@ -178,5 +178,9 @@
   "${ModID}:Hellblaze": {
     "NAME": "Hellblaze",
     "DESCRIPTION": "Deal !D! damage twice. NL ${ModID}:Summon a ${ModID}:Fire\u00A0Imp."
+  },
+  "${ModID}:SureShot": {
+    "NAME": "Sure Shot",
+    "DESCRIPTION": "The target loses !D! HP. If it has Block, it loses !D! HP again."
   }
 }
