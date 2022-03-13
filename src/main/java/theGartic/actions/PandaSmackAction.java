@@ -43,9 +43,9 @@ public class PandaSmackAction extends AbstractGameAction {
             }
             targetX = target.hb.cX;
             targetY = target.hb.cY;
-            thunkTiming = (targetX - sourceX)/1600.0f;
-            if (thunkTiming > 0.5f)
-                thunkTiming = 0.5f;
+            thunkTiming = (targetX - sourceX)/3200.0f;
+            if (thunkTiming > 0.25f)
+                thunkTiming = 0.25f;
             if (thunkTiming < 0.1f)
                 thunkTiming = 0.1f;
 
