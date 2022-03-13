@@ -248,9 +248,9 @@
     "DESCRIPTION": "Summon a Three-Tailed White Fox.",
     "UPGRADE_DESCRIPTION": "Summon a Three-Tailed White Fox.",
     "EXTENDED_DESCRIPTION": [
-      "Draw !M! card.",
-      "Draw !M! cards.",
-      " Gain !M! E."
+      " NL Draw !M! card.",
+      " NL Draw !M! cards.",
+      " NL Gain !M! E."
       ]
   }
 }
