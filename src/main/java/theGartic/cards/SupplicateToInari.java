@@ -37,7 +37,22 @@ public class SupplicateToInari extends AbstractEasyCard  {
     @Override
     public void upp() {
         upgradeMagicNumber(MAGIC_UPGRADE_INCREMENT);
-        this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+        if (magicNumber == 0)
+        {
+            this.rawDescription = cardStrings.DESCRIPTION;
+        }
+        else if (magicNumber == 1)
+        {
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0];
+            this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[2];
+        }
+        else
+        {
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[1];
+            this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[2];
+        }
         initializeDescription();
     }
 
