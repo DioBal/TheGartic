@@ -238,5 +238,9 @@
   "${ModID}:ExtendoArm": {
     "NAME": "Extendo Arm",
     "DESCRIPTION": "Gain !B! Block. NL Put a card from your discard pile on the bottom of your draw pile."
+  },
+  "${ModID}:SureShot": {
+    "NAME": "Sure Shot",
+    "DESCRIPTION": "The target loses !D! HP. If it has Block, it loses !D! HP again."
   }
 }
