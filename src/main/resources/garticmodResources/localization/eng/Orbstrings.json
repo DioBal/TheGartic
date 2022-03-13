@@ -27,13 +27,19 @@
     " cards or steal ",
     " cards from you until next turn (50% chance)."
   ]
-},
+  },
   "${ModID}:MischievousFoxSummon": {
     "NAME": "Mischievous Fox",
     "DESCRIPTION": [
       "After you play a card, will either deal #b",
       " damage to you, or #b",
       " damage to a random enemy (50% chance.)"
+    ]
+  },
+  "${ModID}:InariWhiteFox": {
+    "NAME": "Three-Tailed White Fox",
+    "DESCRIPTION": [
+      "When your turn ends, pick 1 of 3 choices."
     ]
   }
 }

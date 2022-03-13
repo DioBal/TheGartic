@@ -242,5 +242,10 @@
   "${ModID}:SureShot": {
     "NAME": "Sure Shot",
     "DESCRIPTION": "The target loses !D! HP. If it has Block, it loses !D! HP again."
+  },
+  "${ModID}:SupplicateToInari": {
+    "NAME": "Suplicate To Inari",
+    "DESCRIPTION": "Summon a Three-Tailed White Fox.",
+    "UPGRADE_DESCRIPTION": "Summon a Three-Tailed White Fox. Draw 1 card. Gain 1 E."
   }
 }
