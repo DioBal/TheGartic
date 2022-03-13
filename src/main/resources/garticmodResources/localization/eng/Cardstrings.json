@@ -103,6 +103,26 @@
       "(Gain !B! Block.) NL (Deal !D! damage.) NL "
     ]
   },
+  "${ModID}:Hunt": {
+    "NAME": "Hunt",
+    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Summon a ${ModID}:Hungry\u00a0Fox that deals !M! damage.",
+    "FLAVOR": "Om Nom Nom"
+  },
+  "${ModID}:RangersFocus": {
+    "NAME": "Ranger's Focus",
+    "DESCRIPTION": "Deal !D! damage. NL The next time you play a ${ModID}:Summon card, NL gain [E].",
+    "FLAVOR": "If you summon an owl, you can call it Shoot and Hoot."
+  },
+  "${ModID}:DistractingFox": {
+    "NAME": "Distracting Fox",
+    "DESCRIPTION": "${ModID}:Unsummon a fox.  If you do, at the end of your turn, gain !M! Block.",
+    "FLAVOR": "This card used to be called Fur Armor, but then people didn't like it."
+  },
+  "${ModID}:Pandamonium": {
+    "NAME": "Pandamonium",
+    "DESCRIPTION": "At the end of your turn, ${ModID}:Summon a ${ModID}:Crazy\u00a0Panda that deals !M! damage.",
+    "FLAVOR": "Skadoosh!"
+  },
   "${ModID}:Frontflip": {
     "NAME": "Frontflip",
     "DESCRIPTION": "Gain !B! Block. NL Draw !M! random cards from your discard pile."

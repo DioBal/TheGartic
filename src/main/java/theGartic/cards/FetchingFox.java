@@ -33,6 +33,7 @@ public class FetchingFox extends AbstractEasyCard
     {
         super(ID, COST, TYPE, RARITY, TARGET, COLOR);
         magicNumber = baseMagicNumber = 1;
+        tags.add(GarticMod.Enums.SUMMON);
     }
 
     @Override
