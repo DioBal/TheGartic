@@ -12,6 +12,7 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -62,6 +63,9 @@ public class GarticMod implements
     private static final String CHARSELECT_PORTRAIT = modID + "Resources/images/charSelect/charBG.png";
     public static Logger logger = LogManager.getLogger(GarticMod.class.getName());
 
+    public static final String GUNSHOT_KEY = makeID("GunshotKey");
+    private static final String GUNSHOT_PATH = "garticmodResources/audio/sfx/Gunshot.ogg";
+
     public GarticMod() {
         BaseMod.subscribe(this);
 
@@ -75,6 +79,8 @@ public class GarticMod implements
     public static class Enums {
         @SpireEnum
         public static AbstractCard.CardTags SUMMON;
+        @SpireEnum
+        public static AbstractGameAction.AttackEffect GUNSHOT;
     }
 
     public static String makePath(String resourcePath) {
@@ -175,6 +181,7 @@ public class GarticMod implements
     @Override
     public void receiveAddAudio() {
         BaseMod.addAudio(modID + ":GLASSARMOR", modID + "Resources/audio/sfx/glassarmor.ogg");
+        BaseMod.addAudio(GUNSHOT_KEY, GUNSHOT_PATH);
     }
 
     @Override

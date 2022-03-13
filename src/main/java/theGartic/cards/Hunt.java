@@ -2,7 +2,6 @@ package theGartic.cards;
 
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theGartic.GarticMod;
@@ -34,7 +33,7 @@ public class Hunt extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
+        dmg(m, GarticMod.Enums.GUNSHOT);
         atb (new SummonOrbAction(new HungryFox(magicNumber)));
     }
 
