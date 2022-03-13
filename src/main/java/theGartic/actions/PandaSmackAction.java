@@ -25,30 +25,30 @@ public class PandaSmackAction extends AbstractGameAction {
     private float sourceY;
 
     public PandaSmackAction(CrazyPanda panda) {
-        target = AbstractDungeon.getRandomMonster();
         this.panda = panda;
         amount = panda.passiveAmount;
         actionType = ActionType.DAMAGE;
         duration = DURATION;
         thunkEffect = false;
-        targetX = target.hb.cX;
-        targetY = target.hb.cY;
         sourceX = panda.cX;
         sourceY = panda.cY;
-        thunkTiming = (targetX - sourceX)/1600.0f;
-        if (thunkTiming > 0.5f)
-            thunkTiming = 0.5f;
-        if (thunkTiming < 0.1f)
-            thunkTiming = 0.1f;
     }
 
     public void update() {
-        if (target == null) {
-            isDone = true;
-            return;
-        }
-
         if (duration == DURATION) {
+            target = AbstractDungeon.getRandomMonster();
+            if (target == null) {
+                isDone = true;
+                return;
+            }
+            targetX = target.hb.cX;
+            targetY = target.hb.cY;
+            thunkTiming = (targetX - sourceX)/1600.0f;
+            if (thunkTiming > 0.5f)
+                thunkTiming = 0.5f;
+            if (thunkTiming < 0.1f)
+                thunkTiming = 0.1f;
+
             panda.startShoot();
             targetX = target.hb.cX + AbstractDungeon.miscRng.random(-25.0f*Settings.xScale, 25.0f*Settings.xScale);
             targetY = target.hb.cY + AbstractDungeon.miscRng.random(-25.0f*Settings.yScale, 25.0f*Settings.yScale);

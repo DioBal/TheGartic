@@ -26,7 +26,7 @@ public class CrazyPanda extends AbstractSummonOrb
 
     // DO NOT SET EITHER OF THESE TO ZERO
     private static final float BOUNCE_DURATION = 1.0f;
-    private static final float GRAVITY = 1500.0f;
+    private static final float GRAVITY = 2500.0f;
 
     private float bounceTime = 0;
     private boolean shooting = false;

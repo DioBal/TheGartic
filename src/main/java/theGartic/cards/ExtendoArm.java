@@ -23,6 +23,5 @@ public class ExtendoArm  extends AbstractEasyCard {
 
     public void upp() {
         upgradeBlock(BLK_UPG);
-        uDesc();
     }
 }
