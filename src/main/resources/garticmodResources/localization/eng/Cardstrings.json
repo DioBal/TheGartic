@@ -88,6 +88,41 @@
     "DESCRIPTION": "Triple the effects of ALL current ${ModID}:Fish cards. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Quadruple the effects of ALL current ${ModID}:Fish cards. NL Exhaust."
   },
+  "${ModID}:Approach": {
+    "NAME": "Approach",
+    "DESCRIPTION": "Deal !D! damage. NL Your next Attack deals double damage."
+  },
+  "${ModID}:AsStone": {
+    "NAME": "As Stone",
+    "DESCRIPTION": "Whenever you gain Block this turn, gain !M! Thorns. NL Exhaust."
+  },
+  "${ModID}:AllWillReturn": {
+    "NAME": "All Will Return",
+    "DESCRIPTION": "Gain Block and deal damage equal to the Block you gained and damage you dealt last turn.",
+    "EXTENDED_DESCRIPTION": [
+      "(Gain !B! Block.) NL (Deal !D! damage.) NL "
+    ]
+  },
+  "${ModID}:Hunt": {
+    "NAME": "Hunt",
+    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Summon a ${ModID}:Hungry\u00a0Fox that deals !M! damage.",
+    "FLAVOR": "Om Nom Nom"
+  },
+  "${ModID}:RangersFocus": {
+    "NAME": "Ranger's Focus",
+    "DESCRIPTION": "Deal !D! damage. NL The next time you play a ${ModID}:Summon card, NL gain [E].",
+    "FLAVOR": "If you summon an owl, you can call it Shoot and Hoot."
+  },
+  "${ModID}:DistractingFox": {
+    "NAME": "Distracting Fox",
+    "DESCRIPTION": "${ModID}:Unsummon a fox.  If you do, at the end of your turn, gain !M! Block.",
+    "FLAVOR": "This card used to be called Fur Armor, but then people didn't like it."
+  },
+  "${ModID}:Pandamonium": {
+    "NAME": "Pandamonium",
+    "DESCRIPTION": "At the end of your turn, ${ModID}:Summon a ${ModID}:Crazy\u00a0Panda that deals !M! damage.",
+    "FLAVOR": "Skadoosh!"
+  },
   "${ModID}:Frontflip": {
     "NAME": "Frontflip",
     "DESCRIPTION": "Gain !B! Block. NL Draw !M! random cards from your discard pile."
@@ -178,6 +213,31 @@
   "${ModID}:Hellblaze": {
     "NAME": "Hellblaze",
     "DESCRIPTION": "Deal !D! damage twice. NL ${ModID}:Summon a ${ModID}:Fire\u00A0Imp."
+  },
+  "${ModID}:FetchingFox": {
+    "NAME": "Fetching Fox",
+    "DESCRIPTION": "Summon a garticmod:FetchingFox."
+  },
+  "${ModID}:MischievousFox": {
+    "NAME": "Mischievous Fox",
+    "DESCRIPTION": "Summon a garticmod:MischievousFox that deals !M! damage."
+  },
+  "${ModID}:FriendlyLick": {
+    "NAME": "Friendly Lick",
+    "DESCRIPTION": "Heal !M! HP.",
+    "UPGRADE_DESCRIPTION": "Heal !M! HP. NL Remove a random debuff from yourself."
+  },
+  "${ModID}:GuzzlerHelmet": {
+    "NAME": "Guzzler Helmet",
+    "DESCRIPTION": "{@@}If there are more cards in your discard pile than your draw pile, gain {!M!|1=[E]|2=[E] [E]|-1,3=[E] [E] [E]|4=[E] [E] [E] [E]|5=[E] [E] [E] [E] [E]|@=!M! [E]} ."
+  },
+  "${ModID}:LongShot": {
+    "NAME": "Long Shot",
+    "DESCRIPTION": "Deal !D! damage. NL Next turn, discard any number of cards then draw that many."
+  },
+  "${ModID}:ExtendoArm": {
+    "NAME": "Extendo Arm",
+    "DESCRIPTION": "Gain !B! Block. NL Put a card from your discard pile on the bottom of your draw pile."
   },
   "${ModID}:SureShot": {
     "NAME": "Sure Shot",

@@ -60,13 +60,17 @@ public abstract class AbstractSummonOrb extends CustomOrb
         evokeAmount = baseEvokeAmount;
     }
 
+    public void atStartOfTurnPostDraw(){
+
+    }
+
     @Override
     public void onEvoke()
     {
 
     }
 
-    public void unSummon(AbstractOrb orb)
+    public static void unSummon(AbstractOrb orb)
     {
         AbstractPlayer player = AbstractDungeon.player;
         if(player.orbs.contains(orb))
@@ -79,6 +83,10 @@ public abstract class AbstractSummonOrb extends CustomOrb
             for(int i = 0; i < player.orbs.size(); ++i)
                 (player.orbs.get(i)).setSlot(i, player.maxOrbs);
         }
+    }
+
+    public void unSummon() {
+        unSummon(this);
     }
 
     @Override

@@ -6,5 +6,48 @@
       " #yBlock. Receiving unblocked attack damage removes all #yGlass #yArmor.",
       "At the end of its turn, gains #b",
       " #yBlock. Receiving unblocked attack damage removes all #yGlass #yArmor."
-    ]  }
+    ]  
+  },
+  "${ModID}:StolenCardPower": {
+    "NAME": "Stolen Cards",
+    "DESCRIPTIONS": [
+      "Oh no! A fox has stolen ",
+      " from you! They will be returned at the start of your next turn."
+    ]
+  },
+  "${ModID}:SummonCostRefundPower": {
+    "NAME": "Summon Energy Gain",
+    "DESCRIPTIONS": [
+      "The next time you play a #ySummon card, gain #b",
+      " [E]."
+    ]
+  },
+  "${ModID}:PandamoniumPower": {
+    "NAME": "Pandamonium",
+    "DESCRIPTIONS": [
+      "At the start of your turn, summon a #yCrazy #yPanda that deals #b",
+      " damage."
+    ]
+  },
+  "${ModID}:DoubleDamagePower": {
+    "NAME": "Double Damage",
+    "DESCRIPTIONS": [
+      "Your next #yAttack deals double damage.",
+      "Your next #b",
+      " #yAttacks deals double damage."
+    ]
+  },
+  "${ModID}:AsStonePower": {
+    "NAME": "As Stone",
+    "DESCRIPTIONS": [
+      "Whenever you gain #yBlock, gain #b",
+      " #yThorns."
+    ]
+  },
+  "${ModID}:GambleNextTurnPower": {
+    "NAME": "Long Shot",
+    "DESCRIPTIONS": [
+      "Next turn, #ydiscard any number of cards then draw that many."
+    ]
+  }
 }

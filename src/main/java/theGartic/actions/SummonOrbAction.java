@@ -10,6 +10,8 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import theGartic.powers.InvisibleSummonPower;
+import theGartic.summons.CrazyPanda;
+import theGartic.summons.HungryFox;
 
 public class SummonOrbAction extends AbstractGameAction
 {
@@ -22,6 +24,10 @@ public class SummonOrbAction extends AbstractGameAction
         duration = Settings.ACTION_DUR_FAST;
         summon = summonOrb;
         this.stack = stackAmount;
+    }
+
+    public SummonOrbAction(AbstractOrb summonOrb) {
+        this(summonOrb, 0);
     }
 
     public void update()
@@ -50,7 +56,7 @@ public class SummonOrbAction extends AbstractGameAction
     {
         for (AbstractOrb orb : AbstractDungeon.player.orbs)
         {
-            if(orb.name == summon.name)
+            if(orb.name == summon.name && !orb.ID.equals(CrazyPanda.ORB_ID) && !orb.ID.equals(HungryFox.ORB_ID))
             {
                 orb.evokeAmount += stack;
                 AbstractDungeon.actionManager.addToBottom(
