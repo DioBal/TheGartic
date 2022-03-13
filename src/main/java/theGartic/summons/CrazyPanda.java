@@ -1,11 +1,17 @@
 package theGartic.summons;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Interpolation;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import theGartic.GarticMod;
-import theGartic.actions.PandaAction;
+import theGartic.actions.PandaSmackAction;
 
 import static java.lang.Math.pow;
 import static theGartic.GarticMod.makeOrbPath;
@@ -17,8 +23,10 @@ public class CrazyPanda extends AbstractSummonOrb
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
     private static final String imgPath = "CrazyPanda.png";
-    private static final float BOUNCE_DURATION = 0.5f;
-    private static final float GRAVITY = 300.0f;
+
+    // DO NOT SET EITHER OF THESE TO ZERO
+    private static final float BOUNCE_DURATION = 1.0f;
+    private static final float GRAVITY = 1500.0f;
 
     private float bounceTime = 0;
     private boolean shooting = false;
@@ -28,15 +36,19 @@ public class CrazyPanda extends AbstractSummonOrb
     private float peakY;
     private float peakTime;
 
+    private float rotation;
+
     public CrazyPanda(int passive)
     {
         super(ORB_ID, orbString.NAME, passive, 0, makeOrbPath(imgPath));
         showEvokeValue = false;
+        rotation = 0.0f;
+        updateDescription();
     }
 
     @Override
     public void onEndOfTurn() {
-        atb(new PandaAction(this));
+        atb(new PandaSmackAction(this));
     }
 
     public void startShoot() {
@@ -58,20 +70,29 @@ public class CrazyPanda extends AbstractSummonOrb
     }
 
     private void calculatePeak() {
-        peakTime = BOUNCE_DURATION*BOUNCE_DURATION + (tY - bounceSourceY) / GRAVITY;
-        peakY = GRAVITY*peakTime*peakTime + bounceSourceY;
+        peakTime = (tY - bounceSourceY) / BOUNCE_DURATION / GRAVITY + BOUNCE_DURATION / 2;
+        peakY = GRAVITY * peakTime * peakTime / 2.0f + bounceSourceY;
     }
 
     @Override
     public void updateAnimation() {
-        if (shooting) {
-            bobEffect.update();
-            if (channelAnimTimer != 0.0F) {
-                channelAnimTimer -= Gdx.graphics.getDeltaTime();
-                if (channelAnimTimer < 0.0F) {
-                    channelAnimTimer = 0.0F;
-                }
+        bobEffect.update();
+        if (channelAnimTimer != 0.0F) {
+            channelAnimTimer -= Gdx.graphics.getDeltaTime();
+            if (channelAnimTimer < 0.0F) {
+                channelAnimTimer = 0.0F;
             }
+        }
+        if (shooting && !bouncing)
+            rotation += 2.0f*Gdx.graphics.getDeltaTime()*360.0f;
+        else if (shooting)
+            rotation += Gdx.graphics.getDeltaTime()*360.0f;
+        else
+            rotation += 0.5f*Gdx.graphics.getDeltaTime()*360.0f;
+
+        c.a = Interpolation.pow2In.apply(1.0F, 0.01F, channelAnimTimer / 0.5F);
+        scale = Interpolation.swingIn.apply(Settings.scale, 0.01F, channelAnimTimer / 0.5F);
+        if (shooting) {
             if (bouncing) {
                 bounceTime += Gdx.graphics.getDeltaTime();
                 if (bounceTime > BOUNCE_DURATION) {
@@ -80,12 +101,28 @@ public class CrazyPanda extends AbstractSummonOrb
                     endShoot();
                 } else {
                     cX = bounceSourceX + (tX - bounceSourceX) * (bounceTime / BOUNCE_DURATION);
-                    cY = (float)(peakY - pow(bounceTime - peakTime, 2));
+                    cY = (float)(peakY - pow(bounceTime - peakTime, 2)*GRAVITY/2.0f);
                 }
             }
         }
-        else
-            super.updateAnimation();
+        else {
+            cX = MathHelper.orbLerpSnap(cX, tX);
+            cY = MathHelper.orbLerpSnap(cY, tY);
+        }
+    }
+
+    @Override
+    public void render(SpriteBatch sb) {
+        sb.setColor(Color.WHITE);
+        sb.setBlendFunction(770, 1);
+        sb.draw(img, cX - 48.0F, cY - 48.0F, 48.0F, 48.0F, 96.0F, 96.0F, scale, scale, rotation, 0, 0, 96, 96, false, false);
+        renderText(sb);
+        hb.render(sb);
+    }
+
+    @Override
+    protected void renderText(SpriteBatch sb) {
+        FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(passiveAmount), cX + NUM_X_OFFSET, cY + bobEffect.y / 2.0F + NUM_Y_OFFSET + 20.0F * Settings.scale, c, fontScale);
     }
 
     @Override
@@ -98,3 +135,27 @@ public class CrazyPanda extends AbstractSummonOrb
         return new CrazyPanda(passiveAmount);
     }
 }
+
+/*
+    ym - ys = xm*xm*a/2
+    ym - yt = (dur - xm)^2 *a/2
+    ym = xm*xm*a/2 + ys
+    xm*xm*a/2 + ys - yt = (dur - xm)^2 *a/2 = [dur^2 -2dur*xm + xm^2]*a/2
+    ys - yt = [dur^2 - 2dur*xm]*a/2
+    ys - yt - dur^2 *a/2 = -dur*xm * a
+    [ys - yt - dur^2 * a/2] / -dur*a = xm
+    xm = (yt - ys)/dur/a + dur/2
+
+
+
+
+
+
+
+
+
+
+
+
+
+ */

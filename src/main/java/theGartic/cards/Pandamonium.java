@@ -19,7 +19,7 @@ public class Pandamonium extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new PandamoniumPower(1, magicNumber));
+        applyToSelf(new PandamoniumPower(magicNumber));
     }
 
     public void upp() {

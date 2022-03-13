@@ -26,9 +26,20 @@
     "PROPER_NAME": "Summon",
     "NAMES": [
       "summon",
-      "summoned"
+      "summoned",
+      "Summoned",
+      "summons",
+      "Summons"
     ],
     "DESCRIPTION": "Create a creature to fight for you this battle."
+  },
+  {
+    "PROPER_NAME": "Unsummon",
+    "NAMES": [
+      "unsummon",
+      "unsummoned"
+    ],
+    "DESCRIPTION": "Remove one of your #ySummons."
   },
   {
     "PROPER_NAME": "Fire Imp",
@@ -41,14 +52,16 @@
   {
     "PROPER_NAME": "Hungry Fox",
     "NAMES": [
-      "Hungry\u00a0Fox"
+      "Hungry\u00a0Fox",
+      "hungry\u00a0fox"
     ],
     "DESCRIPTION": "#ySummon. At the end of your turn deals damage to the lowest health enemy."
   },
   {
     "PROPER_NAME": "Crazy Panda",
     "NAMES": [
-      "Crazy\u00a0Panda"
+      "Crazy\u00a0Panda",
+      "crazy\u00a0panda"
     ],
     "DESCRIPTION": "#ySummon. At the end of your turn deals damage to a random enemy and applies #yWeak or #yVulnerable."
   },

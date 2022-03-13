@@ -3,6 +3,7 @@ package theGartic.actions;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
@@ -45,20 +46,13 @@ public class HungryFoxAction extends AbstractGameAction {
                     isDone = true;
                     return;
                 }
-
-                att(new VFXAction(new BiteEffect(target.hb.cX, target.hb.cY - 40.0F * Settings.scale,
-                        Color.SCARLET.cpy()), 0.2F));
-            }
-
-            tickDuration();
-            if (isDone) {
-                target.damage(info);
+                atb(new VFXAction(new BiteEffect(target.hb.cX, target.hb.cY - 40.0F * Settings.scale,
+                        Color.SCARLET.cpy()), 0.1F));
+                atb(new DamageAction(target, new DamageInfo(adp(), amount, DamageType.THORNS)));
                 if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead())
                     AbstractDungeon.actionManager.clearPostCombatActions();
             }
-
-        } else {
-            isDone = true;
         }
+        isDone = true;
     }
 }

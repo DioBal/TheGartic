@@ -21,14 +21,14 @@ public abstract class AbstractEasyPower extends AbstractPower {
     public boolean canGoNegative2 = false;
 
     public AbstractEasyPower(String NAME, PowerType powerType, boolean isTurnBased, AbstractCreature owner, int amount) {
-        this.ID = makeID(NAME.replaceAll("([ ])", ""));
+        ID = makeID(NAME.replaceAll("([ ])", ""));
         this.isTurnBased = isTurnBased;
 
         this.name = NAME;
 
         this.owner = owner;
         this.amount = amount;
-        this.type = powerType;
+        type = powerType;
 
         Texture normalTexture = TexLoader.getTexture(GarticMod.modID + "Resources/images/powers/" + NAME.replaceAll("([ ])", "") + "32.png");
         Texture hiDefImage = TexLoader.getTexture(GarticMod.modID + "Resources/images/powers/" + NAME.replaceAll("([ ])", "") + "84.png");
@@ -37,11 +37,11 @@ public abstract class AbstractEasyPower extends AbstractPower {
             if (normalTexture != null)
                 region48 = new TextureAtlas.AtlasRegion(normalTexture, 0, 0, normalTexture.getWidth(), normalTexture.getHeight());
         } else if (normalTexture != null) {
-            this.img = normalTexture;
+            img = normalTexture;
             region48 = new TextureAtlas.AtlasRegion(normalTexture, 0, 0, normalTexture.getWidth(), normalTexture.getHeight());
         }
 
-        this.updateDescription();
+        updateDescription();
     }
 
     public void renderAmount(SpriteBatch sb, float x, float y, Color c) {

@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
@@ -17,7 +16,7 @@ import static theGartic.util.Wiz.*;
 
 public class PandaSmackAction extends AbstractGameAction {
     private static final float DURATION = 1.0F;
-    private static final float THUNK_TIMING = 0.5f;
+    private float thunkTiming;
     private boolean thunkEffect;
     private CrazyPanda panda;
     private float targetX;
@@ -25,10 +24,10 @@ public class PandaSmackAction extends AbstractGameAction {
     private float sourceX;
     private float sourceY;
 
-    public PandaSmackAction(AbstractMonster target, CrazyPanda panda) {
-        this.target = target;
+    public PandaSmackAction(CrazyPanda panda) {
+        target = AbstractDungeon.getRandomMonster();
         this.panda = panda;
-        this.amount = panda.passiveAmount;
+        amount = panda.passiveAmount;
         actionType = ActionType.DAMAGE;
         duration = DURATION;
         thunkEffect = false;
@@ -36,6 +35,11 @@ public class PandaSmackAction extends AbstractGameAction {
         targetY = target.hb.cY;
         sourceX = panda.cX;
         sourceY = panda.cY;
+        thunkTiming = (targetX - sourceX)/1600.0f;
+        if (thunkTiming > 0.5f)
+            thunkTiming = 0.5f;
+        if (thunkTiming < 0.1f)
+            thunkTiming = 0.1f;
     }
 
     public void update() {
@@ -52,10 +56,10 @@ public class PandaSmackAction extends AbstractGameAction {
             sourceY = panda.cY;
         }
 
-        panda.cX = sourceX + (targetX - sourceX)*(DURATION - duration)/THUNK_TIMING;
-        panda.cY = sourceY + (targetY - sourceY)*(DURATION - duration)/THUNK_TIMING;
+        panda.cX = sourceX + (targetX - sourceX)*(DURATION - duration)/ thunkTiming;
+        panda.cY = sourceY + (targetY - sourceY)*(DURATION - duration)/ thunkTiming;
 
-        if (duration <= DURATION - THUNK_TIMING && !thunkEffect) {
+        if (duration <= DURATION - thunkTiming && !thunkEffect) {
             thunkEffect = true;
             panda.cX = targetX;
             panda.cY = targetY;
