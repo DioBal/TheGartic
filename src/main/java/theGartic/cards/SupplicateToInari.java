@@ -1,6 +1,8 @@
 package theGartic.cards;
 
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -20,20 +22,26 @@ public class SupplicateToInari extends AbstractEasyCard  {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheGartic.Enums.GARTIC_COLOR;
 
-    private static final Color FLAVOR_BOX_COLOR = Color.BROWN.cpy();
-    private static final Color FLAVOR_TEXT_COLOR = Color.WHITE.cpy();
+    private final static int MAGIC = 0;
+    private final static int MAGIC_UPGRADE_INCREMENT = 1;
 
-    public SupplicateToInari() {
-        super(ID, 2, TYPE, RARITY, TARGET);
+    private static final Color FLAVOR_BOX_COLOR = Color.WHITE.cpy();
+    private static final Color FLAVOR_TEXT_COLOR = Color.BROWN.cpy();
+
+    public SupplicateToInari()
+    {
+        super(ID, 3, TYPE, RARITY, TARGET);
+        baseMagicNumber = magicNumber = MAGIC;
     }
 
     @Override
     public void upp() {
-
+        magicNumber += MAGIC_UPGRADE_INCREMENT;
     }
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-
+        addToBot(new DrawCardAction(magicNumber));
+        addToBot(new GainEnergyAction(magicNumber));
     }
 }
