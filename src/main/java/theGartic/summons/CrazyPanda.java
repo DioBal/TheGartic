@@ -26,7 +26,7 @@ public class CrazyPanda extends AbstractSummonOrb
 
     // DO NOT SET EITHER OF THESE TO ZERO
     private static final float BOUNCE_DURATION = 1.0f;
-    private static final float GRAVITY = 2500.0f;
+    private static final float GRAVITY = 2700.0f;
 
     private float bounceTime = 0;
     private boolean shooting = false;
@@ -84,7 +84,7 @@ public class CrazyPanda extends AbstractSummonOrb
             }
         }
         if (shooting)
-            rotation += Gdx.graphics.getDeltaTime()*360.0f;
+            rotation += 4*Gdx.graphics.getDeltaTime()*360.0f;
         else
             rotation += 0.25f*Gdx.graphics.getDeltaTime()*360.0f;
 
