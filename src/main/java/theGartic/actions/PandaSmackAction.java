@@ -7,12 +7,13 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
-import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 import theGartic.summons.CrazyPanda;
 
-import static theGartic.util.Wiz.*;
+import static theGartic.util.Wiz.adp;
+import static theGartic.util.Wiz.att;
 
 public class PandaSmackAction extends AbstractGameAction {
     private static final float DURATION = 1.0F;
@@ -63,21 +64,20 @@ public class PandaSmackAction extends AbstractGameAction {
             thunkEffect = true;
             panda.cX = targetX;
             panda.cY = targetY;
-            AbstractDungeon.effectList.add(new FlashAtkImgEffect(targetX, targetY, AttackEffect.BLUNT_HEAVY));
             if (target != null && target.currentHealth > 0 && adp() != null) {
                 int x = AbstractDungeon.miscRng.random(0, 1);
+                AbstractPower pow;
                 if (x == 0) {
-                    VulnerablePower pow = new VulnerablePower(target, 1, false);
+                    pow = new VulnerablePower(target, 1, false);
                     ReflectionHacks.setPrivate(pow, VulnerablePower.class, "justApplied", true);
-                    att (new ApplyPowerAction(target, adp(), pow, 1, true));
                 } else
-                    att (new ApplyPowerAction(target, adp(), new WeakPower(target, 1, false),
-                            1, true));
-                att(new DamageAction(target, new DamageInfo(adp(), panda.passiveAmount, DamageInfo.DamageType.THORNS),
+                    pow = new WeakPower(target, 1, false);
+                ApplyPowerAction action =  new ApplyPowerAction(target, adp(), pow);
+                ReflectionHacks.setPrivate(action, AbstractGameAction.class, "duration", 0);
+                ReflectionHacks.setPrivate(action, ApplyPowerAction.class, "startingDuration", 0);
+                att(action);
+                att(new DamageAction(target, new DamageInfo(adp(), panda.passiveAmount, DamageInfo.DamageType.NORMAL),
                         AttackEffect.BLUNT_HEAVY, true));
-                if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
-                    AbstractDungeon.actionManager.clearPostCombatActions();
-                }
             }
             panda.startBounce(targetX, targetY);
             isDone = true;
