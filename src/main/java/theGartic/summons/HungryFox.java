@@ -1,16 +1,20 @@
 package theGartic.summons;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Interpolation;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import theGartic.GarticMod;
 import theGartic.actions.HungryFoxAction;
 
 import static theGartic.GarticMod.makeOrbPath;
-import static theGartic.util.Wiz.*;
+import static theGartic.util.Wiz.atb;
 
 public class HungryFox extends AbstractSummonOrb
 {
@@ -23,6 +27,21 @@ public class HungryFox extends AbstractSummonOrb
     {
         super(ORB_ID, orbString.NAME, passive, 0, makeOrbPath(imgPath));
         showEvokeValue = false;
+    }
+
+    @Override
+    public void updateAnimation() {
+        cX = MathHelper.orbLerpSnap(cX, AbstractDungeon.player.animX + tX);
+        cY = MathHelper.orbLerpSnap(cY, AbstractDungeon.player.animY + tY);
+        if (channelAnimTimer != 0.0F) {
+            channelAnimTimer -= Gdx.graphics.getDeltaTime();
+            if (channelAnimTimer < 0.0F) {
+                channelAnimTimer = 0.0F;
+            }
+        }
+
+        c.a = Interpolation.pow2In.apply(1.0F, 0.01F, channelAnimTimer / 0.5F);
+        scale = Interpolation.swingIn.apply(Settings.scale, 0.01F, channelAnimTimer / 0.5F);
     }
 
     @Override
