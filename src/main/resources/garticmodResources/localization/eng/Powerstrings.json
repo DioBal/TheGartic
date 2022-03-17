@@ -49,5 +49,13 @@
     "DESCRIPTIONS": [
       "Next turn, #ydiscard any number of cards then draw that many."
     ]
+  },
+  "${ModID}:PowerofCreation": {
+    "NAME": "Power of Creation",
+    "DESCRIPTIONS": [
+      "The first #b",
+      " card you create each turn cost #b1 less.",
+      " cards you create each turn cost #b1 less."
+    ]
   }
 }

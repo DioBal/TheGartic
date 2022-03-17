@@ -238,5 +238,14 @@
   "${ModID}:ExtendoArm": {
     "NAME": "Extendo Arm",
     "DESCRIPTION": "Gain !B! Block. NL Put a card from your discard pile on the bottom of your draw pile."
+  },
+  "${ModID}:CreationOfPower": {
+    "NAME": "Creation of Power",
+    "DESCRIPTION": "Add a copy of each power you played this combat to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add an Upgraded copy of each power you played this combat to your hand. NL Exhaust."
+  },
+  "${ModID}:PowerOfCreation": {
+    "NAME": "Power of Creation",
+    "DESCRIPTION": "Reduce the cost of the first card you add to your hand each turn by 1."
   }
 }
