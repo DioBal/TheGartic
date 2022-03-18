@@ -1,7 +1,9 @@
 package theGartic.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static theGartic.GarticMod.makeID;
@@ -22,10 +24,11 @@ public class OpeningStrike extends AbstractEasyCard {
         } else {
             dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
         }
+        this.addToBot(new DrawCardAction(AbstractDungeon.player, 1));
     }
 
     public void upp() {
-        upgradeDamage(9);
+        upgradeDamage(3);
         uDesc();
     }
 

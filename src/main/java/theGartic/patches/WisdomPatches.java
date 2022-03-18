@@ -1,9 +1,6 @@
 package theGartic.patches;
 
-import com.evacipated.cardcrawl.modthespire.lib.SpireField;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatches2;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
+import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.DiscardAtEndOfTurnAction;
@@ -15,10 +12,12 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import theGartic.stances.WisdomStance;
 
-import javax.swing.*;
 import java.util.ArrayList;
 
-
+@SpirePatch2(
+        clz = CardGroup.class,
+        method=SpirePatch.CLASS
+)
 public class WisdomPatches {
 
     public static SpireField<Boolean> wisdomActive = new SpireField<>(() -> false);
@@ -27,9 +26,9 @@ public class WisdomPatches {
             clz = CardGroup.class,
             method = "addToTop"
     )
-    public class AddToTopPatch{
+    public static class AddToTopPatch{
         @SpirePostfixPatch
-        public void plsWork(CardGroup __instance, AbstractCard c) {
+        public static void plsWork(CardGroup __instance, AbstractCard c) {
             if(!AbstractDungeon.player.stance.ID.equals(WisdomStance.STANCE_ID) || wisdomActive.get(__instance).equals(true)){
                 return;
             }
@@ -48,9 +47,9 @@ public class WisdomPatches {
             clz = CardGroup.class,
             method = "addToBottom"
     )
-    public class AddToBottomPatch{
+    public static class AddToBottomPatch{
         @SpirePostfixPatch
-        public void plsWork(CardGroup __instance, AbstractCard c) {
+        public static void plsWork(CardGroup __instance, AbstractCard c) {
             if(!AbstractDungeon.player.stance.ID.equals(WisdomStance.STANCE_ID) || wisdomActive.get(__instance).equals(true)){
                 return;
             }
@@ -69,9 +68,9 @@ public class WisdomPatches {
             clz = CardGroup.class,
             method = "addToRandomSpot"
     )
-    public class AddToRandomSpotPatch{
+    public static class AddToRandomSpotPatch{
         @SpirePostfixPatch
-        public void plsWork(CardGroup __instance, AbstractCard c) {
+        public static void plsWork(CardGroup __instance, AbstractCard c) {
             if(!AbstractDungeon.player.stance.ID.equals(WisdomStance.STANCE_ID) || wisdomActive.get(__instance).equals(true)){
                 return;
             }

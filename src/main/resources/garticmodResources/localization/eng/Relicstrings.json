@@ -33,5 +33,12 @@
     "DESCRIPTIONS": [
       "Whenever you discard #b3 cards, draw #b1 card."
     ]
+  },
+  "${ModID}:DarkPact": {
+    "NAME": "Dark Pact",
+    "FLAVOR": "Unnatural speed payed for with lifeforce.",
+    "DESCRIPTIONS": [
+      "While your HP is at or below 50%, draw #b1 additional card at the beginning of your turn."
+    ]
   }
 }
