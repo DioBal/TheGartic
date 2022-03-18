@@ -246,6 +246,7 @@
   "${ModID}:SupplicateToInari": {
     "NAME": "Suplicate To Inari",
     "DESCRIPTION": "Summon a Three-Tailed White Fox.",
-    "UPGRADE_DESCRIPTION": "Summon a Three-Tailed White Fox. Draw 1 card. Gain 1 E."
+    "UPGRADE_DESCRIPTION": "Summon a Three-Tailed White Fox. Draw 1 card. Gain 1 E.",
+    "FLAVOR": "Family we are, you and I. Just respectfully ask and you shall receive."
   }
 }
