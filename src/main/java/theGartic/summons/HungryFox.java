@@ -46,7 +46,8 @@ public class HungryFox extends AbstractSummonOrb
 
     @Override
     protected void renderText(SpriteBatch sb) {
-        FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(passiveAmount), cX + NUM_X_OFFSET, cY + bobEffect.y / 2.0F + NUM_Y_OFFSET + 20.0F * Settings.scale, c, fontScale);
+        FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(passiveAmount),
+                cX + NUM_X_OFFSET, cY + NUM_Y_OFFSET, c, fontScale);
     }
 
     @Override
