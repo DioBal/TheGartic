@@ -247,5 +247,9 @@
   "${ModID}:PowerOfCreation": {
     "NAME": "Power of Creation",
     "DESCRIPTION": "Reduce the cost of the first card you add to your hand each turn by 1."
+  },
+  "${ModID}:CleanestMind": {
+    "NAME": "Cleanest Mind",
+    "DESCRIPTION": "Lose !M! Max HP. NL At the start of your turn, lose 1 HP and gain 1 Dexterity. NL At the end of your turn, if this is in your hand, shuffle a copy of it into your draw pile. NL Soulbound."
   }
 }
