@@ -222,6 +222,10 @@
     "NAME": "Mischievous Fox",
     "DESCRIPTION": "Summon a garticmod:MischievousFox that deals !M! damage."
   },
+  "${ModID}:ToothAndClaw": {
+    "NAME": "Tooth And Claw",
+    "DESCRIPTION": "garticmod:Unsummon a Summon. NL If you did, Summon a ${ModID}:Dire\u00a0Wolf that deals 8 damage !M! times. NL Damage is affected by attack modifiers."
+  },
   "${ModID}:FriendlyLick": {
     "NAME": "Friendly Lick",
     "DESCRIPTION": "Heal !M! HP.",
