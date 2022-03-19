@@ -247,5 +247,21 @@
   "${ModID}:PowerOfCreation": {
     "NAME": "Power of Creation",
     "DESCRIPTION": "Reduce the cost of the first card you add to your hand each turn by 1."
+  },
+  "${ModID}:MultiBottleRockets": {
+    "NAME": "Multi-Bottle Rockets",
+    "DESCRIPTION": "Discard any number of cards. NL Deal !D! damage to a random enemy for each card discarded +!M!."
+  },
+  "${ModID}:ScrapShield": {
+    "NAME": "Scrap Shield",
+    "DESCRIPTION": "Gain !B! Block. NL Draw 1 card. NL Discard 1 card."
+  },
+  "${ModID}:HeavySlam": {
+    "NAME": "Heavy Slam",
+    "DESCRIPTION": "{@@}Deal damage equal to the number of cards in your discard pile{!Upgrades!|>0=+3}.{!D!|>0= NL (Deals !D! damage.)}"
+  },
+  "${ModID}:Protector": {
+    "NAME": "Protector",
+    "DESCRIPTION": "Gain !B! Block. NL If this card is discarded, gain [E]."
   }
 }
