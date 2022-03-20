@@ -9,6 +9,11 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theGartic.GarticMod;
 import theGartic.TheGartic;
+import theGartic.actions.SummonOrbAction;
+import theGartic.summons.HungryFox;
+import theGartic.summons.InariWhiteFoxSummon;
+
+import static theGartic.util.Wiz.atb;
 
 public class SupplicateToInari extends AbstractEasyCard  {
 
@@ -24,6 +29,7 @@ public class SupplicateToInari extends AbstractEasyCard  {
 
     private final static int MAGIC = 0;
     private final static int MAGIC_UPGRADE_INCREMENT = 1;
+    private final static int WHITE_FOX_MAGIC = 1;
 
     private static final Color FLAVOR_BOX_COLOR = Color.WHITE.cpy();
     private static final Color FLAVOR_TEXT_COLOR = Color.BROWN.cpy();
@@ -58,6 +64,7 @@ public class SupplicateToInari extends AbstractEasyCard  {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        atb (new SummonOrbAction(new InariWhiteFoxSummon(1, WHITE_FOX_MAGIC)));
         addToBot(new DrawCardAction(magicNumber));
         addToBot(new GainEnergyAction(magicNumber));
     }
