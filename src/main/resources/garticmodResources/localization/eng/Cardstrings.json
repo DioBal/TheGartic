@@ -237,6 +237,10 @@
     "NAME": "Mischievous Fox",
     "DESCRIPTION": "Summon a garticmod:MischievousFox that deals !M! damage."
   },
+  "${ModID}:ToothAndClaw": {
+    "NAME": "Tooth And Claw",
+    "DESCRIPTION": "garticmod:Unsummon a Summon. NL If you did, Summon a ${ModID}:Dire\u00a0Wolf that deals 8 damage !M! times. NL Damage is affected by attack modifiers."
+  },
   "${ModID}:FriendlyLick": {
     "NAME": "Friendly Lick",
     "DESCRIPTION": "Heal !M! HP.",
@@ -262,5 +266,25 @@
   "${ModID}:PowerOfCreation": {
     "NAME": "Power of Creation",
     "DESCRIPTION": "Reduce the cost of the first card you add to your hand each turn by 1."
+  },
+  "${ModID}:CleanestMind": {
+    "NAME": "Cleanest Mind",
+    "DESCRIPTION": "Lose !M! Max HP. NL At the start of your turn, lose 1 HP and gain 1 Dexterity. NL At the end of your turn, if this is in your hand, shuffle a copy of it into your draw pile. NL Soulbound."
+  },
+  "${ModID}:MultiBottleRockets": {
+    "NAME": "Multi-Bottle Rockets",
+    "DESCRIPTION": "Discard any number of cards. NL Deal !D! damage to a random enemy for each card discarded +!M!."
+  },
+  "${ModID}:ScrapShield": {
+    "NAME": "Scrap Shield",
+    "DESCRIPTION": "Gain !B! Block. NL Draw 1 card. NL Discard 1 card."
+  },
+  "${ModID}:HeavySlam": {
+    "NAME": "Heavy Slam",
+    "DESCRIPTION": "{@@}Deal damage equal to the number of cards in your discard pile{!Upgrades!|>0=+3}.{!D!|>0= NL (Deals !D! damage.)}"
+  },
+  "${ModID}:Protector": {
+    "NAME": "Protector",
+    "DESCRIPTION": "Gain !B! Block. NL If this card is discarded, gain [E]."
   }
 }
