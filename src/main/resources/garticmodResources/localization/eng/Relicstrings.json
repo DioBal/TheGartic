@@ -33,5 +33,12 @@
     "DESCRIPTIONS": [
       "Whenever you discard #b3 cards, draw #b1 card."
     ]
+  },
+  "${ModID}:HiddenCompartment": {
+    "NAME": "Hidden Compartment",
+    "FLAVOR": "Don't forget how to open it.",
+    "DESCRIPTIONS": [
+      "At the start of combat, add a #ySmite and a #ySafety to your hand."
+    ]
   }
 }

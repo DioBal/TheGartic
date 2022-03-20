@@ -8,11 +8,14 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.scenes.scene2d.ui.List;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -22,6 +25,7 @@ import theGartic.cards.AbstractEasyCard;
 import theGartic.cards.cardvars.SecondDamage;
 import theGartic.patches.AllWillReturnPatch;
 import theGartic.potions.PurpleStuff;
+import theGartic.powers.PowerOfCreationPower;
 import theGartic.relics.AbstractEasyRelic;
 
 import java.nio.charset.StandardCharsets;
@@ -36,7 +40,8 @@ public class GarticMod implements
         EditCharactersSubscriber,
         AddAudioSubscriber,
         OnStartBattleSubscriber,
-        PostBattleSubscriber {
+        PostBattleSubscriber
+        {
 
     public static final String modID = "garticmod";
 
@@ -62,6 +67,9 @@ public class GarticMod implements
     private static final String CHARSELECT_PORTRAIT = modID + "Resources/images/charSelect/charBG.png";
     public static Logger logger = LogManager.getLogger(GarticMod.class.getName());
 
+    public static final String GUNSHOT_KEY = makeID("GunshotKey");
+    private static final String GUNSHOT_PATH = "garticmodResources/audio/sfx/Gunshot.ogg";
+
     public GarticMod() {
         BaseMod.subscribe(this);
 
@@ -71,10 +79,12 @@ public class GarticMod implements
                 ATTACK_L_ART, SKILL_L_ART, POWER_L_ART,
                 CARD_ENERGY_L, TEXT_ENERGY);
     }
-
+    
     public static class Enums {
         @SpireEnum
         public static AbstractCard.CardTags SUMMON;
+        @SpireEnum
+        public static AbstractGameAction.AttackEffect GUNSHOT;
     }
 
     public static String makePath(String resourcePath) {
@@ -175,6 +185,7 @@ public class GarticMod implements
     @Override
     public void receiveAddAudio() {
         BaseMod.addAudio(modID + ":GLASSARMOR", modID + "Resources/audio/sfx/glassarmor.ogg");
+        BaseMod.addAudio(GUNSHOT_KEY, GUNSHOT_PATH);
     }
 
     @Override
@@ -187,5 +198,13 @@ public class GarticMod implements
     public void receivePostBattle(AbstractRoom abstractRoom) {
         AllWillReturnPatch.lastTurnBlock = AllWillReturnPatch.thisTurnBlock = 0;
         AllWillReturnPatch.lastTurnDamage = AllWillReturnPatch.thisTurnDamage = 0;
+    }
+    
+    public static void onCardCreation(AbstractCard card)
+    {
+        if(AbstractDungeon.player.hasPower(PowerOfCreationPower.POWER_ID))
+        {
+            ((PowerOfCreationPower)AbstractDungeon.player.getPower(PowerOfCreationPower.POWER_ID)).onCardCreation(card);
+        }
     }
 }
