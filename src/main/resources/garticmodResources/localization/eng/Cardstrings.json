@@ -301,5 +301,13 @@
   "${ModID}:Protector": {
     "NAME": "Protector",
     "DESCRIPTION": "Gain !B! Block. NL If this card is discarded, gain [E]."
+  },
+  "${ModID}:InariDash": {
+    "NAME": "Inari Dash",
+    "DESCRIPTION": "Next turn, if you play a card, draw #b",
+    "EXTENDED_DESCRIPTION": [
+      " card.",
+      " cards."
+    ]
   }
 }
