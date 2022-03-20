@@ -103,6 +103,21 @@
       "(Gain !B! Block.) NL (Deal !D! damage.) NL "
     ]
   },
+  "${ModID}:DiveBomb": {
+    "NAME": "Dive Bomb",
+    "DESCRIPTION": "Remove all ${ModID}:Flight. NL Deal !D! damage to a random enemy for each stack of ${ModID}:Flight removed.",
+    "FLAVOR": "Also known as the Angry Birds maneuver."
+  },
+  "${ModID}:Hover": {
+    "NAME": "Hover",
+    "DESCRIPTION": "Your ${ModID}:Flight can not decrease this turn.",
+    "FLAVOR": "Hilarious against melee enemies."
+  },
+  "${ModID}:CelestialCrafting": {
+    "NAME": "Celestial Crafting",
+    "DESCRIPTION": "Gain !M! ${ModID}:Flight. NL While you are in ${ModID}:Flight, whenever you create a card, add a copy to your discard pile.",
+    "FLAVOR": "We have Master Reality at home."
+  },
   "${ModID}:Hunt": {
     "NAME": "Hunt",
     "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Summon a ${ModID}:Hungry\u00a0Fox that deals !M! damage.",

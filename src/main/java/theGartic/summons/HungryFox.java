@@ -13,8 +13,8 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import theGartic.GarticMod;
 import theGartic.actions.HungryFoxAction;
 
+import static theGartic.util.Wiz.*;
 import static theGartic.GarticMod.makeOrbPath;
-import static theGartic.util.Wiz.atb;
 
 public class HungryFox extends AbstractSummonOrb
 {
