@@ -39,7 +39,16 @@
   "${ModID}:InariWhiteFoxSummon": {
     "NAME": "Three-Tailed White Fox",
     "DESCRIPTION": [
-      "When your turn ends, pick #b1 of #b3 choices."
+      "When your turn ends, pick #b1 of #b3 choices.",
+      "Next turn, if you play a card, draw #b", " card.", " cards.",
+      "Next turn, gain #b", " [E]",
+      "Add 1 of 3 Colorless cards with Exhaust to the top of your draw pile", ".", " times.",
+      "Apply #b", " Weak to all enemies.",
+      "Apply #b", " Vulnerable to all enemies.",
+      "Gain #b", " Block.",
+      "Deal ", "x10 damage to the lowest health enemy.",
+      "Deal ", "x5 damage to the highest health enemy.",
+      "Gain #b", "Temp HP."
     ]
   },
   "${ModID}:DireWolfSummon": {
