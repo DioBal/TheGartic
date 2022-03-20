@@ -80,5 +80,14 @@
       " card you create each turn cost #b1 less.",
       " cards you create each turn cost #b1 less."
     ]
+  },
+  "${ModID}:InariDashPower": {
+    "NAME": "Inari Dash",
+    "DESCRIPTIONS": [
+      "if you play a card, draw #b",
+      " card.",
+      " cards.",
+      " This Power is removed at the end of this turn."
+    ]
   }
 }
