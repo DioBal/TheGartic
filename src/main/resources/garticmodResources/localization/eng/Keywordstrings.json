@@ -78,5 +78,14 @@
       "mischievousfox"
     ],
     "DESCRIPTION": "A creature that has a 50% chance to perform one of these two actions after you play a card. NL - Deals its damage to you. NL - Deals its damage to a random enemy. "
+  },
+  {
+    "PROPER_NAME": "Dire Wolf",
+    "NAMES": [
+      "Dire\u00a0Wolf",
+      "dire\u00a0wolf",
+      "direwolf"
+    ],
+    "DESCRIPTION": "A creature that attacks the enemy with the lowest health multiple times, affected by attack modifiers."
   }
 ]

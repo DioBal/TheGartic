@@ -41,5 +41,13 @@
     "DESCRIPTION": [
       "When your turn ends, pick 1 of 3 choices."
     ]
+  },
+  "${ModID}:DireWolfSummon": {
+    "NAME": "Dire Wolf",
+    "DESCRIPTION": [
+      "After you play a card, will either deal #b",
+      " damage to you, or #b",
+      " damage to a random enemy (50% chance.)"
+    ]
   }
 }

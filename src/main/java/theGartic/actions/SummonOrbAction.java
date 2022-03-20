@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import theGartic.powers.InvisibleSummonPower;
 import theGartic.summons.CrazyPanda;
+import theGartic.summons.DireWolfSummon;
 import theGartic.summons.HungryFox;
 
 public class SummonOrbAction extends AbstractGameAction
@@ -56,9 +57,16 @@ public class SummonOrbAction extends AbstractGameAction
     {
         for (AbstractOrb orb : AbstractDungeon.player.orbs)
         {
-            if(orb.name == summon.name && !orb.ID.equals(CrazyPanda.ORB_ID) && !orb.ID.equals(HungryFox.ORB_ID))
+            if(orb.name == summon.name && !orb.ID.equals(CrazyPanda.ORB_ID) && !orb.ID.equals(HungryFox.ORB_ID) && !orb.ID.equals(DireWolfSummon.ORB_ID))
             {
                 orb.evokeAmount += stack;
+                AbstractDungeon.actionManager.addToBottom(
+                        new VFXAction(new OrbFlareEffect(orb, OrbFlareEffect.OrbFlareColor.DARK), 0.1f));
+                return true;
+            }
+            if(orb.name == summon.name && orb.ID.equals(DireWolfSummon.ORB_ID))
+            {
+                orb.passiveAmount += stack;
                 AbstractDungeon.actionManager.addToBottom(
                         new VFXAction(new OrbFlareEffect(orb, OrbFlareEffect.OrbFlareColor.DARK), 0.1f));
                 return true;
