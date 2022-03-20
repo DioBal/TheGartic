@@ -25,6 +25,12 @@ public class InariWhiteFoxSummon extends AbstractSummonOrb
     }
 
     @Override
+    public void updateDescription()
+    {
+        description = DESCRIPTIONS[0];
+    }
+
+    @Override
     public AbstractOrb makeCopy() {
         return new InariWhiteFoxSummon(passiveAmount, evokeAmount);
     }

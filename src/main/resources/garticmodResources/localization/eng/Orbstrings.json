@@ -36,10 +36,10 @@
       " damage to a random enemy (50% chance.)"
     ]
   },
-  "${ModID}:InariWhiteFox": {
+  "${ModID}:InariWhiteFoxSummon": {
     "NAME": "Three-Tailed White Fox",
     "DESCRIPTION": [
-      "When your turn ends, pick 1 of 3 choices."
+      "When your turn ends, pick #b1 of #b3 choices."
     ]
   },
   "${ModID}:DireWolfSummon": {
