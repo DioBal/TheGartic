@@ -20,6 +20,10 @@ public class InariWhiteFoxSummon extends AbstractSummonOrb
 
     }
 
+    public void onEndOfTurn() {
+
+    }
+
     @Override
     public AbstractOrb makeCopy() {
         return new InariWhiteFoxSummon(passiveAmount, evokeAmount);
