@@ -8,7 +8,7 @@ import static theGartic.GarticMod.makeID;
 import static theGartic.util.Wiz.*;
 
 public class Pandamonium extends AbstractEasyCard {
-    public final static String ID = makeID("Pandamonium");
+    public final static String ID = makeID(Pandamonium.class.getSimpleName());
     private final static int MAGIC = 10;
     private final static int UPGRADE_MAGIC = 5;
     private final static int COST = 3;

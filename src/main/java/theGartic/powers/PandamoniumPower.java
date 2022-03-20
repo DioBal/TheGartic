@@ -18,7 +18,7 @@ import static theGartic.GarticMod.makeID;
 import static theGartic.util.Wiz.*;
 
 public class PandamoniumPower extends AbstractPower {
-    public static final String POWER_ID = makeID("PandamoniumPower");
+    public static final String POWER_ID = makeID(PandamoniumPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
