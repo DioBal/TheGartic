@@ -286,5 +286,15 @@
   "${ModID}:Protector": {
     "NAME": "Protector",
     "DESCRIPTION": "Gain !B! Block. NL If this card is discarded, gain [E]."
+  },
+  "${ModID}:CreationOfCreation": {
+    "NAME": "Creation of Creation",
+    "DESCRIPTION": "Randomly add Burning Blade, Distraction, White Noise or Jack of All Trades to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Randomly add Burning Blade+, Distraction+, White Noise+ or Jack of All Trades+ to your hand. NL Exhaust."
+  },
+  "${ModID}:BlockAndLoad": {
+    "NAME": "Block and Load",
+    "DESCRIPTION": "Enter garticmod:Resolute. NL Whenever you gain Block this turn, add a random Attack to your hand.",
+    "UPGRADE_DESCRIPTION": "Enter garticmod:Resolute. NL Whenever you gain Block this turn, add a random upgraded Attack to your hand."
   }
 }

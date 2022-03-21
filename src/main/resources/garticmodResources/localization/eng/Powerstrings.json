@@ -80,5 +80,15 @@
       " card you create each turn cost #b1 less.",
       " cards you create each turn cost #b1 less."
     ]
+  },
+  "${ModID}:BlockAndLoadPower": {
+    "NAME": "Block and Load",
+    "DESCRIPTIONS": [
+      "After you gain #yBlock, add #b",
+      " random ",
+      " random upgraded ",
+      " Attack to your hand.",
+      " Attacks to your hand."
+    ]
   }
 }
