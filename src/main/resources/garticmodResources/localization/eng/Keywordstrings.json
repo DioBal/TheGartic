@@ -87,5 +87,13 @@
       "direwolf"
     ],
     "DESCRIPTION": "A creature that attacks the enemy with the lowest health multiple times, affected by attack modifiers."
+  },
+  {
+    "PROPER_NAME": "Resolute",
+    "NAMES": [
+      "Resolute",
+      "resolute"
+    ],
+    "DESCRIPTION": "Stance: While in Resolute, whenever you play an Attack, gain #b2 #yBlock."
   }
 ]

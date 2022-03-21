@@ -167,6 +167,8 @@ public class GarticMod implements
         BaseMod.loadCustomStringsFile(PotionStrings.class, modID + "Resources/localization/eng/Potionstrings.json");
 
         BaseMod.loadCustomStringsFile(OrbStrings.class, modID + "Resources/localization/eng/Orbstrings.json");
+        
+        BaseMod.loadCustomStringsFile(StanceStrings.class, modID+ "Resources/localization/eng/Stancestrings.json");
     }
 
     @Override
