@@ -122,8 +122,8 @@ public class CrazyPanda extends AbstractSummonOrb
     protected void renderText(SpriteBatch sb) {
         if (!shooting)
             FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(passiveAmount),
-                    cX + NUM_X_OFFSET + 25*Settings.scale, cY + NUM_Y_OFFSET - 25* Settings.yScale,
-                    new Color(1.0f, 0.25f, 0.25f, 1.0f), fontScale);
+                    cX + NUM_X_OFFSET + 20*Settings.scale, cY + NUM_Y_OFFSET - 20* Settings.yScale,
+                    new Color(1.0f, 0.5f, 0.5f, 1.0f), fontScale);
     }
 
     @Override
