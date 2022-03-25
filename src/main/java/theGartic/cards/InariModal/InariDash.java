@@ -14,7 +14,7 @@ import static theGartic.util.Wiz.atb;
 
 public class InariDash extends EasyModalChoiceCard {
 
-    public static final String ID = makeID(AngelicGlide.class.getSimpleName());
+    public static final String ID = makeID(InariDash.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
