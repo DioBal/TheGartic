@@ -26,8 +26,8 @@ public class InariDash extends EasyModalChoiceCard {
         });
     }
 
-    public InariDash(String name, String description, int magicNumber) {
-        super(name, description, () -> {
+    public InariDash(int magicNumber) {
+        super(NAME, DESCRIPTION, () -> {
             AbstractPlayer p = AbstractDungeon.player;
             atb(new ApplyPowerAction(p, p, new InariDashPower(magicNumber), 1));
         });
