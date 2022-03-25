@@ -16,6 +16,15 @@ public class InariDash extends EasyModalChoiceCard {
 
     public static final String ID = makeID(AngelicGlide.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+
+    public InariDash(){
+        super(NAME, DESCRIPTION, () -> {
+            AbstractPlayer p = AbstractDungeon.player;
+            atb(new ApplyPowerAction(p, p, new InariDashPower(1), 1));
+        });
+    }
 
     public InariDash(String name, String description, int magicNumber) {
         super(name, description, () -> {
