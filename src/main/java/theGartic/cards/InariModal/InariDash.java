@@ -18,12 +18,22 @@ public class InariDash extends EasyModalChoiceCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 
     public InariDash(){
         super(NAME, DESCRIPTION, () -> {
             AbstractPlayer p = AbstractDungeon.player;
             atb(new ApplyPowerAction(p, p, new InariDashPower(1), 1));
         });
+
+        baseMagicNumber = magicNumber;
+
+        if (baseMagicNumber == 1) {
+            this.rawDescription = DESCRIPTION + baseMagicNumber + EXTENDED_DESCRIPTION[0];
+        } else {
+            this.rawDescription = DESCRIPTION + baseMagicNumber + EXTENDED_DESCRIPTION[1];
+        }
+        initializeDescription();
     }
 
     public InariDash(int magicNumber) {
@@ -33,5 +43,12 @@ public class InariDash extends EasyModalChoiceCard {
         });
 
         baseMagicNumber = magicNumber;
+
+        if (baseMagicNumber == 1) {
+            this.rawDescription = DESCRIPTION + baseMagicNumber + EXTENDED_DESCRIPTION[0];
+        } else {
+            this.rawDescription = DESCRIPTION + baseMagicNumber + EXTENDED_DESCRIPTION[1];
+        }
+        initializeDescription();
     }
 }
