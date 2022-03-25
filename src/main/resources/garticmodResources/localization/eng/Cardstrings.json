@@ -304,7 +304,7 @@
   },
   "${ModID}:InariDash": {
     "NAME": "Inari Dash",
-    "DESCRIPTION": "Next turn, if you play a card, draw #b",
+    "DESCRIPTION": "Next turn, if you play a card, draw !M!",
     "EXTENDED_DESCRIPTION": [
       " card.",
       " cards."

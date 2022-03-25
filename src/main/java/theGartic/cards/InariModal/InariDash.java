@@ -29,9 +29,9 @@ public class InariDash extends EasyModalChoiceCard {
         baseMagicNumber = magicNumber;
 
         if (baseMagicNumber == 1) {
-            this.rawDescription = DESCRIPTION + baseMagicNumber + EXTENDED_DESCRIPTION[0];
+            this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
         } else {
-            this.rawDescription = DESCRIPTION + baseMagicNumber + EXTENDED_DESCRIPTION[1];
+            this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[1];
         }
         initializeDescription();
     }
@@ -45,9 +45,9 @@ public class InariDash extends EasyModalChoiceCard {
         baseMagicNumber = magicNumber;
 
         if (baseMagicNumber == 1) {
-            this.rawDescription = DESCRIPTION + baseMagicNumber + EXTENDED_DESCRIPTION[0];
+            this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
         } else {
-            this.rawDescription = DESCRIPTION + baseMagicNumber + EXTENDED_DESCRIPTION[1];
+            this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[1];
         }
         initializeDescription();
     }
