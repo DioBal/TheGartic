@@ -23,7 +23,7 @@ public class InariDashPower extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static int amount_of_turns_left = 2;
+    private int amount_of_turns_left = 2;
     private static int magicAmount;
 
     public InariDashPower(int magicAmount)
