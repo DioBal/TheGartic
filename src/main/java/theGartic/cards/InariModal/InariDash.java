@@ -18,12 +18,9 @@ public class InariDash extends EasyModalChoiceCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public InariDash(String name, String description, int magicNumber) {
-        super(name, description, new Runnable() {
-            @Override
-            public void run() {
-                AbstractPlayer p = AbstractDungeon.player;
-                atb(new ApplyPowerAction(p, p, new InariDashPower(magicNumber), 1));
-            }
+        super(name, description, () -> {
+            AbstractPlayer p = AbstractDungeon.player;
+            atb(new ApplyPowerAction(p, p, new InariDashPower(magicNumber), 1));
         });
 
         baseMagicNumber = magicNumber;
