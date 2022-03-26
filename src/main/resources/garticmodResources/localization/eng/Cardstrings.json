@@ -58,6 +58,23 @@
     "NAME": "Hook",
     "DESCRIPTION": "Deal !D! damage. NL Shuffle !M! ${ModID}:Fish into your draw pile."
   },
+  "${ModID}:ReelItIn": {
+    "NAME": "Reel It In",
+    "DESCRIPTION": "Deal !D! damage. NL Add !M! ${ModID}:Fish to your hand."
+  },
+  "${ModID}:BigHaul": {
+    "NAME": "Big Haul",
+    "DESCRIPTION": "Add !M! ${ModID}:Fish to your hand and give them Retain."
+  },
+  "${ModID}:BloodInTheWater": {
+    "NAME": "Blood in the Water",
+    "DESCRIPTION": "Gain !M! Strength. Gain  !${ModID}:m2! additional Strength for every ${ModID}:Fish ${ModID}:Consumed.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain !M! Strength. Gain  !${ModID}:m2! additional Strength for every ${ModID}:Fish ${ModID}:Consumed."
+  },
+  "${ModID}:KingOfTheDepths": {
+    "NAME": "King of the Depths",
+    "DESCRIPTION": "Add !M! ${ModID}:Fish to your draw pile. NL Whenever this card ${ModID}:Consumes a ${ModID}:Fish, permanently increase the ${ModID}:Fish added by !${ModID}:m2!."
+  },
   "${ModID}:CatchOfTheDay": {
     "NAME": "Catch of the Day",
     "DESCRIPTION": "At the start of your turn, shuffle a ${ModID}:Fish into your draw pile.",
