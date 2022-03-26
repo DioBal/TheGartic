@@ -95,5 +95,14 @@
       "resolute"
     ],
     "DESCRIPTION": "Stance: While in Resolute, whenever you play an Attack, gain #b2 #yBlock."
+  },
+  {
+    "PROPER_NAME": "Consume",
+    "NAMES": [
+      "consume",
+      "consumes",
+      "consumed"
+    ],
+    "DESCRIPTION": "When you have #yFish in hand, you will #yExhaust #yFish to pay [E] per #yFish for this card's cost."
   }
 ]
