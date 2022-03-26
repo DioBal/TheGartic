@@ -88,6 +88,10 @@ public class WisdomPatches {
 
     public static void onAddToDiscardPile(CardGroup cg, AbstractCard card){
         //check for end of turn discard
+        if(AbstractDungeon.actionManager.currentAction instanceof DiscardAtEndOfTurnAction){
+            wisdomActive.set(cg, false);
+            return;
+        }
         ArrayList<AbstractGameAction> actions = new ArrayList<AbstractGameAction>(AbstractDungeon.actionManager.actions);
         for(AbstractGameAction a : actions){
             if(a instanceof DiscardAtEndOfTurnAction){
@@ -103,6 +107,10 @@ public class WisdomPatches {
 
     public static void onAddToDrawPile(CardGroup cg, AbstractCard card, boolean randomSpot, boolean toBottom){
         //check for deck shuffle
+        if(AbstractDungeon.actionManager.currentAction instanceof EmptyDeckShuffleAction){
+            wisdomActive.set(cg, false);
+            return;
+        }
         ArrayList<AbstractGameAction> actions = new ArrayList<AbstractGameAction>(AbstractDungeon.actionManager.actions);
         for(AbstractGameAction a : actions){
             if(a instanceof EmptyDeckShuffleAction){
