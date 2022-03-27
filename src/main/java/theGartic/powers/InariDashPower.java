@@ -74,4 +74,13 @@ public class InariDashPower extends AbstractPower {
 
     }
 
+    @Override
+    public void stackPower(int stackAmount) {
+        fontScale = 8.0F;
+        amount_of_turns_left += 1;
+        updateDescription();
+    }
+
+
+
 }
