@@ -309,5 +309,9 @@
       " card.",
       " cards."
     ]
+  },
+  "${ModID}:InariEnergy": {
+    "NAME": "Inari Energy",
+    "DESCRIPTION": "Next turn, gain !M! [E]"
   }
 }
