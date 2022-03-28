@@ -40,12 +40,11 @@ public class InariWhiteFoxSummon extends AbstractSummonOrb
         inariChoicesDeck.add(new InariEndurance(BASE_PASSIVE_AMOUNT));
         inariChoicesDeck.add(new InariPloy(BASE_PASSIVE_AMOUNT));
         inariChoicesDeck.add(new InariProtection(BASE_PASSIVE_AMOUNT));
-        inariChoicesDeck.add(new InariProtection(BASE_PASSIVE_AMOUNT));
-        inariChoicesDeck.add(new InariProtection(BASE_PASSIVE_AMOUNT));
-        inariChoicesDeck.add(new InariProtection(BASE_PASSIVE_AMOUNT));
-        inariChoicesDeck.add(new InariProtection(BASE_PASSIVE_AMOUNT));
+        inariChoicesDeck.add(new InariSabotage(BASE_PASSIVE_AMOUNT));
+        inariChoicesDeck.add(new InariSabotage(BASE_PASSIVE_AMOUNT));
+        inariChoicesDeck.add(new InariSabotage(BASE_PASSIVE_AMOUNT));
+        inariChoicesDeck.add(new InariSabotage(BASE_PASSIVE_AMOUNT));
         /*inariChoicesDeck.add(InariChoices.ADD_COLORLESS_WITH_EXHAUST_TO_TOP_OF_DRAW_PILE);
-        inariChoicesDeck.add(InariChoices.APPLY_VULNERABLE_TO_ALL_ENEMIES);
         inariChoicesDeck.add(InariChoices.DEAL_DAMAGE_TO_THE_LOWEST_HEALTH_ENEMY);
         inariChoicesDeck.add(InariChoices.DEAL_DAMAGE_TO_THE_HIGHEST_HEALTH_ENEMY);*/
     }
