@@ -304,7 +304,7 @@
   },
   "${ModID}:InariDash": {
     "NAME": "Inari Dash",
-    "DESCRIPTION": "Next turn, if you play a card, draw !M!.",
+    "DESCRIPTION": "Next turn, if you play a card, draw !M!",
     "EXTENDED_DESCRIPTION": [
       " card.",
       " cards."
@@ -317,5 +317,9 @@
   "${ModID}:InariEndurance": {
     "NAME": "Inari Endurance",
     "DESCRIPTION": "Gain !M! Temp HP."
+  },
+  "${ModID}:InariPloy": {
+    "NAME": "Inari Ploy",
+    "DESCRIPTION": "Apply !M! Weak to ALL enemies."
   }
 }

@@ -11,6 +11,7 @@ import theGartic.cards.EasyModalChoiceCard;
 import theGartic.cards.InariModal.InariDash;
 import theGartic.cards.InariModal.InariEndurance;
 import theGartic.cards.InariModal.InariEnergy;
+import theGartic.cards.InariModal.InariPloy;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -40,14 +41,13 @@ public class InariWhiteFoxSummon extends AbstractSummonOrb
         inariChoicesDeck.add(new InariDash(BASE_PASSIVE_AMOUNT));
         inariChoicesDeck.add(new InariEnergy(BASE_PASSIVE_AMOUNT));
         inariChoicesDeck.add(new InariEndurance(BASE_PASSIVE_AMOUNT));
-        inariChoicesDeck.add(new InariEnergy(BASE_PASSIVE_AMOUNT));
+        inariChoicesDeck.add(new InariPloy(BASE_PASSIVE_AMOUNT));
         inariChoicesDeck.add(new InariDash(BASE_PASSIVE_AMOUNT));
         inariChoicesDeck.add(new InariEndurance(BASE_PASSIVE_AMOUNT));
         inariChoicesDeck.add(new InariDash(BASE_PASSIVE_AMOUNT));
-        inariChoicesDeck.add(new InariEnergy(BASE_PASSIVE_AMOUNT));
+        inariChoicesDeck.add(new InariPloy(BASE_PASSIVE_AMOUNT));
         inariChoicesDeck.add(new InariEndurance(BASE_PASSIVE_AMOUNT));
         /*inariChoicesDeck.add(InariChoices.ADD_COLORLESS_WITH_EXHAUST_TO_TOP_OF_DRAW_PILE);
-        inariChoicesDeck.add(InariChoices.APPLY_WEAK_TO_ALL_ENEMIES);
         inariChoicesDeck.add(InariChoices.APPLY_VULNERABLE_TO_ALL_ENEMIES);
         inariChoicesDeck.add(InariChoices.GAIN_BLOCK);
         inariChoicesDeck.add(InariChoices.DEAL_DAMAGE_TO_THE_LOWEST_HEALTH_ENEMY);
