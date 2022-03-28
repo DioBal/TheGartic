@@ -329,5 +329,9 @@
   "${ModID}:InariProtection": {
     "NAME": "Inari Protection",
     "DESCRIPTION": "Gain !M! Block."
+  },
+  "${ModID}:InariFlames": {
+    "NAME": "Inari Flames",
+    "DESCRIPTION": "Deal !M! * 10 damage to the lowest health enemy."
   }
 }
