@@ -321,5 +321,9 @@
   "${ModID}:InariPloy": {
     "NAME": "Inari Ploy",
     "DESCRIPTION": "Apply !M! Weak to ALL enemies."
+  },
+  "${ModID}:InariProtection": {
+    "NAME": "Inari Protection",
+    "DESCRIPTION": "Gain !M! Block."
   }
 }
