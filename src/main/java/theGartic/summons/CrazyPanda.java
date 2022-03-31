@@ -15,7 +15,7 @@ import theGartic.actions.PandaSmackAction;
 
 import static java.lang.Math.pow;
 import static theGartic.GarticMod.makeOrbPath;
-import static theGartic.util.Wiz.*;
+import static theGartic.util.Wiz.atb;
 
 public class CrazyPanda extends AbstractSummonOrb
 {
@@ -84,9 +84,9 @@ public class CrazyPanda extends AbstractSummonOrb
             }
         }
         if (shooting)
-            rotation += 4*Gdx.graphics.getDeltaTime()*360.0f;
+            rotation += 6*Gdx.graphics.getDeltaTime()*360.0f;
         else
-            rotation += 0.25f*Gdx.graphics.getDeltaTime()*360.0f;
+            rotation += 0.5f*Gdx.graphics.getDeltaTime()*360.0f;
 
         c.a = Interpolation.pow2In.apply(1.0F, 0.01F, channelAnimTimer / 0.5F);
         scale = Interpolation.swingIn.apply(Settings.scale, 0.01F, channelAnimTimer / 0.5F);
@@ -111,8 +111,8 @@ public class CrazyPanda extends AbstractSummonOrb
 
     @Override
     public void render(SpriteBatch sb) {
-        sb.setColor(Color.WHITE);
-        sb.setBlendFunction(770, 1);
+        sb.setColor(Color.WHITE.cpy());
+        sb.setBlendFunction(770, 771);
         sb.draw(img, cX - 48.0F, cY - 48.0F, 48.0F, 48.0F, 96.0F, 96.0F, scale, scale, rotation, 0, 0, 96, 96, false, false);
         renderText(sb);
         hb.render(sb);
@@ -120,7 +120,10 @@ public class CrazyPanda extends AbstractSummonOrb
 
     @Override
     protected void renderText(SpriteBatch sb) {
-        FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(passiveAmount), cX + NUM_X_OFFSET, cY + bobEffect.y / 2.0F + NUM_Y_OFFSET + 20.0F * Settings.scale, c, fontScale);
+        if (!shooting)
+            FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(passiveAmount),
+                    cX + NUM_X_OFFSET + 20*Settings.scale, cY + NUM_Y_OFFSET - 20* Settings.yScale,
+                    new Color(1.0f, 0.5f, 0.5f, 1.0f), fontScale);
     }
 
     @Override
@@ -143,17 +146,4 @@ public class CrazyPanda extends AbstractSummonOrb
     ys - yt - dur^2 *a/2 = -dur*xm * a
     [ys - yt - dur^2 * a/2] / -dur*a = xm
     xm = (yt - ys)/dur/a + dur/2
-
-
-
-
-
-
-
-
-
-
-
-
-
  */

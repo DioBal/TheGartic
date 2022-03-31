@@ -40,5 +40,12 @@
     "DESCRIPTIONS": [
       "While your HP is at or below 50%, draw #b1 additional card at the beginning of your turn."
     ]
+  },
+  "${ModID}:HiddenCompartment": {
+    "NAME": "Hidden Compartment",
+    "FLAVOR": "Don't forget how to open it.",
+    "DESCRIPTIONS": [
+      "At the start of combat, add a #ySmite and a #ySafety to your hand."
+    ]
   }
 }

@@ -35,5 +35,13 @@
       " damage to you, or #b",
       " damage to a random enemy (50% chance.)"
     ]
+  },
+  "${ModID}:DireWolfSummon": {
+    "NAME": "Dire Wolf",
+    "DESCRIPTION": [
+      "At the end of your turn it deals #b",
+      " damage #b",
+      " times to the lowest hp enemy."
+    ]
   }
 }

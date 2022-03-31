@@ -78,5 +78,31 @@
       "mischievousfox"
     ],
     "DESCRIPTION": "A creature that has a 50% chance to perform one of these two actions after you play a card. NL - Deals its damage to you. NL - Deals its damage to a random enemy. "
+  },
+  {
+    "PROPER_NAME": "Dire Wolf",
+    "NAMES": [
+      "Dire\u00a0Wolf",
+      "dire\u00a0wolf",
+      "direwolf"
+    ],
+    "DESCRIPTION": "A creature that attacks the enemy with the lowest health multiple times, affected by attack modifiers."
+  },
+  {
+    "PROPER_NAME": "Resolute",
+    "NAMES": [
+      "Resolute",
+      "resolute"
+    ],
+    "DESCRIPTION": "Stance: While in Resolute, whenever you play an Attack, gain #b2 #yBlock."
+  },
+  {
+    "PROPER_NAME": "Consume",
+    "NAMES": [
+      "consume",
+      "consumes",
+      "consumed"
+    ],
+    "DESCRIPTION": "When you have #yFish in hand, you will #yExhaust #yFish to pay [E] per #yFish for this card's cost."
   }
 ]

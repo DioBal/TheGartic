@@ -29,6 +29,29 @@
       " damage."
     ]
   },
+  "${ModID}:PlayerFlightPower": {
+    "NAME": "Flight",
+    "DESCRIPTIONS": [
+      "Reduce attack damage taken by #b",
+      "% .  Lose a stack when you receive attack damage and at the start of your turn."
+    ]
+  },
+  "${ModID}:HoverPower": {
+    "NAME": "Hover",
+    "DESCRIPTIONS": [
+      "#yFlight is not removed this turn.",
+      "#yFlight is not removed for #b",
+      "turns."
+    ]
+  },
+  "${ModID}:CelestialCraftingPower": {
+    "NAME": "Celestial Crafting",
+    "DESCRIPTIONS": [
+      "When you create a card, if you are in #yFlight, add a copy to your discard pile.",
+      "When you create a card, if you are in #yFlight, add #b",
+      " copies to your discard pile."
+    ]
+  },
   "${ModID}:DoubleDamagePower": {
     "NAME": "Double Damage",
     "DESCRIPTIONS": [
@@ -56,6 +79,16 @@
       "The first #b",
       " card you create each turn cost #b1 less.",
       " cards you create each turn cost #b1 less."
+    ]
+  },
+  "${ModID}:BlockAndLoadPower": {
+    "NAME": "Block and Load",
+    "DESCRIPTIONS": [
+      "After you gain #yBlock, add #b",
+      " random ",
+      " random upgraded ",
+      " Attack to your hand.",
+      " Attacks to your hand."
     ]
   }
 }

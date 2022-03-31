@@ -1,6 +1,7 @@
 package theGartic.summons;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,8 +14,8 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import theGartic.GarticMod;
 import theGartic.actions.HungryFoxAction;
 
+import static theGartic.util.Wiz.*;
 import static theGartic.GarticMod.makeOrbPath;
-import static theGartic.util.Wiz.atb;
 
 public class HungryFox extends AbstractSummonOrb
 {
@@ -46,7 +47,10 @@ public class HungryFox extends AbstractSummonOrb
 
     @Override
     protected void renderText(SpriteBatch sb) {
-        FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(passiveAmount), cX + NUM_X_OFFSET, cY + bobEffect.y / 2.0F + NUM_Y_OFFSET + 20.0F * Settings.scale, c, fontScale);
+        FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L,
+                Integer.toString(passiveAmount),cX + NUM_X_OFFSET + 20* Settings.scale,
+                cY + NUM_Y_OFFSET - 20* Settings.yScale,
+                new Color(1.0f, 0.5f, 0.5f, 1.0f), fontScale);
     }
 
     @Override
