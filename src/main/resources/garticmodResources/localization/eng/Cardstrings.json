@@ -284,6 +284,21 @@
     "NAME": "Power of Creation",
     "DESCRIPTION": "Reduce the cost of the first card you add to your hand each turn by 1."
   },
+  "${ModID}:Adaptation": {
+    "NAME": "Adaptation",
+    "DESCRIPTION": "Whenever you change Stances, put a card from your discard pile on top of your draw pile.",
+    "UPGRADE_DESCRIPTION": "Whenever you change Stances, put a card from your discard pile on top of your draw pile."
+  },
+  "${ModID}:EldersKnowledge": {
+    "NAME": "Elder's Knowledge",
+    "DESCRIPTION": "Gain !B! Block. NL Enter Wisdom.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Enter Wisdom."
+  },
+  "${ModID}:OpeningStrike": {
+    "NAME": "Opening Strike",
+    "DESCRIPTION": "Deal !D! Damage. NL Draw a card.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. NL Draw a card."
+  },
   "${ModID}:CleanestMind": {
     "NAME": "Cleanest Mind",
     "DESCRIPTION": "Lose !M! Max HP. NL At the start of your turn, lose 1 HP and gain 1 Dexterity. NL At the end of your turn, if this is in your hand, shuffle a copy of it into your draw pile. NL Soulbound."
