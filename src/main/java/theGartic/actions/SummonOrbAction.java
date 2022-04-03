@@ -13,6 +13,7 @@ import theGartic.powers.InvisibleSummonPower;
 import theGartic.summons.CrazyPanda;
 import theGartic.summons.DireWolfSummon;
 import theGartic.summons.HungryFox;
+import theGartic.summons.InariWhiteFoxSummon;
 
 public class SummonOrbAction extends AbstractGameAction
 {
@@ -62,6 +63,12 @@ public class SummonOrbAction extends AbstractGameAction
                 orb.evokeAmount += stack;
                 AbstractDungeon.actionManager.addToBottom(
                         new VFXAction(new OrbFlareEffect(orb, OrbFlareEffect.OrbFlareColor.DARK), 0.1f));
+                return true;
+            }
+            if (orb.name == summon.name && orb.ID.equals(InariWhiteFoxSummon.ORB_ID)){
+                ((InariWhiteFoxSummon)orb).passiveAmount += orb.passiveAmount;
+                AbstractDungeon.actionManager.addToBottom(
+                        new VFXAction(new OrbFlareEffect(orb, OrbFlareEffect.OrbFlareColor.PLASMA), 0.2f));
                 return true;
             }
             if(orb.name == summon.name && orb.ID.equals(DireWolfSummon.ORB_ID))
