@@ -27,7 +27,7 @@ public class InariGift extends EasyModalChoiceCard {
 
     public InariGift(){
         super(NAME, DESCRIPTION, () -> {
-            atb(new InariGiftAction(true, 1));
+            atb(new InariGiftAction(1));
         });
 
         baseMagicNumber = magicNumber;
@@ -37,7 +37,7 @@ public class InariGift extends EasyModalChoiceCard {
 
     public InariGift(int magicNumber){
         super(NAME, DESCRIPTION, () -> {
-            atb(new InariGiftAction(true, magicNumber));
+            atb(new InariGiftAction(magicNumber));
         });
 
         baseMagicNumber = magicNumber;
