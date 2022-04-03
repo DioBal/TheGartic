@@ -1,8 +1,10 @@
 package theGartic.summons;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import theGartic.GarticMod;
@@ -22,13 +24,13 @@ public class InariWhiteFoxSummon extends AbstractSummonOrb
     public static final String ORB_ID = GarticMod.makeID(InariWhiteFoxSummon.class.getSimpleName());
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
-    private static int BASE_PASSIVE_AMOUNT = 1, BASE_STACK = 1;
+    private static int BASE_PASSIVE_AMOUNT = 1;
     private static ArrayList<EasyModalChoiceCard> inariChoicesDeck;
     private static int optionsShown = 0;
 
-    public InariWhiteFoxSummon(int amount, int stack)
+    public InariWhiteFoxSummon(int amount)
     {
-        super(ORB_ID, orbString.NAME, amount, stack, makeOrbPath("MischievousFox.png"));
+        super(ORB_ID, orbString.NAME, amount, 0, makeOrbPath("MischievousFox.png"));
         inariChoicesDeck = new ArrayList<EasyModalChoiceCard>();
         initInariChoicesDeck();
         shuffleInariChoicesDeck();
@@ -49,6 +51,13 @@ public class InariWhiteFoxSummon extends AbstractSummonOrb
     private void shuffleInariChoicesDeck(){
         Collections.shuffle(inariChoicesDeck,AbstractDungeon.cardRandomRng.random);
     }
+
+    @Override
+    protected void renderText(SpriteBatch sb) {
+        FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(passiveAmount),
+                cX + NUM_X_OFFSET, cY + NUM_Y_OFFSET, c, fontScale);
+    }
+
 
     public void onEndOfTurn() {
         if (optionsShown >= inariChoicesDeck.size()/3){
@@ -75,6 +84,6 @@ public class InariWhiteFoxSummon extends AbstractSummonOrb
 
     @Override
     public AbstractOrb makeCopy() {
-        return new InariWhiteFoxSummon(passiveAmount, evokeAmount);
+        return new InariWhiteFoxSummon(passiveAmount);
     }
 }

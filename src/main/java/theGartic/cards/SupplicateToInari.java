@@ -64,7 +64,7 @@ public class SupplicateToInari extends AbstractEasyCard  {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        atb (new SummonOrbAction(new InariWhiteFoxSummon(1, WHITE_FOX_MAGIC)));
+        atb (new SummonOrbAction(new InariWhiteFoxSummon(WHITE_FOX_MAGIC)));
         addToBot(new DrawCardAction(magicNumber));
         addToBot(new GainEnergyAction(magicNumber));
     }
