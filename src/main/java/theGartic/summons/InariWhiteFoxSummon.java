@@ -53,7 +53,7 @@ public class InariWhiteFoxSummon extends AbstractSummonOrb
     }
 
     public void onEndOfTurn() {
-        if (optionsShown >= inariChoicesDeck.size()){
+        if (optionsShown >= inariChoicesDeck.size()/3){
             optionsShown = 0;
             shuffleInariChoicesDeck();
         }
@@ -64,11 +64,7 @@ public class InariWhiteFoxSummon extends AbstractSummonOrb
         }
         atb(new EasyModalChoiceAction(choiceCardList));
 
-
-        //Call for the three choices on the inariChoicesDeck
-        //the player picks an option
-        //option does thing
-
+        optionsShown += 1;
     }
 
 
