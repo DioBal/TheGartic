@@ -332,6 +332,6 @@
   },
   "${ModID}:InariFlames": {
     "NAME": "Inari Flames",
-    "DESCRIPTION": "Deal !M! * 10 damage to the lowest health enemy."
+    "DESCRIPTION": "Deal 10 damage !M! times to the enemy with the lowest health enemy."
   }
 }
