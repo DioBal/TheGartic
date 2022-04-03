@@ -340,6 +340,6 @@
   },
   "${ModID}:InariGift": {
     "NAME": "Inari Gift",
-    "DESCRIPTION": "Weeeeeell..."
+    "DESCRIPTION": "Choose 1 of 3 Colorless cards with Exhaust to go to the top of your draw pile."
   }
 }
