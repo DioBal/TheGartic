@@ -52,14 +52,14 @@ public class InariBarrage extends EasyModalChoiceCard {
             DamageInfo.DamageType damageType = DamageInfo.DamageType.THORNS;
             AbstractMonster m = GetAliveMonsterWithMoreHealth();
             if (m != null){
-                for (int i = 0; i < 10; i++){
+                for (int i = 0; i < 5; i++){
                     atb(new DamageAction(m, new DamageInfo(p, 3+magicNumber, damageType), effect));
                 }
             }
 
         };
 
-        baseMagicNumber = 1+magicNumber;
+        baseMagicNumber = 3+magicNumber;
         initializeDescription();
     }
 
