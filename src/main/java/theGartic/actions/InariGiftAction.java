@@ -2,8 +2,10 @@ package theGartic.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DescriptionLine;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.GameDictionary;
 import com.megacrit.cardcrawl.screens.CardRewardScreen;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
@@ -43,33 +45,22 @@ public class InariGiftAction extends AbstractGameAction {
                         disCard.upgrade();
                         disCard2.upgrade();
                     }
-
-                    //Add here the Exhaust
                     if (!disCard.exhaust){
-                        disCard.exhaust = true;
+                        setCardToHaveExhaust(disCard);
                     }
                     if (!disCard2.exhaust){
-                        disCard2.exhaust = true;
+                        setCardToHaveExhaust(disCard2);
                     }
+
+
                     disCard.current_x = -1000.0F * Settings.xScale;
                     disCard2.current_x = -1000.0F * Settings.xScale + AbstractCard.IMG_HEIGHT_S;
                     if (this.amount == 1) {
-                        if (AbstractDungeon.player.hand.size() < 10) {
-                            AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(disCard, false, false));
-                        } else {
-                            AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(disCard, false, false));
-                        }
-
+                        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(disCard, false, false));
                         disCard2 = null;
-                    } else if (AbstractDungeon.player.hand.size() + this.amount <= 10) {
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(disCard, false, false));
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(disCard, false, false));
-                    } else if (AbstractDungeon.player.hand.size() == 9) {
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(disCard, false, false));
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(disCard, false, false));
                     } else {
                         AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(disCard, false, false));
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(disCard, false, false));
+                        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(disCard2, false, false));
                     }
 
                     AbstractDungeon.cardRewardScreen.discoveryCard = null;
@@ -83,12 +74,14 @@ public class InariGiftAction extends AbstractGameAction {
     }
 
     private ArrayList<AbstractCard> generateColorlessCardChoices() {
-        ArrayList derp = new ArrayList();
+        ArrayList cardChoices = new ArrayList();
 
-        while(derp.size() != 3) {
+        while(cardChoices.size() != 3) {
             boolean dupe = false;
             AbstractCard tmp = AbstractDungeon.returnTrulyRandomColorlessCardInCombat();
-            Iterator var4 = derp.iterator();
+
+
+            Iterator var4 = cardChoices.iterator();
 
             while(var4.hasNext()) {
                 AbstractCard c = (AbstractCard)var4.next();
@@ -99,10 +92,32 @@ public class InariGiftAction extends AbstractGameAction {
             }
 
             if (!dupe) {
-                derp.add(tmp.makeCopy());
+                AbstractCard temp = tmp.makeCopy();
+                if (!temp.exhaust){
+                    setCardToHaveExhaust(temp);
+                }
+                cardChoices.add(temp);
             }
         }
 
-        return derp;
+        return cardChoices;
+    }
+
+    private static void setCardToHaveExhaust(AbstractCard the_card) {
+        if (the_card.type != AbstractCard.CardType.POWER){
+            the_card.exhaust = true;
+
+            String upper_cased_exhaust = GameDictionary.EXHAUST.NAMES[0].
+                    substring(0, 1).toUpperCase() +
+                    GameDictionary.EXHAUST.NAMES[0].substring(1);
+
+            if (Settings.language == Settings.GameLanguage.ZHS)
+                upper_cased_exhaust = "" + upper_cased_exhaust;
+
+            the_card.rawDescription += " NL " +
+                    upper_cased_exhaust + ".";
+
+            the_card.initializeDescription();
+        }
     }
 }
