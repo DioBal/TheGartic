@@ -45,8 +45,12 @@ public class InariGiftAction extends AbstractGameAction {
                     }
 
                     //Add here the Exhaust
-                    //disCard.setCostForTurn(0);
-                    //disCard2.setCostForTurn(0);
+                    if (!disCard.exhaust){
+                        disCard.exhaust = true;
+                    }
+                    if (!disCard2.exhaust){
+                        disCard2.exhaust = true;
+                    }
                     disCard.current_x = -1000.0F * Settings.xScale;
                     disCard2.current_x = -1000.0F * Settings.xScale + AbstractCard.IMG_HEIGHT_S;
                     if (this.amount == 1) {
