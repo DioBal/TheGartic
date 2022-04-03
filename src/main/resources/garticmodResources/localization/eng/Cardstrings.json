@@ -337,5 +337,9 @@
   "${ModID}:InariBarrage": {
     "NAME": "Inari Barrage",
     "DESCRIPTION": "Deal !M! damage 5 times to the highest health enemy."
+  },
+  "${ModID}:InariGift": {
+    "NAME": "Inari Gift",
+    "DESCRIPTION": "Weeeeeell..."
   }
 }
