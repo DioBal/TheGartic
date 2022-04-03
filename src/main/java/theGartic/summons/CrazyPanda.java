@@ -6,12 +6,14 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import theGartic.GarticMod;
 import theGartic.actions.PandaSmackAction;
+import theGartic.util.OrbTargetArrow;
 
 import static java.lang.Math.pow;
 import static theGartic.GarticMod.makeOrbPath;
@@ -76,6 +78,8 @@ public class CrazyPanda extends AbstractSummonOrb
 
     @Override
     public void updateAnimation() {
+        if (AbstractDungeon.screen == GarticMod.Enums.ORB_TARGET_SCREEN && OrbTargetArrow.subscriber.isTarget(this))
+            updateReticle();
         bobEffect.update();
         if (channelAnimTimer != 0.0F) {
             channelAnimTimer -= Gdx.graphics.getDeltaTime();
@@ -111,6 +115,8 @@ public class CrazyPanda extends AbstractSummonOrb
 
     @Override
     public void render(SpriteBatch sb) {
+        if (AbstractDungeon.screen == GarticMod.Enums.ORB_TARGET_SCREEN && OrbTargetArrow.subscriber.isTarget(this))
+            renderReticle(sb);
         sb.setColor(Color.WHITE.cpy());
         sb.setBlendFunction(770, 771);
         sb.draw(img, cX - 48.0F, cY - 48.0F, 48.0F, 48.0F, 96.0F, 96.0F, scale, scale, rotation, 0, 0, 96, 96, false, false);

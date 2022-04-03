@@ -148,6 +148,10 @@
   "${ModID}:DistractingFox": {
     "NAME": "Distracting Fox",
     "DESCRIPTION": "${ModID}:Unsummon a fox.  If you do, at the end of your turn, gain !M! Block.",
+    "EXTENDED_DESCRIPTION": ["I can only play this if I have a fox summoned.",
+      "Fox",
+      "Choose a fox to unsummon."
+      ],
     "FLAVOR": "This card used to be called Fur Armor, but then people didn't like it."
   },
   "${ModID}:Pandamonium": {

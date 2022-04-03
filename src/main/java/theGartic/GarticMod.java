@@ -85,6 +85,8 @@ public class GarticMod implements
         public static AbstractCard.CardTags SUMMON;
         @SpireEnum
         public static AbstractGameAction.AttackEffect GUNSHOT;
+        @SpireEnum
+        public static AbstractDungeon.CurrentScreen ORB_TARGET_SCREEN;
     }
 
     public static String makePath(String resourcePath) {
