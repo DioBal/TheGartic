@@ -1,5 +1,6 @@
 package theGartic.actions;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DescriptionLine;
@@ -7,9 +8,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.GameDictionary;
 import com.megacrit.cardcrawl.screens.CardRewardScreen;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
+import theGartic.vfx.InariGiftShowCardAndAddToDrawPileEffect;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -56,11 +55,11 @@ public class InariGiftAction extends AbstractGameAction {
                     disCard.current_x = -1000.0F * Settings.xScale;
                     disCard2.current_x = -1000.0F * Settings.xScale + AbstractCard.IMG_HEIGHT_S;
                     if (this.amount == 1) {
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(disCard, false, false));
+                        AbstractDungeon.effectList.add(new InariGiftShowCardAndAddToDrawPileEffect(disCard, false, false));
                         disCard2 = null;
                     } else {
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(disCard, false, false));
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(disCard2, false, false));
+                        AbstractDungeon.effectList.add(new InariGiftShowCardAndAddToDrawPileEffect(disCard, false, false));
+                        AbstractDungeon.effectList.add(new InariGiftShowCardAndAddToDrawPileEffect(disCard2, false, false));
                     }
 
                     AbstractDungeon.cardRewardScreen.discoveryCard = null;
