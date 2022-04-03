@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import theGartic.actions.InariGiftAction;
 import theGartic.cards.EasyModalChoiceCard;
 
 import static theGartic.GarticMod.makeID;
@@ -26,7 +27,7 @@ public class InariGift extends EasyModalChoiceCard {
 
     public InariGift(){
         super(NAME, DESCRIPTION, () -> {
-            atb(new DiscoveryAction(true, 1));
+            atb(new InariGiftAction(true, 1));
         });
 
         baseMagicNumber = magicNumber;
@@ -36,7 +37,7 @@ public class InariGift extends EasyModalChoiceCard {
 
     public InariGift(int magicNumber){
         super(NAME, DESCRIPTION, () -> {
-            atb(new DiscoveryAction(true, magicNumber));
+            atb(new InariGiftAction(true, magicNumber));
         });
 
         baseMagicNumber = magicNumber;
