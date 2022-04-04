@@ -33,7 +33,7 @@ public class HungryFox extends AbstractSummonOrb
 
     @Override
     public void updateAnimation() {
-        if (AbstractDungeon.screen == GarticMod.Enums.ORB_TARGET_SCREEN && OrbTargetArrow.subscriber.isTarget(this))
+        if (AbstractDungeon.screen == GarticMod.Enums.ORB_TARGET_SCREEN && OrbTargetArrow.subscriber.isAcceptableTarget(this) && hb.hovered)
             updateReticle();
         cX = MathHelper.orbLerpSnap(cX, AbstractDungeon.player.animX + tX);
         cY = MathHelper.orbLerpSnap(cY, AbstractDungeon.player.animY + tY);

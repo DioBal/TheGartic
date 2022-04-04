@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.GameCursor;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
@@ -88,7 +87,7 @@ public class OrbTargetArrow {
             if (InputHelper.justClickedLeft || CInputActionSet.select.isJustPressed()) {
                 InputHelper.justClickedLeft = false;
                 CInputActionSet.select.unpress();
-                if (hoveredOrb != null && subscriber.isTarget(hoveredOrb)) {
+                if (hoveredOrb != null && subscriber.isAcceptableTarget(hoveredOrb)) {
                     if (AbstractDungeon.player.hasPower(SurroundedPower.POWER_ID))
                         AbstractDungeon.player.flipHorizontal = hoveredOrb.cX < AbstractDungeon.player.drawX;
                     use(source, hoveredOrb);
@@ -112,7 +111,7 @@ public class OrbTargetArrow {
             controlPoint = new Vector2(x - (x - from.x) / 4.0F, y + (y - from.y - 40.0F * Settings.scale) / 2.0F);
             float arrowScale;
 
-            if (hoveredOrb == null || !subscriber.isTarget(hoveredOrb)) {
+            if (hoveredOrb == null || !subscriber.isAcceptableTarget(hoveredOrb)) {
                 arrowScale = Settings.scale;
                 arrowScaleTimer = 0.0F;
                 sb.setColor(new Color(1.0F, 1.0F, 1.0F, 1.0F));
@@ -158,6 +157,6 @@ public class OrbTargetArrow {
 
         void end();
 
-        boolean isTarget(AbstractSummonOrb orb);
+        boolean isAcceptableTarget(AbstractSummonOrb orb);
     }
 }
