@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.BiteEffect;
-import theGartic.cards.DireWolfHelper;
 
+import static theGartic.summons.DireWolfSummon.helperCard;
 import static theGartic.util.Wiz.*;
 
 public class DireWolfAction extends AbstractGameAction {
@@ -19,7 +19,6 @@ public class DireWolfAction extends AbstractGameAction {
     private DamageInfo info;
     private static final float DURATION = 0.15F;
     private static final boolean muteSfx = false;
-    private static DireWolfHelper helperCard = new DireWolfHelper(1);
 
     public DireWolfAction(int stacks, int amount) {
         this.amount = amount;
@@ -54,7 +53,7 @@ public class DireWolfAction extends AbstractGameAction {
         target = weakestMonster;
         helperCard.calculateCardDamage((AbstractMonster) target);
         int damage = helperCard.damage;
-        // You declared this info but then didn't use it
+
         info = new DamageInfo(adp(), damage, DamageType.THORNS);
         if (!shouldCancelAction() && target != null) {
             if (duration == DURATION) {

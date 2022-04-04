@@ -89,5 +89,15 @@
       " cards.",
       " This Power is removed at the end of this turn."
     ]
+  },
+  "${ModID}:BlockAndLoadPower": {
+    "NAME": "Block and Load",
+    "DESCRIPTIONS": [
+      "After you gain #yBlock, add #b",
+      " random ",
+      " random upgraded ",
+      " Attack to your hand.",
+      " Attacks to your hand."
+    ]
   }
 }

@@ -25,7 +25,6 @@ import static theGartic.util.Wiz.atb;
 import static theGartic.util.Wiz.att;
 
 public abstract class AbstractEasyCard extends CustomCard {
-
     protected final CardStrings cardStrings;
 
     public int secondMagic;

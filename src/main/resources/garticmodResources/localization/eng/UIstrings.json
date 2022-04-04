@@ -1,0 +1,13 @@
+{
+  "${ModID}:Resolute": {
+    "NAME": "Resolute",
+    "DESCRIPTION": [
+      "After you play an Attack, gain #b", " Block"
+    ]
+  },
+  "${ModID}:ConsumeMod": {
+    "TEXT": [
+      "${ModID}:Consume. NL "
+    ]
+  }
+}
