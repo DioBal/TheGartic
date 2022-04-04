@@ -99,7 +99,7 @@ public abstract class AbstractSummonOrb extends CustomOrb
     public void updateAnimation()
     {
         super.updateAnimation();
-        if (AbstractDungeon.screen == GarticMod.Enums.ORB_TARGET_SCREEN && OrbTargetArrow.subscriber.isTarget(this))
+        if (AbstractDungeon.screen == GarticMod.Enums.ORB_TARGET_SCREEN && OrbTargetArrow.subscriber.isAcceptableTarget(this) && hb.hovered)
             updateReticle();
         angle += Gdx.graphics.getDeltaTime() * 45.0f;
         vfxTimer -= Gdx.graphics.getDeltaTime();
@@ -114,7 +114,7 @@ public abstract class AbstractSummonOrb extends CustomOrb
     @Override
     public void render(SpriteBatch sb)
     {
-        if (AbstractDungeon.screen == GarticMod.Enums.ORB_TARGET_SCREEN && OrbTargetArrow.subscriber.isTarget(this))
+        if (AbstractDungeon.screen == GarticMod.Enums.ORB_TARGET_SCREEN && OrbTargetArrow.subscriber.isAcceptableTarget(this) && hb.hovered)
             renderReticle(sb);
         sb.setColor(new Color(1.0f, 1.0f, 1.0f, 1.0f));
         sb.draw(img, cX - 48.0f, cY - 48.0f + bobEffect.y, 48.0f, 48.0f, 96.0f, 96.0f, scale + MathUtils.sin(angle / PI_4) * ORB_WAVY_DIST * Settings.scale, scale, 0, 0, 0, 96, 96, false, false);
