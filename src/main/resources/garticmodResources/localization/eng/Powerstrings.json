@@ -26,6 +26,8 @@
     "NAME": "Pandamonium",
     "DESCRIPTIONS": [
       "At the start of your turn, summon a #yCrazy #yPanda that deals #b",
+      "At the start of your turn, summon #b",
+      " #yCrazy #yPandas that deal #b",
       " damage."
     ]
   },
