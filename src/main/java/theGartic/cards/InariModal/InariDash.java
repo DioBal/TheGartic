@@ -12,7 +12,7 @@ import theGartic.powers.InariDashPower;
 import static theGartic.GarticMod.makeID;
 import static theGartic.util.Wiz.atb;
 
-public class InariDash extends EasyModalChoiceCard {
+public class InariDash extends InariCard {
 
     public static final String ID = makeID(InariDash.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -50,5 +50,11 @@ public class InariDash extends EasyModalChoiceCard {
             this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[1];
         }
         initializeDescription();
+    }
+
+    @Override
+    public void updateMagicNumber(int amount){
+        magicNumber += amount;
+        baseMagicNumber = magicNumber;
     }
 }

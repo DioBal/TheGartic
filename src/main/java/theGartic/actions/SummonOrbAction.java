@@ -66,7 +66,8 @@ public class SummonOrbAction extends AbstractGameAction
                 return true;
             }
             if (orb.name == summon.name && orb.ID.equals(InariWhiteFoxSummon.ORB_ID)){
-                ((InariWhiteFoxSummon)orb).passiveAmount += orb.passiveAmount;
+                ((InariWhiteFoxSummon)orb).passiveAmount += summon.passiveAmount;
+
                 AbstractDungeon.actionManager.addToBottom(
                         new VFXAction(new OrbFlareEffect(orb, OrbFlareEffect.OrbFlareColor.PLASMA), 0.2f));
                 return true;
