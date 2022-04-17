@@ -53,7 +53,10 @@ public class PandamoniumPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        if (amount == 1)
+            description = DESCRIPTIONS[0] + amount2 + DESCRIPTIONS[3];
+        else
+            description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[2] + amount2 + DESCRIPTIONS[3];
     }
 
     public void renderAmount(SpriteBatch sb, float x, float y, Color c) {
