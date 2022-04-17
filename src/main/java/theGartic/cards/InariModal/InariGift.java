@@ -12,7 +12,7 @@ import theGartic.cards.EasyModalChoiceCard;
 import static theGartic.GarticMod.makeID;
 import static theGartic.util.Wiz.atb;
 
-public class InariGift extends InariCard {
+public class InariGift extends EasyModalChoiceCard {
 
     /*
     Step 1: Use Colorless Potion effect.
@@ -43,11 +43,5 @@ public class InariGift extends InariCard {
         baseMagicNumber = magicNumber;
 
         initializeDescription();
-    }
-
-    @Override
-    public void updateMagicNumber(int amount){
-        magicNumber += amount;
-        baseMagicNumber = magicNumber;
     }
 }

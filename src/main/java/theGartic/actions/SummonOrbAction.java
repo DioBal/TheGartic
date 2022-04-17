@@ -9,6 +9,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
+import jdk.nashorn.internal.runtime.Debug;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import theGartic.powers.InvisibleSummonPower;
 import theGartic.summons.CrazyPanda;
 import theGartic.summons.DireWolfSummon;
@@ -58,20 +61,15 @@ public class SummonOrbAction extends AbstractGameAction
     {
         for (AbstractOrb orb : AbstractDungeon.player.orbs)
         {
-            if(orb.name == summon.name && !orb.ID.equals(CrazyPanda.ORB_ID) && !orb.ID.equals(HungryFox.ORB_ID) && !orb.ID.equals(DireWolfSummon.ORB_ID))
+            if(orb.name == summon.name && !orb.ID.equals(InariWhiteFoxSummon.ORB_ID)
+                    && !orb.ID.equals(CrazyPanda.ORB_ID) && !orb.ID.equals(HungryFox.ORB_ID) && !orb.ID.equals(DireWolfSummon.ORB_ID))
             {
                 orb.evokeAmount += stack;
                 AbstractDungeon.actionManager.addToBottom(
                         new VFXAction(new OrbFlareEffect(orb, OrbFlareEffect.OrbFlareColor.DARK), 0.1f));
                 return true;
             }
-            if (orb.name == summon.name && orb.ID.equals(InariWhiteFoxSummon.ORB_ID)){
-                ((InariWhiteFoxSummon)orb).passiveAmount += summon.passiveAmount;
 
-                AbstractDungeon.actionManager.addToBottom(
-                        new VFXAction(new OrbFlareEffect(orb, OrbFlareEffect.OrbFlareColor.PLASMA), 0.2f));
-                return true;
-            }
             if(orb.name == summon.name && orb.ID.equals(DireWolfSummon.ORB_ID))
             {
                 orb.passiveAmount += stack;

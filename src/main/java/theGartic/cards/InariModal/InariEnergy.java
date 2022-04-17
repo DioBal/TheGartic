@@ -6,13 +6,14 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
+import theGartic.GarticMod;
 import theGartic.cards.EasyModalChoiceCard;
 import theGartic.powers.InariDashPower;
 
 import static theGartic.GarticMod.makeID;
 import static theGartic.util.Wiz.atb;
 
-public class InariEnergy extends InariCard {
+public class InariEnergy extends EasyModalChoiceCard {
 
     public static final String ID = makeID(InariEnergy.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -32,16 +33,11 @@ public class InariEnergy extends InariCard {
     public InariEnergy(int magicNumber){
         super(NAME, DESCRIPTION, () -> {
             AbstractPlayer p = AbstractDungeon.player;
+            GarticMod.logger.info(magicNumber);
             atb(new ApplyPowerAction(p,p, new EnergizedPower(p,2*magicNumber)));
         });
 
         baseMagicNumber = magicNumber * 2;
         initializeDescription();
-    }
-
-    @Override
-    public void updateMagicNumber(int amount){
-        magicNumber += amount;
-        baseMagicNumber = magicNumber * 2;
     }
 }

@@ -16,7 +16,7 @@ import theGartic.cards.EasyModalChoiceCard;
 import static theGartic.GarticMod.makeID;
 import static theGartic.util.Wiz.atb;
 
-public class InariFlames extends InariCard {
+public class InariFlames extends EasyModalChoiceCard {
 
     public static final String ID = makeID(InariFlames.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -101,11 +101,5 @@ public class InariFlames extends InariCard {
         }
 
         return monsterWithLessHealth;
-    }
-
-    @Override
-    public void updateMagicNumber(int amount){
-        magicNumber += amount;
-        baseMagicNumber = 1+magicNumber;
     }
 }

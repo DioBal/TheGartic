@@ -26,13 +26,13 @@ public class InariWhiteFoxSummon extends AbstractSummonOrb
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
     private static int BASE_PASSIVE_AMOUNT = 1;
-    private static ArrayList<InariCard> inariChoicesDeck;
+    private static ArrayList<EasyModalChoiceCard> inariChoicesDeck;
     private static int optionsShown = 0;
 
     public InariWhiteFoxSummon(int amount)
     {
         super(ORB_ID, orbString.NAME, amount, 0, makeOrbPath("MischievousFox.png"));
-        inariChoicesDeck = new ArrayList<InariCard>();
+        inariChoicesDeck = new ArrayList<EasyModalChoiceCard>();
         initInariChoicesDeck();
         shuffleInariChoicesDeck();
     }
@@ -75,8 +75,6 @@ public class InariWhiteFoxSummon extends AbstractSummonOrb
         optionsShown += 1;
     }
 
-
-
     @Override
     public void updateDescription()
     {
@@ -86,12 +84,5 @@ public class InariWhiteFoxSummon extends AbstractSummonOrb
     @Override
     public AbstractOrb makeCopy() {
         return new InariWhiteFoxSummon(passiveAmount);
-    }
-
-    public void improveInariCards(int amount){
-        for (int i = 0; i < inariChoicesDeck.size(); i++){
-            inariChoicesDeck.get(i).updateMagicNumber(amount);
-
-        }
     }
 }
