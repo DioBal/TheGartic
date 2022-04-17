@@ -30,7 +30,7 @@ public class DistractingFoxAction extends AbstractGameAction implements OrbTarge
 			for (AbstractOrb orb : adp().orbs) {
 				if (orb instanceof AbstractSummonOrb) {
 					AbstractSummonOrb sorb = (AbstractSummonOrb) orb;
-					if (isTarget(sorb)) {
+					if (isAcceptableTarget(sorb)) {
 						foxCount++;
 						lastOrb = sorb;
 					}
@@ -67,7 +67,7 @@ public class DistractingFoxAction extends AbstractGameAction implements OrbTarge
 	}
 
 	@Override
-	public boolean isTarget(AbstractSummonOrb orb) {
+	public boolean isAcceptableTarget(AbstractSummonOrb orb) {
 		return orb.getClass().getSimpleName().contains(DistractingFox.FOX_STRING);
 	}
 
