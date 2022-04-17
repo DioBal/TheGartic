@@ -28,7 +28,6 @@ public class QuickCast extends AbstractEasyCard {
     private static final int COST = 1;
     private static final int DAMAGE = 7;
     private static final int UPGRADE_PLUS_DMG = 2;
-    private ArrayList<AbstractCard> Choices = new ArrayList<>();
 
     public QuickCast () {
         super(ID,COST,TYPE,RARITY,TARGET,COLOR);
@@ -41,6 +40,7 @@ public class QuickCast extends AbstractEasyCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        ArrayList<AbstractCard> Choices = new ArrayList<>();
         Choices.add(new BoomingBlade(m));
         Choices.add(new ShieldofLight(m));
         for (AbstractCard c : Choices){
