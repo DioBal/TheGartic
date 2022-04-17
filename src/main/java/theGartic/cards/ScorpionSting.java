@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
+import theGartic.TheGartic;
 import theGartic.util.Wiz;
 
 import static theGartic.GarticMod.makeCardPath;
@@ -21,7 +22,7 @@ public class ScorpionSting extends AbstractEasyCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = CardColor.COLORLESS;
+    public static final CardColor COLOR = TheGartic.Enums.GARTIC_COLOR;
 
     private static final int COST = 2;
     private static final int DAMAGE = 6;

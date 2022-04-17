@@ -30,5 +30,6 @@ public class CarryOn extends AbstractEasyCard {
 
     public void upp() {
         upSecondMagic(UPGRADE_SECOND_MAGIC);
+        uDesc();
     }
 }

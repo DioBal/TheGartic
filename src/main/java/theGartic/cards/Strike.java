@@ -8,7 +8,6 @@ import static theGartic.GarticMod.makeID;
 
 public class Strike extends AbstractEasyCard {
     public final static String ID = makeID("Strike");
-    // intellij stuff attack, enemy, basic, 6, 3,  , , , 
 
     public Strike() {
         super(ID, 1, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
@@ -18,7 +17,7 @@ public class Strike extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.NONE);
+        dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
     }
 
     public void upp() {

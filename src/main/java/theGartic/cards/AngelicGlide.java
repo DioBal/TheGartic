@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import theGartic.TheGartic;
 import theGartic.powers.PlayerFlightPower;
 import theGartic.util.Wiz;
 
@@ -19,10 +20,8 @@ public class AngelicGlide extends AbstractEasyCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = CardColor.COLORLESS;
+    public static final CardColor COLOR = TheGartic.Enums.GARTIC_COLOR;
     private static final int COST = 2;
-    private static final int DAMAGE = 6;
-    private static final int UPGRADE_PLUS_DMG = 2;
 
     public AngelicGlide() {
         super(ID, COST, TYPE, RARITY, TARGET, COLOR);
@@ -35,7 +34,7 @@ public class AngelicGlide extends AbstractEasyCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        Wiz.applyToSelf(new PlayerFlightPower(p, p, magicNumber));
+        Wiz.applyToSelf(new PlayerFlightPower(p, magicNumber));
     }
 
     // Upgraded stats.

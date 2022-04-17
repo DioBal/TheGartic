@@ -1,0 +1,47 @@
+{
+  "${ModID}:FireImpSummon": {
+    "NAME": "Fire Imp",
+    "DESCRIPTION": [
+      "Whenever you play an attack, deal ", " damage to a random enemy ", " time.", " times."
+    ]
+  },
+  "${ModID}:HungryFox": {
+    "NAME": "Hungry Fox",
+    "DESCRIPTION": [
+      "At the end of your turn will deal #b",
+      " damage to the lowest health enemy."
+    ]
+  },
+  "${ModID}:CrazyPanda": {
+    "NAME": "Crazy Panda",
+    "DESCRIPTION": [
+      "At the end of your turn will deal #b",
+      " damage to a random enemy and inflict #yWeak or #yVulnerable."
+    ]
+  },
+  "${ModID}:FetchingFoxSummon": {
+  "NAME": "Fetching Fox",
+  "DESCRIPTION": [
+    "At the start of the turn, will either draw you a card or steal a card from you until next turn (50% chance).",
+    "At the start of the turn, will either draw you ",
+    " cards or steal ",
+    " cards from you until next turn (50% chance)."
+  ]
+},
+  "${ModID}:MischievousFoxSummon": {
+    "NAME": "Mischievous Fox",
+    "DESCRIPTION": [
+      "After you play a card, will either deal #b",
+      " damage to you, or #b",
+      " damage to a random enemy (50% chance.)"
+    ]
+  },
+  "${ModID}:DireWolfSummon": {
+    "NAME": "Dire Wolf",
+    "DESCRIPTION": [
+      "At the end of your turn it deals #b",
+      " damage #b",
+      " times to the lowest hp enemy."
+    ]
+  }
+}

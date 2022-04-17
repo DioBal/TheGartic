@@ -1,1 +1,94 @@
-{}
+{
+  "${ModID}:GlassArmorPower": {
+  "NAME": "Glass Armor",
+    "DESCRIPTIONS": [
+      "At the end of your turn, gain #b",
+      " #yBlock. Receiving unblocked attack damage removes all #yGlass #yArmor.",
+      "At the end of its turn, gains #b",
+      " #yBlock. Receiving unblocked attack damage removes all #yGlass #yArmor."
+    ]  
+  },
+  "${ModID}:StolenCardPower": {
+    "NAME": "Stolen Cards",
+    "DESCRIPTIONS": [
+      "Oh no! A fox has stolen ",
+      " from you! They will be returned at the start of your next turn."
+    ]
+  },
+  "${ModID}:SummonCostRefundPower": {
+    "NAME": "Summon Energy Gain",
+    "DESCRIPTIONS": [
+      "The next time you play a #ySummon card, gain #b",
+      " [E]."
+    ]
+  },
+  "${ModID}:PandamoniumPower": {
+    "NAME": "Pandamonium",
+    "DESCRIPTIONS": [
+      "At the start of your turn, summon a #yCrazy #yPanda that deals #b",
+      " damage."
+    ]
+  },
+  "${ModID}:PlayerFlightPower": {
+    "NAME": "Flight",
+    "DESCRIPTIONS": [
+      "Reduce attack damage taken by #b",
+      "% .  Lose a stack when you receive attack damage and at the start of your turn."
+    ]
+  },
+  "${ModID}:HoverPower": {
+    "NAME": "Hover",
+    "DESCRIPTIONS": [
+      "#yFlight is not removed this turn.",
+      "#yFlight is not removed for #b",
+      "turns."
+    ]
+  },
+  "${ModID}:CelestialCraftingPower": {
+    "NAME": "Celestial Crafting",
+    "DESCRIPTIONS": [
+      "When you create a card, if you are in #yFlight, add a copy to your discard pile.",
+      "When you create a card, if you are in #yFlight, add #b",
+      " copies to your discard pile."
+    ]
+  },
+  "${ModID}:DoubleDamagePower": {
+    "NAME": "Double Damage",
+    "DESCRIPTIONS": [
+      "Your next #yAttack deals double damage.",
+      "Your next #b",
+      " #yAttacks deals double damage."
+    ]
+  },
+  "${ModID}:AsStonePower": {
+    "NAME": "As Stone",
+    "DESCRIPTIONS": [
+      "Whenever you gain #yBlock, gain #b",
+      " #yThorns."
+    ]
+  },
+  "${ModID}:GambleNextTurnPower": {
+    "NAME": "Long Shot",
+    "DESCRIPTIONS": [
+      "Next turn, #ydiscard any number of cards then draw that many."
+    ]
+  },
+  "${ModID}:PowerofCreation": {
+    "NAME": "Power of Creation",
+    "DESCRIPTIONS": [
+      "The first #b",
+      " card you create each turn cost #b1 less.",
+      " cards you create each turn cost #b1 less."
+    ]
+  },
+  "${ModID}:BlockAndLoadPower": {
+    "NAME": "Block and Load",
+    "DESCRIPTIONS": [
+      "After you gain #yBlock, add #b",
+      " random ",
+      " random upgraded ",
+      " Attack to your hand.",
+      " Attacks to your hand."
+    ]
+  }
+}
