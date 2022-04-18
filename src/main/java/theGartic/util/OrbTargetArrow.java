@@ -16,7 +16,6 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.powers.SurroundedPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theGartic.summons.AbstractSummonOrb;
 
@@ -52,14 +51,6 @@ public class OrbTargetArrow {
         for (int i = 0; i < points.length; i++) points[i] = new Vector2();
     }
 
-    public static void open(Vector2 s) {
-        source = null;
-        from = s;
-        isActive = true;
-        GameCursor.hidden = true;
-        for (int i = 0; i < points.length; i++) points[i] = new Vector2();
-    }
-
     public static void close() {
         isActive = false;
         subscriber.end();
@@ -88,15 +79,12 @@ public class OrbTargetArrow {
                 InputHelper.justClickedLeft = false;
                 CInputActionSet.select.unpress();
                 if (hoveredOrb != null && subscriber.isAcceptableTarget(hoveredOrb)) {
-                    if (AbstractDungeon.player.hasPower(SurroundedPower.POWER_ID))
-                        AbstractDungeon.player.flipHorizontal = hoveredOrb.cX < AbstractDungeon.player.drawX;
                     use(source, hoveredOrb);
                     if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT)
                         AbstractDungeon.actionManager.addToBottom(new HandCheckAction());
                     close();
                     GameCursor.hidden = false;
                 }
-
             }
         }
     }
