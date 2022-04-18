@@ -243,4 +243,6 @@ public abstract class AbstractEasyCard extends CustomCard {
     protected void upSecondDamage(int x) {
         upgradeSecondDamage(x);
     }
+
+    public void triggerOnUnsummon() {}
 }
