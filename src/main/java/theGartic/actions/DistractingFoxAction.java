@@ -24,34 +24,28 @@ public class DistractingFoxAction extends AbstractGameAction implements OrbTarge
 
 	@Override
 	public void update() {
+		if (OrbTargetScreen.Inst.isActive)
+			return;
 		int foxCount = 0;
 		AbstractSummonOrb lastOrb = null;
-		if (duration == startDuration) {
-			for (AbstractOrb orb : adp().orbs) {
-				if (orb instanceof AbstractSummonOrb) {
-					AbstractSummonOrb sorb = (AbstractSummonOrb) orb;
-					if (isAcceptableTarget(sorb)) {
-						foxCount++;
-						lastOrb = sorb;
-					}
+		for (AbstractOrb orb : adp().orbs) {
+			if (orb instanceof AbstractSummonOrb) {
+				AbstractSummonOrb sorb = (AbstractSummonOrb) orb;
+				if (isAcceptableTarget(sorb)) {
+					foxCount++;
+					lastOrb = sorb;
 				}
 			}
-			if (foxCount == 0) {
-				isDone = true;
-				return;
-			}
-			else if (foxCount == 1) {
-				lastOrb.unSummon();
-				applyToSelfTop(new MetallicizePower(adp(), amount));
-			} else {
-				OrbTargetScreen.Inst.open(this, tipString);
-				tickDuration();
-			}
-
-			if(OrbTargetScreen.Inst.isActive && !OrbTargetArrow.isActive)
-				isDone = true;
-		} else
+		}
+		if (foxCount == 0) {
 			isDone = true;
+		}
+		else if (foxCount == 1) {
+			lastOrb.unSummon();
+			applyToSelfTop(new MetallicizePower(adp(), amount));
+			isDone = true;
+		} else
+			OrbTargetScreen.Inst.open(this, tipString);
 	}
 
 	@Override
