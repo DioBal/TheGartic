@@ -260,7 +260,10 @@
   },
   "${ModID}:ToothAndClaw": {
     "NAME": "Tooth And Claw",
-    "DESCRIPTION": "garticmod:Unsummon a Summon. NL If you did, Summon a ${ModID}:Dire\u00a0Wolf that deals 8 damage !M! times. NL Damage is affected by attack modifiers."
+    "DESCRIPTION": "garticmod:Unsummon. If you did, Summon a ${ModID}:Dire\u00a0Wolf that deals !${ModID}:m2! base damage !M! times. NL Damage is affected by attack modifiers.",
+    "EXTENDED_DESCRIPTION": ["I can only play this if I have a summoned creature.",
+      "Choose a creature to unsummon."
+    ]
   },
   "${ModID}:FriendlyLick": {
     "NAME": "Friendly Lick",
@@ -387,5 +390,15 @@
     "NAME": "Block and Load",
     "DESCRIPTION": "Enter garticmod:Resolute. NL Whenever you gain Block this turn, add a random Attack to your hand.",
     "UPGRADE_DESCRIPTION": "Enter garticmod:Resolute. NL Whenever you gain Block this turn, add a random upgraded Attack to your hand."
+  },
+  "${ModID}:WasteNot": {
+    "NAME": "Waste Not",
+    "DESCRIPTION": "Deal !D! damage. NL Whenever you garticmod:Unsummon, return this from the discard pile to your hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Whenever you garticmod:Unsummon, return this from the discard pile to your hand. NL Grave."
+  },
+  "${ModID}:UncannyHunger": {
+    "NAME": "Uncanny Hunger",
+    "DESCRIPTION": "At the start of your turn, garticmod:Unsummon. NL If you did, gain !M! Energy and draw !${ModID}:m2! cards.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, garticmod:Unsummon. NL If you did, gain !M! Energy and draw !${ModID}:m2! cards."
   }
 }

@@ -101,5 +101,13 @@
       " Attack to your hand.",
       " Attacks to your hand."
     ]
+  },
+  "${ModID}:UncannyHungerPower": {
+    "NAME": "Uncanny Hunger",
+    "DESCRIPTIONS": [
+      "At the start of your turn, #yUnsummon. If you did, gain ",
+      " and draw ",
+      " cards."
+    ]
   }
 }
