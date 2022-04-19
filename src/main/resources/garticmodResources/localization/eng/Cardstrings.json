@@ -394,7 +394,7 @@
   "${ModID}:WasteNot": {
     "NAME": "Waste Not",
     "DESCRIPTION": "Deal !D! damage. NL Whenever you garticmod:Unsummon, return this from the discard pile to your hand.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Whenever you garticmod:Unsummon, return this from the discard pile to your hand. NL Grave."
+    "UPGRADE_DESCRIPTION": "Grave. Deal !D! damage. NL Whenever you garticmod:Unsummon, return this from the discard pile to your hand."
   },
   "${ModID}:UncannyHunger": {
     "NAME": "Uncanny Hunger",
