@@ -399,6 +399,7 @@
   "${ModID}:UncannyHunger": {
     "NAME": "Uncanny Hunger",
     "DESCRIPTION": "At the start of your turn, garticmod:Unsummon. NL If you did, gain !M! Energy and draw !${ModID}:m2! cards.",
-    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, garticmod:Unsummon. NL If you did, gain !M! Energy and draw !${ModID}:m2! cards."
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, garticmod:Unsummon. NL If you did, gain !M! Energy and draw !${ModID}:m2! cards.",
+    "EXTENDED_DESCRIPTION": ["Your hunger must be sated."]
   }
 }

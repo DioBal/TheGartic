@@ -3,30 +3,26 @@ package theGartic.actions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.powers.MetallicizePower;
-import theGartic.cards.DistractingFox;
+import theGartic.cards.UncannyHunger;
 import theGartic.summons.AbstractSummonOrb;
 import theGartic.util.OrbTargetArrow;
 import theGartic.util.OrbTargetScreen;
 
 import static theGartic.util.Wiz.adp;
-import static theGartic.util.Wiz.applyToSelfTop;
 
 public class UncannyHungerUnsummonAction extends AbstractGameAction implements OrbTargetArrow.OrbTargetArrowSubscriber {
-    private int magicNumber;
-    private int secondMagic;
-    private String tipString;
+    private int energyGain;
+    private int cardDraw;
+    private static String tipString;
 
-    public UncannyHungerUnsummonAction(String tipString, int magicNumber, int secondMagic) {
-        this.tipString = tipString;
-        this.magicNumber = magicNumber;
-        this.secondMagic = secondMagic;
+    public UncannyHungerUnsummonAction(int magicNumber, int secondMagic) {
+        if (tipString == null)
+            tipString = UncannyHunger.getTipString();
+        energyGain = magicNumber;
+        cardDraw = secondMagic;
         actionType = ActionType.POWER;
         startDuration = duration = Settings.ACTION_DUR_XFAST;
     }
@@ -48,18 +44,17 @@ public class UncannyHungerUnsummonAction extends AbstractGameAction implements O
         }
         if (summonCount == 0) {
             isDone = true;
-        }
+        } else if (summonCount == 1)
+            receiveTargetOrb(adp(), lastOrb);
         else
             OrbTargetScreen.Inst.open(this, tipString);
     }
 
-    public void use(AbstractPlayer p, AbstractMonster m) {}
-
     @Override
     public void receiveTargetOrb(AbstractCreature source, AbstractSummonOrb orb) {
         orb.unSummon();
-        addToBot(new GainEnergyAction(magicNumber));
-        addToBot(new DrawCardAction(AbstractDungeon.player,secondMagic));
+        addToBot(new GainEnergyAction(energyGain));
+        addToBot(new DrawCardAction(cardDraw));
         isDone = true;
     }
 
@@ -70,10 +65,10 @@ public class UncannyHungerUnsummonAction extends AbstractGameAction implements O
 
     @Override
     public boolean isAcceptableTarget(AbstractSummonOrb orb) {
-        return orb.getClass().getSimpleName().contains(DistractingFox.FOX_STRING);
+        return isOrbTarget(orb);
     }
 
     public static boolean isOrbTarget(AbstractSummonOrb orb) {
-        return orb instanceof AbstractSummonOrb;
+        return true;
     }
 }
