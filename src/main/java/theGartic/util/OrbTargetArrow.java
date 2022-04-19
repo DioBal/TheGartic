@@ -145,6 +145,6 @@ public class OrbTargetArrow {
 
         void end();
 
-        boolean isAcceptableTarget(AbstractSummonOrb orb);
+        default boolean isAcceptableTarget(AbstractSummonOrb orb) {return true;}
     }
 }
