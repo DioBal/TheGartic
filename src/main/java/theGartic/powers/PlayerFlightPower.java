@@ -9,56 +9,52 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theGartic.GarticMod;
+import theGartic.actions.ReduceFlightMaybeAction;
+
+import static theGartic.util.Wiz.*;
 
 public class PlayerFlightPower extends AbstractPower {
-    public AbstractCreature source;
-    public static final String POWER_ID = GarticMod.makeID("PlayerFlight");
+    public static final String POWER_ID = GarticMod.makeID(PlayerFlightPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    public PlayerFlightPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public static final int DMG_REDUCTION_PERCENT = 50;
+    public static final float DMG_REDUCTION_MULTIPLIER = DMG_REDUCTION_PERCENT/100.0f;
+
+    public PlayerFlightPower(final AbstractCreature owner, final int amount) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
-        this.source = source;
-        this.loadRegion("flight");
+        loadRegion("flight");
         type = PowerType.BUFF;
         isTurnBased = false;
 
-        // We load those txtures here.
-
         updateDescription();
     }
-    public float atDamageFinalReceive(float damage, DamageInfo.DamageType type) {
-        return this.calculateDamageTakenAmount(damage, type);
+
+    public float atDamageReceive(float damage, DamageInfo.DamageType type) {
+        return type == DamageInfo.DamageType.NORMAL ? damage*DMG_REDUCTION_MULTIPLIER : damage;
     }
 
-    private float calculateDamageTakenAmount(float damage, DamageInfo.DamageType type) {
-        return type != DamageInfo.DamageType.HP_LOSS && type != DamageInfo.DamageType.THORNS ? damage / 2.0F : damage;
-    }
     public void atStartOfTurn() {
-        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            this.flashWithoutSound();
-            this.addToBot(new ReducePowerAction(this.owner, this.owner, this, 1));
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT &&
+                !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+            atb(new ReduceFlightMaybeAction());
         }
 
     }
     public int onAttacked(DamageInfo info, int damageAmount) {
-        Boolean willLive = this.calculateDamageTakenAmount((float)damageAmount, info.type) < (float)this.owner.currentHealth;
-        if (info.owner != null && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount > 0 && willLive) {
-            this.flash();
-            this.addToBot(new ReducePowerAction(this.owner, this.owner, this, 1));
+        if (info.owner != null && info.type == DamageInfo.DamageType.NORMAL && damageAmount > 0 && !adp().hasPower(HoverPower.POWER_ID)) {
+            flash();
+            att(new ReducePowerAction(owner, owner, this, 1));
         }
 
         return damageAmount;
     }
-    @Override
-    public void atEndOfTurn(final boolean isplayer) {
-        addToBot(new ReducePowerAction(owner,owner,this,1));
-    }
+
     public void updateDescription() {
-        this.description = "Take 50% less damage from attacks, reduced by #b1 when damaged and at the start of your turn";
+        description = DESCRIPTIONS[0] + DMG_REDUCTION_PERCENT + DESCRIPTIONS[1];
     }
 }

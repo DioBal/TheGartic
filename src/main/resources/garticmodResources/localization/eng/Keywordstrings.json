@@ -26,9 +26,20 @@
     "PROPER_NAME": "Summon",
     "NAMES": [
       "summon",
-      "summoned"
+      "summoned",
+      "Summoned",
+      "summons",
+      "Summons"
     ],
     "DESCRIPTION": "Create a creature to fight for you this battle."
+  },
+  {
+    "PROPER_NAME": "Unsummon",
+    "NAMES": [
+      "unsummon",
+      "unsummoned"
+    ],
+    "DESCRIPTION": "Remove one of your #ySummons."
   },
   {
     "PROPER_NAME": "Fire Imp",
@@ -37,5 +48,61 @@
       "fire\u00A0imp"
     ],
     "DESCRIPTION": "A creature that deals 3 damage to a random enemy whenever you play an attack."
+  },
+  {
+    "PROPER_NAME": "Hungry Fox",
+    "NAMES": [
+      "Hungry\u00a0Fox",
+      "hungry\u00a0fox"
+    ],
+    "DESCRIPTION": "#ySummon. At the end of your turn deals damage to the lowest health enemy."
+  },
+  {
+    "PROPER_NAME": "Crazy Panda",
+    "NAMES": [
+      "Crazy\u00a0Panda",
+      "crazy\u00a0panda"
+    ],
+    "DESCRIPTION": "#ySummon. At the end of your turn deals damage to a random enemy and applies #yWeak or #yVulnerable."
+  },
+  {
+    "PROPER_NAME": "Fetching Fox",
+    "NAMES": [
+      "fetchingfox"
+    ],
+    "DESCRIPTION": "A creature that has a 50% chance to perform one of these two actions at the start of each turn. NL - Draws you a card. NL - Steals a card from you, returning it at the start of next turn. "
+  },
+  {
+    "PROPER_NAME": "Mischievous Fox",
+    "NAMES": [
+      "mischievousfox"
+    ],
+    "DESCRIPTION": "A creature that has a 50% chance to perform one of these two actions after you play a card. NL - Deals its damage to you. NL - Deals its damage to a random enemy. "
+  },
+  {
+    "PROPER_NAME": "Dire Wolf",
+    "NAMES": [
+      "Dire\u00a0Wolf",
+      "dire\u00a0wolf",
+      "direwolf"
+    ],
+    "DESCRIPTION": "A creature that attacks the enemy with the lowest health multiple times, affected by attack modifiers."
+  },
+  {
+    "PROPER_NAME": "Resolute",
+    "NAMES": [
+      "Resolute",
+      "resolute"
+    ],
+    "DESCRIPTION": "Stance: While in Resolute, whenever you play an Attack, gain #b2 #yBlock."
+  },
+  {
+    "PROPER_NAME": "Consume",
+    "NAMES": [
+      "consume",
+      "consumes",
+      "consumed"
+    ],
+    "DESCRIPTION": "When you have #yFish in hand, you will #yExhaust #yFish to pay [E] per #yFish for this card's cost."
   }
 ]
