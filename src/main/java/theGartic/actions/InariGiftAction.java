@@ -1,17 +1,15 @@
 package theGartic.actions;
 
-import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DescriptionLine;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.GameDictionary;
+import com.megacrit.cardcrawl.powers.watcher.MasterRealityPower;
 import com.megacrit.cardcrawl.screens.CardRewardScreen;
 import theGartic.vfx.InariGiftShowCardAndAddToDrawPileEffect;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 /*
     If you are reading this code and thinking "hey, this looks familiar"
@@ -20,7 +18,6 @@ import java.util.Iterator;
  */
 public class InariGiftAction extends AbstractGameAction {
     private boolean retrieveCard = false;
-    private AbstractCard.CardType cardType = null;
 
     public InariGiftAction(int amount) {
         this.actionType = ActionType.CARD_MANIPULATION;
@@ -29,18 +26,17 @@ public class InariGiftAction extends AbstractGameAction {
     }
 
     public void update() {
-        ArrayList generatedCards;
+        ArrayList<AbstractCard> generatedCards;
         generatedCards = this.generateColorlessCardChoices();
 
         if (this.duration == Settings.ACTION_DUR_FAST) {
-            AbstractDungeon.cardRewardScreen.customCombatOpen(generatedCards, CardRewardScreen.TEXT[1], this.cardType != null);
-            this.tickDuration();
+            AbstractDungeon.cardRewardScreen.customCombatOpen(generatedCards, CardRewardScreen.TEXT[1], false);
         } else {
             if (!this.retrieveCard) {
                 if (AbstractDungeon.cardRewardScreen.discoveryCard != null) {
                     AbstractCard disCard = AbstractDungeon.cardRewardScreen.discoveryCard.makeStatEquivalentCopy();
                     AbstractCard disCard2 = AbstractDungeon.cardRewardScreen.discoveryCard.makeStatEquivalentCopy();
-                    if (AbstractDungeon.player.hasPower("MasterRealityPower")) {
+                    if (AbstractDungeon.player.hasPower(MasterRealityPower.POWER_ID)) {
                         disCard.upgrade();
                         disCard2.upgrade();
                     }
@@ -67,23 +63,20 @@ public class InariGiftAction extends AbstractGameAction {
 
                 this.retrieveCard = true;
             }
-
-            this.tickDuration();
         }
+
+        this.tickDuration();
     }
 
     private ArrayList<AbstractCard> generateColorlessCardChoices() {
-        ArrayList cardChoices = new ArrayList();
+        ArrayList<AbstractCard> cardChoices = new ArrayList<>();
 
         while(cardChoices.size() != 3) {
             boolean dupe = false;
             AbstractCard tmp = AbstractDungeon.returnTrulyRandomColorlessCardInCombat();
 
 
-            Iterator var4 = cardChoices.iterator();
-
-            while(var4.hasNext()) {
-                AbstractCard c = (AbstractCard)var4.next();
+            for (AbstractCard c : cardChoices) {
                 if (c.cardID.equals(tmp.cardID)) {
                     dupe = true;
                     break;
