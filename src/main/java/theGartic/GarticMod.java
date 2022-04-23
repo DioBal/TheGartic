@@ -24,6 +24,7 @@ import org.apache.logging.log4j.Logger;
 import theGartic.cards.AbstractEasyCard;
 import theGartic.cards.cardvars.SecondDamage;
 import theGartic.patches.AllWillReturnPatch;
+import theGartic.potions.DarklingMilk;
 import theGartic.potions.PurpleStuff;
 import theGartic.powers.PowerOfCreationPower;
 import theGartic.relics.AbstractEasyRelic;
@@ -125,6 +126,7 @@ public class GarticMod implements
 
     public void receiveEditPotions() {
         BaseMod.addPotion(PurpleStuff.class, Color.PURPLE.cpy(), Color.PURPLE.cpy(), Color.PURPLE.cpy(), PurpleStuff.ID, TheGartic.Enums.THE_GARTIC);
+        BaseMod.addPotion(DarklingMilk.class, Color.WHITE.cpy(), Color.WHITE.cpy(), Color.WHITE.cpy(), DarklingMilk.ID, TheGartic.Enums.THE_GARTIC);
     }
 
     @Override
