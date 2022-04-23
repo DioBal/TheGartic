@@ -13,6 +13,8 @@ import javassist.CtBehavior;
 import java.util.ArrayList;
 import java.util.List;
 
+import static theGartic.util.Wiz.adp;
+
 public class AllWillReturnPatch {
     public static int lastTurnBlock = 0;
     public static int lastTurnDamage = 0;
@@ -83,7 +85,7 @@ public class AllWillReturnPatch {
                 locator = Locator.class
         )
         public static void tracking(AbstractCreature __instance, DamageInfo info) {
-            if (info.owner.equals(AbstractDungeon.player)) {
+            if (info.owner != null && info.owner == adp()) {
                 thisTurnDamage += __instance.lastDamageTaken;
             }
         }

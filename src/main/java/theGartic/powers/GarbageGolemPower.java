@@ -30,7 +30,7 @@ public class GarbageGolemPower extends AbstractEasyPower {
 
     @Override
     public void atEndOfRound() {
-        atb(new RemoveSpecificPowerAction(adp(), adp(), this));
+        atb(new RemoveSpecificPowerAction(owner, owner, this));
     }
 
     public void updateDescription() {
