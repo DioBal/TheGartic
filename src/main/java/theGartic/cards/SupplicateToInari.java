@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theGartic.GarticMod;
 import theGartic.TheGartic;
 import theGartic.actions.SummonOrbAction;
-import theGartic.summons.HungryFox;
 import theGartic.summons.InariWhiteFoxSummon;
 
 import static theGartic.util.Wiz.atb;
@@ -38,6 +37,7 @@ public class SupplicateToInari extends AbstractEasyCard  {
     {
         super(ID, 3, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
+        tags.add(GarticMod.Enums.SUMMON);
     }
 
     @Override

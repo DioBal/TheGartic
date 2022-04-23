@@ -274,6 +274,12 @@
     "NAME": "Guzzler Helmet",
     "DESCRIPTION": "{@@}If there are more cards in your discard pile than your draw pile, gain {!M!|1=[E]|2=[E] [E]|-1,3=[E] [E] [E]|4=[E] [E] [E] [E]|5=[E] [E] [E] [E] [E]|@=!M! [E]} ."
   },
+  "${ModID}:GarbageGolem": {
+    "NAME": "Garbage Golem",
+    "DESCRIPTION": "Gain !B! Block.  If you win the combat this turn, your block carries over to the next combat.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !M! Strength. NL If you win the combat this turn, your block carries over to the next combat.",
+    "FLAVOR": "WALL-E's ugly brother"
+  },
   "${ModID}:LongShot": {
     "NAME": "Long Shot",
     "DESCRIPTION": "Deal !D! damage. NL Next turn, discard any number of cards then draw that many."

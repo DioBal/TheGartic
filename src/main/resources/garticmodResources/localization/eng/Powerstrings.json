@@ -69,6 +69,12 @@
       " #yThorns."
     ]
   },
+  "${ModID}:GarbageGolemPower": {
+    "NAME": "GarbageGolem",
+    "DESCRIPTIONS": [
+      "If you win combat this turn, carry your block over to the next combat."
+    ]
+  },
   "${ModID}:GambleNextTurnPower": {
     "NAME": "Long Shot",
     "DESCRIPTIONS": [
