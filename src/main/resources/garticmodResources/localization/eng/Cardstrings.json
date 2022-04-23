@@ -340,6 +340,11 @@
     "NAME": "Scrap Shield",
     "DESCRIPTION": "Gain !B! Block. NL Draw 1 card. NL Discard 1 card."
   },
+  "${ModID}:DynamicEntry": {
+    "NAME": "Dynamic Entry",
+    "DESCRIPTION": "Whenever you ${ModID}:summon, activate that *summon's end of turn effect.",
+    "FLAVOR": "So, instead of throwing your pokeball at the ground, throw it at their face."
+  },
   "${ModID}:HeavySlam": {
     "NAME": "Heavy Slam",
     "DESCRIPTION": "{@@}Deal damage equal to the number of cards in your discard pile{!Upgrades!|>0=+3}.{!D!|>0= NL (Deals !D! damage.)}"

@@ -2,26 +2,25 @@ package theGartic.powers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theGartic.GarticMod;
+import theGartic.summons.AbstractSummonOrb;
 import theGartic.util.TexLoader;
 
 import static theGartic.GarticMod.makeID;
-import static theGartic.util.Wiz.*;
+import static theGartic.util.Wiz.adp;
+import static theGartic.util.Wiz.atb;
 
-public class SummonCostRefundPower extends AbstractPower {
-    public static final String POWER_ID = makeID(SummonCostRefundPower.class.getSimpleName());
+public class DynamicEntryPower extends AbstractPower implements OnSummonPower {
+    public static final String POWER_ID = makeID(DynamicEntryPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public SummonCostRefundPower(int amount) {
+    public DynamicEntryPower(int amount) {
         ID = POWER_ID;
         this.name = NAME;
         type = PowerType.BUFF;
@@ -30,8 +29,8 @@ public class SummonCostRefundPower extends AbstractPower {
         this.amount = amount;
         isTurnBased = false;
 
-        Texture normalTexture = TexLoader.getTexture(GarticMod.modID + "Resources/images/powers/SummonCostRefund32.png");
-        Texture hiDefImage = TexLoader.getTexture(GarticMod.modID + "Resources/images/powers/SummonCostRefund84.png");
+        Texture normalTexture = TexLoader.getTexture(GarticMod.modID + "Resources/images/powers/DynamicEntry32.png");
+        Texture hiDefImage = TexLoader.getTexture(GarticMod.modID + "Resources/images/powers/DynamicEntry84.png");
         region128 = new TextureAtlas.AtlasRegion(hiDefImage, 0, 0, hiDefImage.getWidth(), hiDefImage.getHeight());
         region48 = new TextureAtlas.AtlasRegion(normalTexture, 0, 0, normalTexture.getWidth(), normalTexture.getHeight());
 
@@ -39,16 +38,23 @@ public class SummonCostRefundPower extends AbstractPower {
     }
 
     @Override
-    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
-        super.onAfterUseCard(card, action);
-        if (card.hasTag(GarticMod.Enums.SUMMON)) {
-            att(new RemoveSpecificPowerAction(adp(), adp(), this));
-            att(new GainEnergyAction(amount));
+    public void onSummon(AbstractSummonOrb orb) {
+        for (int i = 0; i < amount; i++) {
+            atb(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    orb.onEndOfTurn();
+                    isDone = true;
+                }
+            });
         }
     }
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        if (amount == 1)
+            description = DESCRIPTIONS[0];
+        else
+            description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
     }
 }
