@@ -5,11 +5,9 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theGartic.TheGartic;
-import theGartic.powers.PlayerFlightPower;
 import theGartic.util.Wiz;
 
 import static theGartic.GarticMod.makeCardPath;
@@ -34,7 +32,7 @@ public class GuzzlerHelmet extends AbstractEasyCard {
     }
 
     public void triggerOnGlowCheck() {
-        if (Wiz.adp().discardPile.size() > Wiz.adp().discardPile.size()) {
+        if (Wiz.adp().discardPile.size() > Wiz.adp().drawPile.size()) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
@@ -47,9 +45,9 @@ public class GuzzlerHelmet extends AbstractEasyCard {
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                if(Wiz.adp().discardPile.size() > Wiz.adp().discardPile.size()) {
+                if(Wiz.adp().discardPile.size() > Wiz.adp().drawPile.size())
                     addToTop(new GainEnergyAction(magicNumber));
-                }
+                isDone = true;
             }
         });
     }
