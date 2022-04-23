@@ -12,7 +12,7 @@ public class ScrapShield extends AbstractEasyCard {
     public final static String ID = makeID("ScrapShield");
 
     public ScrapShield() {
-        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         baseBlock = 8;
     }
 

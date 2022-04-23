@@ -1,6 +1,7 @@
 package theGartic.cards;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theGartic.actions.ExtendoArmAction;
 
@@ -8,8 +9,8 @@ import static theGartic.GarticMod.makeID;
 
 public class ExtendoArm  extends AbstractEasyCard {
     public final static String ID = makeID(ExtendoArm.class.getSimpleName());
-
     private static final int BLK = 7, BLK_UPG = 3;
+    public static final String EXTENDO_ACTION_STRING = CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0];
 
     public ExtendoArm() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
