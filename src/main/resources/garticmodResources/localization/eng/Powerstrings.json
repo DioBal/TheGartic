@@ -109,5 +109,13 @@
       " and draw ",
       " cards."
     ]
+  },
+  "${ModID}:LoseWrath": {
+    "NAME": "Lose Wrath",
+    "DESCRIPTIONS": [
+      "Exit #yWrath at end of this turn.",
+      "Exit №yWrath at end of turn after #b",
+      " turns."
+    ]
   }
 }

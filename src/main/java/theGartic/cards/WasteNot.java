@@ -27,9 +27,8 @@ public class WasteNot extends AbstractEasyCard {
     public void upp() {
         upgradeDamage(2);
         rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-        if(this.upgraded) {
-            GraveField.grave.set(this, true);
-        }
+        GraveField.grave.set(this, true);
+        uDesc();
     }
 
     public void triggerOnUnsummon() {
