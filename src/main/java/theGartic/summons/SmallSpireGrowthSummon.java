@@ -2,6 +2,7 @@ package theGartic.summons;
 
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.OrbStrings;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import theGartic.GarticMod;
 
 import static theGartic.GarticMod.makeOrbPath;
@@ -15,6 +16,11 @@ public class SmallSpireGrowthSummon extends AbstractSummonOrb {
     public SmallSpireGrowthSummon()
     {
         super(ORB_ID, orbString.NAME, 1, 0, makeOrbPath("MischievousFox.png"));
+    }
+
+    @Override
+    public AbstractOrb makeCopy() {
+        return new SmallSpireGrowthSummon();
     }
 
     //It should deal 5 points of damage at the end of the turn.
