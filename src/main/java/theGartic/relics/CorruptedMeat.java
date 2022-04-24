@@ -1,9 +1,14 @@
 package theGartic.relics;
 
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import theGartic.GarticMod;
+import theGartic.actions.SummonOrbAction;
 import theGartic.cards.SupplicateToInari;
+import theGartic.summons.InariWhiteFoxSummon;
+import theGartic.summons.SmallSpireGrowthSummon;
 
 import static theGartic.GarticMod.makeID;
+import static theGartic.util.Wiz.atb;
 
 public class CorruptedMeat extends AbstractEasyRelic {
 
@@ -15,19 +20,21 @@ public class CorruptedMeat extends AbstractEasyRelic {
 
     public CorruptedMeat() {
         super(ID, RELIC_TIER, LANDING_SOUND);
-        summon_small_spire_growth = false;
+    }
+
+    @Override
+    public void onEquip() {
+        ++AbstractDungeon.player.energy.energyMaster;
+    }
+
+    @Override
+    public void onUnequip() {
+        --AbstractDungeon.player.energy.energyMaster;
     }
 
     @Override
     public void atBattleStart() {
-        summon_small_spire_growth = true;
-    }
-
-    @Override
-    public void onPlayerEndTurn() {
-        if (summon_small_spire_growth){
-            
-        }
+        atb (new SummonOrbAction(new SmallSpireGrowthSummon()));
     }
 
 }
