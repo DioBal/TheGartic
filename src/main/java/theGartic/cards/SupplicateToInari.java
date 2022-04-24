@@ -23,7 +23,7 @@ public class SupplicateToInari extends AbstractEasyCard  {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheGartic.Enums.GARTIC_COLOR;
 
     private final static int MAGIC = 0;

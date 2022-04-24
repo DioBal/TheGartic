@@ -294,7 +294,7 @@
     "DESCRIPTION": "The target loses !D! HP. If it has Block, it loses !D! HP again."
   },
   "${ModID}:SupplicateToInari": {
-    "NAME": "Suplicate To Inari",
+    "NAME": "Supplicate To Inari",
     "DESCRIPTION": "Summon a Three-Tailed White Fox.",
     "UPGRADE_DESCRIPTION": "Summon a Three-Tailed White Fox.",
     "EXTENDED_DESCRIPTION": [

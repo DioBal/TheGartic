@@ -30,10 +30,10 @@ public class InariProtection extends EasyModalChoiceCard {
 
     public InariProtection(int magicNumber) {
         super(NAME, DESCRIPTION, () -> {
-            atb(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, magicNumber * 12));
+            atb(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, magicNumber * 10));
         });
 
-        baseMagicNumber = magicNumber * 12;
+        baseMagicNumber = magicNumber * 10;
         initializeDescription();
     }
 }

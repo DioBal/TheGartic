@@ -33,10 +33,10 @@ public class InariEndurance extends EasyModalChoiceCard {
     public InariEndurance(int magicNumber){
         super(NAME, DESCRIPTION, () -> {
             AbstractPlayer p = AbstractDungeon.player;
-            atb(new AddTemporaryHPAction(p, p, magicNumber*12));
+            atb(new AddTemporaryHPAction(p, p, magicNumber*10));
         });
 
-        baseMagicNumber = magicNumber*12;
+        baseMagicNumber = magicNumber*10;
 
         initializeDescription();
     }
