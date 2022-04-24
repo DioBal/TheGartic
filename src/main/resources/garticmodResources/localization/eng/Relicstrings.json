@@ -48,7 +48,7 @@
       "At the start of combat, add a #ySmite and a #ySafety to your hand."
     ]
   },
-  "${ModID}:Corrupted Meat": {
+  "${ModID}:CorruptedMeat": {
     "NAME": "Corrupted Meat",
     "FLAVOR": "There is a good reason for why no one eats blighted meat.",
     "DESCRIPTIONS": [
