@@ -14,13 +14,13 @@ import com.megacrit.cardcrawl.vfx.combat.BiteEffect;
 import static theGartic.summons.DireWolfSummon.helperCard;
 import static theGartic.util.Wiz.*;
 
-public class DireWolfAction extends AbstractGameAction {
+public class DireWolfAttackAction extends AbstractGameAction {
     private final int stacks;
     private DamageInfo info;
     private static final float DURATION = 0.15F;
     private static final boolean muteSfx = false;
 
-    public DireWolfAction(int stacks, int amount) {
+    public DireWolfAttackAction(int stacks, int amount) {
         this.amount = amount;
         this.stacks = stacks;
         helperCard.baseDamage = amount;

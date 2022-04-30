@@ -14,7 +14,7 @@ import static theGartic.GarticMod.modID;
 import static theGartic.util.Wiz.atb;
 
 public class GlassArmorPower extends AbstractEasyPower {
-    public static final String POWER_ID = makeID(GlassArmorPower.class.getSimpleName());
+    public static final String POWER_ID = makeID(GarbageGolemPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

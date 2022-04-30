@@ -260,7 +260,10 @@
   },
   "${ModID}:ToothAndClaw": {
     "NAME": "Tooth And Claw",
-    "DESCRIPTION": "garticmod:Unsummon a Summon. NL If you did, Summon a ${ModID}:Dire\u00a0Wolf that deals 8 damage !M! times. NL Damage is affected by attack modifiers."
+    "DESCRIPTION": "garticmod:Unsummon. If you did, Summon a ${ModID}:Dire\u00a0Wolf that deals !${ModID}:m2! base damage !M! times. NL Damage is affected by attack modifiers.",
+    "EXTENDED_DESCRIPTION": ["I can only play this if I have a summoned creature.",
+      "Choose a creature to unsummon."
+    ]
   },
   "${ModID}:FriendlyLick": {
     "NAME": "Friendly Lick",
@@ -271,13 +274,35 @@
     "NAME": "Guzzler Helmet",
     "DESCRIPTION": "{@@}If there are more cards in your discard pile than your draw pile, gain {!M!|1=[E]|2=[E] [E]|-1,3=[E] [E] [E]|4=[E] [E] [E] [E]|5=[E] [E] [E] [E] [E]|@=!M! [E]} ."
   },
+  "${ModID}:GarbageGolem": {
+    "NAME": "Garbage Golem",
+    "DESCRIPTION": "Gain !B! Block.  If you win the combat this turn, your block carries over to the next combat.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !M! Strength. NL If you win the combat this turn, your block carries over to the next combat.",
+    "FLAVOR": "WALL-E's ugly brother"
+  },
   "${ModID}:LongShot": {
     "NAME": "Long Shot",
     "DESCRIPTION": "Deal !D! damage. NL Next turn, discard any number of cards then draw that many."
   },
   "${ModID}:ExtendoArm": {
     "NAME": "Extendo Arm",
-    "DESCRIPTION": "Gain !B! Block. NL Put a card from your discard pile on the bottom of your draw pile."
+    "DESCRIPTION": "Gain !B! Block. NL Put a card from your discard pile on the bottom of your draw pile.",
+    "EXTENDED_DESCRIPTION": ["Select a card to add to the bottom of your draw pile."]
+  },
+  "${ModID}:SureShot": {
+    "NAME": "Sure Shot",
+    "DESCRIPTION": "The target loses !D! HP. If it has Block, it loses !D! HP again."
+  },
+  "${ModID}:SupplicateToInari": {
+    "NAME": "Supplicate To Inari",
+    "DESCRIPTION": "Summon a Three-Tailed White Fox.",
+    "UPGRADE_DESCRIPTION": "Summon a Three-Tailed White Fox.",
+    "EXTENDED_DESCRIPTION": [
+      " NL Draw !M! card.",
+      " NL Draw !M! cards.",
+      " NL Gain !M! [E]."
+      ],
+    "FLAVOR": "Family we are, you and I. Just respectfully ask and you shall receive."
   },
   "${ModID}:CreationOfPower": {
     "NAME": "Creation of Power",
@@ -309,11 +334,16 @@
   },
   "${ModID}:MultiBottleRockets": {
     "NAME": "Multi-Bottle Rockets",
-    "DESCRIPTION": "Discard any number of cards. NL Deal !D! damage to a random enemy for each card discarded +!M!."
+    "DESCRIPTION": "Discard any number of cards. NL Deal !D! damage to a random enemy for each card NL discarded + !M!."
   },
   "${ModID}:ScrapShield": {
     "NAME": "Scrap Shield",
     "DESCRIPTION": "Gain !B! Block. NL Draw 1 card. NL Discard 1 card."
+  },
+  "${ModID}:DynamicEntry": {
+    "NAME": "Dynamic Entry",
+    "DESCRIPTION": "Whenever you ${ModID}:summon, activate that *summon's end of turn effect.",
+    "FLAVOR": "So, instead of throwing your pokeball at the ground, throw it at their face."
   },
   "${ModID}:HeavySlam": {
     "NAME": "Heavy Slam",
@@ -323,10 +353,50 @@
     "NAME": "Protector",
     "DESCRIPTION": "Gain !B! Block. NL If this card is discarded, gain [E]."
   },
+  "${ModID}:InariDash": {
+    "NAME": "Inari Dash",
+    "DESCRIPTION": "Next turn, if you play a card, draw !M!",
+    "EXTENDED_DESCRIPTION": [
+      " card.",
+      " cards."
+    ]
+  },
+  "${ModID}:InariEnergy": {
+    "NAME": "Inari Energy",
+    "DESCRIPTION": "Next turn, gain !M! [E]."
+  },
+  "${ModID}:InariEndurance": {
+    "NAME": "Inari Endurance",
+    "DESCRIPTION": "Gain !M! Temp HP."
+  },
+  "${ModID}:InariPloy": {
+    "NAME": "Inari Ploy",
+    "DESCRIPTION": "Apply !M! Weak to ALL enemies."
+  },
+  "${ModID}:InariSabotage": {
+    "NAME": "Inari Sabotage",
+    "DESCRIPTION": "Apply !M! Vulnerable to ALL enemies."
+  },
+  "${ModID}:InariProtection": {
+    "NAME": "Inari Protection",
+    "DESCRIPTION": "Gain !M! Block."
+  },
+  "${ModID}:InariFlames": {
+    "NAME": "Inari Flames",
+    "DESCRIPTION": "Deal !M! damage 10 times to the lowest health enemy."
+  },
+  "${ModID}:InariBarrage": {
+    "NAME": "Inari Barrage",
+    "DESCRIPTION": "Deal !M! damage 5 times to the highest health enemy."
+  },
+  "${ModID}:InariGift": {
+    "NAME": "Inari Gift",
+    "DESCRIPTION": "Choose 1 of 3 Colorless cards with Exhaust to go to the top of your draw pile."
+  },
   "${ModID}:CreationOfCreation": {
     "NAME": "Creation of Creation",
-    "DESCRIPTION": "Randomly add Burning Blade, Distraction, White Noise or Jack of All Trades to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Randomly add Burning Blade+, Distraction+, White Noise+ or Jack of All Trades+ to your hand. NL Exhaust."
+    "DESCRIPTION": "Randomly add *Infernal *Blade, *Distraction, *White *Noise or *Jack *of *All *Trades to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Randomly add *Infernal *Blade+, *Distraction+, *White *Noise+ or *Jack *of *All *Trades+ to your hand. NL Exhaust."
   },
   "${ModID}:BlockAndLoad": {
     "NAME": "Block and Load",
@@ -340,5 +410,16 @@
     "EXTENDED_DESCRIPTION": [
       "Add a summon to your Party."
     ]
+  },
+  "${ModID}:WasteNot": {
+    "NAME": "Waste Not",
+    "DESCRIPTION": "Deal !D! damage. NL Whenever you garticmod:Unsummon, return this from the discard pile to your hand.",
+    "UPGRADE_DESCRIPTION": "Grave. Deal !D! damage. NL Whenever you garticmod:Unsummon, return this from the discard pile to your hand."
+  },
+  "${ModID}:UncannyHunger": {
+    "NAME": "Uncanny Hunger",
+    "DESCRIPTION": "At the start of your turn, garticmod:Unsummon. NL If you did, gain !M! Energy and draw !${ModID}:m2! cards.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, garticmod:Unsummon. NL If you did, gain !M! Energy and draw !${ModID}:m2! cards.",
+    "EXTENDED_DESCRIPTION": ["Your hunger must be sated."]
   }
 }

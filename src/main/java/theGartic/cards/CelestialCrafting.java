@@ -5,8 +5,10 @@ import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theGartic.powers.CelestialCraftingPower;
+import theGartic.powers.PlayerFlightPower;
 
 import static theGartic.GarticMod.makeID;
+import static theGartic.util.Wiz.adp;
 import static theGartic.util.Wiz.applyToSelf;
 
 public class CelestialCrafting extends AbstractEasyCard {
@@ -21,7 +23,8 @@ public class CelestialCrafting extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new CelestialCraftingPower(magicNumber));
+        applyToSelf(new PlayerFlightPower(adp(), magicNumber));
+        applyToSelf(new CelestialCraftingPower(1));
     }
 
     @Override

@@ -1,12 +1,12 @@
 package theGartic.util;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Vector2;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import theGartic.GarticMod;
+
+import static theGartic.util.Wiz.adp;
 
 public class OrbTargetScreen {
     public static OrbTargetScreen Inst = new OrbTargetScreen();
@@ -18,7 +18,7 @@ public class OrbTargetScreen {
 
     public void open(OrbTargetArrow.OrbTargetArrowSubscriber sub, String tip) {
         timer = 0.1F;
-        OrbTargetArrow.open(new Vector2(Settings.WIDTH / 2.0F, 0.0F));
+        OrbTargetArrow.open(adp());
         OrbTargetArrow.register(sub);
         isActive = true;
         AbstractDungeon.isScreenUp = true;
@@ -45,20 +45,7 @@ public class OrbTargetScreen {
         tip = null;
     }
 
-    private void fakeClose() {
-        AbstractDungeon.overlayMenu.endTurnButton.disable();
-        AbstractDungeon.isScreenUp = false;
-    }
-
     public void update() {
-        if (timer > 0.0F)
-            timer -= Gdx.graphics.getDeltaTime();
-        else {
-            fakeClose();
-            if (isActive && !OrbTargetArrow.isActive)
-                OrbTargetArrow.close();
-        }
-
         OrbTargetArrow.update();
         OrbTargetArrow.from.x = AbstractDungeon.player.drawX;
         OrbTargetArrow.from.y = AbstractDungeon.player.drawY;

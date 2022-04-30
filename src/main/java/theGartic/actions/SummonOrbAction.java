@@ -1,25 +1,24 @@
 package theGartic.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.random.Random;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import theGartic.powers.InvisibleSummonPower;
-import theGartic.summons.CrazyPanda;
-import theGartic.summons.DireWolfSummon;
-import theGartic.summons.HungryFox;
+import theGartic.powers.OnSummonPower;
+import theGartic.summons.*;
+
+import static theGartic.util.Wiz.*;
 
 public class SummonOrbAction extends AbstractGameAction
 {
-    private AbstractOrb summon;
+    private AbstractSummonOrb summon;
     int stack = 1;
 
-    public SummonOrbAction(AbstractOrb summonOrb, int stackAmount)
+    public SummonOrbAction(AbstractSummonOrb summonOrb, int stackAmount)
     {
         actionType = ActionType.SPECIAL;
         duration = Settings.ACTION_DUR_FAST;
@@ -27,7 +26,7 @@ public class SummonOrbAction extends AbstractGameAction
         this.stack = stackAmount;
     }
 
-    public SummonOrbAction(AbstractOrb summonOrb) {
+    public SummonOrbAction(AbstractSummonOrb summonOrb) {
         this(summonOrb, 0);
     }
 
@@ -39,12 +38,16 @@ public class SummonOrbAction extends AbstractGameAction
             return;
         }
 
-        if(!AbstractDungeon.player.hasPower(InvisibleSummonPower.POWER_ID))
-            AbstractDungeon.player.powers.add(new InvisibleSummonPower(AbstractDungeon.player, AbstractDungeon.player, 1));
+        if(!adp().hasPower(InvisibleSummonPower.POWER_ID))
+            adp().powers.add(new InvisibleSummonPower(adp(), adp(), 1));
 
-        //if(!CheckForStack())
         addToTop(new ChannelAction(summon, false));
         AbstractDungeon.player.increaseMaxOrbSlots(1, false);
+
+        if (adp() != null)
+            for (AbstractPower pow : adp().powers)
+                if (pow instanceof OnSummonPower)
+                    ((OnSummonPower) pow).onSummon(summon);
 
         isDone = true;
     }
@@ -53,22 +56,22 @@ public class SummonOrbAction extends AbstractGameAction
     {
         for (AbstractOrb orb : AbstractDungeon.player.orbs)
         {
-            if(orb.name == summon.name && !orb.ID.equals(CrazyPanda.ORB_ID) && !orb.ID.equals(HungryFox.ORB_ID) && !orb.ID.equals(DireWolfSummon.ORB_ID))
+            if(orb.name.equals(summon.name) && !orb.ID.equals(InariWhiteFoxSummon.ORB_ID)
+                    && !orb.ID.equals(CrazyPanda.ORB_ID) && !orb.ID.equals(HungryFox.ORB_ID) && !orb.ID.equals(DireWolfSummon.ORB_ID))
             {
                 orb.evokeAmount += stack;
-                AbstractDungeon.actionManager.addToBottom(
-                        new VFXAction(new OrbFlareEffect(orb, OrbFlareEffect.OrbFlareColor.DARK), 0.1f));
+                vfx(new OrbFlareEffect(orb, OrbFlareEffect.OrbFlareColor.DARK), 0.1f);
                 return true;
             }
-            if(orb.name == summon.name && orb.ID.equals(DireWolfSummon.ORB_ID))
+
+            if(orb.name.equals(summon.name) && orb.ID.equals(DireWolfSummon.ORB_ID))
             {
                 orb.passiveAmount += stack;
-                AbstractDungeon.actionManager.addToBottom(
-                        new VFXAction(new OrbFlareEffect(orb, OrbFlareEffect.OrbFlareColor.DARK), 0.1f));
+                vfx(new OrbFlareEffect(orb, OrbFlareEffect.OrbFlareColor.DARK), 0.1f);
                 return true;
             }
         }
-        addToTop(new ChannelAction(summon, false));
+        att(new ChannelAction(summon, false));
         return false;
     }*/
 }

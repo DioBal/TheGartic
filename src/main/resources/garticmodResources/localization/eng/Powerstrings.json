@@ -26,6 +26,8 @@
     "NAME": "Pandamonium",
     "DESCRIPTIONS": [
       "At the start of your turn, summon a #yCrazy #yPanda that deals #b",
+      "At the start of your turn, summon #b",
+      " #yCrazy #yPandas that deal #b",
       " damage."
     ]
   },
@@ -60,11 +62,25 @@
       " #yAttacks deals double damage."
     ]
   },
+  "${ModID}:DynamicEntryPower": {
+    "NAME": "Dynamic Entry",
+    "DESCRIPTIONS": [
+      "Whenever you summon, activate that summon's end of turn effect.",
+      "Whenever you summon, activate that summon's end of turn effect ",
+      " times."
+    ]
+  },
   "${ModID}:AsStonePower": {
     "NAME": "As Stone",
     "DESCRIPTIONS": [
       "Whenever you gain #yBlock, gain #b",
       " #yThorns."
+    ]
+  },
+  "${ModID}:GarbageGolemPower": {
+    "NAME": "GarbageGolem",
+    "DESCRIPTIONS": [
+      "If you win combat this turn, carry your block over to the next combat."
     ]
   },
   "${ModID}:GambleNextTurnPower": {
@@ -81,6 +97,15 @@
       " cards you create each turn cost #b1 less."
     ]
   },
+  "${ModID}:InariDashPower": {
+    "NAME": "Inari Dash",
+    "DESCRIPTIONS": [
+      "if you play a card, draw #b",
+      " card.",
+      " cards.",
+      " This Power is removed at the end of this turn."
+    ]
+  },
   "${ModID}:BlockAndLoadPower": {
     "NAME": "Block and Load",
     "DESCRIPTIONS": [
@@ -89,6 +114,22 @@
       " random upgraded ",
       " Attack to your hand.",
       " Attacks to your hand."
+    ]
+  },
+  "${ModID}:UncannyHungerPower": {
+    "NAME": "Uncanny Hunger",
+    "DESCRIPTIONS": [
+      "At the start of your turn, #yUnsummon. If you did, gain ",
+      " and draw ",
+      " cards."
+    ]
+  },
+  "${ModID}:LoseWrath": {
+    "NAME": "Lose Wrath",
+    "DESCRIPTIONS": [
+      "Exit #yWrath at end of this turn.",
+      "Exit №yWrath at end of turn after #b",
+      " turns."
     ]
   }
 }

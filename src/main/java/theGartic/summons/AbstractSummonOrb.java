@@ -20,7 +20,10 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 import theGartic.GarticMod;
+import theGartic.cards.AbstractEasyCard;
 import theGartic.util.OrbTargetArrow;
+
+import java.util.Iterator;
 
 import static theGartic.util.Wiz.adp;
 
@@ -94,6 +97,14 @@ public abstract class AbstractSummonOrb extends CustomOrb
                 player.maxOrbs = 0;
             for(int i = 0; i < player.orbs.size(); ++i)
                 (player.orbs.get(i)).setSlot(i, player.maxOrbs);
+            Iterator<AbstractCard> cardInDiscardPile = AbstractDungeon.player.discardPile.group.iterator();
+            while(cardInDiscardPile.hasNext()) {
+                AbstractCard card = cardInDiscardPile.next();
+                if (!(card instanceof AbstractEasyCard))
+                    continue;
+                AbstractEasyCard c = (AbstractEasyCard) card; //cast AbstractCard card to AbstractEasyCard c
+                c.triggerOnUnsummon();
+            }
         }
     }
 

@@ -1,5 +1,6 @@
 package theGartic.cards;
 
+import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -19,6 +20,8 @@ import theGartic.TheGartic;
 import theGartic.util.CardArtRoller;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import static theGartic.GarticMod.*;
 import static theGartic.util.Wiz.atb;
@@ -242,5 +245,17 @@ public abstract class AbstractEasyCard extends CustomCard {
 
     protected void upSecondDamage(int x) {
         upgradeSecondDamage(x);
+    }
+
+    public void triggerOnUnsummon() {}
+
+    @Override
+    public List<String> getCardDescriptors() {
+        if (this.tags.contains(Enums.SUMMON)) {
+            List<String> tags = new ArrayList<>();
+            tags.add(BaseMod.getKeywordTitle("garticmod:summon"));
+            return tags;
+        }
+        return Collections.emptyList();
     }
 }
