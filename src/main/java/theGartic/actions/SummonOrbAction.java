@@ -42,17 +42,13 @@ public class SummonOrbAction extends AbstractGameAction
         if(!AbstractDungeon.player.hasPower(InvisibleSummonPower.POWER_ID))
             AbstractDungeon.player.powers.add(new InvisibleSummonPower(AbstractDungeon.player, AbstractDungeon.player, 1));
 
-        if(!CheckForStack())
-            AbstractDungeon.player.increaseMaxOrbSlots(1, false);
-//        Random rand = new Random();
-//        if(rand.randomBoolean())
-//            addToTop(new SFXAction("theVacant:gemSpawn"));
-//        else
-//            addToTop(new SFXAction("theVacant:gemSpawn2"));
+        //if(!CheckForStack())
+        addToTop(new ChannelAction(summon, false));
+        AbstractDungeon.player.increaseMaxOrbSlots(1, false);
 
         isDone = true;
     }
-
+/*
     private boolean CheckForStack()
     {
         for (AbstractOrb orb : AbstractDungeon.player.orbs)
@@ -74,5 +70,5 @@ public class SummonOrbAction extends AbstractGameAction
         }
         addToTop(new ChannelAction(summon, false));
         return false;
-    }
+    }*/
 }

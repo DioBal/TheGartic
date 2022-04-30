@@ -2,7 +2,7 @@
   "${ModID}:FireImpSummon": {
     "NAME": "Fire Imp",
     "DESCRIPTION": [
-      "Whenever you play an attack, deal ", " damage to a random enemy ", " time.", " times."
+      "Whenever you play an attack, deal ", " damage to a random enemy."
     ]
   },
   "${ModID}:HungryFox": {

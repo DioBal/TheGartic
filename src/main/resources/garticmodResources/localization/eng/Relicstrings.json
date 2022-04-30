@@ -47,5 +47,12 @@
     "DESCRIPTIONS": [
       "At the start of combat, add a #ySmite and a #ySafety to your hand."
     ]
+  },
+  "${ModID}:PartyRelic": {
+    "NAME": "Party",
+    "FLAVOR": "A group of summons that join you at the start of each battle.",
+    "DESCRIPTIONS": [
+      "At the start of battle, summon the following creatures: ", ", "
+    ]
   }
 }

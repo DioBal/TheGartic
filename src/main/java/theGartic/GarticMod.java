@@ -2,13 +2,13 @@ package theGartic;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.abstracts.CustomSavable;
 import basemod.abstracts.DynamicVariable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
-import com.badlogic.gdx.scenes.scene2d.ui.List;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -27,8 +27,11 @@ import theGartic.patches.AllWillReturnPatch;
 import theGartic.potions.PurpleStuff;
 import theGartic.powers.PowerOfCreationPower;
 import theGartic.relics.AbstractEasyRelic;
+import theGartic.summons.AbstractSummonOrb;
 
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 @SpireInitializer
@@ -69,6 +72,7 @@ public class GarticMod implements
 
     public static final String GUNSHOT_KEY = makeID("GunshotKey");
     private static final String GUNSHOT_PATH = "garticmodResources/audio/sfx/Gunshot.ogg";
+    public static List<AbstractSummonOrb> partySummons = new ArrayList<>();
 
     public GarticMod() {
         BaseMod.subscribe(this);
@@ -79,7 +83,7 @@ public class GarticMod implements
                 ATTACK_L_ART, SKILL_L_ART, POWER_L_ART,
                 CARD_ENERGY_L, TEXT_ENERGY);
     }
-    
+
     public static class Enums {
         @SpireEnum
         public static AbstractCard.CardTags SUMMON;
@@ -114,8 +118,25 @@ public class GarticMod implements
         return modID + "Resources/images/cards/" + resourcePath;
     }
 
-    public static void initialize() {
+    public static void initialize(){
         GarticMod thismod = new GarticMod();
+
+        partySummons = new ArrayList<>();
+
+        BaseMod.addSaveField("Party", new CustomSavable<List<AbstractSummonOrb>>()
+        {
+            @Override
+            public List<AbstractSummonOrb> onSave()
+            {
+                return partySummons;
+            }
+
+            @Override
+            public void onLoad(List<AbstractSummonOrb> abstractSummonOrbs)
+            {
+                partySummons = abstractSummonOrbs;
+            }
+        });
     }
 
     @Override

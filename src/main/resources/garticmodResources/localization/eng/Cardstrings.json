@@ -332,5 +332,13 @@
     "NAME": "Block and Load",
     "DESCRIPTION": "Enter garticmod:Resolute. NL Whenever you gain Block this turn, add a random Attack to your hand.",
     "UPGRADE_DESCRIPTION": "Enter garticmod:Resolute. NL Whenever you gain Block this turn, add a random upgraded Attack to your hand."
+  },
+  "${ModID}:TamersCandy": {
+    "NAME": "Tamer's Candy",
+    "DESCRIPTION": "Ethereal. NL Add one of your current Summons to your Party.",
+    "UPGRADE_DESCRIPTION": "Add one of your current Summons to your Party.",
+    "EXTENDED_DESCRIPTION": [
+      "Add a summon to your Party."
+    ]
   }
 }
