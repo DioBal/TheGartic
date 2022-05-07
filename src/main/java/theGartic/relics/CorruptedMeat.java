@@ -1,10 +1,7 @@
 package theGartic.relics;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import theGartic.GarticMod;
 import theGartic.actions.SummonOrbAction;
-import theGartic.cards.SupplicateToInari;
-import theGartic.summons.InariWhiteFoxSummon;
 import theGartic.summons.SmallSpireGrowthSummon;
 
 import static theGartic.GarticMod.makeID;
