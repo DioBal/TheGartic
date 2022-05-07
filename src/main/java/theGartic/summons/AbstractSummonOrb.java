@@ -102,7 +102,7 @@ public abstract class AbstractSummonOrb extends CustomOrb
                 c.triggerOnUnsummon();
             }
             for (int i = 0; i < player.orbs.size(); ++i){
-                if (player.orbs.get(i).getClass().getName() == "AbstractSummonOrb"){
+                if (player.orbs.get(i) instanceof  AbstractSummonOrb){
                     ((AbstractSummonOrb)player.orbs.get(i)).onUnsummon();
                 }
             }
@@ -114,6 +114,7 @@ public abstract class AbstractSummonOrb extends CustomOrb
     }
 
     public void onSummon(){
+
         //BE CAREFUL TO NOT ACCIDENTALLY CREATE INFINITE LOOPS WITH THIS
     }
 
