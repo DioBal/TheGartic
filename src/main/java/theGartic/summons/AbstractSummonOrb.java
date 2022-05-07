@@ -52,7 +52,14 @@ public abstract class AbstractSummonOrb extends CustomOrb
         angle = MathUtils.random(360.0f);
         channelAnimTimer = 0.5f;
 
-        onSummon();
+        AbstractPlayer player = adp();
+        for (int i = 0; i < player.orbs.size(); ++i){
+            if (player.orbs.get(i) instanceof AbstractSummonOrb){
+                if (player.orbs.get(i) != this){
+                    ((AbstractSummonOrb)player.orbs.get(i)).onSummon();
+                }
+            }
+        }
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
