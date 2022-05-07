@@ -19,17 +19,17 @@ public class SmallSpireGrowthSummon extends AbstractSummonOrb {
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
     //public static final Logger logger = LogManager.getLogger("a");
+    public int amountOfSummonsAndUnsummons = 0;
 
     public SmallSpireGrowthSummon()
     {
         super(ORB_ID, orbString.NAME, 1, 0, makeOrbPath("MischievousFox.png"));
     }
 
-
-
     @Override
     public void onEndOfTurn() {
         //logger.info("So, we are here, and still");
+
         DamageAction smallSpireDamageAction =
                 new DamageAction(AbstractDungeon.player,
                         new DamageInfo(AbstractDungeon.player, 5, DamageInfo.DamageType.THORNS),
@@ -41,8 +41,5 @@ public class SmallSpireGrowthSummon extends AbstractSummonOrb {
     public AbstractOrb makeCopy() {
         return new SmallSpireGrowthSummon();
     }
-
-    //It should deal 5 points of damage at the end of the turn.
-    //How do I do that without much work...
 
 }
