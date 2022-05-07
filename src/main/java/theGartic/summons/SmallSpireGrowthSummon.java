@@ -18,7 +18,7 @@ public class SmallSpireGrowthSummon extends AbstractSummonOrb {
     public static final String ORB_ID = GarticMod.makeID(SmallSpireGrowthSummon.class.getSimpleName());
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
-    public static final Logger logger = LogManager.getLogger("a");
+    //public static final Logger logger = LogManager.getLogger("a");
 
     public SmallSpireGrowthSummon()
     {
@@ -29,7 +29,7 @@ public class SmallSpireGrowthSummon extends AbstractSummonOrb {
 
     @Override
     public void onEndOfTurn() {
-        logger.info("So, we are here, and still");
+        //logger.info("So, we are here, and still");
         DamageAction smallSpireDamageAction =
                 new DamageAction(AbstractDungeon.player,
                         new DamageInfo(AbstractDungeon.player, 5, DamageInfo.DamageType.THORNS),
