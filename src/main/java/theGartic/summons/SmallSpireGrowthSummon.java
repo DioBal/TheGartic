@@ -38,6 +38,7 @@ public class SmallSpireGrowthSummon extends AbstractSummonOrb {
         AbstractDungeon.actionManager.addToTop(smallSpireDamageAction);
     }
 
+    @Override
     public void onSummon(){
         amountOfSummonsAndUnsummons++;
         if (amountOfSummonsAndUnsummons >= limitWhereSmallSpireGrowthIsUnsummoned){
@@ -45,6 +46,7 @@ public class SmallSpireGrowthSummon extends AbstractSummonOrb {
         }
     }
 
+    @Override
     public void onUnsummon(){
         amountOfSummonsAndUnsummons++;
         if (amountOfSummonsAndUnsummons >= limitWhereSmallSpireGrowthIsUnsummoned){
