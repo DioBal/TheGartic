@@ -106,6 +106,14 @@ public abstract class AbstractSummonOrb extends CustomOrb
         unSummon(this);
     }
 
+    public void onSummon(){
+
+    }
+
+    public void onUnsummon(){
+        
+    }
+
     @Override
     public void updateAnimation()
     {
