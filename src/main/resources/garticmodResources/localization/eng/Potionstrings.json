@@ -2,5 +2,9 @@
   "${ModID}:PurpleStuff": {
     "NAME": "Purple Stuff",
     "DESCRIPTIONS": ["Swap your Draw and Discard piles, draw #b", " cards."]
+  },
+  "${ModID}:CopyingPotion": {
+    "NAME": "Copying Potion",
+    "DESCRIPTIONS": ["Add #b", " createable in combat cards into your hand."]
   }
 }
