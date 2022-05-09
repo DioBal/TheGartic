@@ -4,7 +4,7 @@
     "NAMES": [
       "fish"
     ],
-    "DESCRIPTION": "#yFish are random Colorless cards that grant a small benefit, replace themselves, and Exhaust."
+    "DESCRIPTION": "#yFish are random Colorless cards that grant a small benefit, replace themselves, and #yExhaust."
   },
   {
     "PROPER_NAME": "Glass Armor",
@@ -12,7 +12,7 @@
       "glass_armor",
       "glass\u00A0armor"
     ],
-    "DESCRIPTION": "At the end of your turn, gain Block equal to your stacks of #yGlass #yArmor. Receiving unblocked attack damage removes all #yGlass #yArmor."
+    "DESCRIPTION": "At the end of your turn, gain #yBlock equal to your stacks of #yGlass #yArmor. Receiving unblocked attack damage removes all #yGlass #yArmor."
   },
   {
     "PROPER_NAME": "Flight",
@@ -47,7 +47,7 @@
       "fireimp",
       "fire\u00A0imp"
     ],
-    "DESCRIPTION": "A creature that deals 3 damage to a random enemy whenever you play an attack."
+    "DESCRIPTION": "A creature that deals 3 damage to a random enemy whenever you play an #yAttack."
   },
   {
     "PROPER_NAME": "Hungry Fox",
@@ -104,5 +104,101 @@
       "consumed"
     ],
     "DESCRIPTION": "When you have #yFish in hand, you will #yExhaust #yFish to pay [E] per #yFish for this card's cost."
+  },
+  {
+    "PROPER_NAME": "Mirrored Fox",
+    "NAMES": [
+      "mirrored fox",
+      "mirrored_fox"
+    ],
+    "DESCRIPTION": "A creature that has a #b50% chance to perform one of these two actions at the end of each turn. NL - Deals its damage to a random enemy. NL - Gain its #yBlock to you."
+  },
+  {
+    "PROPER_NAME": "Fixed Damage",
+    "NAMES": [
+      "fixed damage",
+      "fixed"
+    ],
+    "DESCRIPTION": "Not affected by effects."
+  },
+  {
+    "PROPER_NAME": "[${ModID}:VoidIcon] Block",
+    "NAMES": [
+      "[${ModID}:VoidIcon] block",
+      "[${ModID}:VoidIcon]",
+      "voidblock" //Don't touch this string in every block types
+    ],
+    "DESCRIPTION": "Owner lose #yStrength until end of turn equal Blocked damage."
+  },
+  {
+    "PROPER_NAME": "[${ModID}:SpikyIcon] Block",
+    "NAMES": [
+      "[${ModID}:SpikyIcon] block",
+      "[${ModID}:SpikyIcon]",
+      "spikyblock"
+    ],
+    "DESCRIPTION": "Gain temporary #yThorns to owner each losed unit #yBlock."
+  },
+  {
+    "PROPER_NAME": "[${ModID}:CurseIcon] Block",
+    "NAMES": [
+      "[${ModID}:CurseIcon] block",
+      "[${ModID}:CurseIcon]",
+      "curseblock"
+    ],
+    "DESCRIPTION": "Apply #yWeak, #yVunerable, and #yFrail to owner after losing all this #yBlock."
+  },
+  {
+    "PROPER_NAME": "[${ModID}:PlatedIcon] Block",
+    "NAMES": [
+      "[${ModID}:PlatedIcon] block",
+      "[${ModID}:PlatedIcon]",
+      "platedblock"
+    ],
+    "DESCRIPTION": "Gain #yPlated #yArmor equal losed #yBlock."
+  },
+  {
+    "PROPER_NAME": "[${ModID}:DamageIcon] Block",
+    "NAMES": [
+      "[${ModID}:DamageIcon] block",
+      "[${ModID}:DamageIcon]",
+      "damageblock"
+    ],
+    "DESCRIPTION": "Gain temporary #yStrength equal Blocked damage."
+  },
+  {
+    "PROPER_NAME": "[${ModID}:BlockingIcon] Block",
+    "NAMES": [
+      "[${ModID}:BlockingIcon] block",
+      "[${ModID}:BlockingIcon]",
+      "blockingblock"
+    ],
+    "DESCRIPTION": "Gain temporary #yDexterity equal Blocked damage."
+  },
+  {
+    "PROPER_NAME": "[${ModID}:EnergyIcon] Block",
+    "NAMES": [
+      "[${ModID}:EnergyIcon] block",
+      "[${ModID}:EnergyIcon]",
+      "energyblock"
+    ],
+    "DESCRIPTION": "Gain [E] after losing all this #yBlock."
+  },
+  {
+    "PROPER_NAME": "[${ModID}:AngryIcon] Block",
+    "NAMES": [
+      "[${ModID}:AngryIcon] block",
+      "[${ModID}:AngryIcon]",
+      "angryblock"
+    ],
+    "DESCRIPTION": "Enter in #yWrath for #b2 turns after losing all this #yBlock."
+  },
+  {
+      "PROPER_NAME": "Paper",
+      "NAMES": [
+          "paper",
+          "paper"
+      ],
+      "DESCRIPTION": "One form of \"Sheet of Paper\"."
   }
 ]

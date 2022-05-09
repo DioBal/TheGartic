@@ -413,5 +413,30 @@
     "DESCRIPTION": "At the start of your turn, garticmod:Unsummon. NL If you did, gain !M! Energy and draw !${ModID}:m2! cards.",
     "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, garticmod:Unsummon. NL If you did, gain !M! Energy and draw !${ModID}:m2! cards.",
     "EXTENDED_DESCRIPTION": ["Your hunger must be sated."]
+  },
+    "${ModID}:VoidDefend": {
+    "NAME": "Void Defend",
+    "DESCRIPTION": "Gain !B! [${ModID}:VoidIcon] Block to ALL characters."
+  },
+  "${ModID}:MirroredFox": {
+    "NAME": "Mirrored Fox",
+    "DESCRIPTION": "Summon a ${ModID}:Mirrored_Fox that gains buff whenever you gain debuff."
+  },
+  "${ModID}:SheetofPaper": {
+    "NAME": "Sheet of Paper",
+    "DESCRIPTION": "At start of your turn Transforms into random stuff.",
+    "UPGRADE_DESCRIPTION": "At start of your turn Transforms into random Upgraded stuff."
+  },
+  "${ModID}:PaperSword": {
+    "NAME": "Paper Sword",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Deal !M! ${ModID}:Fixed damage to you."
+  },
+  "${ModID}:PaperShield": {
+    "NAME": "Paper Shield",
+    "DESCRIPTION": "Gain !B! a random type of Block. NL Deal !M! ${ModID}:Fixed damage to you twice. NL Types of Block:  [${ModID}:VoidIcon] ,  [${ModID}:SpikyIcon] ,  [${ModID}:PlatedIcon] ,  [${ModID}:DamageIcon] ,  [${ModID}:BlockingIcon] ,  [${ModID}:AngryIcon] ,  [${ModID}:EnergyIcon] ,  [${ModID}:CurseIcon] ."
+  },
+  "${ModID}:PaperBunny": {
+    "NAME": "Paper Bunny",
+    "DESCRIPTION": "Raise ALL numbers on cards by !M! except cost."
   }
 }
