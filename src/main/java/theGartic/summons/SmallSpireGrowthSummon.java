@@ -21,6 +21,7 @@ public class SmallSpireGrowthSummon extends AbstractSummonOrb {
     //public static final Logger logger = LogManager.getLogger("a");
     public int amountOfSummonsAndUnsummons = 0;
     private static final int limitWhereSmallSpireGrowthIsUnsummoned = 2;
+    private static final int amountOfDamageItDoes = 5;
 
     public SmallSpireGrowthSummon()
     {
@@ -33,7 +34,8 @@ public class SmallSpireGrowthSummon extends AbstractSummonOrb {
 
         DamageAction smallSpireDamageAction =
                 new DamageAction(AbstractDungeon.player,
-                        new DamageInfo(AbstractDungeon.player, 5, DamageInfo.DamageType.THORNS),
+                        new DamageInfo(AbstractDungeon.player, amountOfDamageItDoes,
+                                DamageInfo.DamageType.THORNS),
                         AbstractGameAction.AttackEffect.BLUNT_LIGHT);
         AbstractDungeon.actionManager.addToTop(smallSpireDamageAction);
     }
