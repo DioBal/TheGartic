@@ -57,6 +57,12 @@ public class SmallSpireGrowthSummon extends AbstractSummonOrb {
     }
 
     @Override
+    public void updateDescription()
+    {
+        description = DESCRIPTIONS[0] + amountOfDamageItDoes + DESCRIPTIONS[1];
+    }
+
+    @Override
     public AbstractOrb makeCopy() {
         return new SmallSpireGrowthSummon();
     }
