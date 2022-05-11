@@ -1,10 +1,13 @@
 package theGartic.summons;
 
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import theGartic.GarticMod;
@@ -44,6 +47,12 @@ public class SmallSpireGrowthSummon extends AbstractSummonOrb {
         if (amountOfSummonsToUnsummonIt >= limitWhereSmallSpireGrowthIsUnsummoned){
             unSummon();
         }
+    }
+
+    @Override
+    protected void renderText(SpriteBatch sb) {
+        FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(amountOfDamageItDoes),
+                cX + NUM_X_OFFSET, cY + NUM_Y_OFFSET, Color.RED, fontScale);
     }
 
     @Override
