@@ -54,5 +54,12 @@
     "DESCRIPTIONS": [
       "Gain one [E] . At the start of each combat, summon a Small Spire Growth."
     ]
+  },
+  "${ModID}:Meat Treat": {
+    "NAME": "Meat Treat",
+    "FLAVOR": "...",
+    "DESCRIPTIONS": [
+      "At the end of the turn, if you don't have a Summon, Summon a Bait."
+    ]
   }
 }
