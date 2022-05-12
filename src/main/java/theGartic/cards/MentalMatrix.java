@@ -1,10 +1,12 @@
 package theGartic.cards;
 
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import theGartic.patches.GameActionManagerPatch;
 
 import static com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase.COMBAT;
 import static theGartic.GarticMod.makeCardPath;
@@ -25,10 +27,10 @@ public class MentalMatrix extends AbstractEasyCard {
         baseMagicNumber = magicNumber = 0;
     }
 
-    // TODO: get number of cards added to draw/discard this turn
     @Override
     public void applyPowers() {
-        //baseMagicNumber = magicNumber = GameActionManager.CardsAddedToDrawOrDiscard - previousCardsAddedToDrawOrDiscard;
+        GameActionManager GMA = AbstractDungeon.actionManager;
+        baseMagicNumber = magicNumber = GameActionManagerPatch.addCardsAddedToDrawOrDiscardField.CardsAddedToDrawOrDiscard.get(GMA) - previousCardsAddedToDrawOrDiscard;
         super.applyPowers();
         if(CardCrawlGame.isInARun() && AbstractDungeon.getCurrRoom().phase == COMBAT && magicNumber > 0) {
             rawDescription = cardStrings.DESCRIPTION + cardStrings.UPGRADE_DESCRIPTION;
@@ -48,7 +50,8 @@ public class MentalMatrix extends AbstractEasyCard {
 
     @Override
     public void atTurnStart() {
-    //    previousCardsAddedToDrawOrDiscard = GameActionManager.CardsAddedToDrawOrDiscard;
+        GameActionManager GMA = AbstractDungeon.actionManager;
+        previousCardsAddedToDrawOrDiscard = GameActionManagerPatch.addCardsAddedToDrawOrDiscardField.CardsAddedToDrawOrDiscard.get(GMA);
     }
 
     @Override

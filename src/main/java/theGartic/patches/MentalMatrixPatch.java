@@ -4,6 +4,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
@@ -18,7 +19,7 @@ public class MentalMatrixPatch {
         if (__instance.duration == ___EFFECT_DUR)
         {
             // Track the number of cards added to draw or discard
-            GameActionManager GMA = new GameActionManager();
+            GameActionManager GMA = AbstractDungeon.actionManager;
             int prevValue = GameActionManagerPatch.addCardsAddedToDrawOrDiscardField.CardsAddedToDrawOrDiscard.get(GMA);
             // Increment value each time
             GameActionManagerPatch.addCardsAddedToDrawOrDiscardField.CardsAddedToDrawOrDiscard.set(GMA,(prevValue+1));
