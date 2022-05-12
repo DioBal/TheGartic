@@ -349,6 +349,21 @@
     "NAME": "Heavy Slam",
     "DESCRIPTION": "{@@}Deal damage equal to the number of cards in your discard pile{!Upgrades!|>0=+3}.{!D!|>0= NL (Deals !D! damage.)}"
   },
+  "${ModID}:GalaxyBrain": {
+    "NAME": "Galaxy Brain",
+    "DESCRIPTION": "Innate. NL {@@}Deal damage equal to the number of cards in your discard pile.{!D!|>0= NL (Deals !D! damage.)}",
+    "UPGRADE_DESCRIPTION": "{@@}Deal damage equal to the number of cards in your discard pile.{!D!|>0= NL (Deals !D! damage.)}"
+  },
+  "${ModID}:CutLosses": {
+    "NAME": "Cut Losses",
+    "DESCRIPTION": "Exit your Stance. All enemies lose HP equal to the HP you lost this turn.",
+    "UPGRADE_DESCRIPTION": " NL (You have lost !M! HP this turn.)"
+  },
+  "${ModID}:MentalMatrix": {
+    "NAME": "Mental Matrix",
+    "DESCRIPTION": "Gain !B! Block. Repeat for each card added to your draw or discard pile this turn.",
+    "UPGRADE_DESCRIPTION": " NL (You have added !M! cards to your draw/discard pile this turn.)"
+  },
   "${ModID}:Protector": {
     "NAME": "Protector",
     "DESCRIPTION": "Gain !B! Block. NL If this card is discarded, gain [E]."
