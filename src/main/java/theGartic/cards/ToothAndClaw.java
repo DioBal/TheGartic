@@ -5,12 +5,17 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import theGartic.GarticMod;
 import theGartic.TheGartic;
+import theGartic.actions.DistractingFoxAction;
 import theGartic.actions.SummonOrbAction;
+import theGartic.actions.DireWolfSummonAction;
+import theGartic.summons.AbstractSummonOrb;
 import theGartic.summons.DireWolfSummon;
 
 import static theGartic.GarticMod.makeCardPath;
+import static theGartic.util.Wiz.adp;
 
 public class ToothAndClaw extends AbstractEasyCard
 {
@@ -39,9 +44,21 @@ public class ToothAndClaw extends AbstractEasyCard
     }
 
     @Override
-    public void use(AbstractPlayer player, AbstractMonster monster)
-    {
-        addToBot(new SummonOrbAction(new DireWolfSummon(magicNumber, secondMagic), magicNumber));
+    public void use(AbstractPlayer player, AbstractMonster monster) {
+        addToBot(new DireWolfSummonAction(cardStrings.EXTENDED_DESCRIPTION[1], magicNumber, secondMagic));
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (!super.canUse(p, m))
+            return false;
+        for (AbstractOrb orb : adp().orbs) {
+            if (orb instanceof AbstractSummonOrb)
+                if (DireWolfSummonAction.isOrbTarget((AbstractSummonOrb) orb))
+                    return true;
+        }
+        cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
+        return false;
     }
 
     @Override

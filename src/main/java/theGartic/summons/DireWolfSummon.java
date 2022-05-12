@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import theGartic.GarticMod;
-import theGartic.actions.DireWolfAction;
+import theGartic.actions.DireWolfAttackAction;
 import theGartic.cards.DireWolfHelper;
 import theGartic.util.OnModifyPowersOrb;
 
@@ -34,7 +34,7 @@ public class DireWolfSummon extends AbstractSummonOrb implements OnModifyPowersO
     @Override
     public void onEndOfTurn() {
         for (int i = 0; i < passiveAmount; i++) {
-            AbstractDungeon.actionManager.addToTop(new DireWolfAction(passiveAmount, evokeAmount));
+            AbstractDungeon.actionManager.addToTop(new DireWolfAttackAction(passiveAmount, evokeAmount));
         }
     }
 

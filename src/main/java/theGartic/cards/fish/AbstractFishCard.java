@@ -5,8 +5,11 @@ import com.megacrit.cardcrawl.cards.colorless.Madness;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import theGartic.GarticMod;
 import theGartic.cards.AbstractEasyCard;
+import basemod.BaseMod;
 
 import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.ArrayList;
 
 public abstract class AbstractFishCard extends AbstractEasyCard {
     public AbstractFishCard(String cardID, int cost, CardType type, CardRarity rarity, CardTarget target, CardColor color) {
@@ -47,5 +50,12 @@ public abstract class AbstractFishCard extends AbstractEasyCard {
         }
 
         return new Madness();
+    }
+    
+    @Override
+    public List<String> getCardDescriptors() {
+        List<String> tags = new ArrayList<>();
+        tags.add(BaseMod.getKeywordTitle("garticmod:fish"));
+        return tags;
     }
 }

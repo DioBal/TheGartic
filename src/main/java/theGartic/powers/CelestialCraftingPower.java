@@ -33,6 +33,8 @@ public class CelestialCraftingPower extends AbstractPower implements OnCardCreat
         Texture hiDefImage = TexLoader.getTexture(GarticMod.modID + "Resources/images/powers/CelestialCrafting84.png");
         region128 = new TextureAtlas.AtlasRegion(hiDefImage, 0, 0, hiDefImage.getWidth(), hiDefImage.getHeight());
         region48 = new TextureAtlas.AtlasRegion(normalTexture, 0, 0, normalTexture.getWidth(), normalTexture.getHeight());
+
+        updateDescription();
     }
 
     @Override
