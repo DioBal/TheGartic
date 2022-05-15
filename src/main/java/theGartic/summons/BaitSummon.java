@@ -1,11 +1,18 @@
 package theGartic.summons;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import theGartic.GarticMod;
+import theGartic.actions.ReplaceBaitAction;
+import theGartic.actions.SummonOrbAction;
+
+import static theGartic.GarticMod.makeOrbPath;
+import static theGartic.util.Wiz.adp;
+import static theGartic.util.Wiz.atb;
 
 public class BaitSummon extends AbstractSummonOrb{
 
@@ -13,8 +20,8 @@ public class BaitSummon extends AbstractSummonOrb{
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
 
-    public BaitSummon(int amount){
-        //TODO: Add code to here
+    public BaitSummon(){
+        super(ORB_ID, orbString.NAME, 1, 1, makeOrbPath("MischievousFox.png"));
     }
 
     @Override
@@ -24,8 +31,11 @@ public class BaitSummon extends AbstractSummonOrb{
 
     @Override
     public void onEndOfTurn() {
-        //TODO: Create action to summon another summon
-        //TODO: Create action to unsummon Bait
+        replaceThisBaitWithAnotherSummon();
+    }
+
+    private void replaceThisBaitWithAnotherSummon(){
+        atb(new ReplaceBaitAction());
     }
 
     @Override
