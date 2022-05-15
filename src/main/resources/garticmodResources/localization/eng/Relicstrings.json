@@ -55,7 +55,7 @@
       "Gain one [E] . At the start of each combat, summon a Small Spire Growth."
     ]
   },
-  "${ModID}:Meat Treat": {
+  "${ModID}:MeatTreat": {
     "NAME": "Meat Treat",
     "FLAVOR": "...",
     "DESCRIPTIONS": [
