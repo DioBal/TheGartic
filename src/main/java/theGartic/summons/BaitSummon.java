@@ -19,7 +19,7 @@ public class BaitSummon extends AbstractSummonOrb{
     public static final String ORB_ID = GarticMod.makeID(BaitSummon.class.getSimpleName());
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
-    private static int TURNS_BEFORE_SUMMONING_SOMETHING = 1;
+    private int TURNS_BEFORE_SUMMONING_SOMETHING = 1;
 
     public BaitSummon(){
         super(ORB_ID, orbString.NAME, 1, 1, makeOrbPath("MischievousFox.png"));
