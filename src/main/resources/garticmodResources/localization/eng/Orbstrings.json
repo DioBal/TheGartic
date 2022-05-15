@@ -65,5 +65,11 @@
       "At the end of your turn it deals #b",
       " damage to #rYOU. Unsummon it or Summon things twice to make it go away!"
     ]
+  },
+  "${ModID}:BaitSummon": {
+    "NAME": "Bait",
+    "DESCRIPTION": [
+      "At the end of your next turn, it unsummons itself and Summons a random summon."
+    ]
   }
 }
