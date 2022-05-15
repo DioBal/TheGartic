@@ -23,8 +23,16 @@ public class ReplaceBaitAction extends AbstractGameAction {
     public void update() {
         RemoveBait();
 
-        int randomSummonChosen = AbstractDungeon.miscRng.random(
-                SummonsAvailableForBaitSummon.values().length);
+        int lengthOfSummonsEnum = SummonsAvailableForBaitSummon.values().length;
+        int randomSummonChosen;
+
+        //Yes, this do-while is needed, as the random function returning 8
+        //happened once while testing.
+        do{
+            randomSummonChosen = AbstractDungeon.miscRng.random(
+                    lengthOfSummonsEnum);
+        } while (randomSummonChosen >= lengthOfSummonsEnum);
+
         SummonsAvailableForBaitSummon enumValue = SummonsAvailableForBaitSummon.
                 values()[randomSummonChosen];
         SummonFromBait(enumValue);
