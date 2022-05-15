@@ -56,7 +56,7 @@ public class ReplaceBaitAction extends AbstractGameAction {
                 atb(new SummonOrbAction(new FetchingFoxSummon(1,1)));
                 break;
             case FIRE_IMP:
-                atb(new SummonOrbAction(new FireImpSummon(1,1)));
+                atb(new SummonOrbAction(new FireImpSummon(3,1)));
                 break;
             case HUNGRY_FOX:
                 atb(new SummonOrbAction(new HungryFox(3)));
