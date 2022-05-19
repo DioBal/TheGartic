@@ -62,11 +62,25 @@
       " #yAttacks deals double damage."
     ]
   },
+  "${ModID}:DynamicEntryPower": {
+    "NAME": "Dynamic Entry",
+    "DESCRIPTIONS": [
+      "Whenever you summon, activate that summon's end of turn effect.",
+      "Whenever you summon, activate that summon's end of turn effect ",
+      " times."
+    ]
+  },
   "${ModID}:AsStonePower": {
     "NAME": "As Stone",
     "DESCRIPTIONS": [
       "Whenever you gain #yBlock, gain #b",
       " #yThorns."
+    ]
+  },
+  "${ModID}:GarbageGolemPower": {
+    "NAME": "GarbageGolem",
+    "DESCRIPTIONS": [
+      "If you win combat this turn, carry your block over to the next combat."
     ]
   },
   "${ModID}:GambleNextTurnPower": {

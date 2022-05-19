@@ -2,6 +2,7 @@ package theGartic;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.abstracts.CustomSavable;
 import basemod.abstracts.DynamicVariable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
@@ -15,6 +16,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
@@ -34,6 +36,9 @@ import theGartic.relics.AbstractEasyRelic;
 
 import java.nio.charset.StandardCharsets;
 
+import static theGartic.util.Wiz.adp;
+import static theGartic.util.Wiz.att;
+
 @SuppressWarnings({"unused", "WeakerAccess"})
 @SpireInitializer
 public class GarticMod implements
@@ -44,8 +49,8 @@ public class GarticMod implements
         EditCharactersSubscriber,
         AddAudioSubscriber,
         OnStartBattleSubscriber,
-        PostBattleSubscriber
-        {
+        PostBattleSubscriber,
+        PostInitializeSubscriber {
 
     public static final String modID = "garticmod";
 
@@ -73,6 +78,8 @@ public class GarticMod implements
 
     public static final String GUNSHOT_KEY = makeID("GunshotKey");
     private static final String GUNSHOT_PATH = "garticmodResources/audio/sfx/Gunshot.ogg";
+
+    public static int garbageBlock = 0;
 
     public GarticMod() {
         BaseMod.subscribe(this);
@@ -120,6 +127,23 @@ public class GarticMod implements
 
     public static void initialize() {
         GarticMod thismod = new GarticMod();
+    }
+
+    @Override
+    public void receivePostInitialize() {
+        BaseMod.addSaveField(makeID("GarbageBlock"), new CustomSavable<Integer>() {
+            @Override
+            public void onLoad(Integer object)
+            {
+                garbageBlock = object;
+            }
+
+            @Override
+            public Integer onSave()
+            {
+                return garbageBlock;
+            }
+        });
     }
 
     @Override
@@ -213,6 +237,10 @@ public class GarticMod implements
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
         AllWillReturnPatch.lastTurnBlock = AllWillReturnPatch.thisTurnBlock = 0;
         AllWillReturnPatch.lastTurnDamage = AllWillReturnPatch.thisTurnDamage = 0;
+        if (garbageBlock > 0) {
+            att(new GainBlockAction(adp(), garbageBlock));
+            garbageBlock = 0;
+        }
     }
 
     @Override
