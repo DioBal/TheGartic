@@ -2,7 +2,7 @@
   "${ModID}:FireImpSummon": {
     "NAME": "Fire Imp",
     "DESCRIPTION": [
-      "Whenever you play an attack, deal ", " damage to a random enemy ", " time.", " times."
+      "Whenever you play an #yAttack, deal ", " damage to a random enemy ", " time.", " times."
     ]
   },
   "${ModID}:HungryFox": {
@@ -42,13 +42,13 @@
       "When your turn ends, pick #b1 of #b3 choices.",
       "Next turn, if you play a card, draw #b", " card.", " cards.",
       "Next turn, gain #b", " [E]",
-      "Add 1 of 3 Colorless cards with Exhaust to the top of your draw pile", ".", " times.",
-      "Apply #b", " Weak to all enemies.",
-      "Apply #b", " Vulnerable to all enemies.",
-      "Gain #b", " Block.",
+      "Add 1 of 3 #yColorless cards with #yExhaust to the top of your draw pile", ".", " times.",
+      "Apply #b", " #yWeak to all enemies.",
+      "Apply #b", " #yVulnerable to all enemies.",
+      "Gain #b", " #yBlock.",
       "Deal ", "x10 damage to the lowest health enemy.",
       "Deal ", "x5 damage to the highest health enemy.",
-      "Gain #b", "Temp HP."
+      "Gain #b", " #yTemp #yHP."
     ]
   },
   "${ModID}:DireWolfSummon": {
@@ -70,6 +70,13 @@
     "NAME": "Bait",
     "DESCRIPTION": [
       "At the end of your next turn, it unsummons itself and Summons a random summon."
+    ]
+  },
+  "${ModID}:MirroredFoxSummon": {
+    "NAME": "Mirrored Fox",
+    "DESCRIPTION": [
+      "At the end of your turn gain #b", " #yBlock.",
+      "At the end of your turn deal #b", " damage to random enemy."
     ]
   }
 }

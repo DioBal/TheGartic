@@ -38,7 +38,7 @@ public class CurseBlockMod extends AbstractBlockModifier {
     public Color blockImageColor() { return c; }
     
     @Override
-    public Color blockTextColor() { return c; }
+    public Color blockTextColor() { return new Color(120F, 140F, 255F, 0.2F); }
     
     @Override 
     public AbstractBlockModifier makeCopy() { 
