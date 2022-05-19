@@ -2,19 +2,19 @@ package theGartic;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
-import basemod.abstracts.CustomSavable;
 import basemod.abstracts.DynamicVariable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.scenes.scene2d.ui.List;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
@@ -24,16 +24,15 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theGartic.cards.AbstractEasyCard;
 import theGartic.cards.cardvars.SecondDamage;
+import theGartic.icons.*;
 import theGartic.patches.AllWillReturnPatch;
 import theGartic.potions.DarklingMilk;
+import theGartic.potions.CopyingPotion;
 import theGartic.potions.PurpleStuff;
 import theGartic.powers.PowerOfCreationPower;
 import theGartic.relics.AbstractEasyRelic;
 
 import java.nio.charset.StandardCharsets;
-
-import static theGartic.util.Wiz.adp;
-import static theGartic.util.Wiz.att;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 @SpireInitializer
@@ -45,8 +44,8 @@ public class GarticMod implements
         EditCharactersSubscriber,
         AddAudioSubscriber,
         OnStartBattleSubscriber,
-        PostBattleSubscriber,
-        PostInitializeSubscriber {
+        PostBattleSubscriber
+        {
 
     public static final String modID = "garticmod";
 
@@ -74,8 +73,6 @@ public class GarticMod implements
 
     public static final String GUNSHOT_KEY = makeID("GunshotKey");
     private static final String GUNSHOT_PATH = "garticmodResources/audio/sfx/Gunshot.ogg";
-
-    public static int garbageBlock = 0;
 
     public GarticMod() {
         BaseMod.subscribe(this);
@@ -126,23 +123,6 @@ public class GarticMod implements
     }
 
     @Override
-    public void receivePostInitialize() {
-        BaseMod.addSaveField(makeID("GarbageBlock"), new CustomSavable<Integer>() {
-            @Override
-            public void onLoad(Integer object)
-            {
-                garbageBlock = object;
-            }
-
-            @Override
-            public Integer onSave()
-            {
-                return garbageBlock;
-            }
-        });
-    }
-
-    @Override
     public void receiveEditCharacters() {
         BaseMod.addCharacter(new TheGartic(TheGartic.characterStrings.NAMES[1], TheGartic.Enums.THE_GARTIC),
                 CHARSELECT_BUTTON, CHARSELECT_PORTRAIT, TheGartic.Enums.THE_GARTIC);
@@ -151,6 +131,7 @@ public class GarticMod implements
 
     public void receiveEditPotions() {
         BaseMod.addPotion(PurpleStuff.class, Color.PURPLE.cpy(), Color.PURPLE.cpy(), Color.PURPLE.cpy(), PurpleStuff.ID, TheGartic.Enums.THE_GARTIC);
+        BaseMod.addPotion(CopyingPotion.class, Color.NAVY.cpy(), Color.NAVY.cpy(), Color.NAVY.cpy(), CopyingPotion.ID, TheGartic.Enums.THE_GARTIC);
         BaseMod.addPotion(DarklingMilk.class, Color.WHITE.cpy(), Color.WHITE.cpy(), Color.WHITE.cpy(), DarklingMilk.ID, TheGartic.Enums.THE_GARTIC);
     }
 
@@ -172,6 +153,15 @@ public class GarticMod implements
 
     @Override
     public void receiveEditCards() {
+        CustomIconHelper.addCustomIcon(new VoidIcon());
+        CustomIconHelper.addCustomIcon(new EnergyIcon());
+        CustomIconHelper.addCustomIcon(new DamageIcon());
+        CustomIconHelper.addCustomIcon(new SpikyIcon());
+        CustomIconHelper.addCustomIcon(new BlockingIcon());
+        CustomIconHelper.addCustomIcon(new CurseIcon());
+        CustomIconHelper.addCustomIcon(new AngryIcon());
+        CustomIconHelper.addCustomIcon(new PlatedIcon());
+
         new AutoAdd(modID)
                 .packageFilter(SecondDamage.class)
                 .any(DynamicVariable.class, (info, dynamicVariable) -> BaseMod.addDynamicVariable(dynamicVariable));
@@ -223,10 +213,6 @@ public class GarticMod implements
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
         AllWillReturnPatch.lastTurnBlock = AllWillReturnPatch.thisTurnBlock = 0;
         AllWillReturnPatch.lastTurnDamage = AllWillReturnPatch.thisTurnDamage = 0;
-        if (garbageBlock > 0) {
-            att(new GainBlockAction(adp(), garbageBlock));
-            garbageBlock = 0;
-        }
     }
 
     @Override
