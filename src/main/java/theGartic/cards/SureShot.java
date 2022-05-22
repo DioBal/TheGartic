@@ -17,7 +17,7 @@ import static theGartic.util.Wiz.atb;
 public class SureShot extends AbstractEasyCard {
     public static final String ID = GarticMod.makeID(SureShot.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = GarticMod.makeCardPath("Attack.png");
+    public static final String IMG = GarticMod.makeCardPath("SureShot.png");
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
