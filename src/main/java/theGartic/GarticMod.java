@@ -155,7 +155,7 @@ public class GarticMod implements
 
     public void receiveEditPotions() {
         BaseMod.addPotion(PurpleStuff.class, Color.PURPLE.cpy(), Color.PURPLE.cpy(), Color.PURPLE.cpy(), PurpleStuff.ID, TheGartic.Enums.THE_GARTIC);
-        BaseMod.addPotion(CopyingPotion.class, Color.NAVY.cpy(), Color.NAVY.cpy(), Color.NAVY.cpy(), CopyingPotion.ID, TheGartic.Enums.THE_GARTIC);
+        BaseMod.addPotion(CopyingPotion.class, Color.NAVY.cpy(), Color.NAVY.cpy(), Color.NAVY.cpy(), CopyingPotion.POTION_ID, TheGartic.Enums.THE_GARTIC);
         BaseMod.addPotion(DarklingMilk.class, Color.WHITE.cpy(), Color.WHITE.cpy(), Color.WHITE.cpy(), DarklingMilk.ID, TheGartic.Enums.THE_GARTIC);
     }
 
