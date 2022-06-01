@@ -1,14 +1,11 @@
 package theGartic.cards;
 
-import basemod.BaseMod;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theGartic.actions.AddOrbToPartyAction;
+import theGartic.actions.AddSummonedOrbToPartyAction;
 import theGartic.actions.CheckForPartyAction;
-import theGartic.powers.PandamoniumPower;
 
 import static theGartic.GarticMod.makeID;
-import static theGartic.util.Wiz.applyToSelf;
 
 public class TamersCandy extends AbstractEasyCard {
 
@@ -24,7 +21,7 @@ public class TamersCandy extends AbstractEasyCard {
     public void use(AbstractPlayer p, AbstractMonster m)
     {
         addToBot(new CheckForPartyAction());
-        addToBot(new AddOrbToPartyAction(cardStrings.EXTENDED_DESCRIPTION[0]));
+        addToBot(new AddSummonedOrbToPartyAction(cardStrings.EXTENDED_DESCRIPTION[0]));
     }
 
     public void upp()

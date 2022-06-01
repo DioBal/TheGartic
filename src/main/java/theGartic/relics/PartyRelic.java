@@ -6,10 +6,13 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardSave;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import theGartic.GarticMod;
 import theGartic.TheGartic;
 import theGartic.actions.SummonOrbAction;
+import theGartic.cards.summonOptions.AbstractSummonOption;
 import theGartic.summons.AbstractSummonOrb;
 
 import java.util.ArrayList;
@@ -18,11 +21,11 @@ import java.util.List;
 import static theGartic.GarticMod.makeID;
 import static theGartic.GarticMod.partySummons;
 
-public class PartyRelic extends AbstractEasyRelic implements CustomSavable<List<AbstractSummonOrb>>
+public class PartyRelic extends AbstractEasyRelic // implements CustomSavable<List<CardSave>>
 {
     public static final String ID = makeID(PartyRelic.class.getSimpleName());
 
-    public List<AbstractSummonOrb> party = null;
+    public List<AbstractSummonOption> party = null;
 
     public PartyRelic() {
         super(ID, RelicTier.SPECIAL, LandingSound.FLAT, TheGartic.Enums.GARTIC_COLOR);
@@ -32,17 +35,22 @@ public class PartyRelic extends AbstractEasyRelic implements CustomSavable<List<
     public void atBattleStart()
     {
         flash();
-        for (AbstractSummonOrb summon : party)
-            addToBot(new SummonOrbAction(summon));
+        for (AbstractSummonOption summon : party)
+            summon.OnSummon();
     }
 
-    public void addToParty(AbstractSummonOrb orb)
+    public void addToParty(AbstractSummonOption summonOption)
     {
         if(party == null)
-            party = new ArrayList<AbstractSummonOrb>();
-        party.add(orb);
+            GetParty();
+        party.add(summonOption);
         //getUpdatedDescription();
         flash();
+    }
+
+    private void GetParty()
+    {
+        party = new ArrayList<AbstractSummonOption>();
     }
 
     @Override
@@ -53,32 +61,47 @@ public class PartyRelic extends AbstractEasyRelic implements CustomSavable<List<
     private String getSummonsToString()
     {
         String summons = "";
-        if(party.size() > 0)
+        if(party != null && party.size() > 0)
         {
-            for (AbstractSummonOrb orb: party)
+            for (AbstractSummonOption summon: party)
             {
-                OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(orb.ID);
-                summons += orbString.NAME;
-                if(party.indexOf(orb) < party.size() - 1)
+                CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(summon.cardID);
+                summons += cardStrings.NAME;
+                if(party.indexOf(summon) < party.size() - 1)
                     summons += DESCRIPTIONS[1];
             }
         }
         return summons;
     }
-
+/*
     @Override
-    public List<AbstractSummonOrb> onSave()
+    public List<CardSave> onSave()
     {
         if(party != null)
-            return party;
+        {
+            List<CardSave> cardSaves = new ArrayList<>();
+            for (AbstractSummonOption card: party)
+                cardSaves.add(new CardSave(card.cardID, card.timesUpgraded, card.misc));
+
+            return cardSaves;
+        }
         return null;
     }
 
     @Override
-    public void onLoad(List<AbstractSummonOrb> partyLoad)
+    public void onLoad(List<CardSave> partyLoad)
     {
         if(partyLoad != null)
-            party = partyLoad;
-    }
+        {
+            for (CardSave card: partyLoad)
+            {
+                AbstractSummonOption savedCard = (AbstractSummonOption) CardLibrary.getCard(card.id);
+                savedCard.timesUpgraded = card.upgrades;
+                savedCard.misc = card.misc;
+
+                party.add(savedCard);
+            }
+        }
+    }*/
 }
 

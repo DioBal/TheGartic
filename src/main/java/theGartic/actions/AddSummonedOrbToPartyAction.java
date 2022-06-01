@@ -4,21 +4,17 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.powers.MetallicizePower;
-import theGartic.cards.DistractingFox;
 import theGartic.relics.PartyRelic;
 import theGartic.summons.AbstractSummonOrb;
-import theGartic.summons.FireImpSummon;
 import theGartic.util.OrbTargetArrow;
 import theGartic.util.OrbTargetScreen;
 
 import static theGartic.util.Wiz.adp;
-import static theGartic.util.Wiz.applyToSelfTop;
 
-public class AddOrbToPartyAction extends AbstractGameAction implements OrbTargetArrow.OrbTargetArrowSubscriber {
+public class AddSummonedOrbToPartyAction extends AbstractGameAction{// implements OrbTargetArrow.OrbTargetArrowSubscriber
     private String tipString;
 
-    public AddOrbToPartyAction(String tipString) {
+    public AddSummonedOrbToPartyAction(String tipString) {
         actionType = ActionType.SPECIAL;
         startDuration = duration = Settings.ACTION_DUR_XFAST;
     }
@@ -26,6 +22,7 @@ public class AddOrbToPartyAction extends AbstractGameAction implements OrbTarget
     @Override
     public void update()
     {
+        /*
         int summonCount = 0;
         AbstractSummonOrb lastOrb = null;
         if (duration == startDuration)
@@ -57,10 +54,10 @@ public class AddOrbToPartyAction extends AbstractGameAction implements OrbTarget
 
             if(OrbTargetScreen.Inst.isActive && !OrbTargetArrow.isActive)
                 isDone = true;
-        } else
+        } else*/
             isDone = true;
     }
-
+/*
     @Override
     public void receiveTargetOrb(AbstractCreature source, AbstractSummonOrb orb) {
         addToParty(orb);
@@ -81,5 +78,5 @@ public class AddOrbToPartyAction extends AbstractGameAction implements OrbTarget
     @Override
     public boolean isAcceptableTarget(AbstractSummonOrb orb) {
         return orb instanceof AbstractSummonOrb;
-    }
+    }*/
 }

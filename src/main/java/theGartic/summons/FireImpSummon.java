@@ -31,7 +31,7 @@ public class FireImpSummon extends AbstractSummonOrb
     public static final String ORB_ID = GarticMod.makeID(FireImpSummon.class.getSimpleName());
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
-    private static int BASE_PASSIVE_AMOUNT = 3, BASE_STACK = 1;
+    public static int BASE_PASSIVE_AMOUNT = 3, BASE_STACK = 1;
 
     public FireImpSummon()
     {

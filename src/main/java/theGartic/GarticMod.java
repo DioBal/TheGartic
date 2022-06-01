@@ -16,6 +16,7 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardSave;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -24,6 +25,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theGartic.cards.AbstractEasyCard;
 import theGartic.cards.cardvars.SecondDamage;
+import theGartic.cards.summonOptions.AbstractSummonOption;
 import theGartic.patches.AllWillReturnPatch;
 import theGartic.potions.PurpleStuff;
 import theGartic.powers.PowerOfCreationPower;
@@ -80,6 +82,8 @@ public class GarticMod implements
 
     public static int garbageBlock = 0;
 
+    public static List<CardSave> party = null;
+
     public GarticMod() {
         BaseMod.subscribe(this);
 
@@ -126,23 +130,6 @@ public class GarticMod implements
 
     public static void initialize(){
         GarticMod thismod = new GarticMod();
-
-        partySummons = new ArrayList<>();
-
-        BaseMod.addSaveField("Party", new CustomSavable<List<AbstractSummonOrb>>()
-        {
-            @Override
-            public List<AbstractSummonOrb> onSave()
-            {
-                return partySummons;
-            }
-
-            @Override
-            public void onLoad(List<AbstractSummonOrb> abstractSummonOrbs)
-            {
-                partySummons = abstractSummonOrbs;
-            }
-        });
     }
 
     @Override
@@ -158,6 +145,20 @@ public class GarticMod implements
             public Integer onSave()
             {
                 return garbageBlock;
+            }
+        });
+
+        BaseMod.addSaveField(makeID("Party"), new CustomSavable<List<CardSave>>() {
+            @Override
+            public void onLoad(List<CardSave> object)
+            {
+                party = object;
+            }
+
+            @Override
+            public List<CardSave> onSave()
+            {
+                return party;
             }
         });
     }
