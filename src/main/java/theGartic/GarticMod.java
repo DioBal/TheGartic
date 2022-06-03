@@ -26,6 +26,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theGartic.cards.AbstractEasyCard;
 import theGartic.cards.cardvars.SecondDamage;
+import theGartic.icons.*;
 import theGartic.patches.AllWillReturnPatch;
 import theGartic.potions.CopyingPotion;
 import theGartic.potions.DarklingMilk;
