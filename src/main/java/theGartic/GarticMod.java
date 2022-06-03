@@ -17,6 +17,7 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardSave;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -25,15 +26,17 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theGartic.cards.AbstractEasyCard;
 import theGartic.cards.cardvars.SecondDamage;
-import theGartic.icons.*;
 import theGartic.patches.AllWillReturnPatch;
 import theGartic.potions.CopyingPotion;
 import theGartic.potions.DarklingMilk;
 import theGartic.potions.PurpleStuff;
 import theGartic.powers.PowerOfCreationPower;
 import theGartic.relics.AbstractEasyRelic;
+import theGartic.summons.AbstractSummonOrb;
 
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 
 import static theGartic.util.Wiz.adp;
 import static theGartic.util.Wiz.att;
@@ -77,8 +80,11 @@ public class GarticMod implements
 
     public static final String GUNSHOT_KEY = makeID("GunshotKey");
     private static final String GUNSHOT_PATH = "garticmodResources/audio/sfx/Gunshot.ogg";
+    public static List<AbstractSummonOrb> partySummons = new ArrayList<>();
 
     public static int garbageBlock = 0;
+
+    public static List<CardSave> party = null;
 
     public GarticMod() {
         BaseMod.subscribe(this);
@@ -124,7 +130,7 @@ public class GarticMod implements
         return modID + "Resources/images/cards/" + resourcePath;
     }
 
-    public static void initialize() {
+    public static void initialize(){
         GarticMod thismod = new GarticMod();
     }
 
@@ -141,6 +147,20 @@ public class GarticMod implements
             public Integer onSave()
             {
                 return garbageBlock;
+            }
+        });
+
+        BaseMod.addSaveField(makeID("Party"), new CustomSavable<List<CardSave>>() {
+            @Override
+            public void onLoad(List<CardSave> object)
+            {
+                party = object;
+            }
+
+            @Override
+            public List<CardSave> onSave()
+            {
+                return party;
             }
         });
     }

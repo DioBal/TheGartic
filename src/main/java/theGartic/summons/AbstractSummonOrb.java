@@ -9,12 +9,14 @@ import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 import theGartic.GarticMod;
@@ -46,7 +48,7 @@ public abstract class AbstractSummonOrb extends CustomOrb
     {
         super(ID, name, amount, stack, "", "", path);
 
-        showEvokeValue = true;
+        showEvokeValue = false;
         updateDescription();
 
         angle = MathUtils.random(360.0f);
@@ -64,7 +66,7 @@ public abstract class AbstractSummonOrb extends CustomOrb
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
     }
-
+/*
     protected void renderText(SpriteBatch sb)
     {
         FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(evokeAmount),
@@ -73,7 +75,7 @@ public abstract class AbstractSummonOrb extends CustomOrb
         FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(passiveAmount),
                 cX + NUM_X_OFFSET, cY + bobEffect.y / 2.0F + NUM_Y_OFFSET + 20.0F * Settings.scale, c, fontScale);
     }
-
+*/
     @Override //if you want to ignore Focus
     public void applyFocus()
     {
@@ -86,6 +88,10 @@ public abstract class AbstractSummonOrb extends CustomOrb
 
     @Override
     public void onEvoke() {
+    }
+
+    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source)
+    {
     }
 
     public static void unSummon(AbstractOrb orb)
@@ -209,4 +215,6 @@ public abstract class AbstractSummonOrb extends CustomOrb
         sb.setColor(reticleColor);
         sb.draw(ImageMaster.RETICLE_CORNER, hb.cX + x - 18.0F, hb.cY + y - 18.0F, 18.0F, 18.0F, 36.0F, 36.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 36, 36, flipX, flipY);
     }
+
+
 }

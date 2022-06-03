@@ -45,4 +45,14 @@ public class InvisibleSummonPower extends AbstractPower implements InvisiblePowe
                 ((AbstractSummonOrb)orb).onUseCard(card, action);
         }
     }
+
+    @Override
+    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source)
+    {
+        for (AbstractOrb orb : AbstractDungeon.player.orbs)
+        {
+            if(orb instanceof AbstractSummonOrb)
+                ((AbstractSummonOrb)orb).onApplyPower(power, target, source);
+        }
+    }
 }
