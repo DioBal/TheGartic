@@ -9,7 +9,6 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
-import com.badlogic.gdx.scenes.scene2d.ui.List;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
@@ -28,13 +27,16 @@ import theGartic.cards.AbstractEasyCard;
 import theGartic.cards.cardvars.SecondDamage;
 import theGartic.icons.*;
 import theGartic.patches.AllWillReturnPatch;
-import theGartic.potions.DarklingMilk;
 import theGartic.potions.CopyingPotion;
+import theGartic.potions.DarklingMilk;
 import theGartic.potions.PurpleStuff;
 import theGartic.powers.PowerOfCreationPower;
 import theGartic.relics.AbstractEasyRelic;
+import theGartic.summons.AbstractSummonOrb;
 
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 
 import static theGartic.util.Wiz.adp;
 import static theGartic.util.Wiz.att;
@@ -78,6 +80,7 @@ public class GarticMod implements
 
     public static final String GUNSHOT_KEY = makeID("GunshotKey");
     private static final String GUNSHOT_PATH = "garticmodResources/audio/sfx/Gunshot.ogg";
+    public static List<AbstractSummonOrb> partySummons = new ArrayList<>();
 
     public static int garbageBlock = 0;
 
@@ -125,7 +128,7 @@ public class GarticMod implements
         return modID + "Resources/images/cards/" + resourcePath;
     }
 
-    public static void initialize() {
+    public static void initialize(){
         GarticMod thismod = new GarticMod();
     }
 
