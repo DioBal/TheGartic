@@ -5,8 +5,12 @@ import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import theGartic.cards.summonOptions.AbstractSummonOption;
+import theGartic.relics.PartyRelic;
 
 import java.util.ArrayList;
+
+import static theGartic.util.Wiz.adp;
+import static theGartic.util.Wiz.att;
 
 public class PickNewSummonToAddToPartyAction extends AbstractGameAction
 {
@@ -19,10 +23,18 @@ public class PickNewSummonToAddToPartyAction extends AbstractGameAction
 
     public void update()
     {
-        ArrayList<AbstractCard> summonChoices = new ArrayList<>();
-        for (int i = 0; i < amount; ++i)
-            summonChoices.add(AbstractSummonOption.returnRandomSummon(false, true));
-        addToBot(new ChooseOneAction(summonChoices));
+        ArrayList<AbstractCard> summonChoices =
+                AbstractSummonOption.returnRandomSummons(false, true, amount);
+        att(new AbstractGameAction() {
+            @Override
+            public void update() {
+                PartyRelic relic = (PartyRelic) adp().getRelic(PartyRelic.ID);
+                if (relic != null)
+                    relic.resetDescription();
+                isDone = true;
+            }
+        });
+        att(new ChooseOneAction(summonChoices));
         isDone = true;
     }
 }

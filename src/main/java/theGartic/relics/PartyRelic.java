@@ -1,31 +1,23 @@
 package theGartic.relics;
 
 import basemod.abstracts.CustomSavable;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardSave;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.localization.OrbStrings;
-import theGartic.GarticMod;
 import theGartic.TheGartic;
-import theGartic.actions.SummonOrbAction;
 import theGartic.cards.summonOptions.AbstractSummonOption;
-import theGartic.summons.AbstractSummonOrb;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import static theGartic.GarticMod.makeID;
-import static theGartic.GarticMod.partySummons;
 
-public class PartyRelic extends AbstractEasyRelic // implements CustomSavable<List<CardSave>>
+public class PartyRelic extends AbstractEasyRelic implements CustomSavable<ArrayList<CardSave>>
 {
     public static final String ID = makeID(PartyRelic.class.getSimpleName());
 
-    public List<AbstractSummonOption> party = null;
+    public ArrayList<AbstractSummonOption> party = null;
 
     public PartyRelic() {
         super(ID, RelicTier.SPECIAL, LandingSound.FLAT, TheGartic.Enums.GARTIC_COLOR);
@@ -42,15 +34,14 @@ public class PartyRelic extends AbstractEasyRelic // implements CustomSavable<Li
     public void addToParty(AbstractSummonOption summonOption)
     {
         if(party == null)
-            GetParty();
+            getParty();
         party.add(summonOption);
-        //getUpdatedDescription();
         flash();
     }
 
-    private void GetParty()
+    private void getParty()
     {
-        party = new ArrayList<AbstractSummonOption>();
+        party = new ArrayList<>();
     }
 
     @Override
@@ -73,13 +64,13 @@ public class PartyRelic extends AbstractEasyRelic // implements CustomSavable<Li
         }
         return summons;
     }
-/*
+
     @Override
-    public List<CardSave> onSave()
+    public ArrayList<CardSave> onSave()
     {
         if(party != null)
         {
-            List<CardSave> cardSaves = new ArrayList<>();
+            ArrayList<CardSave> cardSaves = new ArrayList<>();
             for (AbstractSummonOption card: party)
                 cardSaves.add(new CardSave(card.cardID, card.timesUpgraded, card.misc));
 
@@ -89,12 +80,15 @@ public class PartyRelic extends AbstractEasyRelic // implements CustomSavable<Li
     }
 
     @Override
-    public void onLoad(List<CardSave> partyLoad)
+    public void onLoad(ArrayList<CardSave> partyLoad)
     {
+        getParty();
         if(partyLoad != null)
         {
             for (CardSave card: partyLoad)
             {
+                if (card == null)
+                    continue;
                 AbstractSummonOption savedCard = (AbstractSummonOption) CardLibrary.getCard(card.id);
                 savedCard.timesUpgraded = card.upgrades;
                 savedCard.misc = card.misc;
@@ -102,6 +96,14 @@ public class PartyRelic extends AbstractEasyRelic // implements CustomSavable<Li
                 party.add(savedCard);
             }
         }
-    }*/
+        resetDescription();
+    }
+
+    public void resetDescription() {
+        tips.clear();
+        description = getUpdatedDescription();
+        tips.add(new PowerTip(name, description));
+        initializeTips();
+    }
 }
 

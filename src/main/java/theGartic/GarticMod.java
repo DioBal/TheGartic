@@ -17,7 +17,6 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardSave;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -85,8 +84,6 @@ public class GarticMod implements
 
     public static int garbageBlock = 0;
 
-    public static List<CardSave> party = null;
-
     public GarticMod() {
         BaseMod.subscribe(this);
 
@@ -148,20 +145,6 @@ public class GarticMod implements
             public Integer onSave()
             {
                 return garbageBlock;
-            }
-        });
-
-        BaseMod.addSaveField(makeID("Party"), new CustomSavable<List<CardSave>>() {
-            @Override
-            public void onLoad(List<CardSave> object)
-            {
-                party = object;
-            }
-
-            @Override
-            public List<CardSave> onSave()
-            {
-                return party;
             }
         });
     }

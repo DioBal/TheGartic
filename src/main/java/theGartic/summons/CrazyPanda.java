@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import theGartic.GarticMod;
 import theGartic.actions.PandaSmackAction;
+import theGartic.cards.summonOptions.PandaOption;
 import theGartic.util.OrbTargetArrow;
 
 import static java.lang.Math.pow;
@@ -45,6 +46,7 @@ public class CrazyPanda extends AbstractSummonOrb
         super(ORB_ID, orbString.NAME, passive, 0, makeOrbPath(imgPath));
         showEvokeValue = false;
         rotation = 0.0f;
+        summonOption = new PandaOption(false, true);
         updateDescription();
     }
 

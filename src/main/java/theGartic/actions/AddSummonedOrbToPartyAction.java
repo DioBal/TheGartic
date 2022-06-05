@@ -9,9 +9,9 @@ import theGartic.summons.AbstractSummonOrb;
 import theGartic.util.OrbTargetArrow;
 import theGartic.util.OrbTargetScreen;
 
-import static theGartic.util.Wiz.adp;
+import static theGartic.util.Wiz.*;
 
-public class AddSummonedOrbToPartyAction extends AbstractGameAction{// implements OrbTargetArrow.OrbTargetArrowSubscriber
+public class AddSummonedOrbToPartyAction extends AbstractGameAction implements OrbTargetArrow.OrbTargetArrowSubscriber {
     private String tipString;
 
     public AddSummonedOrbToPartyAction(String tipString) {
@@ -22,7 +22,6 @@ public class AddSummonedOrbToPartyAction extends AbstractGameAction{// implement
     @Override
     public void update()
     {
-        /*
         int summonCount = 0;
         AbstractSummonOrb lastOrb = null;
         if (duration == startDuration)
@@ -54,20 +53,31 @@ public class AddSummonedOrbToPartyAction extends AbstractGameAction{// implement
 
             if(OrbTargetScreen.Inst.isActive && !OrbTargetArrow.isActive)
                 isDone = true;
-        } else*/
+        } else
             isDone = true;
     }
-/*
+
     @Override
     public void receiveTargetOrb(AbstractCreature source, AbstractSummonOrb orb) {
         addToParty(orb);
         isDone = true;
+        att(new AbstractGameAction() {
+            @Override
+            public void update() {
+                PartyRelic relic = (PartyRelic) adp().getRelic(PartyRelic.ID);
+                if (relic != null)
+                    relic.resetDescription();
+                isDone = true;
+            }
+        });
     }
 
     private void addToParty(AbstractSummonOrb summonOrb)
     {
-        if(adp().hasRelic(PartyRelic.ID))
-            ((PartyRelic)adp().getRelic(PartyRelic.ID)).addToParty(summonOrb);
+        if(adp().hasRelic(PartyRelic.ID)) {
+            if (summonOrb.summonOption != null)
+            ((PartyRelic) adp().getRelic(PartyRelic.ID)).addToParty(summonOrb.summonOption);
+        }
     }
 
     @Override
@@ -78,5 +88,5 @@ public class AddSummonedOrbToPartyAction extends AbstractGameAction{// implement
     @Override
     public boolean isAcceptableTarget(AbstractSummonOrb orb) {
         return orb instanceof AbstractSummonOrb;
-    }*/
+    }
 }

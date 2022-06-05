@@ -13,7 +13,6 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -21,6 +20,7 @@ import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 import theGartic.GarticMod;
 import theGartic.cards.AbstractEasyCard;
+import theGartic.cards.summonOptions.AbstractSummonOption;
 import theGartic.util.OrbTargetArrow;
 
 import java.util.Iterator;
@@ -43,6 +43,8 @@ public abstract class AbstractSummonOrb extends CustomOrb
     private float reticleOffset = 0.0F;
     private float reticleAnimTimer = 0.0F;
     private static final float RETICLE_OFFSET_DIST = 15.0F * Settings.scale;
+
+    public AbstractSummonOption summonOption = null;
 
     public AbstractSummonOrb(String ID, String name, int amount, int stack, String path)
     {

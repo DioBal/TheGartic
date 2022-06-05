@@ -443,6 +443,10 @@
     "NAME": "Crazy Panda",
     "DESCRIPTION": " At the end of your turn deals damage to a random enemy and applies Weak or Vulnerable."
   },
+  "${ModID}:HungryFoxOption": {
+    "NAME": "Hungry Fox",
+    "DESCRIPTION": "At the end of your turn will deal !M! damage to the lowest health enemy."
+  },
   "${ModID}:UncannyHunger": {
     "NAME": "Uncanny Hunger",
     "DESCRIPTION": "At the start of your turn, garticmod:Unsummon. NL If you did, gain !M! Energy and draw !${ModID}:m2! cards.",

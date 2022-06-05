@@ -3,11 +3,9 @@ package theGartic.cards.summonOptions;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import theGartic.actions.SummonOrbAction;
-import theGartic.relics.PartyRelic;
 import theGartic.summons.FireImpSummon;
 
 import static theGartic.GarticMod.makeID;
-import static theGartic.util.Wiz.adp;
 import static theGartic.util.Wiz.atb;
 
 public class FireImpOption extends AbstractSummonOption
@@ -25,7 +23,7 @@ public class FireImpOption extends AbstractSummonOption
 
     public FireImpOption(boolean summon, boolean addToParty)
     {
-        super(ID, NAME, DESCRIPTION, CardType.ATTACK, summon, addToParty);
+        super(ID, CardType.ATTACK, summon, addToParty);
         magicNumber = baseMagicNumber = BASE_PASSIVE_AMOUNT;
     }
 
