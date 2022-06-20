@@ -31,7 +31,7 @@ public class InariWhiteFoxSummon extends AbstractSummonOrb
 
     public InariWhiteFoxSummon(int amount)
     {
-        super(ORB_ID, orbString.NAME, amount, 0, makeOrbPath("MischievousFox.png"));
+        super(ORB_ID, orbString.NAME, amount, 0, makeOrbPath("InariWhiteFox.png"));
         inariChoicesDeck = new ArrayList<EasyModalChoiceCard>();
         initInariChoicesDeck();
         shuffleInariChoicesDeck();

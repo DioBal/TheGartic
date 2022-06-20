@@ -18,7 +18,7 @@ public class SupplicateToInari extends AbstractEasyCard  {
 
     public static final String ID = GarticMod.makeID(SupplicateToInari.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = GarticMod.makeCardPath("Skill.png");
+    public static final String IMG = GarticMod.makeCardPath("SupplicateToInari.png");
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final CardRarity RARITY = CardRarity.RARE;
