@@ -2,6 +2,7 @@
   "modid": "${ModID}",
   "name": "${project.name}",
   "author_list": [
+    "Levender",
     "Vex'd"
   ],
   "description": "${project.description}",
