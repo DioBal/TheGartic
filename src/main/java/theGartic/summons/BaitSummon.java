@@ -22,7 +22,7 @@ public class BaitSummon extends AbstractSummonOrb{
     private int TURNS_BEFORE_SUMMONING_SOMETHING = 1;
 
     public BaitSummon(){
-        super(ORB_ID, orbString.NAME, 1, 1, makeOrbPath("MischievousFox.png"));
+        super(ORB_ID, orbString.NAME, 1, 1, makeOrbPath("Bait.png"));
     }
 
     @Override
