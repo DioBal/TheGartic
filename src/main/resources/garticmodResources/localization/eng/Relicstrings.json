@@ -57,14 +57,14 @@
   },
   "${ModID}:CorruptedMeat": {
     "NAME": "Corrupted Meat",
-    "FLAVOR": "There is a good reason for why no one eats blighted meat.",
+    "FLAVOR": "No one eats blighted meat, and there is a good reason for that.",
     "DESCRIPTIONS": [
       "Gain one [E] . At the start of each combat, summon a Small Spire Growth."
     ]
   },
   "${ModID}:MeatTreat": {
     "NAME": "Meat Treat",
-    "FLAVOR": "...",
+    "FLAVOR": "High quality meat, but not a sign of a good place to properly cook it.",
     "DESCRIPTIONS": [
       "At the end of the turn, if you don't have a Summon, Summon a Bait."
     ]
