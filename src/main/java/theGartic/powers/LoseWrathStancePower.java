@@ -42,7 +42,7 @@ public class LoseWrathStancePower extends AbstractPower {
     @Override
     public void atEndOfTurn(boolean IsPlayer) {
         if (amount == 1 && owner instanceof AbstractPlayer) {
-        	flash()
+        	flash();
             atb(new ChangeStanceAction("Neutral"));
         }
         atb(new ReducePowerAction(adp(), adp(), this, 1));
