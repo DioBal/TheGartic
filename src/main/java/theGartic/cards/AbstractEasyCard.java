@@ -252,9 +252,9 @@ public abstract class AbstractEasyCard extends CustomCard {
     @Override
     public List<String> getCardDescriptors() {
         if (this.tags.contains(Enums.SUMMON)) {
-            List<String> tags = new ArrayList<>();
-            tags.add(BaseMod.getKeywordTitle("garticmod:summon"));
-            return tags;
+            List<String> descriptors = new ArrayList<>();
+            descriptors.add(BaseMod.getKeywordTitle("garticmod:summon"));
+            return descriptors;
         }
         return Collections.emptyList();
     }

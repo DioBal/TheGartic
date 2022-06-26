@@ -15,6 +15,20 @@
       " from you! They will be returned at the start of your next turn."
     ]
   },
+  "${ModID}:DivineInterventionPower": {
+    "NAME": "Divine Intervention",
+    "DESCRIPTIONS": [
+      "The next time you would die, heal #b1 HP, gain #b15 Block, and enter Divinity instead.",
+      "The next #b",
+      " times you would die, heal #b1 HP, gain #b15 Block, and enter Divinity instead."
+    ]
+  },
+  "${ModID}:DivinityNextTurnPower": {
+    "NAME": "Divine Blessing",
+    "DESCRIPTIONS": [
+      "Enter #yDivinity at the start of your next turn."
+    ]
+  },
   "${ModID}:SummonCostRefundPower": {
     "NAME": "Summon Energy Gain",
     "DESCRIPTIONS": [

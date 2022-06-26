@@ -152,7 +152,7 @@
       "Fox",
       "Choose a fox to unsummon."
       ],
-    "FLAVOR": "This card used to be called Fur Armor, but then people didn't like it."
+    "FLAVOR": "This card used to be called Fur Armor, but people didn't like that."
   },
   "${ModID}:Pandamonium": {
     "NAME": "Pandamonium",
@@ -331,6 +331,26 @@
   "${ModID}:CleanestMind": {
     "NAME": "Cleanest Mind",
     "DESCRIPTION": "Lose !M! Max HP. NL At the start of your turn, lose 1 HP and gain 1 Dexterity. NL At the end of your turn, if this is in your hand, shuffle a copy of it into your draw pile. NL Soulbound."
+  },
+  "${ModID}:FutureSight": {
+    "NAME": "Future Sight",
+    "DESCRIPTION": "Gain !B! Block. NL Put a card from your hand to the bottom of your draw pile. NL It costs 0 until played.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Put any number of cards from your hand to the bottom of your draw pile. NL They cost 0 until played."
+  },
+  "${ModID}:CollectSelf": {
+    "NAME": "Collect Self",
+    "DESCRIPTION": "Exit your stance. NL Next turn, draw X cards and gain X energy. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Exit your stance. NL Next turn, draw X+1 cards and gain X+1 energy. NL Exhaust."
+  },
+  "${ModID}:DivineIntervention": {
+    "NAME": "Divine Intervention",
+    "DESCRIPTION": "The next time you would die, heal to 1 HP, gain 15 Block, and enter Divinity instead.",
+    "FLAVOR": "We're gonna need Divine Intervention on our mages, so they can AoE."
+  },
+  "${ModID}:InnerBalance": {
+    "NAME": "Inner Balance",
+    "DESCRIPTION": "If not in Calm, gain !B! Block. NL If not in Wrath, deal !D! damage. NL Draw a card.",
+    "FLAVOR": "Inner Balance will probably be something in the next Kung Fu Panda."
   },
   "${ModID}:MultiBottleRockets": {
     "NAME": "Multi-Bottle Rockets",
