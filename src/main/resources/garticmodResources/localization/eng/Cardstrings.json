@@ -453,11 +453,15 @@
   },
   "${ModID}:TallGrass": {
     "NAME": "Tall Grass",
-    "DESCRIPTION": "When you draw this card, permanently reduce its cost by 1. NL Choose 1 of 3 ${ModID}:Summons to join your Party."
+    "DESCRIPTION": "When you draw this card, permanently reduce its cost by !M!. Choose 1 of 3 ${ModID}:Summons to join your ${ModID}:Party. Fleeting."
   },
   "${ModID}:FireImpOption": {
     "NAME": "Fire Imp",
-    "DESCRIPTION": "A creature that deals !M! damage to a random enemy whenever you play an attack."
+    "DESCRIPTION": "A creature that deals !M! damage to a random enemy whenever you play an attack. Damage is affected by attack modifiers."
+  },
+  "${ModID}:DireWolfOption": {
+    "NAME": "Dire Wolf",
+    "DESCRIPTION": "A creature that deals !${ModID}:m2! base damage !M! times. NL Damage is affected by attack modifiers."
   },
   "${ModID}:PandaOption": {
     "NAME": "Crazy Panda",
@@ -466,6 +470,22 @@
   "${ModID}:HungryFoxOption": {
     "NAME": "Hungry Fox",
     "DESCRIPTION": "At the end of your turn will deal !M! damage to the lowest health enemy."
+  },
+  "${ModID}:FetchingFoxOption": {
+    "NAME": "Fetching Fox",
+    "DESCRIPTION": "At the start of your turn, will either draw or steal a card."
+  },
+  "${ModID}:InariOption": {
+    "NAME": "Three-Tailed White Fox",
+    "DESCRIPTION": "When your turn ends, pick 1 of 3 choices."
+  },
+  "${ModID}:MirroredFoxOption": {
+    "NAME": "Mirrored Fox",
+    "DESCRIPTION": "Gains !M! Block or deals !M! damage."
+  },
+  "${ModID}:MischievousFoxOption": {
+    "NAME": "Mischievous Fox",
+    "DESCRIPTION": "Deals !M! damage to you or a random enemy."
   },
   "${ModID}:UncannyHunger": {
     "NAME": "Uncanny Hunger",
