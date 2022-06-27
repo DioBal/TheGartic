@@ -32,8 +32,13 @@ public abstract class AbstractSummonOption  extends AbstractEasyCard
         {
             weightedSummons = new LinkedHashMap<>();
             weightedSummons.put(FireImpOption.ID, 40);
-            weightedSummons.put(PandaOption.ID, 20);
             weightedSummons.put(HungryFoxOption.ID, 40);
+            weightedSummons.put(FetchingFoxOption.ID, 40);
+            weightedSummons.put(MirroredFoxOption.ID, 40);
+            weightedSummons.put(MischievousFoxOption.ID, 40);
+            weightedSummons.put(PandaOption.ID, 20);
+            weightedSummons.put(DireWolfOption.ID, 20);
+            weightedSummons.put(InariOption.ID, 4);
         }
     }
 

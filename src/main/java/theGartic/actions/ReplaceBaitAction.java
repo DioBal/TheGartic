@@ -3,10 +3,8 @@ package theGartic.actions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.random.Random;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import theGartic.powers.PandamoniumPower;
 import theGartic.summons.*;
 
 import static theGartic.summons.AbstractSummonOrb.unSummon;
@@ -59,7 +57,7 @@ public class ReplaceBaitAction extends AbstractGameAction {
                 atb(new SummonOrbAction(new FireImpSummon(3,1)));
                 break;
             case HUNGRY_FOX:
-                atb(new SummonOrbAction(new HungryFox(3)));
+                atb(new SummonOrbAction(new HungryFoxSummon(3)));
                 break;
             case INARI_WHITE_FOX:
                 atb(new SummonOrbAction(new InariWhiteFoxSummon(1)));
@@ -68,7 +66,7 @@ public class ReplaceBaitAction extends AbstractGameAction {
                 atb(new SummonOrbAction(new MirroredFoxSummon()));
                 break;
             case MISCHIEVOUS_FOX:
-                atb(new SummonOrbAction(new MischievousFoxSummon(1,2)));
+                atb(new SummonOrbAction(new MischievousFoxSummon(MischievousFoxSummon.BASE_PASSIVE_AMOUNT,2)));
                 break;
             default:
                 Logger logger = LogManager.getLogger("ReplaceBaitAction");

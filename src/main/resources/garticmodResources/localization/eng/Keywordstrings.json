@@ -73,6 +73,13 @@
     "DESCRIPTION": "A creature that has a 50% chance to perform one of these two actions at the start of each turn. NL - Draws you a card. NL - Steals a card from you, returning it at the start of next turn. "
   },
   {
+    "PROPER_NAME": "Party",
+    "NAMES": [
+      "party"
+    ],
+    "DESCRIPTION": "A group of #ySummons that join you at the start of each battle."
+  },
+  {
     "PROPER_NAME": "Mischievous Fox",
     "NAMES": [
       "mischievousfox"

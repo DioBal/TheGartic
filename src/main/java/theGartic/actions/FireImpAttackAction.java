@@ -36,7 +36,7 @@ public class FireImpAttackAction extends AbstractGameAction
         AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
 
         if (target != null)
-            AbstractDungeon.actionManager.addToTop(new DamageAction(target, new DamageInfo(AbstractDungeon.player, imp.passiveAmount, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
+            AbstractDungeon.actionManager.addToTop(new DamageAction(target, new DamageInfo(AbstractDungeon.player, imp.attackAmount, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
 
         isDone = true;
     }

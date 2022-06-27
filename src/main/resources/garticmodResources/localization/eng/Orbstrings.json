@@ -5,7 +5,7 @@
       "Whenever you play an attack, deal ", " damage to a random enemy."
     ]
   },
-  "${ModID}:HungryFox": {
+  "${ModID}:HungryFoxSummon": {
     "NAME": "Hungry Fox",
     "DESCRIPTION": [
       "At the end of your turn will deal #b",
