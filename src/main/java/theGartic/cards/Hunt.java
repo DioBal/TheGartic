@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theGartic.GarticMod;
 import theGartic.actions.SummonOrbAction;
-import theGartic.summons.HungryFox;
+import theGartic.summons.HungryFoxSummon;
 
 import static theGartic.util.Wiz.*;
 import static theGartic.GarticMod.makeID;
@@ -34,7 +34,7 @@ public class Hunt extends AbstractEasyCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, GarticMod.Enums.GUNSHOT);
-        atb (new SummonOrbAction(new HungryFox(magicNumber)));
+        atb (new SummonOrbAction(new HungryFoxSummon(magicNumber)));
     }
 
     public void upp() {

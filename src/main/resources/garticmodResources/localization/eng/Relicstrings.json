@@ -57,9 +57,16 @@
   },
   "${ModID}:PartyRelic": {
     "NAME": "Party",
-    "FLAVOR": "A group of summons that join you at the start of each battle.",
+    "FLAVOR": "Gotta catch 'em all!",
     "DESCRIPTIONS": [
       "At the start of battle, summon the following creatures: ", ", "
+    ]
+  },
+  "${ModID}:SpikedCollar": {
+    "NAME": "Spiked Collar",
+    "FLAVOR": "It was attached to a friend!",
+    "DESCRIPTIONS": [
+      "At the start of your next combat, choose 1 of 3 creatures to add to your #y${ModID}:Party."
     ]
   },
   "${ModID}:CorruptedMeat": {

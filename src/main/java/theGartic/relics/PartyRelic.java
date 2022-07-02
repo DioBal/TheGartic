@@ -27,8 +27,9 @@ public class PartyRelic extends AbstractEasyRelic implements CustomSavable<Array
     public void atBattleStart()
     {
         flash();
-        for (AbstractSummonOption summon : party)
+        for (AbstractSummonOption summon : party){
             summon.OnSummon();
+        }
     }
 
     public void addToParty(AbstractSummonOption summonOption)
