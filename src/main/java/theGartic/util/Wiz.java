@@ -1,5 +1,6 @@
 package theGartic.util;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -181,5 +182,15 @@ public class Wiz {
 
     public static void applyToSelfNextTurn(AbstractPower po) {
         atb(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new NextTurnPowerPower(AbstractDungeon.player, po)));
+    }
+
+    public static AbstractGameAction.AttackEffect getRandomSlash() {
+        int x = MathUtils.random(0, 2);
+        if (x == 0)
+            return AbstractGameAction.AttackEffect.SLASH_VERTICAL;
+        else if (x == 1)
+            return AbstractGameAction.AttackEffect.SLASH_HORIZONTAL;
+        else
+            return AbstractGameAction.AttackEffect.SLASH_DIAGONAL;
     }
 }
