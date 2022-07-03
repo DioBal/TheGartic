@@ -529,5 +529,9 @@
   "${ModID}:PaperBunny": {
     "NAME": "Paper Bunny",
     "DESCRIPTION": "Raise ALL numbers on cards by !M! except cost."
+  },
+  "${ModID}:PounceAndRetreat": {
+    "NAME": "Pounce and Retreat",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! [${ModID}:DamageIcon] Block."
   }
 }
