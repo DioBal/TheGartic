@@ -120,6 +120,18 @@
       "(Gain !B! Block.) NL (Deal !D! damage.) NL "
     ]
   },
+  "${ModID}:GodsBlood": {
+    "NAME": "God's Blood",
+    "DESCRIPTION": "Lose 1 HP !M! times. NL Enter Wrath. NL Your next attack deals double damage."
+  },
+  "${ModID}:ClearIntention": {
+    "NAME": "Clear Intention",
+    "DESCRIPTION": "Pick a card from your draw pile. Discard your draw pile. Make !M! copies of the card you picked in your draw pile."
+  },
+  "${ModID}:PolarityDisorder": {
+    "NAME": "Polarity Disorder",
+    "DESCRIPTION": "Deal !D! damage. NL Repeat for each unique Stance you entered this turn."
+  },
   "${ModID}:DiveBomb": {
     "NAME": "Dive Bomb",
     "DESCRIPTION": "Remove all ${ModID}:Flight. NL Deal !D! damage to a random enemy for each stack of ${ModID}:Flight removed.",
