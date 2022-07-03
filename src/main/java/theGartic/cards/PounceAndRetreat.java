@@ -29,9 +29,9 @@ public class PounceAndRetreat extends AbstractEasyCard {
     private static final AbstractCard.CardType TYPE = AbstractCard.CardType.ATTACK;
     public static final AbstractCard.CardColor COLOR = TheGartic.Enums.GARTIC_COLOR;
     private final static int DAMAGE = 9;
-        private final static int UPGRADE_DAMAGE = 9;
+        private final static int UPGRADE_DAMAGE = 3;
         private final static int BLOCK = 9;
-        private final static int UPGRADE_BLOCK = 9;
+        private final static int UPGRADE_BLOCK = 3;
         private final static int COST = 2;
 
 
