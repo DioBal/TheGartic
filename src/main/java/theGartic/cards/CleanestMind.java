@@ -22,7 +22,7 @@ public class CleanestMind extends AbstractEasyCard {
     private final static int UPGRADE_MAGIC = -2;
 
     public CleanestMind() {
-        super(ID, 1, CardType.POWER, CardRarity.BASIC, CardTarget.SELF);
+        super(ID, 1, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         SoulboundField.soulbound.set(this, true);
         baseMagicNumber = magicNumber = MAGIC;
         if (adp() != null && adp().hasRelic(TranquilVoid.ID))
