@@ -1,0 +1,82 @@
+{
+  "${ModID}:FireImpSummon": {
+    "NAME": "Fire Imp",
+    "DESCRIPTION": [
+      "Whenever you play an attack, deal ", " damage to a random enemy."
+    ]
+  },
+  "${ModID}:HungryFoxSummon": {
+    "NAME": "Hungry Fox",
+    "DESCRIPTION": [
+      "At the end of your turn will deal #b",
+      " damage to the lowest health enemy."
+    ]
+  },
+  "${ModID}:CrazyPanda": {
+    "NAME": "Crazy Panda",
+    "DESCRIPTION": [
+      "At the end of your turn will deal #b",
+      " damage to a random enemy and inflict #yWeak or #yVulnerable."
+    ]
+  },
+  "${ModID}:FetchingFoxSummon": {
+  "NAME": "Fetching Fox",
+  "DESCRIPTION": [
+    "At the start of the turn, will either draw you a card or steal a card from you until next turn (50% chance).",
+    "At the start of the turn, will either draw you ",
+    " cards or steal ",
+    " cards from you until next turn (50% chance)."
+  ]
+  },
+  "${ModID}:MischievousFoxSummon": {
+    "NAME": "Mischievous Fox",
+    "DESCRIPTION": [
+      "After you play a card, will either deal #b",
+      " damage to you, or #b",
+      " damage to a random enemy (50% chance.)"
+    ]
+  },
+  "${ModID}:InariWhiteFoxSummon": {
+    "NAME": "Three-Tailed White Fox",
+    "DESCRIPTION": [
+      "When your turn ends, pick #b1 of #b3 choices.",
+      "Next turn, if you play a card, draw #b", " card.", " cards.",
+      "Next turn, gain #b", " [E]",
+      "Add 1 of 3 #yColorless cards with #yExhaust to the top of your draw pile", ".", " times.",
+      "Apply #b", " #yWeak to all enemies.",
+      "Apply #b", " #yVulnerable to all enemies.",
+      "Gain #b", " #yBlock.",
+      "Deal ", "x10 damage to the lowest health enemy.",
+      "Deal ", "x5 damage to the highest health enemy.",
+      "Gain #b", " #yTemp #yHP."
+    ]
+  },
+  "${ModID}:DireWolfSummon": {
+    "NAME": "Dire Wolf",
+    "DESCRIPTION": [
+      "At the end of your turn it deals #b",
+      " damage #b",
+      " times to the lowest hp enemy."
+    ]
+  },
+  "${ModID}:SmallSpireGrowthSummon": {
+    "NAME": "Small Spire Growth",
+    "DESCRIPTION": [
+      "At the end of your turn it deals #b",
+      " damage to #rYOU. Unsummon it or Summon things twice to make it go away!"
+    ]
+  },
+  "${ModID}:BaitSummon": {
+    "NAME": "Bait",
+    "DESCRIPTION": [
+      "At the end of your next turn, it unsummons itself and Summons a random summon."
+    ]
+  },
+  "${ModID}:MirroredFoxSummon": {
+    "NAME": "Mirrored Fox",
+    "DESCRIPTION": [
+      "At the end of your turn gain #b", " #yBlock.",
+      "At the end of your turn deal #b", " damage to random enemy."
+    ]
+  }
+}

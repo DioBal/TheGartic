@@ -2,5 +2,13 @@
   "${ModID}:PurpleStuff": {
     "NAME": "Purple Stuff",
     "DESCRIPTIONS": ["Swap your Draw and Discard piles, draw #b", " cards."]
+  },
+  "${ModID}:DarklingMilk": {
+    "NAME": "Darkling Milk",
+    "DESCRIPTIONS": ["If your Max HP is below its original value, gain #b", "% of it back."]
+  },
+  "${ModID}:CopyingPotion": {
+    "NAME": "Copying Potion",
+    "DESCRIPTIONS": ["Add #b", " createable in combat cards into your hand."]
   }
 }

@@ -18,9 +18,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import theGartic.cards.Defend;
-import theGartic.cards.StockUp;
-import theGartic.cards.Strike;
+import theGartic.cards.*;
 import theGartic.relics.OldRod;
 
 import java.util.ArrayList;
@@ -42,7 +40,7 @@ public class TheGartic extends CustomPlayer {
             modID + "Resources/images/char/mainChar/orb/layer4d.png",
             modID + "Resources/images/char/mainChar/orb/layer5d.png",};
     static final String ID = makeID("TheGartic");
-    static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
+    public static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     static final String[] NAMES = characterStrings.NAMES;
     static final String[] TEXT = characterStrings.TEXT;
 
@@ -78,6 +76,8 @@ public class TheGartic extends CustomPlayer {
             retVal.add(Defend.ID);
         }
         retVal.add(StockUp.ID);
+        retVal.add(TallGrass.ID);
+        retVal.add(CleanestMind.ID);
         return retVal;
     }
 

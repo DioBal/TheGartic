@@ -50,7 +50,7 @@ public class LoseWeightAction extends AbstractGameAction {
 			AbstractDungeon.handCardSelectScreen.selectedCards.group.clear();
 
 			if (count > 0) {
-				addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PlayerFlightPower(AbstractDungeon.player, AbstractDungeon.player, count)));
+				addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PlayerFlightPower(AbstractDungeon.player, count)));
 			}
 		}
 		tickDuration();

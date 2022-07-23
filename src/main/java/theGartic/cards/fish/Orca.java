@@ -15,11 +15,24 @@ public class Orca extends AbstractFishCard {
 
     public Orca() {
         super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.NONE, CardColor.COLORLESS);
+        magicNumber = baseMagicNumber = 1;
         exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new PlayTopCardAction(AbstractDungeon.getRandomMonster(), false));
+        for (int i = 0; i < magicNumber; i++)
+            atb(new PlayTopCardAction(AbstractDungeon.getRandomMonster(), false));
+    }
+
+    @Override
+    public void applyPowers() {
+        if (magicNumber > 1) {
+            if (!upgraded)
+                rawDescription = String.format(cardStrings.EXTENDED_DESCRIPTION[0], magicNumber);
+            else
+                rawDescription = String.format(cardStrings.EXTENDED_DESCRIPTION[1], magicNumber);
+        }
+        super.initializeDescription();
     }
 
     public void upp() {

@@ -58,6 +58,23 @@
     "NAME": "Hook",
     "DESCRIPTION": "Deal !D! damage. NL Shuffle !M! ${ModID}:Fish into your draw pile."
   },
+  "${ModID}:ReelItIn": {
+    "NAME": "Reel It In",
+    "DESCRIPTION": "Deal !D! damage. NL Add !M! ${ModID}:Fish to your hand."
+  },
+  "${ModID}:BigHaul": {
+    "NAME": "Big Haul",
+    "DESCRIPTION": "Add !M! ${ModID}:Fish to your hand and give them Retain."
+  },
+  "${ModID}:BloodInTheWater": {
+    "NAME": "Blood in the Water",
+    "DESCRIPTION": "Gain !M! Strength. Gain  !${ModID}:m2! additional Strength for every ${ModID}:Fish ${ModID}:Consumed.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain !M! Strength. Gain  !${ModID}:m2! additional Strength for every ${ModID}:Fish ${ModID}:Consumed."
+  },
+  "${ModID}:KingOfTheDepths": {
+    "NAME": "King of the Depths",
+    "DESCRIPTION": "Add !M! ${ModID}:Fish to your draw pile. NL Whenever this card ${ModID}:Consumes a ${ModID}:Fish, permanently increase the ${ModID}:Fish added by !${ModID}:m2!."
+  },
   "${ModID}:CatchOfTheDay": {
     "NAME": "Catch of the Day",
     "DESCRIPTION": "At the start of your turn, shuffle a ${ModID}:Fish into your draw pile.",
@@ -87,6 +104,72 @@
     "NAME": "It Was THIIIIIIIS Big!",
     "DESCRIPTION": "Triple the effects of ALL current ${ModID}:Fish cards. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Quadruple the effects of ALL current ${ModID}:Fish cards. NL Exhaust."
+  },
+  "${ModID}:Approach": {
+    "NAME": "Approach",
+    "DESCRIPTION": "Deal !D! damage. NL Your next Attack deals double damage."
+  },
+  "${ModID}:AsStone": {
+    "NAME": "As Stone",
+    "DESCRIPTION": "Whenever you gain Block this turn, gain !M! Thorns. NL Exhaust."
+  },
+  "${ModID}:AllWillReturn": {
+    "NAME": "All Will Return",
+    "DESCRIPTION": "Gain Block and deal damage equal to the Block you gained and damage you dealt last turn.",
+    "EXTENDED_DESCRIPTION": [
+      "(Gain !B! Block.) NL (Deal !D! damage.) NL "
+    ]
+  },
+  "${ModID}:GodsBlood": {
+    "NAME": "God's Blood",
+    "DESCRIPTION": "Lose 1 HP !M! times. NL Enter Wrath. NL Your next attack deals double damage."
+  },
+  "${ModID}:ClearIntention": {
+    "NAME": "Clear Intention",
+    "DESCRIPTION": "Pick a card from your draw pile. Discard your draw pile. Make !M! copies of the card you picked in your draw pile."
+  },
+  "${ModID}:PolarityDisorder": {
+    "NAME": "Polarity Disorder",
+    "DESCRIPTION": "Deal !D! damage. NL Repeat for each unique Stance you entered this turn."
+  },
+  "${ModID}:DiveBomb": {
+    "NAME": "Dive Bomb",
+    "DESCRIPTION": "Remove all ${ModID}:Flight. NL Deal !D! damage to a random enemy for each stack of ${ModID}:Flight removed.",
+    "FLAVOR": "Also known as the Angry Birds maneuver."
+  },
+  "${ModID}:Hover": {
+    "NAME": "Hover",
+    "DESCRIPTION": "Your ${ModID}:Flight can not decrease this turn.",
+    "FLAVOR": "Hilarious against melee enemies."
+  },
+  "${ModID}:CelestialCrafting": {
+    "NAME": "Celestial Crafting",
+    "DESCRIPTION": "Gain !M! ${ModID}:Flight. NL While you are in ${ModID}:Flight, whenever you create a card, add a copy to your discard pile.",
+    "FLAVOR": "We have Master Reality at home."
+  },
+  "${ModID}:Hunt": {
+    "NAME": "Hunt",
+    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Summon a ${ModID}:Hungry\u00a0Fox that deals !M! damage.",
+    "FLAVOR": "Om Nom Nom"
+  },
+  "${ModID}:RangersFocus": {
+    "NAME": "Ranger's Focus",
+    "DESCRIPTION": "Deal !D! damage. NL The next time you play a ${ModID}:Summon card, NL gain [E].",
+    "FLAVOR": "If you summon an owl, you can call it Shoot and Hoot."
+  },
+  "${ModID}:DistractingFox": {
+    "NAME": "Distracting Fox",
+    "DESCRIPTION": "${ModID}:Unsummon a fox.  If you do, at the end of your turn, gain !M! Block.",
+    "EXTENDED_DESCRIPTION": ["I can only play this if I have a fox summoned.",
+      "Fox",
+      "Choose a fox to unsummon."
+      ],
+    "FLAVOR": "This card used to be called Fur Armor, but people didn't like that."
+  },
+  "${ModID}:Pandamonium": {
+    "NAME": "Pandamonium",
+    "DESCRIPTION": "At the end of your turn, ${ModID}:Summon a ${ModID}:Crazy\u00a0Panda that deals !M! damage.",
+    "FLAVOR": "Skadoosh!"
   },
   "${ModID}:Frontflip": {
     "NAME": "Frontflip",
@@ -167,12 +250,317 @@
   },
   "${ModID}:LittleShieldDude": {
     "NAME": "Little Shield Dude",
-    "DESCRIPTION": "Your next Attack grants Block equal to its unblocked Damage.",
+    "DESCRIPTION": "Your next Attack grants Block equal to their unblocked Damage.",
     "UPGRADE_DESCRIPTION": "Your 2 next Attacks grant Block equal to their unblocked Damage."
   },
   "${ModID}:ArcaneToolbox": {
     "NAME": "Arcane Toolbox",
     "DESCRIPTION": "Your first card played each turn grants: NL 1 Strength if it's a Skill, 1 Dexterity if it's an Attack or [E] if it's a Power.",
     "UPGRADE_DESCRIPTION": "Your first card played each turn grants: NL 1 Strength if it's a Skill, 1 Dexterity if it's an Attack or [E] if it's a Power. NL Innate."
+  },
+  "${ModID}:Hellblaze": {
+    "NAME": "Hellblaze",
+    "DESCRIPTION": "Deal !D! damage twice. NL ${ModID}:Summon a ${ModID}:Fire\u00A0Imp."
+  },
+  "${ModID}:FetchingFox": {
+    "NAME": "Fetching Fox",
+    "DESCRIPTION": "Summon a garticmod:FetchingFox."
+  },
+  "${ModID}:MischievousFox": {
+    "NAME": "Mischievous Fox",
+    "DESCRIPTION": "Summon a garticmod:MischievousFox that deals !M! damage."
+  },
+  "${ModID}:ToothAndClaw": {
+    "NAME": "Tooth And Claw",
+    "DESCRIPTION": "garticmod:Unsummon. If you did, Summon a ${ModID}:Dire\u00a0Wolf that deals !${ModID}:m2! base damage !M! times. NL Damage is affected by attack modifiers.",
+    "EXTENDED_DESCRIPTION": ["I can only play this if I have a summoned creature.",
+      "Choose a creature to unsummon."
+    ]
+  },
+  "${ModID}:FriendlyLick": {
+    "NAME": "Friendly Lick",
+    "DESCRIPTION": "Heal !M! HP.",
+    "UPGRADE_DESCRIPTION": "Heal !M! HP. NL Remove a random debuff from yourself."
+  },
+  "${ModID}:GuzzlerHelmet": {
+    "NAME": "Guzzler Helmet",
+    "DESCRIPTION": "{@@}If there are more cards in your discard pile than your draw pile, gain {!M!|1=[E]|2=[E] [E]|-1,3=[E] [E] [E]|4=[E] [E] [E] [E]|5=[E] [E] [E] [E] [E]|@=!M! [E]} ."
+  },
+  "${ModID}:GarbageGolem": {
+    "NAME": "Garbage Golem",
+    "DESCRIPTION": "Gain !B! Block.  If you win the combat this turn, your block carries over to the next combat.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !M! Strength. NL If you win the combat this turn, your block carries over to the next combat.",
+    "FLAVOR": "WALL-E's ugly brother"
+  },
+  "${ModID}:LongShot": {
+    "NAME": "Long Shot",
+    "DESCRIPTION": "Deal !D! damage. NL Next turn, discard any number of cards then draw that many."
+  },
+  "${ModID}:ExtendoArm": {
+    "NAME": "Extendo Arm",
+    "DESCRIPTION": "Gain !B! Block. NL Put a card from your discard pile on the bottom of your draw pile.",
+    "EXTENDED_DESCRIPTION": ["Select a card to add to the bottom of your draw pile."]
+  },
+  "${ModID}:SureShot": {
+    "NAME": "Sure Shot",
+    "DESCRIPTION": "The target loses !D! HP. If it has Block, it loses !D! HP again."
+  },
+  "${ModID}:SupplicateToInari": {
+    "NAME": "Supplicate To Inari",
+    "DESCRIPTION": "Summon a Three-Tailed White Fox.",
+    "UPGRADE_DESCRIPTION": "Summon a Three-Tailed White Fox.",
+    "EXTENDED_DESCRIPTION": [
+      " NL Draw !M! card.",
+      " NL Draw !M! cards.",
+      " NL Gain !M! [E]."
+      ],
+    "FLAVOR": "Family we are, you and I. Just respectfully ask and you shall receive."
+  },
+  "${ModID}:CreationOfPower": {
+    "NAME": "Creation of Power",
+    "DESCRIPTION": "Add a copy of each power you played this combat to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add an Upgraded copy of each power you played this combat to your hand. NL Exhaust."
+  },
+  "${ModID}:PowerOfCreation": {
+    "NAME": "Power of Creation",
+    "DESCRIPTION": "Reduce the cost of the first card you add to your hand each turn by 1."
+  },
+  "${ModID}:Adaptation": {
+    "NAME": "Adaptation",
+    "DESCRIPTION": "Whenever you change Stances, put a card from your discard pile on top of your draw pile.",
+    "UPGRADE_DESCRIPTION": "Whenever you change Stances, put a card from your discard pile on top of your draw pile."
+  },
+  "${ModID}:EldersKnowledge": {
+    "NAME": "Elder's Knowledge",
+    "DESCRIPTION": "Gain !B! Block. NL Enter Wisdom.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Enter Wisdom."
+  },
+  "${ModID}:OpeningStrike": {
+    "NAME": "Opening Strike",
+    "DESCRIPTION": "Deal !D! Damage. NL Draw a card.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. NL Draw a card."
+  },
+  "${ModID}:CleanestMind": {
+    "NAME": "Cleanest Mind",
+    "DESCRIPTION": "Lose !M! Max HP. NL At the start of your turn, lose 1 HP and gain 1 Dexterity. NL At the end of your turn, if this is in your hand, shuffle a copy of it into your draw pile. NL Soulbound.",
+    "EXTENDED_DESCRIPTION": [
+      "Cleanest Mind",
+      "At the start of your turn, lose #b",
+      " HP and gain #b",
+      " Dexterity."
+    ]
+  },
+  "${ModID}:FutureSight": {
+    "NAME": "Future Sight",
+    "DESCRIPTION": "Gain !B! Block. NL Put a card from your hand to the bottom of your draw pile. NL It costs 0 until played.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Put any number of cards from your hand to the bottom of your draw pile. NL They cost 0 until played."
+  },
+  "${ModID}:CollectSelf": {
+    "NAME": "Collect Self",
+    "DESCRIPTION": "Exit your stance. NL Next turn, draw X cards and gain X energy. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Exit your stance. NL Next turn, draw X+1 cards and gain X+1 energy. NL Exhaust."
+  },
+  "${ModID}:DivineIntervention": {
+    "NAME": "Divine Intervention",
+    "DESCRIPTION": "The next time you would die, heal to 1 HP, gain 15 Block, and enter Divinity instead.",
+    "FLAVOR": "We're gonna need Divine Intervention on our mages, so they can AoE."
+  },
+  "${ModID}:InnerBalance": {
+    "NAME": "Inner Balance",
+    "DESCRIPTION": "If not in Calm, gain !B! Block. NL If not in Wrath, deal !D! damage. NL Draw a card.",
+    "FLAVOR": "Inner Balance will probably be something in the next Kung Fu Panda."
+  },
+  "${ModID}:MultiBottleRockets": {
+    "NAME": "Multi-Bottle Rockets",
+    "DESCRIPTION": "Discard any number of cards. NL Deal !D! damage to a random enemy for each card NL discarded + !M!."
+  },
+  "${ModID}:ScrapShield": {
+    "NAME": "Scrap Shield",
+    "DESCRIPTION": "Gain !B! Block. NL Draw 1 card. NL Discard 1 card."
+  },
+  "${ModID}:Jetstream": {
+    "NAME": "Jet Stream",
+    "DESCRIPTION": "Shuffle your hand into your draw pile, excluding *Safeties and *Smites. NL Draw !M! cards. NL Exhaust."
+  },
+  "${ModID}:DivineAdvent": {
+    "NAME": "Divine Advent",
+    "DESCRIPTION": "Whenever you shuffle your draw pile, you can add a *Smite or *Safety into your hand.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you shuffle your draw pile, you can add a *Smite or *Safety into your hand."
+  },
+  "${ModID}:Freefall": {
+    "NAME": "Freefall",
+    "DESCRIPTION": "${ModID}:Unnate. NL When you draw this card, draw !M! cards and Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL When you draw this card, draw !M! cards and Exhaust."
+  },
+  "${ModID}:SoaringForm": {
+    "NAME": "Soaring Form",
+    "DESCRIPTION": "Ethereal. NL At the start of your turn, gain [E] and !M! ${ModID}:Flight.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, gain [E] and !M! ${ModID}:Flight."
+  },
+  "${ModID}:DelayedDeath": {
+    "NAME": "Delayed Death",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage to ALL enemies. NL At the start of targets' turn, they lose HP equal to unblocked damage dealt."
+  },
+  "${ModID}:TotalMadness": {
+    "NAME": "t0tAl MaDnEs5",
+    "DESCRIPTION": "At the start of your turn, if you are in Wrath, play a random card from your discard pile. NL Otherwise, enter Wrath.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, if you are in Wrath, play !M! random cards from your discard pile. NL Otherwise, enter Wrath."
+  },
+  "${ModID}:HeavySlam": {
+    "NAME": "Heavy Slam",
+    "DESCRIPTION": "{@@}Deal damage equal to the number of cards in your discard pile{!Upgrades!|>0=+3}.{!D!|>0= NL (Deals !D! damage.)}"
+  },
+  "${ModID}:GalaxyBrain": {
+    "NAME": "Galaxy Brain",
+    "DESCRIPTION": "Innate. NL {@@}Deal damage equal to the number of cards in your discard pile.{!D!|>0= NL (Deals !D! damage.)}",
+    "UPGRADE_DESCRIPTION": "{@@}Deal damage equal to the number of cards in your discard pile.{!D!|>0= NL (Deals !D! damage.)}"
+  },
+  "${ModID}:CutLosses": {
+    "NAME": "Cut Losses",
+    "DESCRIPTION": "Exit your Stance. All enemies lose HP equal to the HP you lost this turn.",
+    "UPGRADE_DESCRIPTION": " NL (You have lost !M! HP this turn.)"
+  },
+  "${ModID}:MentalMatrix": {
+    "NAME": "Mental Matrix",
+    "DESCRIPTION": "Gain !B! Block. Repeat for each card added to your draw or discard pile this turn.",
+    "UPGRADE_DESCRIPTION": " NL (You have added !M! cards to your draw/discard pile this turn.)"
+  },
+  "${ModID}:Protector": {
+    "NAME": "Protector",
+    "DESCRIPTION": "Gain !B! Block. NL If this card is discarded, gain [E]."
+  },
+  "${ModID}:InariDash": {
+    "NAME": "Inari Dash",
+    "DESCRIPTION": "Next turn, if you play a card, draw !M!",
+    "EXTENDED_DESCRIPTION": [
+      " card.",
+      " cards."
+    ]
+  },
+  "${ModID}:InariEnergy": {
+    "NAME": "Inari Energy",
+    "DESCRIPTION": "Next turn, gain !M! [E]."
+  },
+  "${ModID}:InariEndurance": {
+    "NAME": "Inari Endurance",
+    "DESCRIPTION": "Gain !M! Temp HP."
+  },
+  "${ModID}:InariPloy": {
+    "NAME": "Inari Ploy",
+    "DESCRIPTION": "Apply !M! Weak to ALL enemies."
+  },
+  "${ModID}:InariSabotage": {
+    "NAME": "Inari Sabotage",
+    "DESCRIPTION": "Apply !M! Vulnerable to ALL enemies."
+  },
+  "${ModID}:InariProtection": {
+    "NAME": "Inari Protection",
+    "DESCRIPTION": "Gain !M! Block."
+  },
+  "${ModID}:InariFlames": {
+    "NAME": "Inari Flames",
+    "DESCRIPTION": "Deal !M! damage 10 times to the lowest health enemy."
+  },
+  "${ModID}:InariBarrage": {
+    "NAME": "Inari Barrage",
+    "DESCRIPTION": "Deal !M! damage 5 times to the highest health enemy."
+  },
+  "${ModID}:InariGift": {
+    "NAME": "Inari Gift",
+    "DESCRIPTION": "Choose 1 of 3 Colorless cards with Exhaust to go to the top of your draw pile."
+  },
+  "${ModID}:CreationOfCreation": {
+    "NAME": "Creation of Creation",
+    "DESCRIPTION": "Randomly add *Infernal *Blade, *Distraction, *White *Noise or *Jack *of *All *Trades to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Randomly add *Infernal *Blade+, *Distraction+, *White *Noise+ or *Jack *of *All *Trades+ to your hand. NL Exhaust."
+  },
+  "${ModID}:BlockAndLoad": {
+    "NAME": "Block and Load",
+    "DESCRIPTION": "Enter garticmod:Resolute. NL Whenever you gain Block this turn, add a random Attack to your hand.",
+    "UPGRADE_DESCRIPTION": "Enter garticmod:Resolute. NL Whenever you gain Block this turn, add a random upgraded Attack to your hand."
+  },
+  "${ModID}:TamersCandy": {
+    "NAME": "Tamer's Candy",
+    "DESCRIPTION": "Ethereal. NL Add one of your current Summons to your Party.",
+    "UPGRADE_DESCRIPTION": "Add one of your current Summons to your Party.",
+    "EXTENDED_DESCRIPTION": [
+      "Add a summon to your Party."
+    ]
+  },
+  "${ModID}:WasteNot": {
+    "NAME": "Waste Not",
+    "DESCRIPTION": "Deal !D! damage. NL Whenever you garticmod:Unsummon, return this from the discard pile to your hand.",
+    "UPGRADE_DESCRIPTION": "Grave. Deal !D! damage. NL Whenever you garticmod:Unsummon, return this from the discard pile to your hand."
+  },
+  "${ModID}:TallGrass": {
+    "NAME": "Tall Grass",
+    "DESCRIPTION": "When you draw this card, permanently reduce its cost by !M!. Choose 1 of 3 ${ModID}:Summons to join your ${ModID}:Party. Fleeting."
+  },
+  "${ModID}:FireImpOption": {
+    "NAME": "Fire Imp",
+    "DESCRIPTION": "A creature that deals !M! damage to a random enemy whenever you play an attack. Damage is affected by attack modifiers."
+  },
+  "${ModID}:DireWolfOption": {
+    "NAME": "Dire Wolf",
+    "DESCRIPTION": "A creature that deals !${ModID}:m2! base damage !M! times. NL Damage is affected by attack modifiers."
+  },
+  "${ModID}:PandaOption": {
+    "NAME": "Crazy Panda",
+    "DESCRIPTION": " At the end of your turn deals damage to a random enemy and applies Weak or Vulnerable."
+  },
+  "${ModID}:HungryFoxOption": {
+    "NAME": "Hungry Fox",
+    "DESCRIPTION": "At the end of your turn will deal !M! damage to the lowest health enemy."
+  },
+  "${ModID}:FetchingFoxOption": {
+    "NAME": "Fetching Fox",
+    "DESCRIPTION": "At the start of your turn, will either draw or steal a card."
+  },
+  "${ModID}:InariOption": {
+    "NAME": "Three-Tailed White Fox",
+    "DESCRIPTION": "When your turn ends, pick 1 of 3 choices."
+  },
+  "${ModID}:MirroredFoxOption": {
+    "NAME": "Mirrored Fox",
+    "DESCRIPTION": "Gains !M! Block or deals !M! damage."
+  },
+  "${ModID}:MischievousFoxOption": {
+    "NAME": "Mischievous Fox",
+    "DESCRIPTION": "Deals !M! damage to you or a random enemy."
+  },
+  "${ModID}:UncannyHunger": {
+    "NAME": "Uncanny Hunger",
+    "DESCRIPTION": "At the start of your turn, garticmod:Unsummon. NL If you did, gain !M! Energy and draw !${ModID}:m2! cards.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, garticmod:Unsummon. NL If you did, gain !M! Energy and draw !${ModID}:m2! cards.",
+    "EXTENDED_DESCRIPTION": ["Your hunger must be sated."]
+  },
+    "${ModID}:VoidDefend": {
+    "NAME": "Void Defend",
+    "DESCRIPTION": "Gain !B! [${ModID}:VoidIcon] Block to ALL characters."
+  },
+  "${ModID}:MirroredFox": {
+    "NAME": "Mirrored Fox",
+    "DESCRIPTION": "Summon a ${ModID}:Mirrored_Fox that gains buff whenever you gain debuff."
+  },
+  "${ModID}:SheetofPaper": {
+    "NAME": "Sheet of Paper",
+    "DESCRIPTION": "At start of your turn Transforms into random stuff.",
+    "UPGRADE_DESCRIPTION": "At start of your turn Transforms into random Upgraded stuff."
+  },
+  "${ModID}:PaperSword": {
+    "NAME": "Paper Sword",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Deal !M! ${ModID}:Fixed damage to you."
+  },
+  "${ModID}:PaperShield": {
+    "NAME": "Paper Shield",
+    "DESCRIPTION": "Gain !B! a random type of Block. NL Deal !M! ${ModID}:Fixed damage to you twice. NL Types of Block:  [${ModID}:VoidIcon] ,  [${ModID}:SpikyIcon] ,  [${ModID}:PlatedIcon] ,  [${ModID}:DamageIcon] ,  [${ModID}:BlockingIcon] ,  [${ModID}:AngryIcon] ,  [${ModID}:EnergyIcon] ,  [${ModID}:CurseIcon] ."
+  },
+  "${ModID}:PaperBunny": {
+    "NAME": "Paper Bunny",
+    "DESCRIPTION": "Raise ALL numbers on cards by !M! except cost."
+  },
+  "${ModID}:PounceAndRetreat": {
+    "NAME": "Pounce and Retreat",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! [${ModID}:DamageIcon] Block."
   }
 }
