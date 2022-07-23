@@ -14,5 +14,10 @@
     "TEXT": [
       "Choose a card to duplicate"
     ]
+  },
+  "${ModID}:DivineAdvent": {
+    "TEXT": [
+      "Choose a card"
+    ]
   }
 }

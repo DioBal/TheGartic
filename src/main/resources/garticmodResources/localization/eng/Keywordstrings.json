@@ -7,6 +7,14 @@
     "DESCRIPTION": "#yFish are random Colorless cards that grant a small benefit, replace themselves, and #yExhaust."
   },
   {
+    "PROPER_NAME": "Unnate",
+    "NAMES": [
+      "Unnate",
+      "unnate"
+    ],
+    "DESCRIPTION": "Start each combat with this card at the bottom of your draw pile."
+  },
+  {
     "PROPER_NAME": "Glass Armor",
     "NAMES": [
       "glass_armor",
