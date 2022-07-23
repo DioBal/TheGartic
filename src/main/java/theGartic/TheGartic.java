@@ -77,7 +77,6 @@ public class TheGartic extends CustomPlayer {
         }
         retVal.add(StockUp.ID);
         retVal.add(TallGrass.ID);
-        retVal.add(CleanestMind.ID);
         return retVal;
     }
 
