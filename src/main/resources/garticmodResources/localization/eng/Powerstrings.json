@@ -29,6 +29,21 @@
       "Enter #yDivinity at the start of your next turn."
     ]
   },
+  "${ModID}:DelayedDeathPower": {
+    "NAME": "Delayed Death",
+    "DESCRIPTIONS": [
+      "At the start of its turn, loses #b",
+      " HP."
+    ]
+  },
+  "${ModID}:TotalMadnessPower": {
+    "NAME": "t0tAl MaDnEs5",
+    "DESCRIPTIONS": [
+      "At the start of your turn, if you are in Wrath play a random card from your discard pile, otherwise enter Wrath.",
+      "At the start of your turn, if you are in Wrath play #b",
+      " random cards from your discard pile, otherwise enter Wrath."
+    ]
+  },
   "${ModID}:DivinityAdventPower": {
     "NAME": "Divine Advent",
     "DESCRIPTIONS": [

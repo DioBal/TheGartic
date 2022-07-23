@@ -40,7 +40,8 @@ public class UnnatePatch {
             public int[] Locate(CtBehavior ctMethodToPatch) throws Exception
             {
                 Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractPlayer.class, "applyStartOfTurnRelics");
-                return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
+                int[] x = LineFinder.findAllInOrder(ctMethodToPatch, finalMatcher);
+                return new int[]{x[1]};
             }
         }
     }

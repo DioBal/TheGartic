@@ -391,10 +391,14 @@
     "DESCRIPTION": "Ethereal. NL At the start of your turn, gain [E] and !M! ${ModID}:Flight.",
     "UPGRADE_DESCRIPTION": "At the start of your turn, gain [E] and !M! ${ModID}:Flight."
   },
-  "${ModID}:DynamicEntry": {
-    "NAME": "Dynamic Entry",
-    "DESCRIPTION": "Whenever you ${ModID}:summon, activate that *summon's end of turn effect.",
-    "FLAVOR": "So, instead of throwing your pokeball at the ground, throw it at their face."
+  "${ModID}:DelayedDeath": {
+    "NAME": "Delayed Death",
+    "DESCRIPTION": "Etheral. NL Deal !D! damage to ALL enemies. NL At the start of targets' turn, they lose HP equal to unblocked damage dealt."
+  },
+  "${ModID}:TotalMadness": {
+    "NAME": "t0tAl MaDnEs5",
+    "DESCRIPTION": "At the start of your turn, if you are in Wrath, play a random card from your discard pile. NL Otherwise, enter Wrath.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, if you are in Wrath, play !M! random cards from your discard pile. NL Otherwise, enter Wrath."
   },
   "${ModID}:HeavySlam": {
     "NAME": "Heavy Slam",

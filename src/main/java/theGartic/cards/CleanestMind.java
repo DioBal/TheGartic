@@ -12,18 +12,22 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import theGartic.powers.LambdaPower;
+import theGartic.relics.TranquilVoid;
 
 import static theGartic.GarticMod.makeID;
 import static theGartic.util.Wiz.*;
 
 public class CleanestMind extends AbstractEasyCard {
-    public final static String ID = makeID("CleanestMind");
-    // intellij stuff power, self, basic, , , , , , 
+    public final static String ID = makeID(CleanestMind.class.getSimpleName());
+    private final static int MAGIC = 4;
+    private final static int UPGRADE_MAGIC = -2;
 
     public CleanestMind() {
         super(ID, 1, CardType.POWER, CardRarity.BASIC, CardTarget.SELF);
         SoulboundField.soulbound.set(this, true);
-        baseMagicNumber = magicNumber = 4;
+        baseMagicNumber = magicNumber = MAGIC;
+        if (adp() != null && adp().hasRelic(TranquilVoid.ID))
+            equipTranquil();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -41,7 +45,8 @@ public class CleanestMind extends AbstractEasyCard {
                 @Override
                 public void atStartOfTurnPostDraw() {
                     flash();
-                    atb(new LoseHPAction(owner, owner, amount, AbstractGameAction.AttackEffect.FIRE));
+                    if (!adp().hasRelic(TranquilVoid.ID))
+                        atb(new LoseHPAction(owner, owner, amount, AbstractGameAction.AttackEffect.FIRE));
                     atb(new ApplyPowerAction(owner, owner, new DexterityPower(owner, amount), amount));
                 }
 
@@ -53,17 +58,22 @@ public class CleanestMind extends AbstractEasyCard {
         }
     }
 
+    public void equipTranquil() {
+        upgradeBaseCost(TranquilVoid.BASE_COST);
+        upgradeMagicNumber(TranquilVoid.HEALTH_COST_INCREASE);
+    }
+
     @Override
     public void triggerWhenDrawn() {
         atb(new SetDontTriggerAction(this, false));
     }
 
     public void triggerOnEndOfTurnForPlayingCard() {
-        this.dontTriggerOnUseCard = true;
+        dontTriggerOnUseCard = true;
         AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
     }
 
     public void upp() {
-        upgradeMagicNumber(-2);
+        upgradeMagicNumber(UPGRADE_MAGIC);
     }
 }

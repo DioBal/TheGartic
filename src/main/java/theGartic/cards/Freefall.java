@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theGartic.GarticMod;
 import theGartic.patches.UnnatePatch;
 
 import static theGartic.GarticMod.makeID;
@@ -20,7 +19,6 @@ public class Freefall extends AbstractEasyCard {
     public Freefall() {
         super(ID, COST, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
         baseMagicNumber = magicNumber = MAGIC;
-        tags.add(GarticMod.Enums.SUMMON);
         UnnatePatch.UnnateFieldPatch.unnate.set(this, true);
     }
 
