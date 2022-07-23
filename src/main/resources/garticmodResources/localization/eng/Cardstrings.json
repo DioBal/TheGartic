@@ -372,6 +372,25 @@
     "NAME": "Scrap Shield",
     "DESCRIPTION": "Gain !B! Block. NL Draw 1 card. NL Discard 1 card."
   },
+  "${ModID}:Jetstream": {
+    "NAME": "Jet Stream",
+    "DESCRIPTION": "Shuffle your hand into your draw pile, excluding *Safeties and *Smites. NL Draw !M! cards. NL Exhaust."
+  },
+  "${ModID}:DivineAdvent": {
+    "NAME": "Divine Advent",
+    "DESCRIPTION": "Whenever you shuffle your draw pile, you can add a *Smite or *Safety into your hand.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you shuffle your draw pile, you can add a *Smite or *Safety into your hand."
+  },
+  "${ModID}:Freefall": {
+    "NAME": "Freefall",
+    "DESCRIPTION": "Unnate. NL When you draw this card, draw !M! cards and Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL When you draw this card, draw !M! cards and Exhaust."
+  },
+  "${ModID}:SoaringForm": {
+    "NAME": "Soaring Form",
+    "DESCRIPTION": "Ethereal. NL At the start of your turn, gain [E] and !M! ${ModID}:Flight.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, gain [E] and !M! ${ModID}:Flight."
+  },
   "${ModID}:DynamicEntry": {
     "NAME": "Dynamic Entry",
     "DESCRIPTION": "Whenever you ${ModID}:summon, activate that *summon's end of turn effect.",

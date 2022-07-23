@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
@@ -15,24 +14,22 @@ import theGartic.TheGartic;
 import theGartic.cardmods.block.DamageBlockMod;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import static theGartic.GarticMod.makeCardPath;
 import static theGartic.GarticMod.makeID;
 
 public class PounceAndRetreat extends AbstractEasyCard {
 
-    public final static String ID = makeID("PounceAndRetreat");
-    public static final String IMG = makeCardPath("MischievousFox.png");
+    public final static String ID = makeID(PounceAndRetreat.class.getSimpleName());
+    public static final String IMG = MischievousFox.IMG;
     private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.COMMON;
     private static final AbstractCard.CardTarget TARGET = CardTarget.ENEMY;
     private static final AbstractCard.CardType TYPE = AbstractCard.CardType.ATTACK;
     public static final AbstractCard.CardColor COLOR = TheGartic.Enums.GARTIC_COLOR;
     private final static int DAMAGE = 9;
-        private final static int UPGRADE_DAMAGE = 3;
-        private final static int BLOCK = 9;
-        private final static int UPGRADE_BLOCK = 3;
-        private final static int COST = 2;
+    private final static int UPGRADE_DAMAGE = 3;
+    private final static int BLOCK = 9;
+    private final static int UPGRADE_BLOCK = 3;
+    private final static int COST = 2;
 
 
     private ArrayList<AbstractBlockModifier> dBlock = new ArrayList<>();

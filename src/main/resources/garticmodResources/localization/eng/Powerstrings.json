@@ -29,6 +29,23 @@
       "Enter #yDivinity at the start of your next turn."
     ]
   },
+  "${ModID}:DivinityAdventPower": {
+    "NAME": "Divine Advent",
+    "DESCRIPTIONS": [
+      "Whenever you shuffle your draw pile, you may add a Smite or Safety into your hand.",
+      "Whenever you shuffle your draw pile, you may add #b",
+      " Smites or Safeties into your hand."
+    ]
+  },
+  "${ModID}:SoaringFormPower": {
+    "NAME": "Soaring Form",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain [E] and #b1 Flight.",
+      "At the start of your turn, gain #b",
+      " [E] and #b",
+      " Flight."
+    ]
+  },
   "${ModID}:SummonCostRefundPower": {
     "NAME": "Summon Energy Gain",
     "DESCRIPTIONS": [
