@@ -342,7 +342,13 @@
   },
   "${ModID}:CleanestMind": {
     "NAME": "Cleanest Mind",
-    "DESCRIPTION": "Lose !M! Max HP. NL At the start of your turn, lose 1 HP and gain 1 Dexterity. NL At the end of your turn, if this is in your hand, shuffle a copy of it into your draw pile. NL Soulbound."
+    "DESCRIPTION": "Lose !M! Max HP. NL At the start of your turn, lose 1 HP and gain 1 Dexterity. NL At the end of your turn, if this is in your hand, shuffle a copy of it into your draw pile. NL Soulbound.",
+    "EXTENDED_DESCRIPTION": [
+      "Cleanest Mind",
+      "At the start of your turn, lose #b",
+      " HP and gain #b",
+      " Dexterity."
+    ]
   },
   "${ModID}:FutureSight": {
     "NAME": "Future Sight",
@@ -383,7 +389,7 @@
   },
   "${ModID}:Freefall": {
     "NAME": "Freefall",
-    "DESCRIPTION": "Unnate. NL When you draw this card, draw !M! cards and Exhaust.",
+    "DESCRIPTION": "${ModID}:Unnate. NL When you draw this card, draw !M! cards and Exhaust.",
     "UPGRADE_DESCRIPTION": "Innate. NL When you draw this card, draw !M! cards and Exhaust."
   },
   "${ModID}:SoaringForm": {
@@ -393,7 +399,7 @@
   },
   "${ModID}:DelayedDeath": {
     "NAME": "Delayed Death",
-    "DESCRIPTION": "Etheral. NL Deal !D! damage to ALL enemies. NL At the start of targets' turn, they lose HP equal to unblocked damage dealt."
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage to ALL enemies. NL At the start of targets' turn, they lose HP equal to unblocked damage dealt."
   },
   "${ModID}:TotalMadness": {
     "NAME": "t0tAl MaDnEs5",

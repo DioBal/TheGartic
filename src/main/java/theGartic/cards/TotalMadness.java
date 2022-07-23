@@ -24,5 +24,7 @@ public class TotalMadness extends AbstractEasyCard {
 
     public void upp() {
         upgradeMagicNumber(UPGRADE_MAGIC);
+        rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+        initializeDescription();
     }
 }

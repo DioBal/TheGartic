@@ -8,11 +8,13 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.powers.watcher.MasterRealityPower;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 
 import java.util.ArrayList;
 
+import static theGartic.GarticMod.logger;
 import static theGartic.GarticMod.makeID;
 
 public class DivineAdventAction extends AbstractGameAction {
@@ -24,6 +26,7 @@ public class DivineAdventAction extends AbstractGameAction {
         actionType = ActionType.CARD_MANIPULATION;
         duration = startDuration = Settings.ACTION_DUR_FAST;
         retrieveCard = false;
+        logger.info("DIVINE ADVENT CONSTRUCTOR");
     }
 
     public void update() {
@@ -36,7 +39,7 @@ public class DivineAdventAction extends AbstractGameAction {
             if (!retrieveCard) {
                 if (AbstractDungeon.cardRewardScreen.discoveryCard != null) {
                     AbstractCard disCard = AbstractDungeon.cardRewardScreen.discoveryCard.makeStatEquivalentCopy();
-                    if (AbstractDungeon.player.hasPower("MasterRealityPower"))
+                    if (AbstractDungeon.player.hasPower(MasterRealityPower.POWER_ID))
                         disCard.upgrade();
 
                     disCard.current_x = -1000.0F * Settings.xScale;
@@ -52,7 +55,6 @@ public class DivineAdventAction extends AbstractGameAction {
                 }
 
                 retrieveCard = true;
-                isDone = true;
             }
 
             tickDuration();

@@ -44,7 +44,7 @@
       " random cards from your discard pile, otherwise enter Wrath."
     ]
   },
-  "${ModID}:DivinityAdventPower": {
+  "${ModID}:DivineAdventPower": {
     "NAME": "Divine Advent",
     "DESCRIPTIONS": [
       "Whenever you shuffle your draw pile, you may add a Smite or Safety into your hand.",

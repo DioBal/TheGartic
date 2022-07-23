@@ -38,7 +38,7 @@
     "NAME": "Tranquil Void",
     "FLAVOR": "If you look into the void, then the void will look at you. If you try to embrace void, void will absorb you up.",
     "DESCRIPTIONS": [
-      "No more HP loss from Cleanest Mind, but the Max HP loss is increased by 1."
+      "No more HP loss from Cleanest Mind, but the Max HP loss is increased by 1. Cleanest Mind costs 0 energy."
     ]
   },
   "${ModID}:BoxOfCrayons": {

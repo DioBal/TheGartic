@@ -26,8 +26,10 @@ public class JetstreamAction extends AbstractGameAction {
                     @Override
                     public void update() {
                         adp().hand.moveToDeck(card, true);
+                        isDone = true;
                     }
                 });
         }
+        isDone = true;
     }
 }

@@ -14,7 +14,7 @@ import static theGartic.util.Wiz.atb;
 public class Jetstream extends AbstractEasyCard {
     public final static String ID = makeID(Jetstream.class.getSimpleName());
     public final static int MAGIC = 5;
-    public final static int UPGRADE_MAGIC = 6;
+    public final static int UPGRADE_MAGIC = 1;
     private final static int COST = 1;
 
     public Jetstream() {
