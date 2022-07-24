@@ -126,7 +126,7 @@
   "${ModID}:GarbageGolemPower": {
     "NAME": "GarbageGolem",
     "DESCRIPTIONS": [
-      "If you win combat this turn, carry your block over to the next combat."
+      "If you win combat this turn, carry your #yBlock over to the next combat."
     ]
   },
   "${ModID}:GambleNextTurnPower": {

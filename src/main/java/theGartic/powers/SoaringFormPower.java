@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.FlightPower;
 import theGartic.GarticMod;
 import theGartic.util.TexLoader;
 
@@ -39,7 +38,7 @@ public class SoaringFormPower extends AbstractPower implements OnShufflePower {
     @Override
     public void atStartOfTurnPostDraw() {
         atb(new GainEnergyAction(amount));
-        applyToSelf(new FlightPower(adp(), amount));
+        applyToSelf(new PlayerFlightPower(adp(), amount));
     }
 
     @Override
