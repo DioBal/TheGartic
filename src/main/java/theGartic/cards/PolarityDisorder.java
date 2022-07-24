@@ -12,7 +12,7 @@ import static theGartic.util.Wiz.getRandomSlash;
 
 public class PolarityDisorder extends AbstractEasyCard {
     public final static String ID = makeID(PolarityDisorder.class.getSimpleName());
-    private final static int DAMAGE = 8;
+    private final static int DAMAGE = 7;
     private final static int UPGRADE_DAMAGE = 3;
     private final static int COST = 1;
     public static final ArrayList<String> stancesThisTurn = new ArrayList<>();

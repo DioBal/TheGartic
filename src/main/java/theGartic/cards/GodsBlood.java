@@ -12,7 +12,7 @@ import static theGartic.util.Wiz.*;
 
 public class GodsBlood extends AbstractEasyCard {
     public final static String ID = makeID(GodsBlood.class.getSimpleName());
-    public final static int MAGIC = 3;
+    public final static int MAGIC = 9;
     private final static int COST = 1;
     private final static int UPGRADED_COST = 0;
 
@@ -22,8 +22,7 @@ public class GodsBlood extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < magicNumber; i++)
-            atb(new LoseHPAction(adp(), adp(), 1));
+        atb(new LoseHPAction(adp(), adp(), magicNumber));
         atb(new ChangeStanceAction(WrathStance.STANCE_ID));
         applyToSelf(new PenNibPower(adp(), 1));
     }

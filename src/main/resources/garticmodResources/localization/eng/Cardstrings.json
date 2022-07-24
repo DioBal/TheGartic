@@ -122,11 +122,11 @@
   },
   "${ModID}:GodsBlood": {
     "NAME": "God's Blood",
-    "DESCRIPTION": "Lose 1 HP !M! times. NL Enter Wrath. NL Your next attack deals double damage."
+    "DESCRIPTION": "Lose !M! HP. NL Enter Wrath. NL Your next attack deals double damage."
   },
   "${ModID}:ClearIntention": {
     "NAME": "Clear Intention",
-    "DESCRIPTION": "Pick a card from your draw pile. Discard your draw pile. Make !M! copies of the card you picked in your draw pile."
+    "DESCRIPTION": "Pick a card from your draw pile. Discard your draw pile. Make !M! copies of the card you picked in your draw pile. NL Exhaust."
   },
   "${ModID}:PolarityDisorder": {
     "NAME": "Polarity Disorder",
@@ -168,7 +168,7 @@
   },
   "${ModID}:Pandamonium": {
     "NAME": "Pandamonium",
-    "DESCRIPTION": "At the end of your turn, ${ModID}:Summon a ${ModID}:Crazy\u00a0Panda that deals !M! damage.",
+    "DESCRIPTION": "At the end of your turn, ${ModID}:Summon a ${ModID}:Crazy\u00a0Panda that deals !M! damage and inflicts either 1 Weak or 1 Vulnerable.",
     "FLAVOR": "Skadoosh!"
   },
   "${ModID}:Frontflip": {
@@ -288,8 +288,8 @@
   },
   "${ModID}:GarbageGolem": {
     "NAME": "Garbage Golem",
-    "DESCRIPTION": "Gain !B! Block.  If you win the combat this turn, your block carries over to the next combat.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !M! Strength. NL If you win the combat this turn, your block carries over to the next combat.",
+    "DESCRIPTION": "Gain !B! Block.  If you win the combat this turn, your Block carries over to the next combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !M! Strength. NL If you win the combat this turn, your Block carries over to the next combat. NL Exhaust.",
     "FLAVOR": "WALL-E's ugly brother"
   },
   "${ModID}:LongShot": {
@@ -357,8 +357,8 @@
   },
   "${ModID}:CollectSelf": {
     "NAME": "Collect Self",
-    "DESCRIPTION": "Exit your stance. NL Next turn, draw X cards and gain X energy. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Exit your stance. NL Next turn, draw X+1 cards and gain X+1 energy. NL Exhaust."
+    "DESCRIPTION": "Exit your Stance. NL Next turn, draw X cards and gain X energy. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Exit your Stance. NL Next turn, draw X+1 cards and gain X+1 energy. NL Exhaust."
   },
   "${ModID}:DivineIntervention": {
     "NAME": "Divine Intervention",
@@ -389,8 +389,8 @@
   },
   "${ModID}:Freefall": {
     "NAME": "Freefall",
-    "DESCRIPTION": "${ModID}:Unnate. NL When you draw this card, draw !M! cards and Exhaust.",
-    "UPGRADE_DESCRIPTION": "Innate. NL When you draw this card, draw !M! cards and Exhaust."
+    "DESCRIPTION": "${ModID}:Unnate. NL Unplayable. NL When you draw this card, draw !M! cards and Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Unplayable. NL When you draw this card, draw !M! cards and Exhaust."
   },
   "${ModID}:SoaringForm": {
     "NAME": "Soaring Form",

@@ -16,6 +16,7 @@ public class ClearIntention extends AbstractEasyCard {
     public ClearIntention() {
         super(ID, COST, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
         baseMagicNumber = magicNumber = MAGIC;
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
