@@ -215,5 +215,13 @@
           "paper"
       ],
       "DESCRIPTION": "One form of \"Sheet of Paper\"."
+  },
+  {
+    "PROPER_NAME": "Wisdom",
+    "NAMES": [
+      "Wisdom",
+      "wisdom"
+    ],
+    "DESCRIPTION": "Stance: While in Wisdom, whenever you add a card to your draw or discard pile, add an additional copy."
   }
 ]

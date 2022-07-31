@@ -177,5 +177,13 @@
       "Exit №yWrath at end of turn after #b",
       " turns."
     ]
+  },
+  "${ModID}:AdaptationPower": {
+    "NAME": "Adaptation",
+    "DESCRIPTIONS": [
+      "Whenever you change Stances, put #b1 card from your discard pile on top of your draw pile.",
+      "Whenever you change Stances, put #b",
+      " cards from your discard pile on top of your draw pile."
+    ]
   }
 }

@@ -332,8 +332,8 @@
   },
   "${ModID}:EldersKnowledge": {
     "NAME": "Elder's Knowledge",
-    "DESCRIPTION": "Gain !B! Block. NL Enter Wisdom.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Enter Wisdom."
+    "DESCRIPTION": "Gain !B! Block. NL Enter garticmod:Wisdom.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Enter garticmod:Wisdom."
   },
   "${ModID}:OpeningStrike": {
     "NAME": "Opening Strike",
