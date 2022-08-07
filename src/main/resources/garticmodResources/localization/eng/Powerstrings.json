@@ -15,6 +15,52 @@
       " from you! They will be returned at the start of your next turn."
     ]
   },
+  "${ModID}:DivineInterventionPower": {
+    "NAME": "Divine Intervention",
+    "DESCRIPTIONS": [
+      "The next time you would die, heal #b1 HP, gain #b15 Block, and enter Divinity instead.",
+      "The next #b",
+      " times you would die, heal #b1 HP, gain #b15 Block, and enter Divinity instead."
+    ]
+  },
+  "${ModID}:DivinityNextTurnPower": {
+    "NAME": "Divine Blessing",
+    "DESCRIPTIONS": [
+      "Enter #yDivinity at the start of your next turn."
+    ]
+  },
+  "${ModID}:DelayedDeathPower": {
+    "NAME": "Delayed Death",
+    "DESCRIPTIONS": [
+      "At the start of its turn, loses #b",
+      " HP."
+    ]
+  },
+  "${ModID}:TotalMadnessPower": {
+    "NAME": "t0tAl MaDnEs5",
+    "DESCRIPTIONS": [
+      "At the start of your turn, if you are in Wrath play a random card from your discard pile, otherwise enter Wrath.",
+      "At the start of your turn, if you are in Wrath play #b",
+      " random cards from your discard pile, otherwise enter Wrath."
+    ]
+  },
+  "${ModID}:DivineAdventPower": {
+    "NAME": "Divine Advent",
+    "DESCRIPTIONS": [
+      "Whenever you shuffle your draw pile, you may add a Smite or Safety into your hand.",
+      "Whenever you shuffle your draw pile, you may add #b",
+      " Smites or Safeties into your hand."
+    ]
+  },
+  "${ModID}:SoaringFormPower": {
+    "NAME": "Soaring Form",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain [E] and #b1 Flight.",
+      "At the start of your turn, gain #b",
+      " [E] and #b",
+      " Flight."
+    ]
+  },
   "${ModID}:SummonCostRefundPower": {
     "NAME": "Summon Energy Gain",
     "DESCRIPTIONS": [
@@ -80,7 +126,7 @@
   "${ModID}:GarbageGolemPower": {
     "NAME": "GarbageGolem",
     "DESCRIPTIONS": [
-      "If you win combat this turn, carry your block over to the next combat."
+      "If you win combat this turn, carry your #yBlock over to the next combat."
     ]
   },
   "${ModID}:GambleNextTurnPower": {
@@ -130,6 +176,14 @@
       "Exit #yWrath at end of this turn.",
       "Exit №yWrath at end of turn after #b",
       " turns."
+    ]
+  },
+  "${ModID}:AdaptationPower": {
+    "NAME": "Adaptation",
+    "DESCRIPTIONS": [
+      "Whenever you change Stances, put #b1 card from your discard pile on top of your draw pile.",
+      "Whenever you change Stances, put #b",
+      " cards from your discard pile on top of your draw pile."
     ]
   }
 }

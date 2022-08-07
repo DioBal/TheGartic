@@ -4,7 +4,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import theGartic.actions.SummonOrbAction;
 import theGartic.cards.Hunt;
-import theGartic.summons.HungryFox;
+import theGartic.summons.HungryFoxSummon;
 
 import static theGartic.GarticMod.makeID;
 import static theGartic.util.Wiz.atb;
@@ -31,6 +31,6 @@ public class HungryFoxOption extends AbstractSummonOption
     @Override
     public void OnSummon()
     {
-        atb(new SummonOrbAction(new HungryFox(BASE_FOX_POWER)));
+        atb(new SummonOrbAction(new HungryFoxSummon(BASE_FOX_POWER)));
     }
 }

@@ -10,7 +10,8 @@ import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import theGartic.GarticMod;
 import theGartic.actions.DireWolfAttackAction;
-import theGartic.cards.DireWolfHelper;
+import theGartic.cards.SummonDamageHelper;
+import theGartic.cards.summonOptions.DireWolfOption;
 import theGartic.util.OnModifyPowersOrb;
 
 import static theGartic.GarticMod.makeOrbPath;
@@ -20,15 +21,20 @@ public class DireWolfSummon extends AbstractSummonOrb implements OnModifyPowersO
     public static final String ORB_ID = GarticMod.makeID(DireWolfSummon.class.getSimpleName());
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
-    private static int BASE_PASSIVE_AMOUNT = 3, BASE_STACK = 1;
-    public static final DireWolfHelper helperCard = new DireWolfHelper(1);
+    public static final int BASE_PASSIVE_AMOUNT = 2, BASE_STACK = 8;
+    public static final SummonDamageHelper helperCard = new SummonDamageHelper(1);
 
     private int displayAmount;
+
+    public DireWolfSummon(){
+        this(BASE_PASSIVE_AMOUNT, BASE_STACK);
+    }
 
     public DireWolfSummon(int amount, int stack)
     {
         super(ORB_ID, orbString.NAME, amount, stack, makeOrbPath("DireWolf.png"));
         OnPowersModified();
+        summonOption = new DireWolfOption(false, true);
     }
 
     @Override

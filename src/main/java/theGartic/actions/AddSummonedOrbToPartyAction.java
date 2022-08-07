@@ -61,6 +61,14 @@ public class AddSummonedOrbToPartyAction extends AbstractGameAction implements O
     public void receiveTargetOrb(AbstractCreature source, AbstractSummonOrb orb) {
         addToParty(orb);
         isDone = true;
+    }
+
+    private void addToParty(AbstractSummonOrb summonOrb)
+    {
+        if(adp().hasRelic(PartyRelic.ID)) {
+            if (summonOrb.summonOption != null)
+            ((PartyRelic) adp().getRelic(PartyRelic.ID)).addToParty(summonOrb.summonOption);
+        }
         att(new AbstractGameAction() {
             @Override
             public void update() {
@@ -70,14 +78,6 @@ public class AddSummonedOrbToPartyAction extends AbstractGameAction implements O
                 isDone = true;
             }
         });
-    }
-
-    private void addToParty(AbstractSummonOrb summonOrb)
-    {
-        if(adp().hasRelic(PartyRelic.ID)) {
-            if (summonOrb.summonOption != null)
-            ((PartyRelic) adp().getRelic(PartyRelic.ID)).addToParty(summonOrb.summonOption);
-        }
     }
 
     @Override

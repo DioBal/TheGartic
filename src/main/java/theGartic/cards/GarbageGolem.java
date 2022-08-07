@@ -35,6 +35,7 @@ public class GarbageGolem extends AbstractEasyCard {
     public GarbageGolem() {
         super(ID, COST, TYPE, RARITY, TARGET, COLOR);
         baseBlock = BLOCK;
+        exhaust = true;
 
         FlavorText.AbstractCardFlavorFields.boxColor.set(this, FLAVOR_BOX_COLOR);
         FlavorText.AbstractCardFlavorFields.textColor.set(this, FLAVOR_TEXT_COLOR);

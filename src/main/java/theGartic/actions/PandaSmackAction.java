@@ -1,6 +1,7 @@
 package theGartic.actions;
 
 import basemod.ReflectionHacks;
+import com.evacipated.cardcrawl.mod.stslib.patches.ColoredDamagePatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -76,8 +77,10 @@ public class PandaSmackAction extends AbstractGameAction {
                 ReflectionHacks.setPrivate(action, AbstractGameAction.class, "duration", 0);
                 ReflectionHacks.setPrivate(action, ApplyPowerAction.class, "startingDuration", 0);
                 att(action);
-                att(new DamageAction(target, new DamageInfo(adp(), panda.passiveAmount, DamageInfo.DamageType.NORMAL),
-                        AttackEffect.BLUNT_HEAVY, true));
+                DamageAction damageAction = new DamageAction(target, new DamageInfo(adp(), panda.passiveAmount, DamageInfo.DamageType.NORMAL),
+                        AttackEffect.BLUNT_HEAVY, true);
+                ColoredDamagePatch.DamageActionColorField.rainbow.set(damageAction, true);
+                att(damageAction);
             }
             panda.startBounce(targetX, targetY);
             isDone = true;

@@ -7,6 +7,14 @@
     "DESCRIPTION": "#yFish are random Colorless cards that grant a small benefit, replace themselves, and #yExhaust."
   },
   {
+    "PROPER_NAME": "Unnate",
+    "NAMES": [
+      "Unnate",
+      "unnate"
+    ],
+    "DESCRIPTION": "Start each combat with this card at the bottom of your draw pile."
+  },
+  {
     "PROPER_NAME": "Glass Armor",
     "NAMES": [
       "glass_armor",
@@ -71,6 +79,13 @@
       "fetchingfox"
     ],
     "DESCRIPTION": "A creature that has a 50% chance to perform one of these two actions at the start of each turn. NL - Draws you a card. NL - Steals a card from you, returning it at the start of next turn. "
+  },
+  {
+    "PROPER_NAME": "Party",
+    "NAMES": [
+      "party"
+    ],
+    "DESCRIPTION": "A group of #ySummons that join you at the start of each battle."
   },
   {
     "PROPER_NAME": "Mischievous Fox",
@@ -200,5 +215,13 @@
           "paper"
       ],
       "DESCRIPTION": "One form of \"Sheet of Paper\"."
+  },
+  {
+    "PROPER_NAME": "Wisdom",
+    "NAMES": [
+      "Wisdom",
+      "wisdom"
+    ],
+    "DESCRIPTION": "Stance: While in Wisdom, whenever you add a card to your draw or discard pile, add an additional copy."
   }
 ]

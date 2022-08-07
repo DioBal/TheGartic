@@ -21,6 +21,8 @@ import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import theGartic.GarticMod;
 import theGartic.actions.StealCardAction;
+import theGartic.cards.summonOptions.DireWolfOption;
+import theGartic.cards.summonOptions.FetchingFoxOption;
 
 import static theGartic.GarticMod.makeOrbPath;
 
@@ -29,12 +31,16 @@ public class FetchingFoxSummon extends AbstractSummonOrb
     public static final String ORB_ID = GarticMod.makeID(FetchingFoxSummon.class.getSimpleName());
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
-    private static int BASE_PASSIVE_AMOUNT = 3, BASE_STACK = 1;
+    public static final int BASE_AMOUNT = 1;
+
+    public FetchingFoxSummon(){
+        this(BASE_AMOUNT, BASE_AMOUNT);
+    }
 
     public FetchingFoxSummon(int amount, int stack)
     {
         super(ORB_ID, orbString.NAME, amount, stack, makeOrbPath("FetchingFox.png"));
-
+        summonOption = new FetchingFoxOption(false, true);
     }
 
     @Override

@@ -4,5 +4,11 @@
     "DESCRIPTION": [
       "After you play an Attack, gain #b", " Block"
     ]
+  },
+  "${ModID}:Wisdom": {
+    "NAME": "Wisdom",
+    "DESCRIPTION": [
+      "Whenever you add a card to your draw or discard pile, add an additional copy."
+    ]
   }
 }

@@ -21,13 +21,15 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.vfx.combat.BiteEffect;
 import com.megacrit.cardcrawl.core.Settings;
+import theGartic.cards.summonOptions.FireImpOption;
+import theGartic.cards.summonOptions.MirroredFoxOption;
 
 public class MirroredFoxSummon extends AbstractSummonOrb {
     
     public static final String ORB_ID = makeID("MirroredFoxSummon");
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
-    private static int BASE_PASSIVE_AMOUNT = 6, BASE_STACK = 1;
+    public static int BASE_PASSIVE_AMOUNT = 6, BASE_STACK = 1;
 
     private int tempStr, baseStr, baseDex, tempFr, tempWeak, countFr, countWeak, rand;
     private boolean Shackle = false;
@@ -38,18 +40,20 @@ public class MirroredFoxSummon extends AbstractSummonOrb {
 
     public MirroredFoxSummon(int amount, int stack) {
         super(ORB_ID, orbString.NAME, amount, stack, makeOrbPath("MirroredFox.png"));
+        summonOption = new MirroredFoxOption(false, true);
     }
-    
+
+    @Override
     public void onStartOfTurn() {
         rand = AbstractDungeon.cardRng.random(0, 2);
         updateDescription();
         updateAmt();
     }
-    
-    public void onEndOfTurn() {
 
+    @Override
+    public void onEndOfTurn() {
         if (rand == 1) {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, evokeAmount));
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, passiveAmount));
         } else {
             AbstractMonster m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
             AbstractDungeon.actionManager.addToBottom(new VFXAction(new BiteEffect(m.hb.cX, m.hb.cY - 40.0F * Settings.scale, Settings.GOLD_COLOR.cpy())));
