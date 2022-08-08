@@ -58,6 +58,14 @@
     "DESCRIPTION": "A creature that deals 3 damage to a random enemy whenever you play an #yAttack."
   },
   {
+    "PROPER_NAME": "Three-Tailed White Fox",
+    "NAMES": [
+      "Three-Tailed\u00a0White\u00a0Fox",
+      "three-tailed\u00a0white\u00a0fox"
+    ],
+    "DESCRIPTION": "#ySummon. At the end of your turn choose one of three random beneficial actions."
+  },
+  {
     "PROPER_NAME": "Hungry Fox",
     "NAMES": [
       "Hungry\u00a0Fox",
