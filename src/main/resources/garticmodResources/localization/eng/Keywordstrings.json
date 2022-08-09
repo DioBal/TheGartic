@@ -63,7 +63,7 @@
       "Three-Tailed\u00a0White\u00a0Fox",
       "three-tailed\u00a0white\u00a0fox"
     ],
-    "DESCRIPTION": "#ySummon. At the end of your turn choose one of three random beneficial actions."
+    "DESCRIPTION": "#ySummon. At the end of your turn, pick #b1 of #b3 random positive choices."
   },
   {
     "PROPER_NAME": "Hungry Fox",
