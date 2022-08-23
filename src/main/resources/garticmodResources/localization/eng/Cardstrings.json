@@ -107,7 +107,7 @@
   },
   "${ModID}:Approach": {
     "NAME": "Approach",
-    "DESCRIPTION": "Deal !D! damage. NL Your next Attack deals double damage."
+    "DESCRIPTION": "Deal !D! damage. NL Your next Attack deals double damage. NL Exhaust."
   },
   "${ModID}:AsStone": {
     "NAME": "As Stone",
