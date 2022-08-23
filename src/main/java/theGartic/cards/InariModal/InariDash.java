@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
-import theGartic.cards.AngelicGlide;
 import theGartic.cards.EasyModalChoiceCard;
 import theGartic.powers.InariDashPower;
 

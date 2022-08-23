@@ -144,8 +144,7 @@
   },
   "${ModID}:CelestialCrafting": {
     "NAME": "Celestial Crafting",
-    "DESCRIPTION": "Gain !M! ${ModID}:Flight. NL While you are in ${ModID}:Flight, whenever you create a card, add a copy to your discard pile.",
-    "FLAVOR": "We have Master Reality at home."
+    "DESCRIPTION": "Gain !M! ${ModID}:Flight. NL While you are in ${ModID}:Flight, whenever you create a card, add a copy to your discard pile."
   },
   "${ModID}:Hunt": {
     "NAME": "Hunt",
@@ -191,7 +190,7 @@
     "NAME": "Scorpion Sting",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Poison. NL Apply 2 Weak"
   },
-  "${ModID}:AngelicGlide": {
+  "${ModID}:FeatherGuard": {
     "NAME": "Feather Guard",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! ${ModID}:Flight."
   },
