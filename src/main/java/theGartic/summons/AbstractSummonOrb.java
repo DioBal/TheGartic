@@ -129,7 +129,6 @@ public abstract class AbstractSummonOrb extends CustomOrb
     }
 
     public void onSummon(){
-
         //BE CAREFUL TO NOT ACCIDENTALLY CREATE INFINITE LOOPS WITH THIS
     }
 
@@ -217,6 +216,4 @@ public abstract class AbstractSummonOrb extends CustomOrb
         sb.setColor(reticleColor);
         sb.draw(ImageMaster.RETICLE_CORNER, hb.cX + x - 18.0F, hb.cY + y - 18.0F, 18.0F, 18.0F, 36.0F, 36.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 36, 36, flipX, flipY);
     }
-
-
 }

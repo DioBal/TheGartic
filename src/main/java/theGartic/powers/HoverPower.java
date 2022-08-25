@@ -21,18 +21,21 @@ public class HoverPower extends AbstractPower {
 
     // Code in FlightPower
     public HoverPower(int amount) {
+        super();
+        isTurnBased = true;
         this.amount = amount;
         this.name = NAME;
         ID = POWER_ID;
         type = AbstractPower.PowerType.BUFF;
         owner = adp();
-        isTurnBased = false;
         priority = 4;
 
         Texture normalTexture = TexLoader.getTexture(GarticMod.modID + "Resources/images/powers/Hover32.png");
         Texture hiDefImage = TexLoader.getTexture(GarticMod.modID + "Resources/images/powers/Hover84.png");
         region128 = new TextureAtlas.AtlasRegion(hiDefImage, 0, 0, hiDefImage.getWidth(), hiDefImage.getHeight());
         region48 = new TextureAtlas.AtlasRegion(normalTexture, 0, 0, normalTexture.getWidth(), normalTexture.getHeight());
+
+        updateDescription();
     }
 
     @Override

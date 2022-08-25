@@ -19,6 +19,7 @@ public class CollectSelf extends AbstractEasyCard {
 
     public CollectSelf() {
         super(ID, COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

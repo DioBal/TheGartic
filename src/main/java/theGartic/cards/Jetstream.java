@@ -27,7 +27,7 @@ public class Jetstream extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new JetstreamAction());
+        atb(new JetstreamAction(magicNumber));
     }
 
     public void upp() {

@@ -2,16 +2,15 @@ package theGartic.powers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theGartic.GarticMod;
+import theGartic.actions.DelayedDeathLoseHPAction;
 import theGartic.util.TexLoader;
 
 import static theGartic.GarticMod.makeID;
-import static theGartic.util.Wiz.adp;
 import static theGartic.util.Wiz.atb;
 
 public class DelayedDeathPower extends AbstractPower implements OnShufflePower {
@@ -39,7 +38,8 @@ public class DelayedDeathPower extends AbstractPower implements OnShufflePower {
 
     @Override
     public void atStartOfTurn() {
-        atb(new LoseHPAction(owner, adp(), amount));
+        flashWithoutSound();
+        atb(new DelayedDeathLoseHPAction(owner, amount));
     }
 
     @Override

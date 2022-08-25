@@ -14,7 +14,6 @@ public class GodsBlood extends AbstractEasyCard {
     public final static String ID = makeID(GodsBlood.class.getSimpleName());
     public final static int MAGIC = 9;
     private final static int COST = 1;
-    private final static int UPGRADED_COST = 0;
 
     public GodsBlood() {
         super(ID, COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
@@ -28,6 +27,7 @@ public class GodsBlood extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeBaseCost(UPGRADED_COST);
+        selfRetain = true;
+        uDesc();
     }
 }
