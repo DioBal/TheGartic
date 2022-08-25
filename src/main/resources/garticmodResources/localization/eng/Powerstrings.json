@@ -146,7 +146,7 @@
   "${ModID}:InariDashPower": {
     "NAME": "Inari Dash",
     "DESCRIPTIONS": [
-      "if you play a card, draw #b",
+      "If you play a card, draw #b",
       " card.",
       " cards.",
       " This Power is removed at the end of this turn."
