@@ -3,9 +3,11 @@ package theGartic.actions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.monsters.beyond.SpireGrowth;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import theGartic.relics.PartyRelic;
 import theGartic.summons.AbstractSummonOrb;
+import theGartic.summons.SmallSpireGrowthSummon;
 import theGartic.util.OrbTargetArrow;
 import theGartic.util.OrbTargetScreen;
 
@@ -28,7 +30,7 @@ public class AddSummonedOrbToPartyAction extends AbstractGameAction implements O
         {
             for (AbstractOrb orb : adp().orbs)
             {
-                if (orb instanceof AbstractSummonOrb)
+                if (orb instanceof AbstractSummonOrb && !(orb instanceof SmallSpireGrowthSummon))
                 {
                     summonCount++;
                     lastOrb = ((AbstractSummonOrb)orb);
@@ -87,6 +89,6 @@ public class AddSummonedOrbToPartyAction extends AbstractGameAction implements O
 
     @Override
     public boolean isAcceptableTarget(AbstractSummonOrb orb) {
-        return orb instanceof AbstractSummonOrb;
+        return orb instanceof AbstractSummonOrb && !(orb instanceof SmallSpireGrowthSummon);
     }
 }
