@@ -1,5 +1,7 @@
 package theGartic.cards;
 
+import basemod.helpers.CardTags;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theGartic.actions.AddSummonedOrbToPartyAction;
@@ -16,6 +18,7 @@ public class TamersCandy extends AbstractEasyCard {
     {
         super(ID, COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         isEthereal = true;
+        FleetingField.fleeting.set(this, true);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m)

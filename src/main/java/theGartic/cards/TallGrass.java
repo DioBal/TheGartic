@@ -29,7 +29,8 @@ public class TallGrass extends AbstractEasyCard implements CustomSavable<Integer
 
     @Override
     public void triggerWhenDrawn() {
-        addToTop(new PermanentCostReduceAction(uuid, magicNumber));
+        if(cost > 0)
+            addToTop(new PermanentCostReduceAction(uuid, magicNumber));
     }
 
     public void updateCost(int costChange){
@@ -53,7 +54,7 @@ public class TallGrass extends AbstractEasyCard implements CustomSavable<Integer
 
     @Override
     public void onLoad(Integer integer) {
-        if(integer != null && integer > 0)
+        if(integer != null && integer >= 0)
             costForTurn = cost = integer;
         else
             cost = COST;
