@@ -107,7 +107,7 @@
   },
   "${ModID}:Approach": {
     "NAME": "Approach",
-    "DESCRIPTION": "Deal !D! damage. NL Your next Attack deals double damage."
+    "DESCRIPTION": "Deal !D! damage. NL Your next Attack deals double damage. NL Exhaust."
   },
   "${ModID}:AsStone": {
     "NAME": "As Stone",
@@ -488,8 +488,8 @@
   },
   "${ModID}:TamersCandy": {
     "NAME": "Tamer's Candy",
-    "DESCRIPTION": "Ethereal. NL Add one of your current Summons to your Party.",
-    "UPGRADE_DESCRIPTION": "Add one of your current Summons to your Party.",
+    "DESCRIPTION": "Fleeting. Ethereal. NL Add one of your current Summons to your Party.",
+    "UPGRADE_DESCRIPTION": "Fleeting. NL Add one of your current Summons to your Party.",
     "EXTENDED_DESCRIPTION": [
       "Add a summon to your Party."
     ]
