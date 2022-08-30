@@ -12,7 +12,6 @@ import static theGartic.util.Wiz.*;
 
 public class CatchOfTheDay extends AbstractEasyCard {
     public final static String ID = makeID("CatchOfTheDay");
-    // intellij stuff power, self, uncommon, , , , , , 
 
     public CatchOfTheDay() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);

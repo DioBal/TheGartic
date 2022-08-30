@@ -43,7 +43,16 @@ public class InnerBalance extends AbstractEasyCard {
             blck();
         atb(new DrawCardAction(magicNumber));
     }
-    
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        if (!AbstractDungeon.player.stance.ID.equals(WrathStance.STANCE_ID))
+            target = CardTarget.ENEMY;
+        else
+            target = CardTarget.SELF;
+    }
+
     public void upp() {
         upgradeDamage(UPGRADE_DAMAGE);
         upgradeBlock(UPGRADE_BLOCK);

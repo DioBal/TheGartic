@@ -122,7 +122,8 @@
   },
   "${ModID}:GodsBlood": {
     "NAME": "God's Blood",
-    "DESCRIPTION": "Lose !M! HP. NL Enter Wrath. NL Your next attack deals double damage."
+    "DESCRIPTION": "Lose !M! HP. NL Enter Wrath. NL Your next attack deals double damage.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Lose !M! HP. NL Enter Wrath. NL Your next attack deals double damage."
   },
   "${ModID}:ClearIntention": {
     "NAME": "Clear Intention",
@@ -136,6 +137,10 @@
     "NAME": "Dive Bomb",
     "DESCRIPTION": "Remove all ${ModID}:Flight. NL Deal !D! damage to a random enemy for each stack of ${ModID}:Flight removed.",
     "FLAVOR": "Also known as the Angry Birds maneuver."
+  },
+  "${ModID}:DynamicEntry": {
+    "NAME": "Dynamic Entry",
+    "DESCRIPTION": "Whenever you ${ModID}:Summon, activate the summon's end of turn effect."
   },
   "${ModID}:Hover": {
     "NAME": "Hover",
@@ -346,7 +351,10 @@
       "Cleanest Mind",
       "At the start of your turn, lose #b",
       " HP and gain #b",
-      " Dexterity."
+      " Dexterity.",
+      "At the start of your turn gain #b",
+      " Dexterity.",
+      "Lose !M! Max HP. NL At the start of your turn gain 1 Dexterity. NL At the end of your turn, if this is in your hand, shuffle a copy of it into your draw pile. NL Soulbound."
     ]
   },
   "${ModID}:FutureSight": {
@@ -356,8 +364,8 @@
   },
   "${ModID}:CollectSelf": {
     "NAME": "Collect Self",
-    "DESCRIPTION": "Exit your Stance. NL Next turn, draw X cards and gain X energy. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Exit your Stance. NL Next turn, draw X+1 cards and gain X+1 energy. NL Exhaust."
+    "DESCRIPTION": "Exit your Stance. NL Next turn, draw X cards and gain X [E]. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Exit your Stance. NL Next turn, draw X+1 cards and gain X+1 [E]. NL Exhaust."
   },
   "${ModID}:DivineIntervention": {
     "NAME": "Divine Intervention",
@@ -529,8 +537,8 @@
   },
   "${ModID}:UncannyHunger": {
     "NAME": "Uncanny Hunger",
-    "DESCRIPTION": "At the start of your turn, garticmod:Unsummon. NL If you did, gain !M! Energy and draw !${ModID}:m2! cards.",
-    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, garticmod:Unsummon. NL If you did, gain !M! Energy and draw !${ModID}:m2! cards.",
+    "DESCRIPTION": "At the start of your turn, ${ModID}:Unsummon. NL If you did, gain !M! [E] and draw !${ModID}:m2! cards.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, ${ModID}:Unsummon. NL If you did, gain !M! [E] and draw !${ModID}:m2! cards.",
     "EXTENDED_DESCRIPTION": ["Your hunger must be sated."]
   },
     "${ModID}:VoidDefend": {

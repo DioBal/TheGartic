@@ -29,7 +29,7 @@ public class DivineAdvent extends AbstractEasyCard {
     }
 
     public void upp() {
-        rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-        initializeDescription();
+        isInnate = true;
+        uDesc();
     }
 }

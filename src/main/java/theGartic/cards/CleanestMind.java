@@ -48,7 +48,11 @@ public class CleanestMind extends AbstractEasyCard {
 
             @Override
             public void updateDescription() {
-                description = cardStrings.EXTENDED_DESCRIPTION[1] + amount + cardStrings.EXTENDED_DESCRIPTION[2] + amount + cardStrings.EXTENDED_DESCRIPTION[3];
+                if (!adp().hasRelic(TranquilVoid.ID))
+                    description = cardStrings.EXTENDED_DESCRIPTION[1] + amount + cardStrings.EXTENDED_DESCRIPTION[2]
+                            + amount + cardStrings.EXTENDED_DESCRIPTION[3];
+                else
+                    description = cardStrings.EXTENDED_DESCRIPTION[4] + amount + cardStrings.EXTENDED_DESCRIPTION[5];
             }
         });
     }

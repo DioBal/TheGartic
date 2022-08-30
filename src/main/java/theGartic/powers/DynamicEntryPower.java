@@ -7,7 +7,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theGartic.GarticMod;
+import theGartic.actions.FireImpAttackAction;
 import theGartic.summons.AbstractSummonOrb;
+import theGartic.summons.FireImpSummon;
 import theGartic.util.TexLoader;
 
 import static theGartic.GarticMod.makeID;
@@ -44,6 +46,8 @@ public class DynamicEntryPower extends AbstractPower implements OnSummonPower {
                 @Override
                 public void update() {
                     orb.onEndOfTurn();
+                    if (orb instanceof FireImpSummon)
+                        atb(new FireImpAttackAction((FireImpSummon) orb));
                     isDone = true;
                 }
             });
