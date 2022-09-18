@@ -26,17 +26,17 @@ public class SureShot extends AbstractEasyCard {
     public static final CardColor COLOR = TheGartic.Enums.GARTIC_COLOR;
 
     public SureShot() {
-        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = 8;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m)
     {
         if (m.currentBlock > 0){
-            atb(new DamageAction(m, new DamageInfo(AbstractDungeon.player, baseDamage, DamageInfo.DamageType.HP_LOSS),
+            atb(new DamageAction(m, new DamageInfo(AbstractDungeon.player, damage, DamageInfo.DamageType.HP_LOSS),
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         }
-        atb(new DamageAction(m, new DamageInfo(AbstractDungeon.player, baseDamage, DamageInfo.DamageType.HP_LOSS),
+        atb(new DamageAction(m, new DamageInfo(AbstractDungeon.player, damage, DamageInfo.DamageType.HP_LOSS),
                 AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 
