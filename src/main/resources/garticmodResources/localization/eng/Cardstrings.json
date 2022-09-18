@@ -311,8 +311,8 @@
   },
   "${ModID}:SupplicateToInari": {
     "NAME": "Supplicate To Inari",
-    "DESCRIPTION": "Summon a ${ModID}:Three-Tailed\u00a0White\u00a0Fox, that at the end of your turn, gives 1 of 3 random positive choices.",
-    "UPGRADE_DESCRIPTION": "Summon a ${ModID}:Three-Tailed\u00a0White\u00a0Fox, that at the end of your turn, gives 1 of 3 random positive choices.",
+    "DESCRIPTION": "Summon a ${ModID}:Three-Tailed\u00a0White\u00a0Fox.",
+    "UPGRADE_DESCRIPTION": "Summon a ${ModID}:Three-Tailed\u00a0White\u00a0Fox.",
     "EXTENDED_DESCRIPTION": [
       " NL Draw !M! card.",
       " NL Draw !M! cards.",
@@ -525,7 +525,7 @@
   },
   "${ModID}:InariOption": {
     "NAME": "Three-Tailed White Fox",
-    "DESCRIPTION": "When your turn ends, pick 1 of 3 choices."
+    "DESCRIPTION": "When your turn ends, pick 1 of 3 positive choices."
   },
   "${ModID}:MirroredFoxOption": {
     "NAME": "Mirrored Fox",
