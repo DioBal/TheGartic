@@ -7,17 +7,21 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
+import com.megacrit.cardcrawl.cards.CardQueueItem;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import theGartic.GarticMod;
 import theGartic.util.Wiz;
 
 public class ChargeBeam extends AbstractEasyCard {
     public final static String ID = GarticMod.makeID("ChargeBeam");
+    private boolean discarded = false;
 
     public ChargeBeam() {
         super(ID, -2, CardType.ATTACK, CardRarity.RARE, CardTarget.NONE);
         damage = baseDamage = 7;
         magicNumber = baseMagicNumber = 3;
         selfRetain = true;
+        isMultiDamage = true;
     }
 
     public void onRetained() {
@@ -25,17 +29,24 @@ public class ChargeBeam extends AbstractEasyCard {
         upgradeDamage(this.magicNumber);
     }
 
-    public void use(AbstractPlayer p, AbstractMonster m) {}
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        if(discarded || (purgeOnUse && isInAutoplay)) {
+            discarded = false;
+            addToBot(new VFXAction(new MindblastEffect(Wiz.adp().dialogX, Wiz.adp().dialogY, Wiz.adp().flipHorizontal)));
+            addToBot(new DamageAllEnemiesAction(Wiz.adp(), multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+        }
+    }
 
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
-        return false;
+        return discarded || (purgeOnUse && isInAutoplay);
     }
 
     @Override
     public void triggerOnManualDiscard() {
-        addToBot(new VFXAction(new MindblastEffect(Wiz.adp().dialogX, Wiz.adp().dialogY, Wiz.adp().flipHorizontal)));
-        addToBot(new DamageAllEnemiesAction(Wiz.adp(), damage, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE));
+        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, false));
+        discarded=true;
+        Wiz.adp().discardPile.removeCard(this);
     }
 
     public void upp() {
