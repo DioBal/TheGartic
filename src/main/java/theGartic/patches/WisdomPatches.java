@@ -35,6 +35,9 @@ public class WisdomPatches {
     public static class AddToTopPatch{
         @SpirePostfixPatch
         public static void plsWork(CardGroup __instance, AbstractCard c) {
+            if(AbstractDungeon.player==null){
+                return;
+            }
             if(!AbstractDungeon.player.stance.ID.equals(WisdomStance.STANCE_ID) || wisdomActive.get(__instance).equals(true)){
                 return;
             }
@@ -56,6 +59,9 @@ public class WisdomPatches {
     public static class AddToBottomPatch{
         @SpirePostfixPatch
         public static void plsWork(CardGroup __instance, AbstractCard c) {
+            if(AbstractDungeon.player==null){
+                return;
+            }
             if(!AbstractDungeon.player.stance.ID.equals(WisdomStance.STANCE_ID) || wisdomActive.get(__instance).equals(true)){
                 return;
             }
@@ -77,6 +83,9 @@ public class WisdomPatches {
     public static class AddToRandomSpotPatch{
         @SpirePostfixPatch
         public static void plsWork(CardGroup __instance, AbstractCard c) {
+            if(AbstractDungeon.player==null){
+                return;
+            }
             if(!AbstractDungeon.player.stance.ID.equals(WisdomStance.STANCE_ID) || wisdomActive.get(__instance).equals(true)){
                 return;
             }
