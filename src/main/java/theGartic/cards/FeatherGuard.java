@@ -11,8 +11,8 @@ import theGartic.util.Wiz;
 import static theGartic.GarticMod.makeCardPath;
 import static theGartic.GarticMod.makeID;
 
-public class AngelicGlide extends AbstractEasyCard {
-    public static final String ID = makeID(AngelicGlide.class.getSimpleName());
+public class FeatherGuard extends AbstractEasyCard {
+    public static final String ID = makeID(FeatherGuard.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String IMG = makeCardPath("Skill.png");
     public static final String NAME = cardStrings.NAME;
@@ -23,7 +23,7 @@ public class AngelicGlide extends AbstractEasyCard {
     public static final CardColor COLOR = TheGartic.Enums.GARTIC_COLOR;
     private static final int COST = 2;
 
-    public AngelicGlide() {
+    public FeatherGuard() {
         super(ID, COST, TYPE, RARITY, TARGET, COLOR);
         block = baseBlock = 10;
         magicNumber = baseMagicNumber = 2;

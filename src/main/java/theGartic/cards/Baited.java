@@ -10,7 +10,6 @@ import static theGartic.util.Wiz.*;
 
 public class Baited extends AbstractEasyCard {
     public final static String ID = makeID("Baited");
-    // intellij stuff attack, enemy, uncommon, 16, 2, , , 1, 1
 
     public Baited() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);

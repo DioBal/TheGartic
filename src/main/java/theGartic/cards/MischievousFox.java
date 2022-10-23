@@ -40,7 +40,7 @@ public class MischievousFox extends AbstractEasyCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        addToBot(new SummonOrbAction(new MischievousFoxSummon(1, magicNumber), magicNumber));
+        addToBot(new SummonOrbAction(new MischievousFoxSummon(magicNumber, magicNumber), magicNumber));
     }
 
     @Override

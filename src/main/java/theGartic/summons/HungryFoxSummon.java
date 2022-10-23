@@ -13,22 +13,31 @@ import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import theGartic.GarticMod;
 import theGartic.actions.HungryFoxAction;
+import theGartic.cards.summonOptions.FireImpOption;
+import theGartic.cards.summonOptions.HungryFoxOption;
 import theGartic.util.OrbTargetArrow;
 
 import static theGartic.util.Wiz.*;
 import static theGartic.GarticMod.makeOrbPath;
 
-public class HungryFox extends AbstractSummonOrb
+public class HungryFoxSummon extends AbstractSummonOrb
 {
-    public static final String ORB_ID = GarticMod.makeID(HungryFox.class.getSimpleName());
+    public static final String ORB_ID = GarticMod.makeID(HungryFoxSummon.class.getSimpleName());
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
     private static final String imgPath = "HungryFox.png";
+    public static int BASE_PASSIVE_AMOUNT = 3;
 
-    public HungryFox(int passive)
+    public HungryFoxSummon()
+    {
+        this(BASE_PASSIVE_AMOUNT);
+    }
+
+    public HungryFoxSummon(int passive)
     {
         super(ORB_ID, orbString.NAME, passive, 0, makeOrbPath(imgPath));
         showEvokeValue = false;
+        summonOption = new HungryFoxOption(false, true);
     }
 
     @Override
@@ -70,6 +79,6 @@ public class HungryFox extends AbstractSummonOrb
     @Override
     public AbstractOrb makeCopy()
     {
-        return new HungryFox(passiveAmount);
+        return new HungryFoxSummon(passiveAmount);
     }
 }

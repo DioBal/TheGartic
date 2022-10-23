@@ -18,9 +18,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import theGartic.cards.Defend;
-import theGartic.cards.StockUp;
-import theGartic.cards.Strike;
+import theGartic.cards.*;
 import theGartic.relics.OldRod;
 
 import java.util.ArrayList;
@@ -78,6 +76,7 @@ public class TheGartic extends CustomPlayer {
             retVal.add(Defend.ID);
         }
         retVal.add(StockUp.ID);
+        retVal.add(TallGrass.ID);
         return retVal;
     }
 

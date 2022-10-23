@@ -11,6 +11,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import theGartic.GarticMod;
+import theGartic.cards.summonOptions.MirroredFoxOption;
+import theGartic.cards.summonOptions.MischievousFoxOption;
 
 import static theGartic.GarticMod.makeOrbPath;
 
@@ -19,12 +21,16 @@ public class MischievousFoxSummon extends AbstractSummonOrb
     public static final String ORB_ID = GarticMod.makeID(MischievousFoxSummon.class.getSimpleName());
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
-    private static int BASE_PASSIVE_AMOUNT = 3, BASE_STACK = 1;
+    public static int BASE_PASSIVE_AMOUNT = 2, BASE_STACK = 2;
+
+    public MischievousFoxSummon(){
+        this(BASE_PASSIVE_AMOUNT, BASE_STACK);
+    }
 
     public MischievousFoxSummon(int amount, int stack)
     {
         super(ORB_ID, orbString.NAME, amount, stack, makeOrbPath("MischievousFox.png"));
-
+        summonOption = new MischievousFoxOption(false, true);
     }
 
     @Override

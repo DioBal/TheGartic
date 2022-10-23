@@ -15,6 +15,8 @@ public class Approach extends AbstractEasyCard {
     public Approach() {
         super(ID, 2, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = 14;
+
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

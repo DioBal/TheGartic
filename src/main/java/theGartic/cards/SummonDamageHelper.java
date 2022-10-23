@@ -7,15 +7,15 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static theGartic.GarticMod.makeID;
 
 @AutoAdd.Ignore
-public class DireWolfHelper extends AbstractEasyCard {
-    public final static String ID = makeID(DireWolfHelper.class.getSimpleName());
+public class SummonDamageHelper extends AbstractEasyCard {
+    public final static String ID = makeID(SummonDamageHelper.class.getSimpleName());
 
-    public DireWolfHelper(int amount) {
+    public SummonDamageHelper(int amount) {
         super(ID, 0, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
         baseDamage = amount;
     }
 
-    public DireWolfHelper() {
+    public SummonDamageHelper() {
         this(1);
     }
 

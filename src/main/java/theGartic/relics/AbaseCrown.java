@@ -1,6 +1,5 @@
 package theGartic.relics;
 
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -9,6 +8,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.stances.AbstractStance;
+import com.megacrit.cardcrawl.stances.NeutralStance;
 
 import static theGartic.GarticMod.makeID;
 
@@ -35,7 +35,7 @@ public class AbaseCrown extends AbstractEasyRelic {
 
     @Override
     public void onChangeStance(AbstractStance prevStance, AbstractStance newStance) {
-        if (prevStance.ID != null && !prevStance.ID.equals(newStance.ID)) {
+        if (prevStance.ID != null && newStance != null && !newStance.ID.equals(NeutralStance.STANCE_ID) && !prevStance.ID.equals(newStance.ID)) {
             active = true;
             this.beginLongPulse();
         }

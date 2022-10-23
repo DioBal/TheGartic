@@ -11,6 +11,8 @@ import theGartic.GarticMod;
 import theGartic.actions.EasyModalChoiceAction;
 import theGartic.cards.EasyModalChoiceCard;
 import theGartic.cards.InariModal.*;
+import theGartic.cards.summonOptions.DireWolfOption;
+import theGartic.cards.summonOptions.InariOption;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,16 +27,21 @@ public class InariWhiteFoxSummon extends AbstractSummonOrb
     public static final String ORB_ID = GarticMod.makeID(InariWhiteFoxSummon.class.getSimpleName());
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
-    private static int BASE_PASSIVE_AMOUNT = 1;
+    public static final int BASE_PASSIVE_AMOUNT = 1;
     private static ArrayList<EasyModalChoiceCard> inariChoicesDeck;
     private static int optionsShown = 0;
 
+    public InariWhiteFoxSummon(){
+        this(BASE_PASSIVE_AMOUNT);
+    }
+
     public InariWhiteFoxSummon(int amount)
     {
-        super(ORB_ID, orbString.NAME, amount, 0, makeOrbPath("MischievousFox.png"));
+        super(ORB_ID, orbString.NAME, amount, 0, makeOrbPath("InariWhiteFox.png"));
         inariChoicesDeck = new ArrayList<EasyModalChoiceCard>();
         initInariChoicesDeck();
         shuffleInariChoicesDeck();
+        summonOption = new InariOption(false, true);
     }
 
     private void initInariChoicesDeck(){

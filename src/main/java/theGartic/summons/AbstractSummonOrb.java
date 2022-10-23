@@ -9,16 +9,18 @@ import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 import theGartic.GarticMod;
 import theGartic.cards.AbstractEasyCard;
+import theGartic.cards.summonOptions.AbstractSummonOption;
 import theGartic.util.OrbTargetArrow;
 
 import java.util.Iterator;
@@ -42,20 +44,31 @@ public abstract class AbstractSummonOrb extends CustomOrb
     private float reticleAnimTimer = 0.0F;
     private static final float RETICLE_OFFSET_DIST = 15.0F * Settings.scale;
 
+    public AbstractSummonOption summonOption = null;
+
     public AbstractSummonOrb(String ID, String name, int amount, int stack, String path)
     {
         super(ID, name, amount, stack, "", "", path);
 
-        showEvokeValue = true;
+        showEvokeValue = false;
         updateDescription();
 
         angle = MathUtils.random(360.0f);
         channelAnimTimer = 0.5f;
+
+        AbstractPlayer player = adp();
+        for (int i = 0; i < player.orbs.size(); ++i){
+            if (player.orbs.get(i) instanceof AbstractSummonOrb){
+                if (player.orbs.get(i) != this){
+                    ((AbstractSummonOrb)player.orbs.get(i)).onSummon();
+                }
+            }
+        }
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
     }
-
+/*
     protected void renderText(SpriteBatch sb)
     {
         FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(evokeAmount),
@@ -64,7 +77,7 @@ public abstract class AbstractSummonOrb extends CustomOrb
         FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(passiveAmount),
                 cX + NUM_X_OFFSET, cY + bobEffect.y / 2.0F + NUM_Y_OFFSET + 20.0F * Settings.scale, c, fontScale);
     }
-
+*/
     @Override //if you want to ignore Focus
     public void applyFocus()
     {
@@ -77,6 +90,10 @@ public abstract class AbstractSummonOrb extends CustomOrb
 
     @Override
     public void onEvoke() {
+    }
+
+    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source)
+    {
     }
 
     public static void unSummon(AbstractOrb orb)
@@ -99,11 +116,24 @@ public abstract class AbstractSummonOrb extends CustomOrb
                 AbstractEasyCard c = (AbstractEasyCard) card; //cast AbstractCard card to AbstractEasyCard c
                 c.triggerOnUnsummon();
             }
+            for (int i = 0; i < player.orbs.size(); ++i){
+                if (player.orbs.get(i) instanceof  AbstractSummonOrb){
+                    ((AbstractSummonOrb)player.orbs.get(i)).onUnsummon();
+                }
+            }
         }
     }
 
     public void unSummon() {
         unSummon(this);
+    }
+
+    public void onSummon(){
+        //BE CAREFUL TO NOT ACCIDENTALLY CREATE INFINITE LOOPS WITH THIS
+    }
+
+    public void onUnsummon(){
+        //BE CAREFUL TO NOT ACCIDENTALLY CREATE INFINITE LOOPS WITH THIS
     }
 
     @Override

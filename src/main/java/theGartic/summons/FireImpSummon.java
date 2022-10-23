@@ -1,36 +1,43 @@
 package theGartic.summons;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.OrbStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.powers.watcher.VigorPower;
-import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
-import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import theGartic.GarticMod;
+import theGartic.actions.FireImpAttackAction;
+import theGartic.cards.SummonDamageHelper;
+import theGartic.cards.summonOptions.FireImpOption;
+import theGartic.util.OnModifyPowersOrb;
 
 import static theGartic.GarticMod.makeOrbPath;
 
-public class FireImpSummon extends AbstractSummonOrb
+public class FireImpSummon extends AbstractSummonOrb implements OnModifyPowersOrb
 {
     public static final String ORB_ID = GarticMod.makeID(FireImpSummon.class.getSimpleName());
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
-    private static int BASE_PASSIVE_AMOUNT = 3, BASE_STACK = 1;
+    public static int BASE_PASSIVE_AMOUNT = 3, BASE_STACK = 1;
+    public static final SummonDamageHelper helperCard = new SummonDamageHelper(1);
+
+    public int attackAmount;
+
+    public FireImpSummon()
+    {
+        this(BASE_PASSIVE_AMOUNT, BASE_STACK);
+    }
 
     public FireImpSummon(int amount, int stack)
     {
         super(ORB_ID, orbString.NAME, amount, stack, makeOrbPath("FireImp.png"));
+        summonOption = new FireImpOption(false, true);
+        attackAmount = amount;
     }
 
     @Override
@@ -38,22 +45,30 @@ public class FireImpSummon extends AbstractSummonOrb
     {
         if(card.type != AbstractCard.CardType.ATTACK)
             return;
-        for (int i = 0; i < evokeAmount; i++)
-        {
-            AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
-            if (target != null)
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(target, new DamageInfo(AbstractDungeon.player, passiveAmount, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
-        }
-        AbstractDungeon.actionManager.addToBottom(
-                new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.DARK), 0.1f));
-        //    AbstractDungeon.actionManager.addToBottom(new AttackDamageRandomEnemyAction(card, AbstractGameAction.AttackEffect.FIRE));
+
+        AbstractDungeon.actionManager.addToBottom(new FireImpAttackAction(this));
+    }
+
+
+    @Override
+    public void OnPowersModified() {
+        helperCard.baseDamage = passiveAmount;
+        helperCard.applyPowers();
+        attackAmount = helperCard.damage;
     }
 
     @Override
     public void updateDescription()
     {
-        applyFocus();
-        description = DESCRIPTIONS[0] + passiveAmount + DESCRIPTIONS[1] + evokeAmount + (evokeAmount == 1?DESCRIPTIONS[2]:DESCRIPTIONS[3]);
+        description = DESCRIPTIONS[0] + attackAmount + DESCRIPTIONS[1];
+    }
+
+    @Override
+    protected void renderText(SpriteBatch sb) {
+        FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L,
+                String.valueOf(attackAmount),
+                cX + NUM_X_OFFSET + 20* Settings.scale, cY + NUM_Y_OFFSET - 20* Settings.yScale,
+                new Color(1.0f, 1f, 1f, 1.0f), fontScale);
     }
 
     @Override
