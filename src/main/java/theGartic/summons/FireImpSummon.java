@@ -38,6 +38,7 @@ public class FireImpSummon extends AbstractSummonOrb implements OnModifyPowersOr
         super(ORB_ID, orbString.NAME, amount, stack, makeOrbPath("FireImp.png"));
         summonOption = new FireImpOption(false, true);
         attackAmount = amount;
+        updateDescription();
     }
 
     @Override
@@ -47,6 +48,7 @@ public class FireImpSummon extends AbstractSummonOrb implements OnModifyPowersOr
             return;
 
         AbstractDungeon.actionManager.addToBottom(new FireImpAttackAction(this));
+        updateDescription();
     }
 
 
@@ -55,6 +57,7 @@ public class FireImpSummon extends AbstractSummonOrb implements OnModifyPowersOr
         helperCard.baseDamage = passiveAmount;
         helperCard.applyPowers();
         attackAmount = helperCard.damage;
+        updateDescription();
     }
 
     @Override
