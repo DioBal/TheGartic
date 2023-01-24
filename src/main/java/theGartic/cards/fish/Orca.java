@@ -28,9 +28,9 @@ public class Orca extends AbstractFishCard {
     public void applyPowers() {
         if (magicNumber > 1) {
             if (!upgraded)
-                rawDescription = String.format(cardStrings.EXTENDED_DESCRIPTION[0], magicNumber);
+                rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];
             else
-                rawDescription = String.format(cardStrings.EXTENDED_DESCRIPTION[1], magicNumber);
+                rawDescription = cardStrings.EXTENDED_DESCRIPTION[1];
         }
         super.initializeDescription();
     }
